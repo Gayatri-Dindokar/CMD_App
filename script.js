@@ -330,7 +330,7 @@ const get_quote = () => {
         if (event.key === 'Enter') {
             const conform = document.getElementById('submitInput').value;
             console.log(conform);
-
+            console.log('hgfhwhbwhnfghwgfhfjkhwhf');
         }
     });
 
