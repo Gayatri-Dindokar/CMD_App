@@ -228,7 +228,7 @@ const get_quote = () => {
     <form>
          <div id="question1" class="que1">
                                 <p class="q1"><span> > </span>what is your name?</p>
-                                   <p><span>></span> <input type="text" id="nameInput" class="input_getquote"   autocomplete="off"> </p>
+                                   <p><span>></span> <input type="text" id="nameInput" class="input_getquote"   autocomplete="off" required pattern="/^[A-Za-z\s]*$/"> </p>
                             </div>
                             <div id="question2" style="display: none;">
                             <p><span> > </span> what is your email?</p>
