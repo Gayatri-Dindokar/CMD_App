@@ -278,7 +278,7 @@ const get_quote = () => {
     // const quote = document.createElement("div");
     // quote.classList.add("quote");
     function showNextQuestion() {
-        console.log("hello")
+
         if (currentQuestionIndex < questions.length) {
             // hideQuestion(currentQuestionIndex);
             currentQuestionIndex++;
@@ -329,16 +329,22 @@ const get_quote = () => {
     document.getElementById('submitInput').addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             const conform = document.getElementById('submitInput').value;
-            console.log(conform);
-            console.log('hgfhwhbwhnfghwgfhfjkhwhf');
+            if (conform == "y") {
+                const formdata = {
+                    name: document.getElementById('nameInput').value,
+                    email: document.getElementById('emailInput').value,
+                    phone: document.getElementById('phoneInput').value,
+                    require: document.getElementById('requireInput').value,
+                    when: document.getElementById('whenInput').value,
+                    ProjectBrief: document.getElementById('Project-Brief').value,
+                    submit: document.getElementById('submitInput').value,
+
+                }
+                sessionStorage.setItem('key', JSON.stringify(formdata))
+            }
         }
     });
 
-    // const question1 = document.querySelector('.que1');
-
-    // prompt.insertAdjacentElement("beforeend", question1);
-
-    // prompt.insertAdjacentElement("beforeend", que1);
 
 
 
