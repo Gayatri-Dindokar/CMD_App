@@ -9,7 +9,7 @@ const inputField = document.querySelectorAll(".input-field");
 const containerFluid = document.querySelector(".container-fluid");
 const body = document.querySelector("body");
 const fulldiv = document.querySelector(".fulldiv");
-
+console.log("hii aashu");
 const path = () => {
     const newpath = document.createElement("div");
     newpath.classList.add("path");
