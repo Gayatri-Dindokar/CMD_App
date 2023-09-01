@@ -7,9 +7,7 @@ const container = document.querySelector(".container");
 const paths = document.querySelectorAll(".paths");
 const inputField = document.querySelectorAll(".input-field");
 const containerFluid = document.querySelector(".container-fluid");
-const body = document.querySelector("body");
-const fulldiv = document.querySelector(".fulldiv");
-console.log("hii aashu");
+
 const path = () => {
     const newpath = document.createElement("div");
     newpath.classList.add("path");
@@ -49,11 +47,7 @@ container.addEventListener("keyup", function(e) {
                 path();
             } else if (userinput.value == "get quote") {
                 get_quote();
-                //showget_quote();
-                // document.getElementById('question1').style.display = 'block';
-                // showQuestion(0);
-                console.log("qote");
-                // path();
+                
             } else if (userinput.value == "jobs") {
                 showJobs();
                 console.log("jobs");
@@ -70,16 +64,17 @@ container.addEventListener("keyup", function(e) {
     }
 });
 console.log(userinput.value);
+//if user enter other command which is not involve above addcommand will call//
 const addcommand = () => {
     const note = document.createElement("div");
     note.classList.add("note");
-
-    note.innerHTML = `
+     note.innerHTML = `
  <p> This Command not found  </p>
  `;
     prompt.insertAdjacentElement("beforeend", note);
-    // userinput.appendChild(note);
-};
+  };
+  
+  //when user type help command//
 const showHelp = () => {
     const helps = document.createElement("div");
     helps.classList.add("helps");
@@ -96,6 +91,8 @@ const showHelp = () => {
 `;
     prompt.insertAdjacentElement("beforeend", helps);
 };
+
+  //when user type home command//
 const showHome = () => {
     const home = document.createElement("div");
     home.classList.add("home");
@@ -132,6 +129,8 @@ const showHome = () => {
     prompt.insertAdjacentElement("beforeend", home);
     // path();
 };
+
+  //when user type about command//
 const showAbout = () => {
     const about = document.createElement("div");
     about.classList.add("about");
@@ -153,6 +152,8 @@ const showAbout = () => {
                     </div>`;
     prompt.insertAdjacentElement("beforeend", about);
 };
+
+  //when user type projects command//
 const showProjects = () => {
     const projects = document.createElement("div");
 
@@ -190,6 +191,8 @@ const showProjects = () => {
  `;
     prompt.insertAdjacentElement("beforeend", projects);
 };
+
+  //when user type contact command//
 const showContact = () => {
     const contact = document.createElement("div");
     contact.classList.add("contact");
@@ -201,6 +204,8 @@ const showContact = () => {
     prompt.insertAdjacentElement("beforeend", contact);
     // userinput.appendChild(note);
 };
+
+  //when user type jobs command//
 const showJobs = () => {
     const jobs = document.createElement("div");
     jobs.classList.add("jobs");
@@ -220,8 +225,10 @@ const showJobs = () => {
                         </p>
                         </div> `;
     prompt.insertAdjacentElement("beforeend", jobs);
-    // userinput.appendChild(note);
+  
 };
+
+  //when user type get quote command//
 const get_quote = () => {
     const que1 = document.createElement("div");
     que1.innerHTML = `
@@ -236,7 +243,7 @@ const get_quote = () => {
                         </div>
                         <div id="question3" style="display: none;">
                         <p><span> > </span>what is your phone no?</p>
-                           <p> <span>></span><input type="text" id="phoneInput" class="input_getquote"> </p>
+                           <p> <span>></span><input type="number" id="phoneInput" class="input_getquote"> </p>
                     </div>
                     <div id="question4" style="display: none;">
                         <p><span> > </span>What Do You Require?</p>
@@ -270,58 +277,100 @@ const get_quote = () => {
         'question6',
         'question7'
     ];
-    let currentQuestionIndex = 0;
+    let currentIndex = 0;
 
+    //display block the quetions
     function showQuestion(index) {
         document.getElementById(questions[index]).style.display = 'block';
     }
-    // const quote = document.createElement("div");
-    // quote.classList.add("quote");
+      //for next quetions
     function showNextQuestion() {
 
-        if (currentQuestionIndex < questions.length) {
-            // hideQuestion(currentQuestionIndex);
-            currentQuestionIndex++;
-            if (currentQuestionIndex < questions.length) {
-                showQuestion(currentQuestionIndex);
+        if (currentIndex < questions.length) {
+            
+            currentIndex++;
+            if (currentIndex < questions.length) {
+                showQuestion(currentIndex);
             }
         }
     }
-    document.getElementById('nameInput').addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
+
+    // after 'enter' key is press  focuses the next quetions//
+    document.getElementById('nameInput').addEventListener('keyup', function(event) {
+       
+            let store = document.getElementById('nameInput').value;
+            if(store.trim()==""){
+                alert("Enter a Name");
+            }
+            if (event.key === 'Enter') {
+          if(store.length > 0){
+           let spli = store.split(" ");
+        //    console.log(spli);
+           const fullNamePattern = /^[A-Za-z\s']+$/;
+           if(!store.match(fullNamePattern)){
+            alert("invalid pattern only alphabets are allowed");
+           }
+         else{
             showNextQuestion();
-            document.getElementById(questions[currentQuestionIndex]).querySelector('input').focus();
+            document.getElementById(questions[currentIndex]).querySelector('input').focus();
         }
+        }}
+
     });
-    document.getElementById('emailInput').addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-            showNextQuestion();
-            document.getElementById(questions[currentQuestionIndex]).querySelector('input').focus();
+    document.getElementById('emailInput').addEventListener('keyup', function(event) {
+        let email = document.getElementById('emailInput').value;
+        if(email.trim()==""){
+            alert("Enter a Email");
         }
-    });
-    document.getElementById('phoneInput').addEventListener('keydown', function(event) {
+        const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if (event.key === 'Enter') {
-            showNextQuestion();
-            document.getElementById(questions[currentQuestionIndex]).querySelector('input').focus();
+         if(!email.match(emailPattern )){
+             console.log("incorrect email");
+            alert("Incorrect Pattern Please Enter Correct Email Id")
+         }else{
+               showNextQuestion();
+             document.getElementById(questions[currentIndex]).querySelector('input').focus();
+             
+            }
+         }
+           });
+    document.getElementById('phoneInput').addEventListener('keyup', function(event) {
+        let phoneNo = document.getElementById('phoneInput').value;
+        if(event.key === 'Enter'){
+        if(phoneNo.trim()==""){
+            alert("Enter a Number");
         }
+        else if (phoneNo.length > 10){
+            alert("Enter a valid Number Only 10 digits are allowed")
+        }
+        
+      
+         else{
+            showNextQuestion();
+            document.getElementById(questions[currentIndex]).querySelector('input').focus();
+        }
+    }
+    
+
+
     });
     document.getElementById('requireInput').addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             showNextQuestion();
-            document.getElementById(questions[currentQuestionIndex]).querySelector('input').focus();
+            document.getElementById(questions[currentIndex]).querySelector('input').focus();
         }
     });
 
     document.getElementById('whenInput').addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             showNextQuestion();
-            document.getElementById(questions[currentQuestionIndex]).querySelector('.textarea').focus();
+            document.getElementById(questions[currentIndex]).querySelector('.textarea').focus();
         }
     });
     document.getElementById('Project-Brief').addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             showNextQuestion();
-            document.getElementById(questions[currentQuestionIndex]).querySelector('input').focus();
+            document.getElementById(questions[currentIndex]).querySelector('input').focus();
 
 
         }
@@ -349,3 +398,29 @@ const get_quote = () => {
 
 
 }
+
+// function conversion() {
+//     let store = document.getElementById("nameInput").value;
+//     // console.log(a);
+  
+//         let spli = store.split(" ")
+//             console.log(spli , "aaa");
+//             // document.getElementById("grab").innerHTML = "length is exceded";
+//         if (spli.length == 2 && spli[0].length >= 4 && spli[1].length >= 4) {
+//             document.getElementById('grab').innerHTML = "you have enter correct name";
+//             document.getElementById('grab').style.color = "yellow";
+//         } else {
+//             document.getElementById('grab').innerHTML = "invalid format";
+//             document.getElementById('grab').style.color = "red";
+//         }
+
+// }
+//     
+// let store = document.getElementById('nameInput').value;
+// if(store.length > 0){
+//     let spli = store.split(" ");
+//     // 
+//     console.log(spli);
+// }
+ 
+
