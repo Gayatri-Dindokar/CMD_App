@@ -261,7 +261,7 @@ const get_quote = () => {
               </div> 
          <div id="question7" style="display: none;">
          <p><span> > </span>Are you sure you want to submit? (y/n)</p>
-                  <p><span>></span><input type="text" id="submitInput" class="input_getquote" ></p>
+                  <p><span>></span><input type="text" id="submitInput" class="input_getquote"  ></p>
            
                     </div>
 
@@ -329,6 +329,7 @@ const get_quote = () => {
 
     // after 'enter' key is press  focuses the next quetions//
     document.getElementById("nameInput").addEventListener("keyup", function (event) {
+        let nameInput =   document.getElementById("nameInput");
         let store = document.getElementById("nameInput").value;
         if (store.trim() == "") {
             alert("Enter a Name");
@@ -340,6 +341,7 @@ const get_quote = () => {
                 const fullNamePattern = /^[A-Za-z\s']+$/;
                 if (!store.match(fullNamePattern)) {
                     alert("invalid pattern only alphabets are allowed");
+                    nameInput.value = "";
                 } else {
                     showNextQuestion();
                     document.getElementById(questions[currentIndex]).querySelector("input").focus();
@@ -349,6 +351,7 @@ const get_quote = () => {
     });
     document.getElementById("emailInput").addEventListener("keyup", function (event) {
         let email = document.getElementById("emailInput").value;
+        let emailInput =   document.getElementById("emailInput");
         if (email.trim() == "") {
             alert("Enter a Email");
         }
@@ -357,6 +360,7 @@ const get_quote = () => {
             if (!email.match(emailPattern)) {
                 console.log("incorrect email");
                 alert("Incorrect Pattern Please Enter Correct Email Id");
+                emailInput.value = "";
             } else {
                 showNextQuestion();
                 document.getElementById(questions[currentIndex]).querySelector("input").focus();
@@ -364,12 +368,15 @@ const get_quote = () => {
         }
     });
     document.getElementById("phoneInput").addEventListener("keyup", function (event) {
+        let phoneInput = document.getElementById("phoneInput");
         let phoneNo = document.getElementById("phoneInput").value;
         if (event.key === "Enter") {
+            phoneNo = phoneNo.replace(/\D/g, "");
             if (phoneNo.trim() == "") {
                 alert("Enter a Number");
-            } else if (phoneNo.length > 10) {
-                alert("Enter a valid Number Only 10 digits are allowed");
+            } else if ((!/^\d{10}$/.test(phoneNo))) {
+                alert("Enter a valid  10 digits number");
+                phoneInput.value = "";
             } else {
                 showNextQuestion();
                 document.getElementById(questions[currentIndex]).querySelector("input").focus();
@@ -399,6 +406,7 @@ const get_quote = () => {
         if (event.key === "Enter") {
             const conform = document.getElementById("submitInput").value;
             if (conform == "y") {
+                submitInput.setAttribute("disabled", true);
                 showNextQuestion();
                 document.getElementById(questions[currentIndex]).querySelector("input").focus();
                 path();
@@ -414,6 +422,7 @@ const get_quote = () => {
                 };
                 sessionStorage.setItem("key", JSON.stringify(formdata));
             } else if (conform == "n") {
+                submitInput.setAttribute("disabled", true);
                 // console.log("hjghd")
                 showQuestion(8);
                 document.getElementById(questions[8]).querySelector("input").focus();
@@ -425,12 +434,14 @@ const get_quote = () => {
         if (event.key === "Enter") {
             const conform = document.getElementById("messageNo").value;
             if (conform == "y") {
+                messageNo.setAttribute("disabled", true);
                 console.log("quit");
                 showQuestion(9);
                 document.getElementById(questions[9]).querySelector("input").focus();
                 path();
                 console.log("help");
             } else if (conform == "n") {
+                messageNo.setAttribute("disabled", true);
                 showQuestion(10);
                 document.getElementById(questions[10]).querySelector("input").focus();
             }
@@ -440,8 +451,8 @@ const get_quote = () => {
         if (event.key === "Enter") {
             const conform = document.getElementById("resubmission").value;
             if (conform == "y") {
-                console.log("gayu");
-                showQuestion(11);
+                resubmission.setAttribute("disabled", true);
+               showQuestion(11);
                 document.getElementById(questions[11]).querySelector("input").focus();
                 path();
 
