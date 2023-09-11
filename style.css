@@ -355,3 +355,17 @@
         text-align: left;
         margin-top: -10px;
     }
+
+    .msg{
+        background-color: brown;
+    }
+    #messageYes{
+        width: 270px;
+        background-color: black;
+        
+    }
+    #successfull{
+        width: 270px;
+        background-color: black;
+        color: white;
+    }
