@@ -313,6 +313,7 @@ const get_quote = () => {
 
     ];
     let currentIndex = 0;
+    console.log('dghdjgdrgfg');
 
     //display block the quetions
     function showQuestion(index) {
