@@ -20,7 +20,7 @@ const path = () => {
     const inputField = newpath.querySelector(".input-field");
     inputField.focus();
 };
-container.addEventListener("keyup", function (e) {
+container.addEventListener("keyup", function(e) {
     // console.log(e.target);
     if (e.target.matches(".input")) {
         const userinput = e.target;
@@ -95,35 +95,23 @@ const showHelp = () => {
 const showHome = () => {
     const home = document.createElement("div");
     home.classList.add("home");
-    home.innerHTML = `<p>we build brands,experiences,solutions</p>
- <p>...with ux driven technology and innovations</p>
-    <div class="homediv ">
-        <h4>UI ENGINEERING</h4>
-        <div class="wrap" style=" height: 50px;
-        width: 360px;
-        text-align: justify;">
-            <p>UI/UX Development with cutting edge technologies from HTML5/CSS3/JS to the latest versions of Angular/Node/React and of course an unrivalled focus on Optimisation, SEO, x-Browser & Responsiveness.</p>
-        </div>
-    </div>
-        <div class=" homediv ">
-        <h4>FULL STACK</h4>
+    home.innerHTML = `<dl>
+    <dt>UI ENGINEERING</dt>
+    <dd>
+        UI/UX Development with cutting-edge technologies from HTML5/CSS3/JS to the latest versions of Angular/Node/React and of course an unrivaled focus on Optimization, SEO, x-Browser & Responsiveness.
+    </dd>
 
-        <div class="wrap" style=" height: 50px;
-        width: 360px;
-        text-align: justify;">
-            <p>Backend development with open source LAMP stack, flexible CMS's & robust eCommerce platforms for powerful, secure, reliable yet faster websites & web applications.
-            </p>
-        </div>
+    <dt>FULL STACK</dt>
+    <dd>
+        Backend development with open-source LAMP stack, flexible CMS's & robust eCommerce platforms for powerful, secure, reliable yet faster websites & web applications.
+    </dd>
 
-    </div>
-    <div class="homediv ">
-        <h4>MOBILE APPS</h4>
-        <div class="wrap" style=" height: 50px;
-        width: 360px;
-        text-align: justify;">
-            <p>Intuitive, fast and quick mobile apps with hybrid frameworks for iOS and Android phones for the mobile-first approach kind of businesses where time to market is the key
-            </p>
-        </div>
+    <dt>MOBILE APPS</dt>
+    <dd>
+        Intuitive, fast and quick mobile apps with hybrid frameworks for iOS and Android phones for the mobile-first approach kind of businesses where time to market is the key.
+    </dd>
+</dl>
+
         `;
     prompt.insertAdjacentElement("beforeend", home);
     // path();
@@ -158,34 +146,27 @@ const showProjects = () => {
 
     projects.classList.add("projects");
     projects.innerHTML = `
-    <ul>
-    <p><span style="color:red;">the projects,, brands & clients, we are proud to showcase.</span></p>
-    <div class="projectwrap">
-        <div class="pdiv">
-            <li>
-                <h4>Mberry,</h4>
-                <p class="pwrap">The Miracle Berry Shop: miracle berries transform the sour test of food,veggies and fruits to sweetness without compromising on the calories chareles wanted a shofify driven eCommerce shop to sell his patended miracle berry
-                    products we gave his consumers a sweet online experience</p>
-            </li>
-        </div><br>
-        <div class="pdiv">
-            <li>
-                <h4>IDFC INSTITUTE :</h4>
-                <p class="pwrap">IDFC Institute is a Research institute setup by IDFC Limited to investigate the political, economic & spatial dimensions of India. They needed an elegant yet customizable CMS driven website for the Institute and Pixel6 delivered
-                    the portal in due course.</p>
-            </li>
-        </div><br>
-        <div class="pdiv">
-            <li>
-                <h4>12 STEPS MARKETING:</h4>
-                <p class="pwrap">12 Steps Marketing is an online marketing and SEO firm based out of LA, USA. They serve medical practices, clinics and treatment centers and go by the motto “OUR ONLY OBSESSION IS YOUR COMPANY’S GROWTH”. We do follow their
-                    business mantra and have been assisting 12StepsMarketing.com platform to develop and deliver compelling online user experiences to the medical industry they serve for more than 5 years now. Vince is happy and that makes
-                    us happy 🙂</p>
-            </li>
+    <dl>
+    <dt>Projects, Brands & Clients:</dt>
+    <dd>
+        <div class="projectwrap">
+            <div class="pdiv">
+                <h4>Mberry</h4>
+                <p class="pwrap">The Miracle Berry Shop: miracle berries transform the sour taste of food, veggies, and fruits to sweetness without compromising on the calories. Charles wanted a Shopify-driven eCommerce shop to sell his patented miracle berry products. We gave his consumers a sweet online experience.</p>
+            </div>
+            <br>
+            <div class="pdiv projects-para">
+                <h4>IDFC INSTITUTE</h4>
+                <p class="pwrap">IDFC Institute is a research institute set up by IDFC Limited to investigate the political, economic, and spatial dimensions of India. They needed an elegant yet customizable CMS-driven website for the Institute, and Pixel6 delivered the portal in due course.</p>
+            </div>
+            <br>
+            <div class="pdiv projects-para">
+                <h4>12 STEPS MARKETING</h4>
+                <p class="pwrap">12 Steps Marketing is an online marketing and SEO firm based out of LA, USA. They serve medical practices, clinics, and treatment centers and go by the motto "OUR ONLY OBSESSION IS YOUR COMPANY'S GROWTH." We do follow their business mantra and have been assisting 12StepsMarketing.com platform to develop and deliver compelling online user experiences to the medical industry they serve for more than 5 years now. Vince is happy, and that makes us happy 🙂</p>
+            </div>
         </div>
-    </div>
-</ul>
-   
+    </dd>
+</dl>
 
  `;
     prompt.insertAdjacentElement("beforeend", projects);
@@ -197,9 +178,21 @@ const showContact = () => {
     contact.classList.add("contact");
 
     contact.innerHTML = `
-    <p>let's connect, we are just a click away.</p>
-    <p>Details<br> E-mail us / info@pixel6.co <br>Phone / +91 88 05 06 05 06</p>
-    <p>Location:<br> V18, Balewadi High Street, Baner, Pune, Maharashtra India 411045</p>`;
+    <dl>
+    
+     <dt class="contact-location">Contact Details:</dt>
+    <dd>
+        <p>E-mail:</p>
+        <dd>info@pixel6.co</dd>
+        <p>Phone:</p>
+        <dd>+91 88 05 06 05 06</dd>
+    </dd>
+    <dt class="contact-location">Location:</dt>
+    <dd>
+        <p>V18, Balewadi High Street, Baner, Pune, Maharashtra India 411045</p>
+    </dd>
+</dl>
+`;
     prompt.insertAdjacentElement("beforeend", contact);
     // userinput.appendChild(note);
 };
@@ -219,9 +212,7 @@ const showJobs = () => {
                             <li>Location: Baner, Pune</li>
                             <li> Skills: Javascript/PHP/Angular</li>
                         </ol><br>
-                        <p>
-                            <a href="https://pixel6.co/software-trainee-engineer/" target="_blank"><span style="color: red; ">clear here to apply</span></a>
-                        </p>
+                       
                         </div> `;
     prompt.insertAdjacentElement("beforeend", jobs);
 };
@@ -328,8 +319,8 @@ const get_quote = () => {
     }
 
     // after 'enter' key is press  focuses the next quetions//
-    document.getElementById("nameInput").addEventListener("keyup", function (event) {
-        let nameInput =   document.getElementById("nameInput");
+    document.getElementById("nameInput").addEventListener("keyup", function(event) {
+        let nameInput = document.getElementById("nameInput");
         let store = document.getElementById("nameInput").value;
         if (store.trim() == "") {
             alert("Enter a Name");
@@ -349,9 +340,9 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("emailInput").addEventListener("keyup", function (event) {
+    document.getElementById("emailInput").addEventListener("keyup", function(event) {
         let email = document.getElementById("emailInput").value;
-        let emailInput =   document.getElementById("emailInput");
+        let emailInput = document.getElementById("emailInput");
         if (email.trim() == "") {
             alert("Enter a Email");
         }
@@ -367,7 +358,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("phoneInput").addEventListener("keyup", function (event) {
+    document.getElementById("phoneInput").addEventListener("keyup", function(event) {
         let phoneInput = document.getElementById("phoneInput");
         let phoneNo = document.getElementById("phoneInput").value;
         if (event.key === "Enter") {
@@ -383,26 +374,26 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("requireInput").addEventListener("keydown", function (event) {
+    document.getElementById("requireInput").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             showNextQuestion();
             document.getElementById(questions[currentIndex]).querySelector("input").focus();
         }
     });
 
-    document.getElementById("whenInput").addEventListener("keydown", function (event) {
+    document.getElementById("whenInput").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             showNextQuestion();
             document.getElementById(questions[currentIndex]).querySelector(".textarea").focus();
         }
     });
-    document.getElementById("Project-Brief").addEventListener("keydown", function (event) {
+    document.getElementById("Project-Brief").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             showNextQuestion();
             document.getElementById(questions[currentIndex]).querySelector("input").focus();
         }
     });
-    document.getElementById("submitInput").addEventListener("keyup", function (event) {
+    document.getElementById("submitInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("submitInput").value;
             if (conform == "y") {
@@ -430,7 +421,7 @@ const get_quote = () => {
         }
     });
 
-    document.getElementById("messageNo").addEventListener("keyup", function (event) {
+    document.getElementById("messageNo").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("messageNo").value;
             if (conform == "y") {
@@ -447,12 +438,12 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("resubmission").addEventListener("keyup", function (event) {
+    document.getElementById("resubmission").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("resubmission").value;
             if (conform == "y") {
                 resubmission.setAttribute("disabled", true);
-               showQuestion(11);
+                showQuestion(11);
                 document.getElementById(questions[11]).querySelector("input").focus();
                 path();
 
@@ -472,3 +463,36 @@ const get_quote = () => {
         }
     });
 };
+
+// moving mydiv container//
+var isDragging = false;
+var offsetX, offsetY;
+var mydiv = document.getElementById("mydiv");
+document.getElementById("mydivheader").addEventListener("dblclick", function() {
+    isDragging = !isDragging;
+    if (isDragging) {
+        mydivheader.style.cursor = "move";
+    } else {
+        mydivheader.style.cursor = "auto";
+    }
+});
+mydiv.onmousedown = function(e) {
+    e.preventDefault();
+
+    if (isDragging) {
+        offsetX = e.clientX - mydiv.getBoundingClientRect().left;
+        offsetY = e.clientY - mydiv.getBoundingClientRect().top;
+        document.onmousemove = moveElement;
+        document.onmouseup = stopDragging;
+    }
+};
+
+function moveElement(e) {
+    mydiv.style.left = e.clientX - offsetX + "px";
+    mydiv.style.top = e.clientY - offsetY + "px";
+}
+
+function stopDragging() {
+    document.onmousemove = null;
+    document.onmouseup = null;
+}
