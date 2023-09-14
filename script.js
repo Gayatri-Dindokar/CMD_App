@@ -517,9 +517,10 @@ bottomDiv.addEventListener("click", () => {
 
 resize.addEventListener("click", () => {
     maincon.style.width = "100%";
-    maincon.style.height = "100%";
-    containerFluid.style.height = "100%";
-    containerFluid.style.overflowY = "hidden";
+    maincon.style.height = "100vh";
+    // 
+    // containerFluid.style.height = "93vh";
+    // containerFluid.style.overflowY = "hidden";
     resize.style.display = 'none';
     restore.style.display = "block";
 })
