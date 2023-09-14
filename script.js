@@ -488,8 +488,13 @@ mydiv.onmousedown = function(e) {
 };
 
 function moveElement(e) {
-    mydiv.style.left = e.clientX - offsetX + "px";
-    mydiv.style.top = e.clientY - offsetY + "px";
+
+    if (e.clientX - offsetX > 20) {
+        mydiv.style.left = e.clientX - offsetX + "px";
+    }
+    if ((e.clientY - offsetY) > 330) {
+        mydiv.style.top = e.clientY - offsetY + "px";
+    }
 }
 
 function stopDragging() {
