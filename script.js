@@ -84,7 +84,7 @@ const showHelp = () => {
  <li>projects</li>
  <li>about</li>
  <li>contact</li>
- <li>get_quote</li>
+ <li>get quote</li>
  <li>jobs</li>
  </ul>
 `;
@@ -496,3 +496,38 @@ function stopDragging() {
     document.onmousemove = null;
     document.onmouseup = null;
 }
+//min-max functionality
+const minMaxBtn = document.getElementById("minmaxbtn");
+const bottomDiv = document.querySelector(".bottom-div");
+const maincon = document.querySelector(".maincon");
+const resize = document.getElementById("resize");
+const restore = document.getElementById("restore");
+
+
+minMaxBtn.addEventListener("click", () => {
+    maincon.style.display = "none";
+    bottomDiv.style.display = "block";
+
+    console.log("none")
+})
+bottomDiv.addEventListener("click", () => {
+    maincon.style.display = "block";
+    bottomDiv.style.display = "none";
+})
+
+resize.addEventListener("click", () => {
+    maincon.style.width = "100%";
+    maincon.style.height = "100%";
+    containerFluid.style.height = "100%";
+    containerFluid.style.overflowY = "hidden";
+    resize.style.display = 'none';
+    restore.style.display = "block";
+})
+restore.addEventListener("click", () => {
+    maincon.style.width = "800px";
+    maincon.style.height = "600px";
+
+
+    resize.style.display = 'block';
+    restore.style.display = "none";
+})

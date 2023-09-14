@@ -14,8 +14,10 @@
         <nav class="navbar" id="mydivheader">
             <div> <img class="px-icon" src="asset/images/cmd.png" alt=""></div>
             <div class="btn">
-                <button class="btnremove "><img  src="asset/images/minimize.png" alt=""></button>
-                <button class="btnremove " id="maximize" onclick="resize()"><img  src="asset/images/resize.png" alt=""></button>
+                <button class="btnremove" id="minmaxbtn"><img  src="asset/images/minimize.png" alt=""></button>
+                <button class="btnremove" id="resize"><img  src="asset/images/resize.png" alt=""></button>
+                <button class="btnremove d-none" id="restore"><img  src="asset/images/restore.png" alt="restore"></button>
+
                 <button class="btnclose" onclick="window.close() "><img src="asset/images/close.png" alt=""></button>
             </div>
         </nav>
@@ -80,7 +82,11 @@
                     </div>
                 </div>
             </div>
+
     </main>
+    <div class="bottom-div d-none">
+        <img class="restore-img" src="asset/images/cmd.png" alt="" style="background-color: black; height: 40px; width:45px;">
+    </div>
 
     <script src="script.js "></script>
 </body>
