@@ -7,7 +7,7 @@
         font-size: 11px;
         /* height: 100%;
         width: 100%; */
-        background-image: url(asset/images/window1.jpg);
+        background-image: url(asset/images/backgroundCMD.jpg);
         background-repeat: no-repeat;
         overflow: hidden;
     }
@@ -426,3 +426,6 @@
         padding: 10px 0;
         text-align: center;
     }
+    /* .margine-1 {
+        margin-top: -1px;
+    } */
