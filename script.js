@@ -9,6 +9,7 @@ const inputField = document.querySelectorAll(".input-field");
 const containerFluid = document.querySelector(".container-fluid");
 
 const path = () => {
+
     const newpath = document.createElement("div");
     newpath.classList.add("path");
     newpath.innerHTML = `<p class="paths  newgeneratedpath">
@@ -26,7 +27,8 @@ container.addEventListener("keyup", function(e) {
         const userinput = e.target;
         if (e.key === "Enter") {
             e.preventDefault();
-            e.target.setAttribute("disabled", true);
+
+            e.target.setAttribute("readonly", true);
             if (userinput.value == "") {
                 console.log("enter command");
                 path();
@@ -397,7 +399,7 @@ const get_quote = () => {
         if (event.key === "Enter") {
             const conform = document.getElementById("submitInput").value;
             if (conform == "y") {
-                submitInput.setAttribute("disabled", true);
+                submitInput.setAttribute("readonly", true);
                 showNextQuestion();
                 document.getElementById(questions[currentIndex]).querySelector("input").focus();
                 path();
@@ -413,7 +415,7 @@ const get_quote = () => {
                 };
                 sessionStorage.setItem("key", JSON.stringify(formdata));
             } else if (conform == "n") {
-                submitInput.setAttribute("disabled", true);
+                submitInput.setAttribute("readonly", true);
                 // console.log("hjghd")
                 showQuestion(8);
                 document.getElementById(questions[8]).querySelector("input").focus();
@@ -425,14 +427,14 @@ const get_quote = () => {
         if (event.key === "Enter") {
             const conform = document.getElementById("messageNo").value;
             if (conform == "y") {
-                messageNo.setAttribute("disabled", true);
+                messageNo.setAttribute("readonly", true);
                 console.log("quit");
                 showQuestion(9);
                 document.getElementById(questions[9]).querySelector("input").focus();
                 path();
                 console.log("help");
             } else if (conform == "n") {
-                messageNo.setAttribute("disabled", true);
+                messageNo.setAttribute("readonly", true);
                 showQuestion(10);
                 document.getElementById(questions[10]).querySelector("input").focus();
             }
@@ -442,7 +444,7 @@ const get_quote = () => {
         if (event.key === "Enter") {
             const conform = document.getElementById("resubmission").value;
             if (conform == "y") {
-                resubmission.setAttribute("disabled", true);
+                resubmission.setAttribute("readonly", true);
                 showQuestion(11);
                 document.getElementById(questions[11]).querySelector("input").focus();
                 path();
