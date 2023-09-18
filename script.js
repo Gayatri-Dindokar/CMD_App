@@ -513,7 +513,7 @@ const restore = document.getElementById("restore");
 
 minMaxBtn.addEventListener("click", () => {
     maincon.style.display = "none";
-    bottomDiv.style.display = "block";
+    bottomDiv.style.display = "flex";
 
     console.log("none")
 })

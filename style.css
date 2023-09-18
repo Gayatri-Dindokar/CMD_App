@@ -11,7 +11,9 @@
         background-repeat: no-repeat;
         overflow: hidden;
     }
-    
+    .d-flex{
+        display: flex;
+    }
     .recycle-bin {
         width: 45px;
         height: 45px;
@@ -438,14 +440,21 @@
     }
     
     .bottom-div {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        color: white;
-        padding: 10px 0;
-        text-align: center;
+    height: 20px;
+    width: 225px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: white;
+    padding: 10px 0;
+    background-color: #101010;
+    align-items: center;
+    /* margin-left: 10px;
+    margin-bottom: 10px; */
     }
-    /* .margine-1 {
-        margin-top: -1px;
-    } */
+    .bottom-p6{
+        font-size: 19px;
+        margin-right: 85px;
+        padding-left: 17px;
+    }
+    
