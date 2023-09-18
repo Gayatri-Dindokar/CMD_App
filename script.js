@@ -224,66 +224,67 @@ const get_quote = () => {
     const que1 = document.createElement("div");
     que1.innerHTML = `
     <form>
-         <div id="question1" class="que1">
-        <p class="q1"><span> > </span>what is your name?</p>
-          <p><span>></span> <input type="text" id="nameInput" class="input_getquote"   autocomplete="off" required pattern="/^[A-Za-z\s]*$/"> </p>
+           <div id="question1" class="que1">
+              <p class="q1"><span> > </span>what is your name?</p>
+              <p><span>></span> <input type="text" id="nameInput" class="input_getquote"   autocomplete="off" required pattern="/^[A-Za-z\s]*$/"> </p>
        </div>
-       <div id="question2" style="display: none;">
-         <p><span> > </span> what is your email?</p>
-       <p><span>></span> <input type="email" id="emailInput" class="input_getquote" autocomplete="off"> </p>
+
+          <div id="question2" style="display: none;">
+             <p><span> > </span> what is your email?</p>
+             <p><span>></span> <input type="email" id="emailInput" class="input_getquote" autocomplete="off"> </p>
       </div>
 
-
-        <div id="question3" style="display: none;">
-         <p><span> > </span>what is your phone no?</p>
-          <p> <span>></span><input type="number" id="phoneInput" class="input_getquote"> </p>
+          <div id="question3" style="display: none;">
+              <p><span> > </span>what is your phone no?</p>
+               <p> <span>></span><input type="number" id="phoneInput" class="input_getquote"> </p>
           </div>
 
          <div id="question4" style="display: none;">
-        <p><span> > </span>What Do You Require?</p>
-       <p> <span>></span><input type="text" id="requireInput" class="input_getquote"> </p>
-     </div>
+           <p><span> > </span>What Do You Require?</p>
+         <p> <span>></span><input type="text" id="requireInput" class="input_getquote"> </p>
+       </div>
 
-   <div id="question5" style="display: none;">
-      <p><span> > </span>When Do You Require?</p>
-     <p><span>></span><input type="date" id="whenInput" class="input_getquote"> </p>
-     </div>
-        <div id="question6" style="display: none;">
-        <p><span> > </span>Project Brief</p>
-       <p style="display:flex;"><span>></span><textarea id="Project-Brief" class="input_getquote textarea" cols="80" rows="5"></textarea>  </p>
-              </div> 
-         <div id="question7" style="display: none;">
-         <p><span> > </span>Are you sure you want to submit? (y/n)</p>
-                  <p><span>></span><input type="text" id="submitInput" class="input_getquote"  ></p>
-           
-                    </div>
+          <div id="question5" style="display: none;">
+            <p><span> > </span>When Do You Require?</p>
+             <p><span>></span><input type="date" id="whenInput" class="input_getquote"> </p>
+       </div>
+
+          <div id="question6" style="display: none;">
+           <p><span> > </span>Project Brief</p>
+           <p style="display:flex;"><span>></span><textarea id="Project-Brief" class="input_getquote textarea" cols="80" rows="5"></textarea>  </p>
+      </div> 
+
+       <div id="question7" style="display: none;">
+           <p><span> > </span>Are you sure you want to submit? (y/n)</p>
+          <p><span>></span><input type="text" id="submitInput" class="input_getquote"  ></p>
+        
+       </div>
 
            <div id="question8" style="display: none;">
-           <p class='message'><span>></span><input type="text" id="messageYes" value="your response is succesfully submmited" class="input_getquote"></p>
+              <p class='message'><span>></span><input type="text" id="messageYes" value="your response is succesfully submmited" class="input_getquote"></p>
           </div>
 
           <div id="question9" style="display: none;">
-          <p><span> > </span>Do you want to quit? (y/n)</p>
-          <p class='message'><span>></span><input type="text" id="messageNo"  class="input_getquote"></p>
+               <p><span> > </span>Do you want to quit? (y/n)</p>
+               <p class='message'><span>></span><input type="text" id="messageNo"  class="input_getquote"></p>
          </div>
+
          <div id="question10" style="display: none;">
-         <p><span> > </span>Your Response is not submitted...</p>
-         <p class='message'><input type="text" id="response-not-submitted"  class="input_getquote"></p>
+               <p><span> > </span>Your Response is not submitted...</p>
+                <p class='message'><input type="text" id="response-not-submitted"  class="input_getquote"></p>
         </div>
 
         <div id="question11" style="display: none;">
-        <p><span>></span> Great! Let's continue with the form type 'Y' to submit it again</p>
-        <p class='message'><span>></span><input type="text" id="resubmission"  class="input_getquote"></p>
+                <p><span>></span> Great! Let's continue with the form type 'Y' to submit it again</p>
+                <p class='message'><span>></span><input type="text" id="resubmission"  class="input_getquote"></p>
        </div>
 
        <div id="question12" style="display: none;">
-       <p class='message'><input type="text" id="successfull" value="your response is succesfully submmited" class="input_getquote"></p>
-        <p class='message'><input type="text" id="resubmission-succesfull"  class="input_getquote"></p>
+               <p class='message'><input type="text" id="successfull" value="your response is succesfully submmited" class="input_getquote"></p>
+              <p class='message'><input type="text" id="resubmission-succesfull"  class="input_getquote"></p>
        </div>
            
-           
-       
-                    </form>`;
+           </form>`;
     prompt.insertAdjacentElement("beforeend", que1);
     const inputFieldquotes = que1.querySelector(".input_getquote");
     inputFieldquotes.focus();
@@ -491,10 +492,10 @@ mydiv.onmousedown = function(e) {
 
 function moveElement(e) {
 
-    if (e.clientX - offsetX > 20) {
+    if (e.clientX - offsetX > 0) {
         mydiv.style.left = e.clientX - offsetX + "px";
     }
-    if ((e.clientY - offsetY) > 330) {
+    if ((e.clientY - offsetY) > 200) {
         mydiv.style.top = e.clientY - offsetY + "px";
     }
 }
@@ -540,10 +541,25 @@ restore.addEventListener("click", () => {
     restore.style.display = "none";
 })
 
-const cmdImg = document.getElementById("cmd");
-cmdImg.addEventListener("click", () => {
-        maincon.style.display = "block";
-    })
+// const cmdImg = document.getElementById("cmd");
+// cmdImg.addEventListener("click", () => {
+//         maincon.style.display = "block";
+//     })
     // recyclebin.addEventListener("mouseover", () => {
     //     image.src = "asset/images/delete state enable-3.png";
     // })
+
+    //btnclose cross btn
+    const btnclose = document.querySelector(".btnclose");
+    function closeContainer(){
+        // maincon.style.left='-700px';
+        maincon.style.display='none';
+    }
+    btnclose.addEventListener("click",closeContainer);
+
+    function openContainer(){
+         maincon.style.display='block';
+       
+    }
+    const cmdImg = document.getElementById("cmd");
+    cmdImg.addEventListener("click",  openContainer);

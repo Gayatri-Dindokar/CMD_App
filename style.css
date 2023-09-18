@@ -21,11 +21,11 @@
         top: 120px;
         padding-left: 10px;
     }
-    
+
     .recycle-bin:hover {
         content: url("asset/images/delete\ state\ enabel-3.png");
     }
-    
+
     #cmd {
         width: 50px;
         height: 50px;
@@ -33,17 +33,21 @@
         top: 50px;
         padding-left: 10px;
     }
-    
+
     .maincon {
-        border: 5px solid black;
+        /* border: 5px solid black; */
         align-items: center;
         background: #000;
         height: 600px;
         width: 800px;
         /* height: 90%; */
         overflow-y: auto;
+
+
     }
-    
+
+
+
     #mydiv {
         left: 50%;
         top: 50%;
@@ -52,26 +56,28 @@
         z-index: 9;
         width: 800px;
     }
-    
+
     #mydivheader {
         padding: 3px;
         cursor: pointer;
         z-index: 10;
-        background-color: #696969;
+        background-color: #404040;
         color: #fff;
     }
+
     /* ::-webkit-scrollbar {
         width: 10px;
         color: black;
         background-color: lightgrey;
     } */
-    
+
     .prompt {
         width: 800px;
         /* background-color: black; */
     }
+
     /* navbar */
-    
+
     .navbar {
         /* justify-content: flex-end; */
         /* position: fixed; */
@@ -87,24 +93,33 @@
         align-items: center;
         /* margin-top: -3px; */
     }
-    
+
     .px-icon {
         height: 25px;
         width: 25px;
         margin-bottom: 8px;
         margin-left: 9px;
-        margin-top: 6px;
+        margin-top: 9px;
+        margin-right: 17px;
     }
-    
+
+    .pixel-6 {
+        font-size: 19px;
+    }
+
+    .six {
+        font-size: 23px;
+    }
+
     img {
         height: 15px;
         width: 15px;
     }
-    
+
     button {
         border-radius: 5px;
     }
-    
+
     .btnclose,
     .btnremove {
         background-color: transparent;
@@ -116,7 +131,7 @@
         transition: all 0.2s ease-in;
         /* padding-top: 10px; */
     }
-    
+
     .btn {
         /* margin-right: 7px; */
         /* background-color: aquamarine; */
@@ -128,17 +143,18 @@
         gap: 0px;
         margin-left: auto;
     }
-    
+
     .btnremove:hover {
         background-color: rgba(211, 211, 211, 0.349);
     }
-    
+
     .btnclose:hover {
         background-color: red;
         opacity: 0.9;
     }
+
     /* main section */
-    
+
     .container-fluid {
         width: 100%;
         /* height: 100%; */
@@ -155,16 +171,16 @@
         /* overflow-y: hidden; */
         /* overflow: hidden; */
     }
-    
+
     dd {
         width: 447px;
         margin-top: 5px;
     }
-    
+
     dt {
         margin-top: 13px;
     }
-    
+
     .container {
         width: 100%;
         height: 100%;
@@ -176,15 +192,16 @@
         overflow: hidden;
         margin-left: 17px;
     }
-    
+
     .heading {
-        margin-top: 40px;
+        margin-top: 12px;
         width: 394px;
         height: 48px;
         /* background-color: aqua; */
     }
+
     /* animated P */
-    
+
     .blink-container {
         /* display: flex; */
         align-items: center;
@@ -196,17 +213,19 @@
         flex-direction: column;
         /* animation: blink infinite; */
     }
-    
+
     @keyframes blink {
+
         0%,
         100% {
             opacity: 1;
         }
+
         50% {
             opacity: 0;
         }
     }
-    
+
     .line {
         white-space: nowrap;
         overflow: hidden;
@@ -217,23 +236,25 @@
         font-size: 10px;
         animation: blink 1s infinite;
     }
+
     /* heading */
-    
+
     .instruction_px {
         /* margin-left: 40px; */
         font-family: monospace;
         font-size: 11px;
     }
+
     /* prpompt section */
-    
+
     .path {
         margin-bottom: -16px;
     }
-    
+
     .newgeneratedpath {
         margin-bottom: 20px;
     }
-    
+
     .main {
         /* background-color: #e4f122; */
         /* height: 30px;
@@ -244,12 +265,12 @@
         /* display: none; */
         /* margin-bottom: 50px; */
     }
-    
+
     .helps {
         margin-top: 20px;
         /* background-color: aqua; */
     }
-    
+
     .input {
         /* width: 400px; */
         /* content: "_"; */
@@ -262,6 +283,7 @@
         /* caret-color: transparent; */
         /* background-color: aqua; */
     }
+
     /* home command */
     /* .home {
         margin-top: 20px;
@@ -280,14 +302,14 @@
         text-align: justify;
     } */
     /* about command */
-    
+
     .about {
         font-size: 10px;
         font-family: monospace;
         text-align: justify;
         margin-top: 20px;
     }
-    
+
     .aboutP {
         width: 400px;
         height: 86px;
@@ -296,12 +318,12 @@
         text-align: justify;
         /* background-color: aquamarine; */
     }
-    
+
     .about ul {
         /* margin-left: -23px; */
         margin-left: -28px;
     }
-    
+
     .aboutwrap {
         margin-left: 72px;
         height: 285px;
@@ -309,12 +331,14 @@
         text-align: justify;
         line-height: 13px;
     }
+
     /* project command */
-    
+
     .projects {
         /* text-align: justify; */
         margin-top: 5px;
     }
+
     /* .projects ul {
         margin-top: 20px;
     }
@@ -326,119 +350,125 @@
     /* pdiv h4 {
         margin-top: -9px;
     } */
-    
+
     .projects-para {
         margin-top: -20px;
     }
-    
+
     .pwrap {
         text-align: justify;
         width: 440px;
         margin-top: -5px;
     }
+
     /* contact command */
-    
+
     .contact {
         margin-top: 20px;
     }
-    
+
     .contact-location {
         margin-top: 8px;
     }
-    
+
     .contact p {
         margin-top: 3px;
     }
+
     /* jobs command */
-    
+
     .jobs {
         text-align: justify;
         margin-top: 20px;
     }
-    
+
     .jobs-px {
         width: 406px;
         /* background-color: aquamarine; */
     }
-    
+
     a {
         text-decoration: none;
         transition: 0.3s;
     }
-    
+
     a:hover {
         background-color: rgba(56, 56, 204, 0.726);
     }
+
     /* get_quote command */
-    
+
     .get_quote {
         text-align: justify;
     }
-    
+
     .get_quote p {
         margin-top: -14px;
     }
-    
+
     .get_quote_px {
         width: 406px;
         margin-top: 20px;
         /* background-color: aquamarine; */
     }
+
     /*  command not found */
-    
+
     .note {
         font-size: 11px;
         margin-top: 20px;
     }
+
     /* input feild */
-    
+
     .input-field {
         font-size: 11px;
         font-family: monospace;
     }
+
     /* get_quote quetions */
-    
+
     .input_getquote {
         background-color: black;
         outline: none;
         border: none;
         margin-left: 12px;
         color: white;
-        font-family: monospace;
+        /* font-family: monospace; */
     }
-    
+
     #Project-Brief {
         background-color: black;
         margin: 0;
         text-align: left;
         margin-top: -10px;
     }
-    
+
     .msg {
         background-color: brown;
     }
-    
+
     #messageYes {
         width: 270px;
         background-color: black;
     }
-    
+
     #successfull {
         width: 270px;
         background-color: black;
         color: white;
     }
-    
+
     .d-none {
         display: none;
     }
-    
+
     .restore-img {
         background-color: black;
         height: 40px;
         width: 45px;
     }
-    
+
     .bottom-div {
     height: 20px;
     width: 225px;
