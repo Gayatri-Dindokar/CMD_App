@@ -21,7 +21,7 @@ const path = () => {
     const inputField = newpath.querySelector(".input-field");
     inputField.focus();
 };
-container.addEventListener("keyup", function(e) {
+container.addEventListener("keyup", function (e) {
     // console.log(e.target);
     if (e.target.matches(".input")) {
         const userinput = e.target;
@@ -322,7 +322,7 @@ const get_quote = () => {
     }
 
     // after 'enter' key is press  focuses the next quetions//
-    document.getElementById("nameInput").addEventListener("keyup", function(event) {
+    document.getElementById("nameInput").addEventListener("keyup", function (event) {
         let nameInput = document.getElementById("nameInput");
         let store = document.getElementById("nameInput").value;
         if (store.trim() == "") {
@@ -343,7 +343,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("emailInput").addEventListener("keyup", function(event) {
+    document.getElementById("emailInput").addEventListener("keyup", function (event) {
         let email = document.getElementById("emailInput").value;
         let emailInput = document.getElementById("emailInput");
         if (email.trim() == "") {
@@ -361,7 +361,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("phoneInput").addEventListener("keyup", function(event) {
+    document.getElementById("phoneInput").addEventListener("keyup", function (event) {
         let phoneInput = document.getElementById("phoneInput");
         let phoneNo = document.getElementById("phoneInput").value;
         if (event.key === "Enter") {
@@ -377,26 +377,26 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("requireInput").addEventListener("keydown", function(event) {
+    document.getElementById("requireInput").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             showNextQuestion();
             document.getElementById(questions[currentIndex]).querySelector("input").focus();
         }
     });
 
-    document.getElementById("whenInput").addEventListener("keydown", function(event) {
+    document.getElementById("whenInput").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             showNextQuestion();
             document.getElementById(questions[currentIndex]).querySelector(".textarea").focus();
         }
     });
-    document.getElementById("Project-Brief").addEventListener("keydown", function(event) {
+    document.getElementById("Project-Brief").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             showNextQuestion();
             document.getElementById(questions[currentIndex]).querySelector("input").focus();
         }
     });
-    document.getElementById("submitInput").addEventListener("keyup", function(event) {
+    document.getElementById("submitInput").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("submitInput").value;
             if (conform == "y") {
@@ -424,7 +424,7 @@ const get_quote = () => {
         }
     });
 
-    document.getElementById("messageNo").addEventListener("keyup", function(event) {
+    document.getElementById("messageNo").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("messageNo").value;
             if (conform == "y") {
@@ -441,7 +441,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("resubmission").addEventListener("keyup", function(event) {
+    document.getElementById("resubmission").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("resubmission").value;
             if (conform == "y") {
@@ -471,7 +471,7 @@ const get_quote = () => {
 var isDragging = false;
 var offsetX, offsetY;
 var mydiv = document.getElementById("mydiv");
-document.getElementById("mydivheader").addEventListener("dblclick", function() {
+document.getElementById("mydivheader").addEventListener("dblclick", function () {
     isDragging = !isDragging;
     if (isDragging) {
         mydivheader.style.cursor = "move";
@@ -479,7 +479,7 @@ document.getElementById("mydivheader").addEventListener("dblclick", function() {
         mydivheader.style.cursor = "auto";
     }
 });
-mydiv.onmousedown = function(e) {
+mydiv.onmousedown = function (e) {
     e.preventDefault();
 
     if (isDragging) {
@@ -510,25 +510,24 @@ const bottomDiv = document.querySelector(".bottom-div");
 const maincon = document.querySelector(".maincon");
 const resize = document.getElementById("resize");
 const restore = document.getElementById("restore");
-
+const resizeBigscreen = document.querySelector(".resize-bigscreen");
+const crossbtn = document.querySelector(".crossbtn");
+const cmdImg = document.getElementById("cmd");
+const btnclose = document.querySelector(".btnclose");
 
 minMaxBtn.addEventListener("click", () => {
     maincon.style.display = "none";
     bottomDiv.style.display = "flex";
 
-    console.log("none")
 })
-bottomDiv.addEventListener("click", () => {
+resizeBigscreen.addEventListener("click", () => {
     maincon.style.display = "block";
-    bottomDiv.style.display = "none";
+    bottomDiv.style.display = "none"
 })
 
 resize.addEventListener("click", () => {
     maincon.style.width = "100%";
     maincon.style.height = "100vh";
-    // 
-    // containerFluid.style.height = "93vh";
-    // containerFluid.style.overflowY = "hidden";
     resize.style.display = 'none';
     restore.style.display = "block";
 })
@@ -541,25 +540,23 @@ restore.addEventListener("click", () => {
     restore.style.display = "none";
 })
 
-// const cmdImg = document.getElementById("cmd");
-// cmdImg.addEventListener("click", () => {
-//         maincon.style.display = "block";
-//     })
-    // recyclebin.addEventListener("mouseover", () => {
-    //     image.src = "asset/images/delete state enable-3.png";
-    // })
 
-    //btnclose cross btn
-    const btnclose = document.querySelector(".btnclose");
-    function closeContainer(){
-        // maincon.style.left='-700px';
-        maincon.style.display='none';
-    }
-    btnclose.addEventListener("click",closeContainer);
+function closeContainer() {
+    // maincon.style.left='-700px';
+    maincon.style.display = 'none';
+}
+btnclose.addEventListener("click", closeContainer);
 
-    function openContainer(){
-         maincon.style.display='block';
-       
-    }
-    const cmdImg = document.getElementById("cmd");
-    cmdImg.addEventListener("click",  openContainer);
+function openContainer() {
+    maincon.style.display = 'block';
+    bottomDiv.style.display = "none"
+
+}
+
+cmdImg.addEventListener("click", openContainer);
+
+
+
+crossbtn.addEventListener("click", () => {
+    bottomDiv.style.display = "none"
+});
