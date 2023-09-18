@@ -539,3 +539,11 @@ restore.addEventListener("click", () => {
     resize.style.display = 'block';
     restore.style.display = "none";
 })
+
+const cmdImg = document.getElementById("cmd");
+cmdImg.addEventListener("click", () => {
+        maincon.style.display = "block";
+    })
+    // recyclebin.addEventListener("mouseover", () => {
+    //     image.src = "asset/images/delete state enable-3.png";
+    // })

@@ -12,6 +12,26 @@
         overflow: hidden;
     }
     
+    .recycle-bin {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        top: 120px;
+        padding-left: 10px;
+    }
+    
+    .recycle-bin:hover {
+        content: url("asset/images/delete\ state\ enabel-3.png");
+    }
+    
+    #cmd {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 50px;
+        padding-left: 10px;
+    }
+    
     .maincon {
         border: 5px solid black;
         align-items: center;
@@ -32,10 +52,10 @@
     }
     
     #mydivheader {
-        padding: 10px;
+        padding: 3px;
         cursor: pointer;
         z-index: 10;
-        background-color: black;
+        background-color: #696969;
         color: #fff;
     }
     /* ::-webkit-scrollbar {
@@ -46,12 +66,11 @@
     
     .prompt {
         width: 800px;
-        background-color: black;
+        /* background-color: black; */
     }
     /* navbar */
     
     .navbar {
-        background-color: black;
         /* justify-content: flex-end; */
         /* position: fixed; */
         height: 28px;
@@ -64,6 +83,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        /* margin-top: -3px; */
     }
     
     .px-icon {
