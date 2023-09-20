@@ -519,6 +519,7 @@ minMaxBtn.addEventListener("click", () => {
     // maincon.style.display = "none";
     bottomDiv.style.display = "flex";
     maincon.classList.add('fadeout')
+    // maincon.classList.add('fadeOutBottomLeft');
   
 
 })
@@ -526,6 +527,8 @@ resizeBigscreen.addEventListener("click", () => {
     // maincon.style.display = "block";
     bottomDiv.style.display = "none";
     maincon.classList.remove('fadeout');
+    maincon.classList.add('fadeInAnimation');
+
 })
 
 resize.addEventListener("click", () => {
@@ -556,6 +559,7 @@ function openContainer() {
     // maincon.style.display = 'block';
     bottomDiv.style.display = "none";
     maincon.classList.remove('fadeout');
+    maincon.classList.add('fadeInAnimation');
 
 }
 

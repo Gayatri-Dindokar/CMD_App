@@ -11,9 +11,11 @@
         background-repeat: no-repeat;
         overflow: hidden;
     }
-    .d-flex{
+
+    .d-flex {
         display: flex;
     }
+
     .recycle-bin {
         width: 45px;
         height: 45px;
@@ -472,38 +474,60 @@
     }
 
     .bottom-div {
-    height: 20px;
-    width: 225px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    color: white;
-    padding: 10px 0;
-    background-color: #101010;
-    align-items: center;
-    /* margin-left: 10px;
+        height: 20px;
+        width: 225px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        color: white;
+        padding: 10px 0;
+        background-color: #101010;
+        align-items: center;
+        /* margin-left: 10px;
     margin-bottom: 10px; */
     }
-    .bottom-p6{
+
+    .bottom-p6 {
         font-size: 19px;
         margin-right: 85px;
         padding-left: 17px;
     }
+
     .fadeout {
         /* color: #ffffff; */
         /* font-size: large; */
         /* font-family: helvetica; */
         /* text-align: center; */
         opacity: 0;
-          -webkit-animation: fadeout 1s; 
-             -moz-animation: fadeout 1s; 
-              -ms-animation: fadeout 1s; 
-               -o-animation: fadeout 1s; 
-                  animation: fadeout 1s;
-      }
-      
-      @keyframes fadeout {
-          from { opacity: 1; }
-          to   { opacity: 0; }
-      } 
-      
+        -webkit-animation: fadeout 1s;
+        -moz-animation: fadeout 1s;
+        -ms-animation: fadeout 1s;
+        -o-animation: fadeout 1s;
+        animation: fadeout 1s;
+    }
+
+    @keyframes fadeout {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+   .fadeInAnimation{
+    /* animation: fadeInAnimation ease 3s; */
+    animation-fill-mode: backward;
+    transition: 1s all ease-in-out;
+   
+   
+   } 
+   @keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
