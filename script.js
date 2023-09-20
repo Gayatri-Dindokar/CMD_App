@@ -516,13 +516,16 @@ const cmdImg = document.getElementById("cmd");
 const btnclose = document.querySelector(".btnclose");
 
 minMaxBtn.addEventListener("click", () => {
-    maincon.style.display = "none";
+    // maincon.style.display = "none";
     bottomDiv.style.display = "flex";
+    maincon.classList.add('fadeout')
+  
 
 })
 resizeBigscreen.addEventListener("click", () => {
-    maincon.style.display = "block";
-    bottomDiv.style.display = "none"
+    // maincon.style.display = "block";
+    bottomDiv.style.display = "none";
+    maincon.classList.remove('fadeout');
 })
 
 resize.addEventListener("click", () => {
@@ -543,13 +546,16 @@ restore.addEventListener("click", () => {
 
 function closeContainer() {
     // maincon.style.left='-700px';
-    maincon.style.display = 'none';
+    // maincon.style.display = 'none';
+    maincon.classList.add('fadeout')
+  
 }
 btnclose.addEventListener("click", closeContainer);
 
 function openContainer() {
-    maincon.style.display = 'block';
-    bottomDiv.style.display = "none"
+    // maincon.style.display = 'block';
+    bottomDiv.style.display = "none";
+    maincon.classList.remove('fadeout');
 
 }
 
@@ -558,5 +564,6 @@ cmdImg.addEventListener("click", openContainer);
 
 
 crossbtn.addEventListener("click", () => {
-    bottomDiv.style.display = "none"
+    bottomDiv.style.display = "none";
+
 });
