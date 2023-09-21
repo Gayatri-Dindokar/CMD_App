@@ -561,14 +561,15 @@ restore.addEventListener("click", () => {
 function closeContainer() {
     // maincon.style.left='-700px';
     // maincon.style.display = 'none';
-    maincon.classList.add('fadeout')
+    maincon.classList.add('fadeout');
+    maincon.classList.remove('fadeInAnimation');
 }
 function openContainer() {
     maincon.classList.add('fadeInAnimation');
     maincon.style.display = 'block';
     bottomDiv.style.display = "none";
     maincon.classList.remove('fadeout');
-    maincon.classList.add('fadeInAnimation');
+  
 
 }
 crossbtn.addEventListener("click", () => {
