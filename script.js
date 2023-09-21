@@ -518,15 +518,15 @@ const crossBtnBigScreen = document.getElementById("crossBtnBigScreen");
 const bigScreenMinMaxBtn = document.getElementById("bigscreen-minmaxbtn");
 const mainconWidth = maincon.offsetWidth;
 const mainconHeight = maincon.offsetHeight;
+const crossBtnBigScreen = document.getElementById("crossBtnBigScreen");
+const bigScreenMinMaxBtn = document.getElementById("bigscreen-minmaxbtn");
+const mainconWidth = maincon.offsetWidth;
+const mainconHeight = maincon.offsetHeight;
 
 minMaxBtn.addEventListener("click", () => {
     // maincon.style.display = "none";
     bottomDiv.style.display = "flex";
-    maincon.classList.add('fadeout');
-    console.log(mainconWidth, "width");
-    console.log(mainconHeight, "height");
-
-
+    maincon.classList.add('fadeout')
     // maincon.classList.add('fadeOutBottomLeft');
 
 
@@ -535,7 +535,7 @@ resizeBigscreen.addEventListener("click", () => {
     // maincon.style.display = "block";
     bottomDiv.style.display = "none";
     maincon.classList.remove('fadeout');
-    maincon.classList.add('fadeInAnimation');
+   maincon.classList.add('fadeInAnimation');
 
 })
 
@@ -544,26 +544,15 @@ resize.addEventListener("click", () => {
     maincon.style.height = "100vh";
     resize.style.display = 'none';
     restore.style.display = "block";
-    btnclose.style.display = "none";
-    crossBtnBigScreen.style.display = "block";
-    bigScreenMinMaxBtn.style.display = "block";
-    minMaxBtn.style.display = "none";
-    maincon.classList.remove('fadeout');
-    maincon.classList.add('fadeInAnimation');
-    // console.log( mainconWidth , "width");
-    // console.log( mainconHeight, "height");
-
 })
 
 restore.addEventListener("click", () => {
     maincon.style.width = "800px";
     maincon.style.height = "600px";
-    btnclose.style.display = "block";
-    crossBtnBigScreen.style.display = "none";
+
+
     resize.style.display = 'block';
     restore.style.display = "none";
-    bigScreenMinMaxBtn.style.display = "none";
-    minMaxBtn.style.display = "block"
 })
 
 
@@ -577,15 +566,10 @@ function openContainer() {
     maincon.style.display = 'block';
     bottomDiv.style.display = "none";
     maincon.classList.remove('fadeout');
-}
-function bigscreencrossbtn() {
-    maincon.style.display = "none";
+    maincon.classList.add('fadeInAnimation');
+
 }
 crossbtn.addEventListener("click", () => {
     bottomDiv.style.display = "none";
 
 });
-cmdImg.addEventListener("click", openContainer);
-btnclose.addEventListener("click", closeContainer);
-crossBtnBigScreen.addEventListener("click", bigscreencrossbtn);
-bigScreenMinMaxBtn.addEventListener("click", bigscreencrossbtn)
