@@ -514,13 +514,21 @@ const resizeBigscreen = document.querySelector(".resize-bigscreen");
 const crossbtn = document.querySelector(".crossbtn");
 const cmdImg = document.getElementById("cmd");
 const btnclose = document.querySelector(".btnclose");
+const crossBtnBigScreen = document.getElementById("crossBtnBigScreen");
+const bigScreenMinMaxBtn = document.getElementById("bigscreen-minmaxbtn");
+const mainconWidth = maincon.offsetWidth;
+const mainconHeight = maincon.offsetHeight;
 
 minMaxBtn.addEventListener("click", () => {
     // maincon.style.display = "none";
     bottomDiv.style.display = "flex";
-    maincon.classList.add('fadeout')
+    maincon.classList.add('fadeout');
+    console.log(mainconWidth, "width");
+    console.log(mainconHeight, "height");
+
+
     // maincon.classList.add('fadeOutBottomLeft');
-  
+
 
 })
 resizeBigscreen.addEventListener("click", () => {
@@ -536,14 +544,26 @@ resize.addEventListener("click", () => {
     maincon.style.height = "100vh";
     resize.style.display = 'none';
     restore.style.display = "block";
+    btnclose.style.display = "none";
+    crossBtnBigScreen.style.display = "block";
+    bigScreenMinMaxBtn.style.display = "block";
+    minMaxBtn.style.display = "none";
+    maincon.classList.remove('fadeout');
+    maincon.classList.add('fadeInAnimation');
+    // console.log( mainconWidth , "width");
+    // console.log( mainconHeight, "height");
+
 })
+
 restore.addEventListener("click", () => {
     maincon.style.width = "800px";
     maincon.style.height = "600px";
-
-
+    btnclose.style.display = "block";
+    crossBtnBigScreen.style.display = "none";
     resize.style.display = 'block';
     restore.style.display = "none";
+    bigScreenMinMaxBtn.style.display = "none";
+    minMaxBtn.style.display = "block"
 })
 
 
@@ -551,23 +571,21 @@ function closeContainer() {
     // maincon.style.left='-700px';
     // maincon.style.display = 'none';
     maincon.classList.add('fadeout')
-  
 }
-btnclose.addEventListener("click", closeContainer);
-
 function openContainer() {
-    // maincon.style.display = 'block';
+    maincon.classList.add('fadeInAnimation');
+    maincon.style.display = 'block';
     bottomDiv.style.display = "none";
     maincon.classList.remove('fadeout');
-    maincon.classList.add('fadeInAnimation');
-
 }
-
-cmdImg.addEventListener("click", openContainer);
-
-
-
+function bigscreencrossbtn() {
+    maincon.style.display = "none";
+}
 crossbtn.addEventListener("click", () => {
     bottomDiv.style.display = "none";
 
 });
+cmdImg.addEventListener("click", openContainer);
+btnclose.addEventListener("click", closeContainer);
+crossBtnBigScreen.addEventListener("click", bigscreencrossbtn);
+bigScreenMinMaxBtn.addEventListener("click", bigscreencrossbtn)

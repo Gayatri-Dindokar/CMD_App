@@ -125,7 +125,7 @@
     }
 
     .btnclose,
-    .btnremove {
+    .btnremove, #crossBtnBigScreen,#bigScreenMinMaxBtn{
         background-color: transparent;
         border: 0;
         font-size: 20px;
@@ -156,6 +156,11 @@
         background-color: red;
         opacity: 0.9;
     }
+    #crossBtnBigScreen:hover{
+        background-color: red;
+        opacity: 0.9;
+    }
+ 
 
     /* main section */
 
