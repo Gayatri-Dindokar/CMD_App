@@ -532,7 +532,7 @@ minMaxBtn.addEventListener("click", () => {
 })
 resizeBigscreen.addEventListener("click", () => {
     // maincon.style.display = "block";
-    // bottomDiv.style.display = "none";
+    bottomDiv.style.display = "none";
     maincon.classList.remove('fadeout');
    maincon.classList.add('fadeInAnimation');
 
@@ -565,6 +565,7 @@ function closeContainer() {
     // maincon.style.display = 'none';
     maincon.classList.add('fadeout');
     maincon.classList.remove('fadeInAnimation');
+    bottomDiv.style.display = "none";
 }
 function openContainer() {
     maincon.classList.add('fadeInAnimation');
