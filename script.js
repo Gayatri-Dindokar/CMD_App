@@ -516,6 +516,7 @@ const cmdImg = document.getElementById("cmd");
 const btnclose = document.querySelector(".btnclose");
 const crossBtnBigScreen = document.getElementById("crossBtnBigScreen");
 const bigScreenMinMaxBtn = document.getElementById("bigscreen-minmaxbtn");
+const  doubleRestore = document.getElementById("double-restore");
 const mainconWidth = maincon.offsetWidth;
 const mainconHeight = maincon.offsetHeight;
 
@@ -523,14 +524,15 @@ const mainconHeight = maincon.offsetHeight;
 minMaxBtn.addEventListener("click", () => {
     // maincon.style.display = "none";
     bottomDiv.style.display = "flex";
-    maincon.classList.add('fadeout')
+    maincon.classList.add('fadeout');
+    // bottomDiv.style.display = "bl";
     // maincon.classList.add('fadeOutBottomLeft');
 
 
 })
 resizeBigscreen.addEventListener("click", () => {
     // maincon.style.display = "block";
-    bottomDiv.style.display = "none";
+    // bottomDiv.style.display = "none";
     maincon.classList.remove('fadeout');
    maincon.classList.add('fadeInAnimation');
 
@@ -582,4 +584,15 @@ function mainconNone(){
 btnclose.addEventListener("click",closeContainer);
 cmdImg.addEventListener("click",openContainer)
 crossBtnBigScreen.addEventListener("click",mainconNone);
-bigScreenMinMaxBtn.addEventListener("click",mainconNone);
+bigScreenMinMaxBtn.addEventListener("click",()=>{
+    maincon.style.display = 'none';
+    bottomDiv.style.display ="flex";
+    doubleRestore.style.display ="block";
+    resizeBigscreen.style.display="none";
+
+});
+doubleRestore.addEventListener("click",()=>{
+    maincon.classList.add('fadeInAnimation');
+    maincon.style.display = 'block';
+    console.log("hii")
+})
