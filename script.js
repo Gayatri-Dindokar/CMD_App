@@ -596,5 +596,6 @@ bigScreenMinMaxBtn.addEventListener("click",()=>{
 doubleRestore.addEventListener("click",()=>{
     maincon.classList.add('fadeInAnimation');
     maincon.style.display = 'block';
+    bottomDiv.style.display="none";
     console.log("hii")
 })
