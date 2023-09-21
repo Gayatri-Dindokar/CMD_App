@@ -580,6 +580,7 @@ crossbtn.addEventListener("click", () => {
 });
 function mainconNone(){
     maincon.style.display = 'none';
+    bottomDiv.style.display ="none";
 }
 btnclose.addEventListener("click",closeContainer);
 cmdImg.addEventListener("click",openContainer)
