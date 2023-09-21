@@ -518,10 +518,7 @@ const crossBtnBigScreen = document.getElementById("crossBtnBigScreen");
 const bigScreenMinMaxBtn = document.getElementById("bigscreen-minmaxbtn");
 const mainconWidth = maincon.offsetWidth;
 const mainconHeight = maincon.offsetHeight;
-const crossBtnBigScreen = document.getElementById("crossBtnBigScreen");
-const bigScreenMinMaxBtn = document.getElementById("bigscreen-minmaxbtn");
-const mainconWidth = maincon.offsetWidth;
-const mainconHeight = maincon.offsetHeight;
+
 
 minMaxBtn.addEventListener("click", () => {
     // maincon.style.display = "none";
@@ -544,6 +541,11 @@ resize.addEventListener("click", () => {
     maincon.style.height = "100vh";
     resize.style.display = 'none';
     restore.style.display = "block";
+    crossBtnBigScreen .style.display = "block";
+    btnclose.style.display = "none";
+    bigScreenMinMaxBtn.style.display ="block";
+    minMaxBtn.style.display="none";
+
 })
 
 restore.addEventListener("click", () => {
@@ -573,3 +575,10 @@ crossbtn.addEventListener("click", () => {
     bottomDiv.style.display = "none";
 
 });
+function mainconNone(){
+    maincon.style.display = 'none';
+}
+btnclose.addEventListener("click",closeContainer);
+cmdImg.addEventListener("click",openContainer)
+crossBtnBigScreen.addEventListener("click",mainconNone);
+bigScreenMinMaxBtn.addEventListener("click",mainconNone);
