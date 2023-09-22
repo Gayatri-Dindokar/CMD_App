@@ -468,37 +468,40 @@ const get_quote = () => {
 };
 
 // moving mydiv container//
-var isDragging = false;
-var offsetX, offsetY;
-var mydiv = document.getElementById("mydiv");
-document.getElementById("mydivheader").addEventListener("dblclick", function () {
-    isDragging = !isDragging;
-    if (isDragging) {
-        mydivheader.style.cursor = "move";
-    } else {
-        mydivheader.style.cursor = "auto";
-    }
-});
-mydiv.onmousedown = function (e) {
-    e.preventDefault();
+// var isDragging = false;
+// var offsetX, offsetY;
+// var mydiv = document.getElementById("mydiv");
+// var height = mydiv.offsetHeight
+// var width = mydiv.offsetWidth
+// console.log(height);
+// console.log(width);
+// document.getElementById("mydivheader").addEventListener("dblclick", function () {
+//     isDragging = !isDragging;
+//     if (isDragging) {
+//         mydivheader.style.cursor = "move";
+//     } else {
+//         mydivheader.style.cursor = "auto";
+//     }
+// });
+// mydiv.onmousedown = function (e) {
+//     e.preventDefault();
 
-    if (isDragging) {
-        offsetX = e.clientX - mydiv.getBoundingClientRect().left;
-        offsetY = e.clientY - mydiv.getBoundingClientRect().top;
-        document.onmousemove = moveElement;
-        document.onmouseup = stopDragging;
-    }
-};
-
-function moveElement(e) {
-
-    if (e.clientX - offsetX > 0) {
-        mydiv.style.left = e.clientX - offsetX + "px";
-    }
-    if ((e.clientY - offsetY) > 200) {
-        mydiv.style.top = e.clientY - offsetY + "px";
-    }
-}
+//     if (isDragging) {
+//         offsetX = e.clientX - mydiv.getBoundingClientRect().left;
+//         offsetY = e.clientY - mydiv.getBoundingClientRect().top;
+//         document.onmousemove = moveElement;
+//         document.onmouseup = stopDragging;
+//     }
+// };
+// function moveElement(e) {
+// console.log(e,"ddd");
+//     if (e.clientX - offsetX > 0) {
+//         mydiv.style.left = e.clientX - offsetX + "px";
+//     }
+//     if ((e.clientY - offsetY) > 200) {
+//         mydiv.style.top = e.clientY - offsetY + "px";
+//     }
+// }
 
 function stopDragging() {
     document.onmousemove = null;
@@ -599,3 +602,35 @@ doubleRestore.addEventListener("click",()=>{
     bottomDiv.style.display="none";
     console.log("hii")
 })
+
+
+var mousePosition;
+var offset = [0,0];
+var isDown = false;
+
+var mydiv = document.getElementById("mydiv");
+mydiv.addEventListener('mousedown', function(e) {
+    isDown = true;
+    offset = [
+        mydiv.offsetLeft - e.clientX,
+        mydiv.offsetTop - e.clientY
+    ];
+}, true);
+
+document.addEventListener('mouseup', function() {
+    isDown = false;
+}, true);
+
+document.addEventListener('mousemove', function(event) {
+    event.preventDefault();
+    if (isDown) {
+        mousePosition = {
+    
+            x : event.clientX,
+            y : event.clientY
+    
+        };
+        mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
+        mydiv.style.top  = (mousePosition.y + offset[1]) + 'px';
+    }
+}, true);
