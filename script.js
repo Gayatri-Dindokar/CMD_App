@@ -525,19 +525,19 @@ const mainconHeight = maincon.offsetHeight;
 
 
 minMaxBtn.addEventListener("click", () => {
-    // maincon.style.display = "none";
+    maincon.style.display = "none";
     bottomDiv.style.display = "flex";
-    maincon.classList.add('fadeout');
+    // maincon.classList.add('fadeout');
     // bottomDiv.style.display = "bl";
     // maincon.classList.add('fadeOutBottomLeft');
 
 
 })
 resizeBigscreen.addEventListener("click", () => {
-    // maincon.style.display = "block";
+    maincon.style.display = "block";
     bottomDiv.style.display = "none";
-    maincon.classList.remove('fadeout');
-   maincon.classList.add('fadeInAnimation');
+    // maincon.classList.remove('fadeout');
+//    maincon.classList.add('fadeInAnimation');
 
 })
 
@@ -566,15 +566,16 @@ restore.addEventListener("click", () => {
 function closeContainer() {
     // maincon.style.left='-700px';
     // maincon.style.display = 'none';
-    maincon.classList.add('fadeout');
-    maincon.classList.remove('fadeInAnimation');
+    // maincon.classList.add('fadeout');
+    // maincon.classList.remove('fadeInAnimation');
+    maincon.style.display = 'none';
     bottomDiv.style.display = "none";
 }
 function openContainer() {
-    maincon.classList.add('fadeInAnimation');
+    // maincon.classList.add('fadeInAnimation');
     maincon.style.display = 'block';
     bottomDiv.style.display = "none";
-    maincon.classList.remove('fadeout');
+    // maincon.classList.remove('fadeout');
   
 
 }
@@ -597,7 +598,7 @@ bigScreenMinMaxBtn.addEventListener("click",()=>{
 
 });
 doubleRestore.addEventListener("click",()=>{
-    maincon.classList.add('fadeInAnimation');
+    // maincon.classList.add('fadeInAnimation');
     maincon.style.display = 'block';
     bottomDiv.style.display="none";
     console.log("hii")

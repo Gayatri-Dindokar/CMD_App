@@ -29,12 +29,26 @@
         content: url("asset/images/delete\ state\ enabel-3.png");
     }
 
-    #cmd {
+    .desktop-icons{
+        background-color: rgb(206, 38, 178);
+        position: relative;
+        width: 20px;
+    }
+    .cmd {
         width: 50px;
         height: 50px;
         position: absolute;
-        top: 50px;
+     
         padding-left: 10px;
+    }
+    #pixel6icon{
+        top: 185px;
+    }
+    #recyclebin{
+        top:245px;
+    }
+    #cmdicon{
+        top: 305px;
     }
 
     .maincon {
@@ -65,7 +79,7 @@
     #mydivheader {
         padding: 3px;
         /* cursor: pointer; */
-        cursor: move;
+        cursor: pointer;
         z-index: 10;
         background-color: #404040;
         color: #fff;
@@ -503,12 +517,8 @@
         width: 100px;
         height: 28px;
     }
-    .fadeout {
-        /* color: #ffffff; */
-        /* font-size: large; */
-        /* font-family: helvetica; */
-        /* text-align: center; */
-        opacity: 0;
+    /* .fadeout {
+          opacity: 0;
         -webkit-animation: fadeout 1s;
         -moz-animation: fadeout 1s;
         -ms-animation: fadeout 1s;
@@ -527,7 +537,7 @@
     }
 
    .fadeInAnimation{
-    /* animation: fadeInAnimation ease 3s; */
+   
     animation-fill-mode: backward;
     transition: 1s all ease-in-out;
    
@@ -540,4 +550,4 @@
     100% {
         opacity: 1;
      }
-}
+} */
