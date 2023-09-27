@@ -8,27 +8,34 @@
     <title>Command prompt interface</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <link rel="icon" href="asset\images\fevicon.png" type="image/x-icon">
 
 </head>
 
 <body>
-    <div>
-        <img id="pixel6icon"  class="cmd" src="asset/images/pixel6.png" alt="pixel6icon" title="Pixel6">
-        <img id="recyclebin" class="cmd" src="asset/images/recyclebin.png" alt="recyclebin" title="recycle bin">
+    <div class="desktop-icon">
+        <a href="https://pixel6.co/" target="_blank" ><img id="pixel6icon"  class="cmd" src="asset/images/p6.png" alt="pixel6icon" title="Pixel6" ></a>
+        <img id="recyclebin" class="cmd" src="asset/images/recy.png" alt="recyclebin" title="recycle bin" >
         <img id="cmd"   class="cmd" src="asset/images/cmd.svg" alt="cmd" title="cmd">
         
       
     </div>
+
+
+
     <main class="maincon" id="mydiv">
-        <nav class="navbar" id="mydivheader">
+       <nav class="navbar" id="mydivheader">
             <div> <img class="px-icon" src="asset/images/cmd.png" alt=""></div>
             <p class="pixel-6">
-                Pixel<span  class="six"  style="color: #c01a20; ">6</span> 
+                Pixel<span  class="six">6</span> 
             </p>
 
             <div class="btn">
-                <button class="btnremove" id="minmaxbtn"><img  src="asset/images/minimize.png" alt=""></button>
+                <button class="btnremove" id="minmaxbtn">
+                    <img  src="asset/images/minimize.png" alt="">
+                    <!-- <span id="underscore">_</span> -->
+                </button>
                 <button class="btnremove" id="bigscreen-minmaxbtn" style="display: none"><img  src="asset/images/bigscreenminimize.png" alt=""></button>
                 <button class="btnremove" id="resize"><img  src="asset/images/resize.png" alt=""></button>
                 <button class="btnremove d-none" id="restore"><img  src="asset/images/restore.png" alt="restore"></button>
@@ -37,11 +44,11 @@
               
             </div>
         </nav>
-        <div class="container-fluid ">
+        <div class="container-fluid " >
             <div class="container  ">
                 <div class="heading ">
                     <p>
-                        Pixel<span style="color: #c01a20; font-size: 14px; ">6</span> Web Studio Pvt. Ltd.(c) 2018
+                        Pixel<span class="six">6</span> Web Studio Pvt. Ltd.(c) 2018
                         Corporation. All rights reserved.
                     </p>
                 </div>
@@ -58,46 +65,12 @@
                     <div class="line margine-1">&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0101</div>
                     <div class="line margine-1">&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0110</div>
                 </div>
-                <div class="instruction_px ">
+                <div class="instruction_px">
                     <p>Type "help " to see a list of commands</p>
                 </div>
-                <div class="prompt ">
-
-                    <p class="paths " id="path">
-                        P<span style="color: #c01a20 ">6</span>:\user\
-
-                        <input type="text " class="input input-field " id="inputf" autofocus="autofocus "
-                            autocomplete="off" />
-                    </p>
-                    <div class="main ">
-                        <!-- <span>No such command</span> -->
-                    </div>
-                    <div id="help" class="help">
-                        <!-- <p>press enter to navigate</p>
-                            <p>--use keywords to navigate</p>
-                            <ul>
-                                <li>home</li>
-                                <li>projects</li>
-                                <li>about</li>
-                                <li>contact</li>
-                                <li>get_quote</li>
-                                <li>jobs</li>
-                            </ul> -->
-                    </div>
-                    <div class="home "> </div>
-                    <div class="about "> </div>
-                    <div class="projects" style="font-family: monospace; "> </div>
-
-                    <div class="contact" style="font-family: monospace;"> </div>
-                    <div class="jobs" style="font-family: monospace;"></div>
-
-                    <div class="get_quote">
-                        <div class="get_quote_px"> </div>
-                    </div>
-
-                    <div class="message">
-                        <div class="msg1"></div>
-                    </div>
+                <div class="prompt display_output">
+                   <!--genearated path -->
+                  <!-- display command output -->
                 </div>
             </div>
 
@@ -108,13 +81,13 @@
                 Pixel<span class="six" style="color: #c01a20;">6</span>
             </p>
         </div>
-        <div class="d-flex">
+        <div class="d-flex bottom-icon">
             <button class="btnremove resize-bigscreen"><img src="asset/images/restore.png" alt="restore"></button>
             <button class="btnremove" id="double-restore" style="display: none;"><img src="asset/images/bottomdivdoublerestore.png" alt="restore"></button>
             <button class="btnclose crossbtn"><img src="asset/images/close.png" alt=""></button>
         </div>
     </div>
-    <script src="script.js "></script>
+    <script type=module src="script.js"></script>
 </body>
 
 </html>

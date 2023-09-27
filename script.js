@@ -1,222 +1,76 @@
+// import showHtmlModel from './model/showHtml.js'
+import * as showHtmlModel from './model/showHtml.js';
+
 const userinput = document.querySelector(".input");
 const main = document.querySelector(".main");
 const help = document.querySelector(".help");
-const prompt = document.querySelector(".prompt");
 const enterCommand = document.querySelector(".enterCommand");
 const container = document.querySelector(".container");
 const paths = document.querySelectorAll(".paths");
-const inputField = document.querySelectorAll(".input-field");
 const containerFluid = document.querySelector(".container-fluid");
+
+const displayOutputContainer = document.querySelector(".display_output");
+// 
+
 
 const path = () => {
 
-    const newpath = document.createElement("div");
-    newpath.classList.add("path");
-    newpath.innerHTML = `<p class="paths  newgeneratedpath">
-    P<span style="color: #c01a20">6</span>:\\user\\<input type="text" class="input input-field"  autocomplete="off" />
-</p>`;
-    prompt.insertAdjacentElement("beforeend", newpath);
+    const newpath = document.createElement("p");
+    newpath.classList.add("newgeneratedpath");
+    newpath.innerHTML = `P<span>6</span>:\\user\\<input type="text" class="input input-field animated-input" autocomplete="off"  autofocus="autofocus"/>
+`;
+   displayOutputContainer.insertAdjacentElement("beforeend", newpath);
 
-    // After adding the element to the DOM, focus the input field
     const inputField = newpath.querySelector(".input-field");
     inputField.focus();
 };
-container.addEventListener("keyup", function (e) {
-    // console.log(e.target);
-    if (e.target.matches(".input")) {
-        const userinput = e.target;
-        if (e.key === "Enter") {
-            e.preventDefault();
 
-            e.target.setAttribute("readonly", true);
-            if (userinput.value == "") {
-                console.log("enter command");
-                path();
-            } else if (userinput.value == "help") {
-                showHelp();
-                path();
-            } else if (userinput.value == "home") {
-                showHome();
-                path();
-                console.log("home");
-            } else if (userinput.value == "projects") {
-                showProjects();
-                console.log("projects");
-                path();
-            } else if (userinput.value == "about") {
-                showAbout();
-                console.log("about");
-                path();
-            } else if (userinput.value == "get quote") {
-                get_quote();
-            } else if (userinput.value == "jobs") {
-                showJobs();
-                console.log("jobs");
-                path();
-            } else if (userinput.value == "contact") {
-                showContact();
-                path();
-            } else {
-                addcommand();
-                path();
-            }
-            // path();
-        }
-    }
-});
-console.log(userinput.value);
+path();
+
+// console.log(userinput.value);
 //if user enter other command which is not involve above addcommand will call//
 const addcommand = () => {
-    const note = document.createElement("div");
-    note.classList.add("note");
-    note.innerHTML = `
- <p> This Command not found  </p>
- `;
-    prompt.insertAdjacentElement("beforeend", note);
+const note=`<p class="note">This Command not found. </p>`;
+
+ displayOutputContainer.insertAdjacentHTML("beforeend", note);
 };
 
 //when user type help command//
-const showHelp = () => {
-    const helps = document.createElement("div");
-    helps.classList.add("helps");
-    helps.innerHTML = `
-  <p>--use keywords to navigate</p>
- <ul>
- <li>home</li>
- <li>projects</li>
- <li>about</li>
- <li>contact</li>
- <li>get quote</li>
- <li>jobs</li>
- </ul>
-`;
-    prompt.insertAdjacentElement("beforeend", helps);
+async function showHelp(){
+
+const html=await showHtmlModel.showHelp()
+    displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 
 //when user type home command//
-const showHome = () => {
-    const home = document.createElement("div");
-    home.classList.add("home");
-    home.innerHTML = `<dl>
-    <dt>UI ENGINEERING</dt>
-    <dd>
-        UI/UX Development with cutting-edge technologies from HTML5/CSS3/JS to the latest versions of Angular/Node/React and of course an unrivaled focus on Optimization, SEO, x-Browser & Responsiveness.
-    </dd>
-
-    <dt>FULL STACK</dt>
-    <dd>
-        Backend development with open-source LAMP stack, flexible CMS's & robust eCommerce platforms for powerful, secure, reliable yet faster websites & web applications.
-    </dd>
-
-    <dt>MOBILE APPS</dt>
-    <dd>
-        Intuitive, fast and quick mobile apps with hybrid frameworks for iOS and Android phones for the mobile-first approach kind of businesses where time to market is the key.
-    </dd>
-</dl>
-
-        `;
-    prompt.insertAdjacentElement("beforeend", home);
-    // path();
+const showHome = async() => {
+    const html = await showHtmlModel.showHome();
+    displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 
 //when user type about command//
-const showAbout = () => {
-    const about = document.createElement("div");
-    about.classList.add("about");
-    about.innerHTML = `
-    <p>ABOUT US what we do:</p>
-                    <div class="aboutwrap">
-                        <p>Pixel6 is an end to end digital solutions agency that helps you strategize and consults you to transform yourself into a digital powerhouse to service your clients better. We are a UI/UX focused web & mobile application development
-                            studio, based out of Pune, India and been working with clients, SME's, UX companies around the world to deliver world-class:</p>
-                        <ul>
-                            <li>Websites - eCommerce, Social Networking, Travel Portals, Portfolios,Blogs</li>
-                            <li> Web Applications - Analytics, Banking & Financial, Employee Management </li>
-                            <li>Mobile Apps - Hybrid apps for Android and iOS</li>
-                        </ul>
-                        <p>Pixel6 is a young team of professionals having varied expertise including research, design and development. We are design fanatics, creative thinkers, business strategists and digital enthusiasts. We have built our clientele with
-                            reputed companies on board like: IDFC Institute, Jocata Financial Advisory & Technology Services, Lollypop UI/UX Design Studio, 12 Steps Marketing, BigClic and many more. Pixel6 is a team of multidisciplinary digital product
-                            development experts focused on UI/UX Design, Mobile/App and Web Application and development. We extend our services to the design, development and marketing departments of growing start ups and established organizations the
-                            same.
-                        </p>
-                    </div>`;
-    prompt.insertAdjacentElement("beforeend", about);
+const showAbout = async() => {
+    const html = await showHtmlModel.showAbout();
+    displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 
 //when user type projects command//
-const showProjects = () => {
-    const projects = document.createElement("div");
-
-    projects.classList.add("projects");
-    projects.innerHTML = `
-    <dl>
-    <dt>Projects, Brands & Clients:</dt>
-    <dd>
-        <div class="projectwrap">
-            <div class="pdiv">
-                <h4>Mberry</h4>
-                <p class="pwrap">The Miracle Berry Shop: miracle berries transform the sour taste of food, veggies, and fruits to sweetness without compromising on the calories. Charles wanted a Shopify-driven eCommerce shop to sell his patented miracle berry products. We gave his consumers a sweet online experience.</p>
-            </div>
-            <br>
-            <div class="pdiv projects-para">
-                <h4>IDFC INSTITUTE</h4>
-                <p class="pwrap">IDFC Institute is a research institute set up by IDFC Limited to investigate the political, economic, and spatial dimensions of India. They needed an elegant yet customizable CMS-driven website for the Institute, and Pixel6 delivered the portal in due course.</p>
-            </div>
-            <br>
-            <div class="pdiv projects-para">
-                <h4>12 STEPS MARKETING</h4>
-                <p class="pwrap">12 Steps Marketing is an online marketing and SEO firm based out of LA, USA. They serve medical practices, clinics, and treatment centers and go by the motto "OUR ONLY OBSESSION IS YOUR COMPANY'S GROWTH." We do follow their business mantra and have been assisting 12StepsMarketing.com platform to develop and deliver compelling online user experiences to the medical industry they serve for more than 5 years now. Vince is happy, and that makes us happy 🙂</p>
-            </div>
-        </div>
-    </dd>
-</dl>
-
- `;
-    prompt.insertAdjacentElement("beforeend", projects);
+const showProjects = async() => {
+    const html = await showHtmlModel.showprojects();
+    displayOutputContainer.insertAdjacentHTML("beforeend",html );   
 };
 
 //when user type contact command//
-const showContact = () => {
-    const contact = document.createElement("div");
-    contact.classList.add("contact");
-
-    contact.innerHTML = `
-    <dl>
+const showContact = async() => {
+    const html = await showHtmlModel.showContact();
+ displayOutputContainer.insertAdjacentHTML("beforeend", html );
     
-     <dt class="contact-location">Contact Details:</dt>
-    <dd>
-        <p>E-mail:</p>
-        <dd>info@pixel6.co</dd>
-        <p>Phone:</p>
-        <dd>+91 88 05 06 05 06</dd>
-    </dd>
-    <dt class="contact-location">Location:</dt>
-    <dd>
-        <p>V18, Balewadi High Street, Baner, Pune, Maharashtra India 411045</p>
-    </dd>
-</dl>
-`;
-    prompt.insertAdjacentElement("beforeend", contact);
-    // userinput.appendChild(note);
 };
 
 //when user type jobs command//
-const showJobs = () => {
-    const jobs = document.createElement("div");
-    jobs.classList.add("jobs");
-    jobs.innerHTML = `
-    <p>JOBS AT PIXEL6</p>
-    <div class="jobs-px">
-                        <p>We are always looking for fresh Engineering / MCA guys with passion for growth and keen on learning. If you are a 2020/21/22 pass-out, good at web development technologies and are you interested in working in Pixel6, please do
-                            fill and submit the following form.</p>
-                        <p>The job Software Trainee Engineer</p>
-                        <ol>
-                            <li>Education: BE/BTECH/MCA/MCS </li>
-                            <li>Location: Baner, Pune</li>
-                            <li> Skills: Javascript/PHP/Angular</li>
-                        </ol><br>
-                       
-                        </div> `;
-    prompt.insertAdjacentElement("beforeend", jobs);
+const showJobs = async() => {
+    const html = await showHtmlModel.showJobs();
+    displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 
 //when user type get quote command//
@@ -250,18 +104,18 @@ const get_quote = () => {
        </div>
 
           <div id="question6" style="display: none;">
-           <p><span> > </span>Project Brief</p>
-           <p style="display:flex;"><span>></span><textarea id="Project-Brief" class="input_getquote textarea" cols="80" rows="5"></textarea>  </p>
+           <p><span > > </span>Project Brief</p>
+           <p style="display:flex;"><span style="padding-top: 4px; margin-right: 5px;">></span><textarea id="Project-Brief" class="input_getquote textarea" cols="80"></textarea>  </p>
       </div> 
 
        <div id="question7" style="display: none;">
            <p><span> > </span>Are you sure you want to submit? (y/n)</p>
           <p><span>></span><input type="text" id="submitInput" class="input_getquote"  ></p>
-        
+
        </div>
 
            <div id="question8" style="display: none;">
-              <p class='message'><span>></span><input type="text" id="messageYes" value="your response is succesfully submmited" class="input_getquote"></p>
+              <p class='message'><span>></span><input type="text" id="messageYes" value="your response is successfully submitted" class="input_getquote"></p>
           </div>
 
           <div id="question9" style="display: none;">
@@ -285,7 +139,7 @@ const get_quote = () => {
        </div>
            
            </form>`;
-    prompt.insertAdjacentElement("beforeend", que1);
+           displayOutputContainer.insertAdjacentElement("beforeend", que1);
     const inputFieldquotes = que1.querySelector(".input_getquote");
     inputFieldquotes.focus();
 
@@ -325,11 +179,12 @@ const get_quote = () => {
     document.getElementById("nameInput").addEventListener("keyup", function (event) {
         let nameInput = document.getElementById("nameInput");
         let store = document.getElementById("nameInput").value;
-        if (store.trim() == "") {
-            alert("Enter a Name");
-        }
+
         if (event.key === "Enter") {
-            if (store.length > 0) {
+            if (store.trim() == "") {
+                alert("Enter a Name");
+            }
+            else if (store.length > 0) {
                 let spli = store.split(" ");
                 //    console.log(spli);
                 const fullNamePattern = /^[A-Za-z\s']+$/;
@@ -346,11 +201,12 @@ const get_quote = () => {
     document.getElementById("emailInput").addEventListener("keyup", function (event) {
         let email = document.getElementById("emailInput").value;
         let emailInput = document.getElementById("emailInput");
-        if (email.trim() == "") {
-            alert("Enter a Email");
-        }
-        const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
         if (event.key === "Enter") {
+            if (email.trim() == "") {
+                alert("Enter a Email");
+            }
+            const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             if (!email.match(emailPattern)) {
                 console.log("incorrect email");
                 alert("Incorrect Pattern Please Enter Correct Email Id");
@@ -467,6 +323,45 @@ const get_quote = () => {
     });
 };
 
+
+// main function
+ container.addEventListener("keyup", async function (e) {
+    // console.log(e.target);
+    if (e.target.matches(".input")) {
+        const userinput = e.target.value.trim();
+        if (e.key === "Enter") {
+            e.preventDefault();
+         if (userinput && userinput == "get quote") {
+                get_quote();
+            }else{
+               
+                if (userinput == "help") {
+                    showHelp();
+                } else if (userinput == "home") {   
+                    showHome();
+                } else if (userinput == "projects") {
+                    showProjects();
+                } else if (userinput == "about") {
+                    showAbout();
+                } else if (userinput == "jobs") {
+                    showJobs();
+                } else if (userinput == "contact") {
+                    showContact();
+                } else {
+                    if(userinput !=''){
+                        addcommand();
+                    }
+                }
+                setTimeout(()=>{
+                    path();
+                },0)
+            }
+
+            e.target.setAttribute("readonly", true);
+           
+        }
+    }
+});
 // moving mydiv container//
 // var isDragging = false;
 // var offsetX, offsetY;
@@ -519,118 +414,209 @@ const cmdImg = document.getElementById("cmd");
 const btnclose = document.querySelector(".btnclose");
 const crossBtnBigScreen = document.getElementById("crossBtnBigScreen");
 const bigScreenMinMaxBtn = document.getElementById("bigscreen-minmaxbtn");
-const  doubleRestore = document.getElementById("double-restore");
+const doubleRestore = document.getElementById("double-restore");
 const mainconWidth = maincon.offsetWidth;
 const mainconHeight = maincon.offsetHeight;
+const hiddenNav = document.querySelector(".hidden-nav");
+const bottomIcon = document.querySelector(".bottom-icon");
+const desktopIcon = document.querySelector(".desktop-icon");
+const navbar = document.querySelector(".navbar");
+const mydivid = document.getElementById("mydiv");
 
-
+// let isMinimisez = true;
 minMaxBtn.addEventListener("click", () => {
+
+        mydivid.style.width = "254px";
+        mydivid.style.height = "35px";
+        mydivid.style.top = "98vh";
+        mydivid.style.left = "127px";
+        // mydiv.classList.add('minimized');
+        mydivheader.classList.add("color");
+        // minMaxBtn.style.display ="none";
+       
+   
+
+       
+   
+//    if(isMinimisez){
+//     setTimeout(()=>{
+//         mydiv.style.display = "none";
+//         bottomDiv.style.display = "flex";
+        
+//     },100);
+//      isMinimisez = false;
+//    }
     // maincon.style.display = "none";
-    bottomDiv.style.display = "flex";
-    maincon.classList.add('fadeout');
+    //   bottomDiv.style.display = "flex";
+   
+    // hiddenNav.style.display ="block";
+    
+    //  maincon.style.position ="absolute";
+   
+    // mydivid.style.position = "fixed";
+
+    //  maincon.classList.add('fadeout')
+    // maincon.classList.add('fadeout');
     // bottomDiv.style.display = "bl";
     // maincon.classList.add('fadeOutBottomLeft');
 
 
 })
 resizeBigscreen.addEventListener("click", () => {
-    // maincon.style.display = "block";
+    maincon.style.display = "block";
     bottomDiv.style.display = "none";
-    maincon.classList.remove('fadeout');
-   maincon.classList.add('fadeInAnimation');
+    mydiv.style.width = "800px";
+    mydiv.style.height = "600px";
+    mydiv.style.left = "50%";
+    mydiv.style.top = "50%";
+
+   
+  
+    // maincon.classList.remove('fadeout');
+    // maincon.classList.add('fadeInAnimation');
 
 })
 
 resize.addEventListener("click", () => {
     maincon.style.width = "100%";
     maincon.style.height = "100vh";
+    maincon.style.left = "50%";
+    maincon.style.top = "50%";
+    maincon.style.backgroundSize = "cover";
     resize.style.display = 'none';
     restore.style.display = "block";
-    crossBtnBigScreen .style.display = "block";
+    crossBtnBigScreen.style.display = "block";
     btnclose.style.display = "none";
-    bigScreenMinMaxBtn.style.display ="block";
-    minMaxBtn.style.display="none";
+    bigScreenMinMaxBtn.style.display = "block";
+    minMaxBtn.style.display = "none";
 
 })
 
 restore.addEventListener("click", () => {
     maincon.style.width = "800px";
     maincon.style.height = "600px";
-
-
     resize.style.display = 'block';
     restore.style.display = "none";
+   
 })
 
 
 function closeContainer() {
     // maincon.style.left='-700px';
-    // maincon.style.display = 'none';
-    maincon.classList.add('fadeout');
-    maincon.classList.remove('fadeInAnimation');
+    maincon.style.display = 'none';
+    // maincon.classList.add('fadeout');
+    // maincon.classList.remove('fadeInAnimation');
     bottomDiv.style.display = "none";
 }
 function openContainer() {
-    maincon.classList.add('fadeInAnimation');
+    // maincon.classList.add('fadeInAnimation');
     maincon.style.display = 'block';
     bottomDiv.style.display = "none";
-    maincon.classList.remove('fadeout');
-  
+    maincon.style.width = "800px";
+    maincon.style.height = "600px";
+    maincon.style.left = "50%";
+    maincon.style.top = "50%";
+    resize.style.display="block";
+    resizeBigscreen.style.display="none";
+    restore.style.display = "none";
+    // minMaxBtn.style.display="block";
+    // maincon.classList.remove('fadeout');
+
 
 }
 crossbtn.addEventListener("click", () => {
     bottomDiv.style.display = "none";
 
 });
-function mainconNone(){
+function mainconNone() {
     maincon.style.display = 'none';
-    bottomDiv.style.display ="none";
+    bottomDiv.style.display = "none";
 }
-btnclose.addEventListener("click",closeContainer);
-cmdImg.addEventListener("click",openContainer)
-crossBtnBigScreen.addEventListener("click",mainconNone);
-bigScreenMinMaxBtn.addEventListener("click",()=>{
-    maincon.style.display = 'none';
-    bottomDiv.style.display ="flex";
-    doubleRestore.style.display ="block";
-    resizeBigscreen.style.display="none";
+btnclose.addEventListener("click", closeContainer);
+cmdImg.addEventListener("click", openContainer)
+crossBtnBigScreen.addEventListener("click", mainconNone);
+bigScreenMinMaxBtn.addEventListener("click", () => {
+    // maincon.style.display = 'none';
+    // bottomDiv.style.display = "flex";
+    // doubleRestore.style.display = "block";
+    // resizeBigscreen.style.display = "none";
+    restore.style.display="none";
+    resize.style.display = "block";
+    mydivid.style.width = "254px";
+    mydivid.style.height = "35px";
+    mydivid.style.top = "98vh";
+    mydivid.style.left = "127px";
+    mydiv.classList.add('minimized');
+    // bigScreenMinMaxBtn.style.display ="none";
+   
+
 
 });
-doubleRestore.addEventListener("click",()=>{
-    maincon.classList.add('fadeInAnimation');
+doubleRestore.addEventListener("click", () => {
+    // maincon.classList.add('fadeInAnimation');
     maincon.style.display = 'block';
-    bottomDiv.style.display="none";
+    bottomDiv.style.display = "none";
     console.log("hii")
 })
 
 
 var mousePosition;
-var offset = [0,0];
+var offset = [0, 0];
 var isDown = false;
 
 var mydiv = document.getElementById("mydiv");
-mydiv.addEventListener('mousedown', function(e) {
-    isDown = true;
-    offset = [
-        mydiv.offsetLeft - e.clientX,
-        mydiv.offsetTop - e.clientY
-    ];
+var originalWidth = mydiv.style.width;
+var originalHeight = mydiv.style.height;
+
+// resize.addEventListener('click', function () {
+    // mydiv.style.width = "100%";
+    // mydiv.style.height = "100vh";
+    // You can add more code here if needed for other elements
+
+    // Reset the position to the top-left corner
+    // mydiv.style.left = "50%";
+    // mydiv.style.top = "50%";
+// });
+
+mydiv.addEventListener('mousedown', function (e) {
+    if (e.button === 0) {
+        isDown = true;
+        offset = [
+            mydiv.offsetLeft - e.clientX,
+            mydiv.offsetTop - e.clientY
+        ];
+    }
 }, true);
 
-document.addEventListener('mouseup', function() {
+document.addEventListener('mouseup', function () {
     isDown = false;
 }, true);
 
-document.addEventListener('mousemove', function(event) {
+document.addEventListener('mousemove', function (event) {
     event.preventDefault();
     if (isDown) {
         mousePosition = {
-    
-            x : event.clientX,
-            y : event.clientY
-    
+            x: event.clientX,
+            y: event.clientY
         };
         mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
-        mydiv.style.top  = (mousePosition.y + offset[1]) + 'px';
+        mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
     }
 }, true);
+
+
+
+
+const recy = document.getElementById("recyclebin");
+recy.addEventListener("click",()=>{
+    alert("recycle bin is empty");
+})
+
+
+// inputField.forEach(inputCursor=>{
+//     inputCursor.addEventListener("blur", function() {
+//           setTimeout(function() {
+//             inputCursor.focus();
+//           }, 0);
+//       });
+// })  
