@@ -35,6 +35,7 @@ const path = () => {
 
 path();
 
+
 // console.log(userinput.value);
 //if user enter other command which is not involve above addcommand will call//
 const addcommand = () => {
