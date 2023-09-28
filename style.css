@@ -5,14 +5,20 @@
         color: white;
         box-sizing: border-box;
         font-size: 11px;
-        /* height: 100%;
-        width: 100%; */
-        background-image: url(asset/images/backgroundCMD.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
         overflow: hidden;
+        background-image: url(asset/images/backgroundCMD.jpg);
+        /* background-size: cover; */
+        background-repeat: no-repeat;
+        /* overflow: hidden; */
       
     }
+    /* html{
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    } */
 
     .d-flex {
         display: flex;
@@ -95,12 +101,18 @@
 .transition{
 transition : all 0.5s;
 }
+.desktop-icon{
+    height: 200px;
+    width: 65px;
+    background-color: red;
+    margin-top: 16%;
+}
 
     #mydiv {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        position: absolute;
+        position: fixed;
         z-index: 9;
         width: 800px;
         resize: both;

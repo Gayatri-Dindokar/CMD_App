@@ -592,8 +592,20 @@ mydiv.addEventListener('mousemove', function (event) {
             x: event.clientX,
             y: event.clientY
         };
-        mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
-        mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
+        // mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
+        // mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
+        var pageWidth = window.innerWidth;
+var pageHeight = window.innerHeight;
+console.log(pageWidth,pageHeight);
+console.log((mousePosition.x + offset[0]),'(mousePosition.x + offset[0])');
+if((mousePosition.x + offset[0])>0)
+{ mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
+
+}
+mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
+ if((mousePosition.y + offset[1])>(pageHeight-600)){
+
+ }
     }
 }, true);
 
