@@ -72,7 +72,7 @@
         overflow-y: auto;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
-        transition: all 0.5s;
+        /* transition: all 0.5s; */
         bottom: 0;
         left: 0;
   }
@@ -86,7 +86,15 @@
 .color{
     background-color:  #101010;
 }
-
+.hidden-scroll{
+    overflow: hidden;
+}
+.show-scroll{
+    overflow: auto;
+}
+.transition{
+transition : all 0.5s;
+}
 
     #mydiv {
         left: 50%;

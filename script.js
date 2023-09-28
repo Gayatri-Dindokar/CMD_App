@@ -10,6 +10,7 @@ const paths = document.querySelectorAll(".paths");
 const containerFluid = document.querySelector(".container-fluid");
 
 const displayOutputContainer = document.querySelector(".display_output");
+const maincon = document.querySelector(".maincon");
 // 
 
 
@@ -19,10 +20,17 @@ const path = () => {
     newpath.classList.add("newgeneratedpath");
     newpath.innerHTML = `P<span>6</span>:\\user\\<input type="text" class="input input-field animated-input" autocomplete="off"  autofocus="autofocus"/>
 `;
-   displayOutputContainer.insertAdjacentElement("beforeend", newpath);
+    displayOutputContainer.insertAdjacentElement("beforeend", newpath);
 
     const inputField = newpath.querySelector(".input-field");
     inputField.focus();
+    document.addEventListener("click",(event)=>{
+        if(event.target !== inputField){
+            inputField.focus();
+            console.log("gayari dindokar")
+        }
+    })
+
 };
 
 path();
@@ -30,45 +38,45 @@ path();
 // console.log(userinput.value);
 //if user enter other command which is not involve above addcommand will call//
 const addcommand = () => {
-const note=`<p class="note">This Command not found. </p>`;
+    const note = `<p class="note">This Command not found. </p>`;
 
- displayOutputContainer.insertAdjacentHTML("beforeend", note);
+    displayOutputContainer.insertAdjacentHTML("beforeend", note);
 };
 
 //when user type help command//
-async function showHelp(){
+async function showHelp() {
 
-const html=await showHtmlModel.showHelp()
+    const html = await showHtmlModel.showHelp()
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 
 //when user type home command//
-const showHome = async() => {
+const showHome = async () => {
     const html = await showHtmlModel.showHome();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 
 //when user type about command//
-const showAbout = async() => {
+const showAbout = async () => {
     const html = await showHtmlModel.showAbout();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 
 //when user type projects command//
-const showProjects = async() => {
+const showProjects = async () => {
     const html = await showHtmlModel.showprojects();
-    displayOutputContainer.insertAdjacentHTML("beforeend",html );   
+    displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 
 //when user type contact command//
-const showContact = async() => {
+const showContact = async () => {
     const html = await showHtmlModel.showContact();
- displayOutputContainer.insertAdjacentHTML("beforeend", html );
-    
+    displayOutputContainer.insertAdjacentHTML("beforeend", html);
+
 };
 
 //when user type jobs command//
-const showJobs = async() => {
+const showJobs = async () => {
     const html = await showHtmlModel.showJobs();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
@@ -139,7 +147,7 @@ const get_quote = () => {
        </div>
            
            </form>`;
-           displayOutputContainer.insertAdjacentElement("beforeend", que1);
+    displayOutputContainer.insertAdjacentElement("beforeend", que1);
     const inputFieldquotes = que1.querySelector(".input_getquote");
     inputFieldquotes.focus();
 
@@ -325,19 +333,19 @@ const get_quote = () => {
 
 
 // main function
- container.addEventListener("keyup", async function (e) {
+container.addEventListener("keyup", async function (e) {
     // console.log(e.target);
     if (e.target.matches(".input")) {
         const userinput = e.target.value.trim();
         if (e.key === "Enter") {
             e.preventDefault();
-         if (userinput && userinput == "get quote") {
+            if (userinput && userinput == "get quote") {
                 get_quote();
-            }else{
-               
+            } else {
+
                 if (userinput == "help") {
                     showHelp();
-                } else if (userinput == "home") {   
+                } else if (userinput == "home") {
                     showHome();
                 } else if (userinput == "projects") {
                     showProjects();
@@ -348,56 +356,20 @@ const get_quote = () => {
                 } else if (userinput == "contact") {
                     showContact();
                 } else {
-                    if(userinput !=''){
+                    if (userinput != '') {
                         addcommand();
                     }
                 }
-                setTimeout(()=>{
+                setTimeout(() => {
                     path();
-                },0)
+                }, 0)
             }
 
             e.target.setAttribute("readonly", true);
-           
+
         }
     }
 });
-// moving mydiv container//
-// var isDragging = false;
-// var offsetX, offsetY;
-// var mydiv = document.getElementById("mydiv");
-// var height = mydiv.offsetHeight
-// var width = mydiv.offsetWidth
-// console.log(height);
-// console.log(width);
-// document.getElementById("mydivheader").addEventListener("dblclick", function () {
-//     isDragging = !isDragging;
-//     if (isDragging) {
-//         mydivheader.style.cursor = "move";
-//     } else {
-//         mydivheader.style.cursor = "auto";
-//     }
-// });
-// mydiv.onmousedown = function (e) {
-//     e.preventDefault();
-
-//     if (isDragging) {
-//         offsetX = e.clientX - mydiv.getBoundingClientRect().left;
-//         offsetY = e.clientY - mydiv.getBoundingClientRect().top;
-//         document.onmousemove = moveElement;
-//         document.onmouseup = stopDragging;
-//     }
-// };
-// function moveElement(e) {
-// console.log(e,"ddd");
-//     if (e.clientX - offsetX > 0) {
-//         mydiv.style.left = e.clientX - offsetX + "px";
-//     }
-//     if ((e.clientY - offsetY) > 200) {
-//         mydiv.style.top = e.clientY - offsetY + "px";
-//     }
-// }
-
 function stopDragging() {
     document.onmousemove = null;
     document.onmouseup = null;
@@ -405,7 +377,7 @@ function stopDragging() {
 //min-max functionality
 const minMaxBtn = document.getElementById("minmaxbtn");
 const bottomDiv = document.querySelector(".bottom-div");
-const maincon = document.querySelector(".maincon");
+// const maincon = document.querySelector(".maincon");
 const resize = document.getElementById("resize");
 const restore = document.getElementById("restore");
 const resizeBigscreen = document.querySelector(".resize-bigscreen");
@@ -423,56 +395,75 @@ const desktopIcon = document.querySelector(".desktop-icon");
 const navbar = document.querySelector(".navbar");
 const mydivid = document.getElementById("mydiv");
 
+function movingContainer(){
+    mydiv.addEventListener('mousedown', function (e) {
+        if (e.button === 0) {
+            isDown = true;
+            offset = [
+                mydiv.offsetLeft - e.clientX,
+                mydiv.offsetTop - e.clientY
+            ];
+        }
+    }, true);
+}
+
 // let isMinimisez = true;
 minMaxBtn.addEventListener("click", () => {
-
         mydivid.style.width = "254px";
         mydivid.style.height = "35px";
         mydivid.style.top = "98vh";
         mydivid.style.left = "127px";
-        // mydiv.classList.add('minimized');
         mydivheader.classList.add("color");
-        // minMaxBtn.style.display ="none";
-       
-   
-
-       
-   
-//    if(isMinimisez){
-//     setTimeout(()=>{
-//         mydiv.style.display = "none";
-//         bottomDiv.style.display = "flex";
+        mydivid.classList.add("hidden-scroll");
+        mydivid.classList.add("transition");
+        mydiv.addEventListener('mousedown', function (e) {
+            if (e.button === 0) {
+                isDown = false;
+                offset = [
+                    mydiv.offsetLeft - e.clientX,
+                    mydiv.offsetTop - e.clientY
+                ];
+            }
+        }, true);
         
-//     },100);
-//      isMinimisez = false;
-//    }
-    // maincon.style.display = "none";
-    //   bottomDiv.style.display = "flex";
-   
-    // hiddenNav.style.display ="block";
-    
-    //  maincon.style.position ="absolute";
-   
-    // mydivid.style.position = "fixed";
+          // mydiv.style.position = "fixed";
+        // isDown = false;
+        // minMaxBtn.style.display ="none";
+        //    if(isMinimisez){
+        //     setTimeout(()=>{
+        //         mydiv.style.display = "none";
+        //         bottomDiv.style.display = "flex";
 
-    //  maincon.classList.add('fadeout')
-    // maincon.classList.add('fadeout');
-    // bottomDiv.style.display = "bl";
-    // maincon.classList.add('fadeOutBottomLeft');
+        //     },100);
+        //      isMinimisez = false;
+        //    }
+        // maincon.style.display = "none";
+        //   bottomDiv.style.display = "flex";
+
+        // hiddenNav.style.display ="block";
+
+        //  maincon.style.position ="absolute";
+
+        // mydiv.style.position = "fixed";
+
+        //  maincon.classList.add('fadeout')
+        // maincon.classList.add('fadeout');
+        // bottomDiv.style.display = "bl";
+        // maincon.classList.add('fadeOutBottomLeft');
 
 
-})
+    })
+
 resizeBigscreen.addEventListener("click", () => {
     maincon.style.display = "block";
     bottomDiv.style.display = "none";
-    mydiv.style.width = "800px";
-    mydiv.style.height = "600px";
-    mydiv.style.left = "50%";
-    mydiv.style.top = "50%";
-
+    mydivid.style.width = "800px";
+    mydivid.style.height = "600px";
+    mydivid.style.left = "50%";
+    mydivid.style.top = "50%";
+    mydivid.classList.add("show-scroll");
    
-  
-    // maincon.classList.remove('fadeout');
+ // maincon.classList.remove('fadeout');
     // maincon.classList.add('fadeInAnimation');
 
 })
@@ -489,16 +480,18 @@ resize.addEventListener("click", () => {
     btnclose.style.display = "none";
     bigScreenMinMaxBtn.style.display = "block";
     minMaxBtn.style.display = "none";
-
-})
+    mydivid.classList.add("show-scroll");
+    movingContainer();
+   })
 
 restore.addEventListener("click", () => {
     maincon.style.width = "800px";
     maincon.style.height = "600px";
     resize.style.display = 'block';
     restore.style.display = "none";
-   
-})
+    mydivid.classList.add("show-scroll");
+    movingContainer();
+    })
 
 
 function closeContainer() {
@@ -507,6 +500,7 @@ function closeContainer() {
     // maincon.classList.add('fadeout');
     // maincon.classList.remove('fadeInAnimation');
     bottomDiv.style.display = "none";
+    
 }
 function openContainer() {
     // maincon.classList.add('fadeInAnimation');
@@ -516,13 +510,13 @@ function openContainer() {
     maincon.style.height = "600px";
     maincon.style.left = "50%";
     maincon.style.top = "50%";
-    resize.style.display="block";
-    resizeBigscreen.style.display="none";
+    resize.style.display = "block";
+    resizeBigscreen.style.display = "none";
     restore.style.display = "none";
-    // minMaxBtn.style.display="block";
+    mydivid.classList.add("show-scroll");
+    movingContainer();
+      // minMaxBtn.style.display="block";
     // maincon.classList.remove('fadeout');
-
-
 }
 crossbtn.addEventListener("click", () => {
     bottomDiv.style.display = "none";
@@ -540,17 +534,24 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
     // bottomDiv.style.display = "flex";
     // doubleRestore.style.display = "block";
     // resizeBigscreen.style.display = "none";
-    restore.style.display="none";
+    restore.style.display = "none";
     resize.style.display = "block";
     mydivid.style.width = "254px";
     mydivid.style.height = "35px";
     mydivid.style.top = "98vh";
     mydivid.style.left = "127px";
-    mydiv.classList.add('minimized');
+    mydivid.classList.add('minimized');
+    mydivid.classList.add("hidden-scroll");
+    mydiv.addEventListener('mousedown', function (e) {
+        if (e.button === 0) {
+            isDown = false;
+            offset = [
+                mydiv.offsetLeft - e.clientX,
+                mydiv.offsetTop - e.clientY
+            ];
+        }
+    }, true);
     // bigScreenMinMaxBtn.style.display ="none";
-   
-
-
 });
 doubleRestore.addEventListener("click", () => {
     // maincon.classList.add('fadeInAnimation');
@@ -568,16 +569,6 @@ var mydiv = document.getElementById("mydiv");
 var originalWidth = mydiv.style.width;
 var originalHeight = mydiv.style.height;
 
-// resize.addEventListener('click', function () {
-    // mydiv.style.width = "100%";
-    // mydiv.style.height = "100vh";
-    // You can add more code here if needed for other elements
-
-    // Reset the position to the top-left corner
-    // mydiv.style.left = "50%";
-    // mydiv.style.top = "50%";
-// });
-
 mydiv.addEventListener('mousedown', function (e) {
     if (e.button === 0) {
         isDown = true;
@@ -588,12 +579,13 @@ mydiv.addEventListener('mousedown', function (e) {
     }
 }, true);
 
-document.addEventListener('mouseup', function () {
+mydiv.addEventListener('mouseup', function () {
     isDown = false;
 }, true);
 
-document.addEventListener('mousemove', function (event) {
+mydiv.addEventListener('mousemove', function (event) {
     event.preventDefault();
+    
     if (isDown) {
         mousePosition = {
             x: event.clientX,
@@ -608,15 +600,7 @@ document.addEventListener('mousemove', function (event) {
 
 
 const recy = document.getElementById("recyclebin");
-recy.addEventListener("click",()=>{
+recy.addEventListener("click", () => {
     alert("recycle bin is empty");
 })
 
-
-// inputField.forEach(inputCursor=>{
-//     inputCursor.addEventListener("blur", function() {
-//           setTimeout(function() {
-//             inputCursor.focus();
-//           }, 0);
-//       });
-// })  
