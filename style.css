@@ -23,6 +23,9 @@
     .d-flex {
         display: flex;
     }
+    .d-coloumn{
+        flex-direction: column;
+    }
 
     .recycle-bin {
         width: 45px;
@@ -35,38 +38,87 @@
     .recycle-bin:hover {
         content: url("asset/images/delete\ state\ enabel-3.png");
     }
-
-    .desktop-icons {
-        background-color: rgb(206, 38, 178);
-        position: relative;
-        width: 20px;
-    }
-    #underscore{
-        margin-top: 2px;
-    }
+.recycleBin-text{
+   font-size: 12px;
+   padding-top: 73px;
+   padding-left: 20px;
+   width: 120px;
+   padding-bottom: 35px;
+   padding-top: 11px;
+   font-family: monospace;
+}
+.pixel6-web-text{
+    padding-left: 20px;
+    width: 120px;
+    padding-bottom: 35px;
+    padding-top: 11px;
+   }
+ .cmd-text{
+    padding-left: 37px;
+    padding-bottom: 35px;
+    padding-top: 11px;
+    font-size: 12px;
+    font-family: monospace;
+}
 
     .cmd {
         width: 50px;
         height: 50px;
-        position: absolute;
+        /* position: absolute; */
 
-        padding-left: 10px;
+        padding-left: 27px;
     }
 
     #pixel6icon {
-        top: 185px;
+        /* top: 185px; */
         border-radius: 10%;
+        /* margin-top: 20px; */
     }
 
     #recyclebin {
-        top: 245px;
+        /* top: 245px; */
         border-radius: 5px;
+        width: 60px;
+        height: 65px;
+        /* margin-top: 90px; */
     }
 
     #cmd {
-        top: 305px;
+        /* top: 305px; */
         border-radius: 5px;
+      
     }
+
+    .desktop-icon{
+        height: 200px;
+        width: 65px;
+        /* background-color: red; */
+        margin-top: 10%;
+        margin-right: 20px;
+    }
+    
+    .desktop-icon-container{
+        display: flex;
+        /* margin-top: -53px; */
+    }
+    .cmdIcon{
+        margin-top: 10%;  
+    }
+    .icon-text{
+        margin-top: 2px;
+    }
+
+ 
+
+    /* .desktop-icons {
+        background-color: rgb(206, 38, 178);
+        position: relative;
+        width: 20px;
+    } */
+    #underscore{
+        margin-top: 2px;
+    }
+
 
     .maincon {
         /* border: 5px solid black; */
@@ -100,12 +152,6 @@
 }
 .transition{
 transition : all 0.5s;
-}
-.desktop-icon{
-    height: 200px;
-    width: 65px;
-    background-color: red;
-    margin-top: 16%;
 }
 
     #mydiv {
@@ -672,3 +718,18 @@ transition : all 0.5s;
     opacity: 0; /* Set the opacity to 0 to make it fade out */
     transition: opacity 5s; /* Add a transition for smooth fading */
 }
+
+/* .num::-webkit-outer-spin-button,
+ .num::-webkit-inner-spin-button {
+ -webkit-appearance: none;
+margin: 0;
+ }
+ input[type=number] {
+ -moz-appearance: textfield;
+ 
+} */
+
+/* .num::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+display: none;
+} */

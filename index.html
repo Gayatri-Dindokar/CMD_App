@@ -1,98 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Command prompt interface</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
-    <link rel="icon" href="asset\images\fevicon.png" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Tangerine"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="asset\images\fevicon.png" type="image/x-icon" />
+  </head>
 
-</head>
-
-<body>
+  <body>
+   <div class="desktop-icon-container">
     <div class="desktop-icon">
-        <div >
-            <a href="https://pixel6.co/" target="_blank" ><img id="pixel6icon"  class="cmd" src="asset/images/iconpixel6.png" alt="pixel6icon" title="Pixel6" >
-          
-            </a>
+
     
-            <img id="recyclebin" class="cmd" src="asset/images/iconrecy.png" alt="recyclebin" title="recycle bin" >
-            <img id="cmd"   class="cmd" src="asset/images/cmd.svg" alt="cmd" title="cmd">
-            
-        </div>
+     <div class="d-flex d-coloumn">
+      <a href="https://pixel6.co/" target="_blank"
+      ><img
+        id="pixel6icon"
+        class="cmd"
+        src="asset/images/iconpixel6.png"
+        alt="pixel6icon"
+        title="Pixel6"
+      />
+     </a>
+    <span class="pixel6-web-text">Pixel6 Web</span>
+     </div>
+    
+     
+      <div class="d-flex d-coloumn"><img
+        id="recyclebin"
+        class="cmd"
+        src="asset/images/iconrecy.png"
+        alt="recyclebin"
+        title="recycle bin"
+      />
+      <span class=" recycleBin-text"> Recycle Bin</span>
+    </div>
       
+      <!-- <div class=" recycleBin-text"><h6>Recycle Bin</h6></div> -->
+     <!-- <span class="icon-text">Recycle Bin</span> -->
+    </div>
+  
+    <div class="cmdIcon d-flex d-coloumn">
+      <img
+        id="cmd"
+        class="cmd"
+        src="asset/images/cmd.svg"
+        alt="cmd"
+        title="cmd"
+      />
+    <span class="cmd-text">CMD</span>
     </div>
 
-
-
+   </div>
     <main class="maincon" id="mydiv">
-       <nav class="navbar" id="mydivheader">
-            <div> <img class="px-icon" src="asset/images/cmd.png" alt=""></div>
-            <p class="pixel-6">
-                Pixel<span  class="six">6</span> 
-            </p>
+      <nav class="navbar" id="mydivheader">
+        <div><img class="px-icon" src="asset/images/cmd.png" alt="" /></div>
+        <p class="pixel-6">Pixel<span class="six">6</span></p>
 
-            <div class="btn">
-                <button class="btnremove" id="minmaxbtn">
-                    <img  src="asset/images/minimize.png" alt="">
-                    <!-- <span id="underscore">_</span> -->
-                </button>
-                <button class="btnremove" id="bigscreen-minmaxbtn" style="display: none"><img  src="asset/images/bigscreenminimize.png" alt=""></button>
-                <button class="btnremove" id="resize"><img  src="asset/images/resize.png" alt=""></button>
-                <button class="btnremove d-none" id="restore"><img  src="asset/images/restore.png" alt="restore"></button>
-                <button class="btnclose"><img src="asset/images/close.png" alt=""></button>
-                <button id="crossBtnBigScreen" style="display: none;"><img src="asset/images/closeforbig.png" alt=""></button>
-              
-            </div>
-        </nav>
-        <div class="container-fluid " >
-            <div class="container  ">
-                <div class="heading ">
-                    <p>
-                        Pixel<span class="six">6</span> Web Studio Pvt. Ltd.(c) 2018
-                        Corporation. All rights reserved.
-                    </p>
-                </div>
-                <div class="blink-container">
-                    <!-- <p id="demo"></p> -->
-                    <div class="line txt " id="demo"> 0100100100101 </div>
-                    <div class="line margine-1">11001010111001</div>
-                    <div class="line margine-1">010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100</div>
-                    <div class="line margine-1">010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;101</div>
-                    <div class="line margine-1">110&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0101001</div>
-                    <div class="line margine-1">111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0110010</div>
-                    <div class="line margine-1">110</div>
-                    <div class="line margine-1">100</div>
-                    <div class="line margine-1">&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0101</div>
-                    <div class="line margine-1">&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0110</div>
-                </div>
-                <div class="instruction_px">
-                    <p>Type "help " to see a list of commands</p>
-                </div>
-                <div class="prompt display_output">
-                   <!--genearated path -->
-                  <!-- display command output -->
-                </div>
-            </div>
+        <div class="btn">
+          <button class="btnremove" id="minmaxbtn">
+            <img src="asset/images/minimize.png" alt="" />
+            <!-- <span id="underscore">_</span> -->
+          </button>
+          <button
+            class="btnremove"
+            id="bigscreen-minmaxbtn"
+            style="display: none"
+          >
+            <img src="asset/images/bigscreenminimize.png" alt="" />
+          </button>
+          <button class="btnremove" id="resize">
+            <img src="asset/images/resize.png" alt="" />
+          </button>
+          <button class="btnremove d-none" id="restore">
+            <img src="asset/images/restore.png" alt="restore" />
+          </button>
+          <button class="btnclose">
+            <img src="asset/images/close.png" alt="" />
+          </button>
+          <button id="crossBtnBigScreen" style="display: none">
+            <img src="asset/images/closeforbig.png" alt="" />
+          </button>
         </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="container">
+          <div class="heading">
+            <p>
+              Pixel<span class="six">6</span> Web Studio Pvt. Ltd.(c) 2018
+              Corporation. All rights reserved.
+            </p>
+          </div>
+          <div class="blink-container">
+            <!-- <p id="demo"></p> -->
+            <div class="line txt" id="demo">0100100100101</div>
+            <div class="line margine-1">11001010111001</div>
+            <div class="line margine-1">
+              010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100
+            </div>
+            <div class="line margine-1">
+              010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;101
+            </div>
+            <div class="line margine-1">
+              110&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0101001
+            </div>
+            <div class="line margine-1">
+              111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0110010
+            </div>
+            <div class="line margine-1">110</div>
+            <div class="line margine-1">100</div>
+            <div class="line margine-1">
+              &nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0101
+            </div>
+            <div class="line margine-1">
+              &nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0110
+            </div>
+          </div>
+          <div class="instruction_px">
+            <p>Type "help " to see a list of commands</p>
+          </div>
+          <div class="prompt display_output">
+            <!--genearated path -->
+            <!-- display command output -->
+          </div>
+        </div>
+      </div>
     </main>
     <div class="bottom-div d-flex d-none">
-        <div class="d-flex">
-            <p class="bottom-p6">
-                Pixel<span class="six" style="color: #c01a20;">6</span>
-            </p>
-        </div>
-        <div class="d-flex bottom-icon">
-            <button class="btnremove resize-bigscreen"><img src="asset/images/restore.png" alt="restore"></button>
-            <button class="btnremove" id="double-restore" style="display: none;"><img src="asset/images/bottomdivdoublerestore.png" alt="restore"></button>
-            <button class="btnclose crossbtn"><img src="asset/images/close.png" alt=""></button>
-        </div>
+      <div class="d-flex">
+        <p class="bottom-p6">
+          Pixel<span class="six" style="color: #c01a20">6</span>
+        </p>
+      </div>
+      <div class="d-flex bottom-icon">
+        <button class="btnremove resize-bigscreen">
+          <img src="asset/images/restore.png" alt="restore" />
+        </button>
+        <button class="btnremove" id="double-restore" style="display: none">
+          <img src="asset/images/bottomdivdoublerestore.png" alt="restore" />
+        </button>
+        <button class="btnclose crossbtn">
+          <img src="asset/images/close.png" alt="" />
+        </button>
+      </div>
     </div>
-    <script type=module src="script.js"></script>
-</body>
-
+    <script type="module" src="script.js"></script>
+  </body>
 </html>

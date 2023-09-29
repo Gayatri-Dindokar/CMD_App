@@ -24,14 +24,20 @@ const path = () => {
 
     const inputField = newpath.querySelector(".input-field");
     inputField.focus();
-    document.addEventListener("click",(event)=>{
-        if(event.target !== inputField){
-            inputField.focus();
-            console.log("gayari dindokar")
-        }
-    })
-
+    
 };
+
+document.addEventListener("click",(event)=>{
+    const inputField = document.querySelectorAll(".input-field");
+    inputField.forEach(input=>{
+        input.focus();
+    })
+    // const inputField = document.querySelectorAll(".input_getquote");
+    // inputField.forEach(input=>{
+    //     input.focus();
+    // })
+    
+})
 
 path();
 
@@ -99,7 +105,7 @@ const get_quote = () => {
 
           <div id="question3" style="display: none;">
               <p><span> > </span>what is your phone no?</p>
-               <p> <span>></span><input type="number" id="phoneInput" class="input_getquote"> </p>
+               <p> <span>></span><input type="tel" id="phoneInput" class="input_getquote num"> </p>
           </div>
 
          <div id="question4" style="display: none;">
@@ -152,6 +158,9 @@ const get_quote = () => {
     const inputFieldquotes = que1.querySelector(".input_getquote");
     inputFieldquotes.focus();
 
+
+   
+
     //we created divs of quetions and put it into an array to get one by one que//
     const questions = [
         "question1",
@@ -168,11 +177,13 @@ const get_quote = () => {
         "question12",
     ];
     let currentIndex = 0;
-    console.log("dghdjgdrgfg");
+    // console.log("dghdjgdrgfg");
 
     //display block the quetions
     function showQuestion(index) {
         document.getElementById(questions[index]).style.display = "block";
+        
+       
     }
     //for next quetions
     function showNextQuestion() {
@@ -226,17 +237,34 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("phoneInput").addEventListener("keyup", function (event) {
+  
+
+    document.getElementById("phoneInput").addEventListener("keydown", function (event) {
         let phoneInput = document.getElementById("phoneInput");
-        let phoneNo = document.getElementById("phoneInput").value;
+        console.log(phoneInput.value.length,'phoneNo.length');
+        if(phoneInput.value.length >10){
+
+            phoneInput.value=phoneInput.value.slice(0,10);
+            // alert("Enter a valid  10 digits number");
+            // phoneInput.value = "";
+        }
+      
+        
         if (event.key === "Enter") {
-            phoneNo = phoneNo.replace(/\D/g, "");
-            if (phoneNo.trim() == "") {
+            phoneInput.value = phoneInput.value.replace(/\D/g, "");
+            if (phoneInput.value.trim() == "") {
                 alert("Enter a Number");
-            } else if ((!/^\d{10}$/.test(phoneNo))) {
-                alert("Enter a valid  10 digits number");
+            }   else  if(phoneInput.value.length < 9 ){
+                alert("enter a valid number with at least 10 digit");
                 phoneInput.value = "";
-            } else {
+            }
+            
+            // else if ((!/^\d{10}$/.test(phoneInput.value)) ) {
+            //     alert("Enter a valid  10 digits number");
+            //     phoneInput.value = "";
+            //    } 
+       
+               else {
                 showNextQuestion();
                 document.getElementById(questions[currentIndex]).querySelector("input").focus();
             }
@@ -596,8 +624,8 @@ mydiv.addEventListener('mousemove', function (event) {
         // mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
         var pageWidth = window.innerWidth;
 var pageHeight = window.innerHeight;
-console.log(pageWidth,pageHeight);
-console.log((mousePosition.x + offset[0]),'(mousePosition.x + offset[0])');
+// console.log(pageWidth,pageHeight);
+// console.log((mousePosition.x + offset[0]),'(mousePosition.x + offset[0])');
 if((mousePosition.x + offset[0])>0)
 { mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
 
