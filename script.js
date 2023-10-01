@@ -24,19 +24,19 @@ const path = () => {
 
     const inputField = newpath.querySelector(".input-field");
     inputField.focus();
-    
+
 };
 
-document.addEventListener("click",(event)=>{
+document.addEventListener("click", (event) => {
     const inputField = document.querySelectorAll(".input-field");
-    inputField.forEach(input=>{
-        input.focus();
-    })
-    // const inputField = document.querySelectorAll(".input_getquote");
-    // inputField.forEach(input=>{
-    //     input.focus();
-    // })
-    
+    inputField.forEach(input => {
+            input.focus();
+        })
+        // const inputField = document.querySelectorAll(".input_getquote");
+        // inputField.forEach(input=>{
+        //     input.focus();
+        // })
+
 })
 
 path();
@@ -58,32 +58,32 @@ async function showHelp() {
 };
 
 //when user type home command//
-const showHome = async () => {
+const showHome = async() => {
     const html = await showHtmlModel.showHome();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 
 //when user type about command//
-const showAbout = async () => {
+const showAbout = async() => {
     const html = await showHtmlModel.showAbout();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 
 //when user type projects command//
-const showProjects = async () => {
+const showProjects = async() => {
     const html = await showHtmlModel.showprojects();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 
 //when user type contact command//
-const showContact = async () => {
+const showContact = async() => {
     const html = await showHtmlModel.showContact();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 
 };
 
 //when user type jobs command//
-const showJobs = async () => {
+const showJobs = async() => {
     const html = await showHtmlModel.showJobs();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
@@ -152,14 +152,89 @@ const get_quote = () => {
                <p class='message'><input type="text" id="successfull" value="your response is succesfully submmited" class="input_getquote"></p>
               <p class='message'><input type="text" id="resubmission-succesfull"  class="input_getquote"></p>
        </div>
+
+       
            
            </form>`;
+
+    // displayOutputContainer.insertAdjacentElement("beforeend", que1);
+    // const inputFieldquotes = que1.querySelectorAll(".input_getquote");
+
+    // inputFieldquotes.focus();
+
+    // document.addEventListener("click", () => {
+    //     inputFieldquotes.forEach((inputField) => {
+
+    //         inputField.focus();
+
+    //     });
+
+    // })
+
     displayOutputContainer.insertAdjacentElement("beforeend", que1);
-    const inputFieldquotes = que1.querySelector(".input_getquote");
-    inputFieldquotes.focus();
+    // const inputFieldsQuotes = que1.querySelectorAll(".input_getquote");
+
+    // // Focus the first input field
+    // if (inputFieldsQuotes.length > 0) {
+    //     inputFieldsQuotes[0].focus();
+    // }
+
+    // // Add a click event listener to each input field
+    // inputFieldsQuotes.forEach((inputField) => {
+    //     inputField.addEventListener("click", () => {
+    //         inputField.focus();
+    //     });
+    // });
+
+    // document.addEventListener("click", (event) => {
+    //     // Check if the clicked element is an input field with the class "input_getquote"
+    //     if (event.target.classList.contains("input_getquote")) {
+    //         event.target.focus();
+    //     }
+    // });
+
+    const inputFieldsQuotes = que1.querySelectorAll(".input_getquote");
+
+    // Focus the first input field
+    if (inputFieldsQuotes.length > 0) {
+        inputFieldsQuotes[0].focus();
+    }
+
+    // Add a click event listener to each input field
+    inputFieldsQuotes.forEach((inputField) => {
+        inputField.addEventListener("click", () => {
+            inputField.focus();
+        });
+    });
+
+    document.addEventListener("click", (event) => {
+        // Check if the clicked element is an input field with the class "input_getquote"
+        if (event.target.classList.contains("input_getquote")) {
+            event.target.focus();
+        } else {
+            // If clicked outside of an input field, focus the first input field
+            if (inputFieldsQuotes.length > 0) {
+                // inputFieldsQuotes[0].focus();
+                focusOnInputsOfCurrentQuestion()
+            }
+        }
+    });
+
+    function focusOnInputsOfCurrentQuestion() {
+        const currentQuestion = document.getElementById(questions[currentIndex]);
+        const inputFields = currentQuestion.querySelectorAll(".input_getquote");
+
+        if (inputFields.length > 0) {
+            inputFields[0].focus();
+        }
+    }
 
 
-   
+
+
+
+
+
 
     //we created divs of quetions and put it into an array to get one by one que//
     const questions = [
@@ -182,8 +257,8 @@ const get_quote = () => {
     //display block the quetions
     function showQuestion(index) {
         document.getElementById(questions[index]).style.display = "block";
-        
-       
+
+
     }
     //for next quetions
     function showNextQuestion() {
@@ -195,15 +270,28 @@ const get_quote = () => {
         }
     }
 
+    function exitFunction() {
+        path();
+        // Handle the "exit" input here, e.g., show a different path or perform some other action
+        console.log("User typed 'exit' in input field");
+    }
+
+
     // after 'enter' key is press  focuses the next quetions//
-    document.getElementById("nameInput").addEventListener("keyup", function (event) {
+    document.getElementById("nameInput").addEventListener("keyup", function(event) {
         let nameInput = document.getElementById("nameInput");
         let store = document.getElementById("nameInput").value;
 
+
+
         if (event.key === "Enter") {
+
             if (store.trim() == "") {
                 alert("Enter a Name");
             }
+            // else if (store.toLowerCase() === "exit") { // Check if input is "exit"
+            //     exitFunction(); // Call the exit function
+            // }
             else if (store.length > 0) {
                 let spli = store.split(" ");
                 //    console.log(spli);
@@ -213,19 +301,24 @@ const get_quote = () => {
                     nameInput.value = "";
                 } else {
                     showNextQuestion();
-                    document.getElementById(questions[currentIndex]).querySelector("input").focus();
+                    focusOnInputsOfCurrentQuestion();
+                    // document.getElementById(questions[currentIndex]).querySelector("input").focus();
                 }
             }
         }
     });
-    document.getElementById("emailInput").addEventListener("keyup", function (event) {
+    document.getElementById("emailInput").addEventListener("keyup", function(event) {
         let email = document.getElementById("emailInput").value;
         let emailInput = document.getElementById("emailInput");
 
         if (event.key === "Enter") {
+
             if (email.trim() == "") {
                 alert("Enter a Email");
             }
+            // else if (email.toLowerCase() === "exit") { // Check if input is "exit"
+            //     exitFunction(); // Call the exit function
+            // }
             const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             if (!email.match(emailPattern)) {
                 console.log("incorrect email");
@@ -233,64 +326,87 @@ const get_quote = () => {
                 emailInput.value = "";
             } else {
                 showNextQuestion();
-                document.getElementById(questions[currentIndex]).querySelector("input").focus();
+                focusOnInputsOfCurrentQuestion();
+                // document.getElementById(questions[currentIndex]).querySelector("input").focus();
             }
         }
     });
-  
 
-    document.getElementById("phoneInput").addEventListener("keydown", function (event) {
+
+    document.getElementById("phoneInput").addEventListener("keydown", function(event) {
         let phoneInput = document.getElementById("phoneInput");
-        console.log(phoneInput.value.length,'phoneNo.length');
-        if(phoneInput.value.length >10){
+        console.log(phoneInput.value.length, 'phoneNo.length');
+        if (phoneInput.value.length > 10) {
 
-            phoneInput.value=phoneInput.value.slice(0,10);
+            phoneInput.value = phoneInput.value.slice(0, 10);
             // alert("Enter a valid  10 digits number");
             // phoneInput.value = "";
         }
-      
-        
+
+
         if (event.key === "Enter") {
             phoneInput.value = phoneInput.value.replace(/\D/g, "");
             if (phoneInput.value.trim() == "") {
                 alert("Enter a Number");
-            }   else  if(phoneInput.value.length < 9 ){
+            }
+            //  else if (phoneInput.value.toLowerCase() === "exit") { // Check if input is "exit"
+            //     exitFunction(); // Call the exit function
+            // }
+            else if (phoneInput.value.length < 9) {
                 alert("enter a valid number with at least 10 digit");
                 phoneInput.value = "";
             }
-            
+
             // else if ((!/^\d{10}$/.test(phoneInput.value)) ) {
             //     alert("Enter a valid  10 digits number");
             //     phoneInput.value = "";
             //    } 
-       
-               else {
+            else {
+                showNextQuestion();
+                focusOnInputsOfCurrentQuestion();
+                // document.getElementById(questions[currentIndex]).querySelector("input").focus();
+            }
+        }
+    });
+    document.getElementById("requireInput").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            const requireInput = document.getElementById("requireInput").value;
+            if (requireInput.trim().toLowerCase() === "exit") {
+                exitFunction();
+            } else {
                 showNextQuestion();
                 document.getElementById(questions[currentIndex]).querySelector("input").focus();
             }
         }
     });
-    document.getElementById("requireInput").addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            showNextQuestion();
-            document.getElementById(questions[currentIndex]).querySelector("input").focus();
-        }
-    });
 
-    document.getElementById("whenInput").addEventListener("keydown", function (event) {
+    document.getElementById("whenInput").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
-            showNextQuestion();
-            document.getElementById(questions[currentIndex]).querySelector(".textarea").focus();
+            const whenInput = document.getElementById("whenInput").value;
+            if (whenInput.trim().toLowerCase() === "exit") {
+                exitFunction();
+            } else {
+                showNextQuestion();
+                document.getElementById(questions[currentIndex]).querySelector(".textarea").focus();
+            }
         }
     });
-    document.getElementById("Project-Brief").addEventListener("keydown", function (event) {
+    document.getElementById("Project-Brief").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
-            showNextQuestion();
+            const projectBriefInput = document.getElementById("Project-Brief").value;
+            if (projectBriefInput.trim().toLowerCase() === "exit") {
+                exitFunction();
+            } else
+                showNextQuestion();
             document.getElementById(questions[currentIndex]).querySelector("input").focus();
         }
     });
-    document.getElementById("submitInput").addEventListener("keyup", function (event) {
+    document.getElementById("submitInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
+            const submit = document.getElementById("submitInput").value;
+            if (submit.trim().toLowerCase() === "exit") {
+                exitFunction();
+            }
             const conform = document.getElementById("submitInput").value;
             if (conform == "y") {
                 submitInput.setAttribute("readonly", true);
@@ -317,8 +433,12 @@ const get_quote = () => {
         }
     });
 
-    document.getElementById("messageNo").addEventListener("keyup", function (event) {
+    document.getElementById("messageNo").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
+            const message = document.getElementById("messageNo").value;
+            if (message.trim().toLowerCase() === "exit") {
+                exitFunction();
+            }
             const conform = document.getElementById("messageNo").value;
             if (conform == "y") {
                 messageNo.setAttribute("readonly", true);
@@ -334,7 +454,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("resubmission").addEventListener("keyup", function (event) {
+    document.getElementById("resubmission").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("resubmission").value;
             if (conform == "y") {
@@ -362,7 +482,7 @@ const get_quote = () => {
 
 
 // main function
-container.addEventListener("keyup", async function (e) {
+container.addEventListener("keyup", async function(e) {
     // console.log(e.target);
     if (e.target.matches(".input")) {
         const userinput = e.target.value.trim();
@@ -384,6 +504,8 @@ container.addEventListener("keyup", async function (e) {
                     showJobs();
                 } else if (userinput == "contact") {
                     showContact();
+                } else if (userinput == "exit") {
+                    maincon.style.display = "none";
                 } else {
                     if (userinput != '') {
                         addcommand();
@@ -399,6 +521,7 @@ container.addEventListener("keyup", async function (e) {
         }
     }
 });
+
 function stopDragging() {
     document.onmousemove = null;
     document.onmouseup = null;
@@ -424,8 +547,8 @@ const desktopIcon = document.querySelector(".desktop-icon");
 const navbar = document.querySelector(".navbar");
 const mydivid = document.getElementById("mydiv");
 
-function movingContainer(){
-    mydiv.addEventListener('mousedown', function (e) {
+function movingContainer() {
+    mydiv.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
             isDown = true;
             offset = [
@@ -438,50 +561,50 @@ function movingContainer(){
 
 // let isMinimisez = true;
 minMaxBtn.addEventListener("click", () => {
-        mydivid.style.width = "254px";
-        mydivid.style.height = "35px";
-        mydivid.style.top = "98vh";
-        mydivid.style.left = "127px";
-        mydivheader.classList.add("color");
-        mydivid.classList.add("hidden-scroll");
-        mydivid.classList.add("transition");
-        mydiv.addEventListener('mousedown', function (e) {
-            if (e.button === 0) {
-                isDown = false;
-                offset = [
-                    mydiv.offsetLeft - e.clientX,
-                    mydiv.offsetTop - e.clientY
-                ];
-            }
-        }, true);
-        
-          // mydiv.style.position = "fixed";
-        // isDown = false;
-        // minMaxBtn.style.display ="none";
-        //    if(isMinimisez){
-        //     setTimeout(()=>{
-        //         mydiv.style.display = "none";
-        //         bottomDiv.style.display = "flex";
+    mydivid.style.width = "254px";
+    mydivid.style.height = "35px";
+    mydivid.style.top = "98vh";
+    mydivid.style.left = "127px";
+    mydivheader.classList.add("color");
+    mydivid.classList.add("hidden-scroll");
+    mydivid.classList.add("transition");
+    mydiv.addEventListener('mousedown', function(e) {
+        if (e.button === 0) {
+            isDown = false;
+            offset = [
+                mydiv.offsetLeft - e.clientX,
+                mydiv.offsetTop - e.clientY
+            ];
+        }
+    }, true);
 
-        //     },100);
-        //      isMinimisez = false;
-        //    }
-        // maincon.style.display = "none";
-        //   bottomDiv.style.display = "flex";
+    // mydiv.style.position = "fixed";
+    // isDown = false;
+    // minMaxBtn.style.display ="none";
+    //    if(isMinimisez){
+    //     setTimeout(()=>{
+    //         mydiv.style.display = "none";
+    //         bottomDiv.style.display = "flex";
 
-        // hiddenNav.style.display ="block";
+    //     },100);
+    //      isMinimisez = false;
+    //    }
+    // maincon.style.display = "none";
+    //   bottomDiv.style.display = "flex";
 
-        //  maincon.style.position ="absolute";
+    // hiddenNav.style.display ="block";
 
-        // mydiv.style.position = "fixed";
+    //  maincon.style.position ="absolute";
 
-        //  maincon.classList.add('fadeout')
-        // maincon.classList.add('fadeout');
-        // bottomDiv.style.display = "bl";
-        // maincon.classList.add('fadeOutBottomLeft');
+    // mydiv.style.position = "fixed";
+
+    //  maincon.classList.add('fadeout')
+    // maincon.classList.add('fadeout');
+    // bottomDiv.style.display = "bl";
+    // maincon.classList.add('fadeOutBottomLeft');
 
 
-    })
+})
 
 resizeBigscreen.addEventListener("click", () => {
     maincon.style.display = "block";
@@ -491,8 +614,8 @@ resizeBigscreen.addEventListener("click", () => {
     mydivid.style.left = "50%";
     mydivid.style.top = "50%";
     mydivid.classList.add("show-scroll");
-   
- // maincon.classList.remove('fadeout');
+
+    // maincon.classList.remove('fadeout');
     // maincon.classList.add('fadeInAnimation');
 
 })
@@ -511,7 +634,7 @@ resize.addEventListener("click", () => {
     minMaxBtn.style.display = "none";
     mydivid.classList.add("show-scroll");
     movingContainer();
-   })
+})
 
 restore.addEventListener("click", () => {
     maincon.style.width = "800px";
@@ -520,7 +643,7 @@ restore.addEventListener("click", () => {
     restore.style.display = "none";
     mydivid.classList.add("show-scroll");
     movingContainer();
-    })
+})
 
 
 function closeContainer() {
@@ -529,8 +652,10 @@ function closeContainer() {
     // maincon.classList.add('fadeout');
     // maincon.classList.remove('fadeInAnimation');
     bottomDiv.style.display = "none";
-    
+
+
 }
+
 function openContainer() {
     // maincon.classList.add('fadeInAnimation');
     maincon.style.display = 'block';
@@ -544,13 +669,14 @@ function openContainer() {
     restore.style.display = "none";
     mydivid.classList.add("show-scroll");
     movingContainer();
-      // minMaxBtn.style.display="block";
+    // minMaxBtn.style.display="block";
     // maincon.classList.remove('fadeout');
 }
 crossbtn.addEventListener("click", () => {
     bottomDiv.style.display = "none";
 
 });
+
 function mainconNone() {
     maincon.style.display = 'none';
     bottomDiv.style.display = "none";
@@ -571,7 +697,7 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
     mydivid.style.left = "127px";
     mydivid.classList.add('minimized');
     mydivid.classList.add("hidden-scroll");
-    mydiv.addEventListener('mousedown', function (e) {
+    mydiv.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
             isDown = false;
             offset = [
@@ -598,7 +724,7 @@ var mydiv = document.getElementById("mydiv");
 var originalWidth = mydiv.style.width;
 var originalHeight = mydiv.style.height;
 
-mydiv.addEventListener('mousedown', function (e) {
+mydiv.addEventListener('mousedown', function(e) {
     if (e.button === 0) {
         isDown = true;
         offset = [
@@ -608,13 +734,13 @@ mydiv.addEventListener('mousedown', function (e) {
     }
 }, true);
 
-mydiv.addEventListener('mouseup', function () {
+mydiv.addEventListener('mouseup', function() {
     isDown = false;
 }, true);
 
-mydiv.addEventListener('mousemove', function (event) {
+mydiv.addEventListener('mousemove', function(event) {
     event.preventDefault();
-    
+
     if (isDown) {
         mousePosition = {
             x: event.clientX,
@@ -623,17 +749,17 @@ mydiv.addEventListener('mousemove', function (event) {
         // mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
         // mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
         var pageWidth = window.innerWidth;
-var pageHeight = window.innerHeight;
-// console.log(pageWidth,pageHeight);
-// console.log((mousePosition.x + offset[0]),'(mousePosition.x + offset[0])');
-if((mousePosition.x + offset[0])>0)
-{ mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
+        var pageHeight = window.innerHeight;
+        // console.log(pageWidth,pageHeight);
+        // console.log((mousePosition.x + offset[0]),'(mousePosition.x + offset[0])');
+        if ((mousePosition.x + offset[0]) > 0) {
+            mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
 
-}
-mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
- if((mousePosition.y + offset[1])>(pageHeight-600)){
+        }
+        mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
+        if ((mousePosition.y + offset[1]) > (pageHeight - 600)) {
 
- }
+        }
     }
 }, true);
 
@@ -644,4 +770,3 @@ const recy = document.getElementById("recyclebin");
 recy.addEventListener("click", () => {
     alert("recycle bin is empty");
 })
-
