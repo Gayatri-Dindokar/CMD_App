@@ -113,7 +113,7 @@ const get_quote = () => {
 
           <div id="question3" style="display: none;">
               <p><span> > </span>what is your phone no?</p>
-               <p> <span>></span><input type="tel"  maxlength="10" id="phoneInput" class="input_getquote num"> </p>
+               <p> <span>></span><input type="number"    maxlength="10" id="phoneInput" class="input_getquote num"> </p>
           </div>
 
          <div id="question4" style="display: none;">
@@ -344,15 +344,19 @@ const get_quote = () => {
     document.getElementById("phoneInput").addEventListener("keydown", function(event) {
         let phoneInput = document.getElementById("phoneInput");
         console.log(phoneInput.value.length, 'phoneNo.length');
-        // if (phoneInput.value.length > 10) {
+        if (phoneInput.value.length > 9) {
 
-        //     phoneInput.value = phoneInput.value.slice(0, 10);
-        //     alert("Enter a valid  10 digits number");
-        //     phoneInput.value = "";
-        // }
+            phoneInput.value = phoneInput.value.slice(0, 10);
+            alert("Enter a valid  10 digits number");
+            phoneInput.value = "";
+        }
 
 
         if (event.key === "Enter") {
+            // if(!(/^[0-9]+$/.test(phoneInput.value))){
+            //     alert("jhgfjhg");
+            //      phoneInput.value = "";
+            // }
             phoneInput.value = phoneInput.value.replace(/\D/g, "");
             if (phoneInput.value.trim() == "") {
                 alert("Enter a Number");
@@ -365,10 +369,11 @@ const get_quote = () => {
                 phoneInput.value = "";
             }
 
-            // else if ((!/^\d{10}$/.test(phoneInput.value)) ) {
-            //     alert("Enter a valid  10 digits number");
-            //     phoneInput.value = "";
-            //    } 
+            else if ((!/^\d{10}$/.test(phoneInput.value)) ) {
+                alert("Enter a valid  10 digits number");
+                phoneInput.value = "";
+                
+               } 
             else {
                 showNextQuestion();
                 focusOnInputsOfCurrentQuestion();
