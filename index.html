@@ -63,7 +63,7 @@
 
    </div>
     <main class="maincon" id="mydiv">
-      <nav class="navbar" id="mydivheader">
+      <nav class="navbar color  " id="mydivheader">
         <div><img class="px-icon" src="asset/images/cmd.png" alt="" /></div>
         <p class="pixel-6">Pixel<span class="six">6</span></p>
 
@@ -82,6 +82,9 @@
           <button class="btnremove" id="resize">
             <img src="asset/images/resize.png" alt="" />
           </button>
+          <button class="btnremove d-none" id="resize-at-minsize">
+            <img src="asset/images/resize.png" alt="" />
+          </button>
           <button class="btnremove d-none" id="restore">
             <img src="asset/images/restore.png" alt="restore" />
           </button>
@@ -93,6 +96,8 @@
           </button>
         </div>
       </nav>
+
+
       <div class="container-fluid">
         <div class="container">
           <div class="heading">
@@ -129,7 +134,7 @@
           <div class="instruction_px">
             <p>Type "help " to see a list of commands</p>
           </div>
-          <div class="prompt display_output">
+          <div class="prompt display_output" id="displayOutputContainer">
             <!--genearated path -->
             <!-- display command output -->
           </div>

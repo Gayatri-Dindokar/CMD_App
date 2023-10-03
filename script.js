@@ -1,6 +1,9 @@
 // import showHtmlModel from './model/showHtml.js'
 import * as showHtmlModel from './model/showHtml.js';
 
+document.addEventListener('click',function(event){
+    console.log(event.target);
+})
 const userinput = document.querySelector(".input");
 const main = document.querySelector(".main");
 const help = document.querySelector(".help");
@@ -11,7 +14,12 @@ const containerFluid = document.querySelector(".container-fluid");
 
 const displayOutputContainer = document.querySelector(".display_output");
 const maincon = document.querySelector(".maincon");
-// 
+const resizeAtMinSize = document.getElementById("resize-at-minsize");
+
+
+function clearContainer(){
+    paths.insertAdjacentElement= "" ;
+}
 
 
 const path = () => {
@@ -105,7 +113,7 @@ const get_quote = () => {
 
           <div id="question3" style="display: none;">
               <p><span> > </span>what is your phone no?</p>
-               <p> <span>></span><input type="tel" id="phoneInput" class="input_getquote num"> </p>
+               <p> <span>></span><input type="tel"  maxlength="10" id="phoneInput" class="input_getquote num"> </p>
           </div>
 
          <div id="question4" style="display: none;">
@@ -336,12 +344,12 @@ const get_quote = () => {
     document.getElementById("phoneInput").addEventListener("keydown", function(event) {
         let phoneInput = document.getElementById("phoneInput");
         console.log(phoneInput.value.length, 'phoneNo.length');
-        if (phoneInput.value.length > 10) {
+        // if (phoneInput.value.length > 10) {
 
-            phoneInput.value = phoneInput.value.slice(0, 10);
-            // alert("Enter a valid  10 digits number");
-            // phoneInput.value = "";
-        }
+        //     phoneInput.value = phoneInput.value.slice(0, 10);
+        //     alert("Enter a valid  10 digits number");
+        //     phoneInput.value = "";
+        // }
 
 
         if (event.key === "Enter") {
@@ -547,6 +555,9 @@ const desktopIcon = document.querySelector(".desktop-icon");
 const navbar = document.querySelector(".navbar");
 const mydivid = document.getElementById("mydiv");
 
+
+
+
 function movingContainer() {
     mydiv.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
@@ -558,8 +569,20 @@ function movingContainer() {
         }
     }, true);
 }
-
+// mydivheader.addEventListener("click",()=>{
+//    if(mydivid.style.width === "254px"){
+//     console.log("content");
+// mydiv.style.width ="800px";
+// mydiv.style.height = "600px";
+// mydiv.style.left = "50%";
+// mydiv.style.top = "50%";
+//    }
+// })
 // let isMinimisez = true;
+
+
+
+
 minMaxBtn.addEventListener("click", () => {
     mydivid.style.width = "254px";
     mydivid.style.height = "35px";
@@ -568,6 +591,22 @@ minMaxBtn.addEventListener("click", () => {
     mydivheader.classList.add("color");
     mydivid.classList.add("hidden-scroll");
     mydivid.classList.add("transition");
+    resizeAtMinSize.style.display = "block";
+    resize.style.display = "none";
+    mydiv.addEventListener("click",function(e){
+        if(e.target.matches('#mydivheader')){
+            
+            mydivid.style.width = "800px";
+            mydivid.style.height = "600px";
+            mydivid.style.left = "50%";
+            mydivid.style.top = "50%";
+            
+        } 
+    })
+  
+  
+   
+    
     mydiv.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
             isDown = false;
@@ -604,7 +643,9 @@ minMaxBtn.addEventListener("click", () => {
     // maincon.classList.add('fadeOutBottomLeft');
 
 
-})
+});
+
+
 
 resizeBigscreen.addEventListener("click", () => {
     maincon.style.display = "block";
@@ -634,8 +675,18 @@ resize.addEventListener("click", () => {
     minMaxBtn.style.display = "none";
     mydivid.classList.add("show-scroll");
     movingContainer();
+   
 })
 
+
+resizeAtMinSize.addEventListener("click",()=>{
+    mydivid.style.width = "800px";
+    mydivid.style.height = "600px";
+    mydivid.style.left = "50%";
+    mydivid.style.top = "50%";
+    resizeAtMinSize.style.display = "none";
+    resize.style.display = "block";
+})
 restore.addEventListener("click", () => {
     maincon.style.width = "800px";
     maincon.style.height = "600px";
@@ -656,7 +707,21 @@ function closeContainer() {
 
 }
 
+// function resetDisplayContainer() {
+//     // Get a reference to the displayOutputContainer
+//     const displayOutputContainer = document.getElementById("displayOutputContainer");
+
+// //    const displayOutputContainer = document.querySelector(".display_output");
+   
+//     // Clone and reappend all existing elements back to the container
+//     const existingElements = Array.from(displayOutputContainer.children);
+//     existingElements.forEach(function(element) {
+//     const clonedElement = element.cloneNode(true);
+//     displayOutputContainer.appendChild(clonedElement);
+//     });
+//    }
 function openContainer() {
+    location.reload();
     // maincon.classList.add('fadeInAnimation');
     maincon.style.display = 'block';
     bottomDiv.style.display = "none";
@@ -669,9 +734,45 @@ function openContainer() {
     restore.style.display = "none";
     mydivid.classList.add("show-scroll");
     movingContainer();
-    // minMaxBtn.style.display="block";
-    // maincon.classList.remove('fadeout');
+    // clearContainer();
+    // resetDisplayContainer();
+ 
+    //hello
+//    const firstPath = displayOutputContainer.firstElementChild;
+//    displayOutputContainer.innerHTML="";
+//    if(firstPath){
+//     displayOutputContainer.appendChild(firstPath);
+  
+//     const inputFields = firstPath.querySelectorAll("input[type='text']"); 
+//     inputFields.forEach(function(inputField) { 
+//         inputField.value = ""; 
+//         inputField.focus();
+//      });
+//      const firstInputField = firstPath.querySelector("input[type='text']");
+//      if(firstInputField){
+//         firstInputField .focus();
+//      }
+
+//    }
+//    const allPaths = document.querySelectorAll(".newgeneratedpath");
+//    for(let i=1; i<allPaths.length;i++){
+// allPaths[i].remove();
+// const inputField = allPaths[0].querySelector(".input-field");
+// inputField.value="";
+// setTimeout(()=>{
+//    inputField.focus();
+// },0);
+// console.log(allPaths);
+//     }
+
+   
+    minMaxBtn.style.display="block";
+    maincon.classList.remove('fadeout');
 }
+
+
+
+
 crossbtn.addEventListener("click", () => {
     bottomDiv.style.display = "none";
 
@@ -697,6 +798,8 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
     mydivid.style.left = "127px";
     mydivid.classList.add('minimized');
     mydivid.classList.add("hidden-scroll");
+    resizeAtMinSize.style.display = "block";
+    resize.style.display = "none";
     mydiv.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
             isDown = false;

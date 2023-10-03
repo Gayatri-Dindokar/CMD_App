@@ -159,9 +159,10 @@ transition : all 0.5s;
         top: 50%;
         transform: translate(-50%, -50%);
         position: fixed;
+        /* position: relative; */
         z-index: 9;
         width: 800px;
-        resize: both;
+        /* resize: both; */
         overflow: auto;
       
       
@@ -169,8 +170,8 @@ transition : all 0.5s;
 
     #mydivheader {
         padding: 3px;
-        /* cursor: pointer; */
         cursor: pointer;
+        /* cursor: pointer; */
         z-index: 10;
         background-color: #404040;
         color: #fff;
@@ -719,17 +720,16 @@ transition : all 0.5s;
     transition: opacity 5s; /* Add a transition for smooth fading */
 }
 
-/* .num::-webkit-outer-spin-button,
- .num::-webkit-inner-spin-button {
- -webkit-appearance: none;
-margin: 0;
- }
- input[type=number] {
- -moz-appearance: textfield;
- 
-} */
-
-/* .num::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-display: none;
-} */
+.small-size{
+    width: 254px;
+    height: 35px;
+    top: 90vh;
+    left: 127px;
+}
+.large-size{
+    width: 800px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
