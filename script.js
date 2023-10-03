@@ -1,7 +1,7 @@
 // import showHtmlModel from './model/showHtml.js'
 import * as showHtmlModel from './model/showHtml.js';
 
-document.addEventListener('click',function(event){
+document.addEventListener('click', function(event) {
     console.log(event.target);
 })
 const userinput = document.querySelector(".input");
@@ -17,8 +17,8 @@ const maincon = document.querySelector(".maincon");
 const resizeAtMinSize = document.getElementById("resize-at-minsize");
 
 
-function clearContainer(){
-    paths.insertAdjacentElement= "" ;
+function clearContainer() {
+    paths.insertAdjacentElement = "";
 }
 
 
@@ -103,22 +103,22 @@ const get_quote = () => {
     <form>
            <div id="question1" class="que1">
               <p class="q1"><span> > </span>what is your name?</p>
-              <p><span>></span> <input type="text" id="nameInput" class="input_getquote"   autocomplete="off" required pattern="/^[A-Za-z\s]*$/"> </p>
+              <p><span>></span> <input data-question-index="0" type="text" id="nameInput" class="input_getquote"   autocomplete="off" required pattern="/^[A-Za-z\s]*$/"> </p>
        </div>
 
           <div id="question2" style="display: none;">
              <p><span> > </span> what is your email?</p>
-             <p><span>></span> <input type="email" id="emailInput" class="input_getquote" autocomplete="off"> </p>
+             <p><span>></span> <input data-question-index="1" type="email" id="emailInput" class="input_getquote" autocomplete="off"> </p>
       </div>
 
           <div id="question3" style="display: none;">
               <p><span> > </span>what is your phone no?</p>
-               <p> <span>></span><input type="number"    maxlength="10" id="phoneInput" class="input_getquote num"> </p>
+               <p> <span>></span><input data-question-index="2" type="tel"  inputmode="numeric"   maxlength="10" id="phoneInput" class="input_getquote num"> </p>
           </div>
 
          <div id="question4" style="display: none;">
            <p><span> > </span>What Do You Require?</p>
-         <p> <span>></span><input type="text" id="requireInput" class="input_getquote"> </p>
+         <p> <span>></span><input data-question-index="3" type="text" id="requireInput" class="input_getquote"> </p>
        </div>
 
           <div id="question5" style="display: none;">
@@ -269,12 +269,21 @@ const get_quote = () => {
 
     }
     //for next quetions
-    function showNextQuestion() {
-        if (currentIndex < questions.length) {
-            currentIndex++;
-            if (currentIndex < questions.length) {
-                showQuestion(currentIndex);
-            }
+    // function showNextQuestion() {
+    //     if (currentIndex < questions.length) {
+    //         currentIndex++;
+    //         if (currentIndex < questions.length) {
+    //             showQuestion(currentIndex);
+    //         }
+    //     }
+    // }
+
+    function focusOnInputsOfCurrentQuestion() {
+        const currentQuestion = document.getElementById(questions[currentIndex]);
+        const inputFields = currentQuestion.querySelectorAll(".input_getquote");
+
+        if (inputFields.length > 0) {
+            inputFields[0].focus();
         }
     }
 
@@ -308,8 +317,10 @@ const get_quote = () => {
                     alert("invalid pattern only alphabets are allowed");
                     nameInput.value = "";
                 } else {
-                    showNextQuestion();
-                    focusOnInputsOfCurrentQuestion();
+                    showQuestion(1);
+
+                    // showNextQuestion();
+                    // focusOnInputsOfCurrentQuestion();
                     // document.getElementById(questions[currentIndex]).querySelector("input").focus();
                 }
             }
@@ -333,61 +344,94 @@ const get_quote = () => {
                 alert("Incorrect Pattern Please Enter Correct Email Id");
                 emailInput.value = "";
             } else {
-                showNextQuestion();
+                showQuestion(2);
+                // showNextQuestion();
                 focusOnInputsOfCurrentQuestion();
                 // document.getElementById(questions[currentIndex]).querySelector("input").focus();
             }
         }
     });
 
+
+    // document.getElementById("phoneInput").addEventListener("input", function(event) {
+    //     const phoneInput = document.getElementById("phoneInput");
+    //     const inputValue = phoneInput.value.replace(/\D/g, ""); // Remove non-numeric characters
+
+    //     if (inputValue.length > 10) {
+    //         phoneInput.value = inputValue.slice(0, 10);
+    //     } else {
+    //         phoneInput.value = inputValue; // Update the input with the cleaned numeric value
+    //     }
+    // });
 
     document.getElementById("phoneInput").addEventListener("keydown", function(event) {
-        let phoneInput = document.getElementById("phoneInput");
-        console.log(phoneInput.value.length, 'phoneNo.length');
-        if (phoneInput.value.length > 9) {
-
-            phoneInput.value = phoneInput.value.slice(0, 10);
-            alert("Enter a valid  10 digits number");
-            phoneInput.value = "";
-        }
-
-
         if (event.key === "Enter") {
-            // if(!(/^[0-9]+$/.test(phoneInput.value))){
-            //     alert("jhgfjhg");
-            //      phoneInput.value = "";
-            // }
-            phoneInput.value = phoneInput.value.replace(/\D/g, "");
-            if (phoneInput.value.trim() == "") {
-                alert("Enter a Number");
-            }
-            //  else if (phoneInput.value.toLowerCase() === "exit") { // Check if input is "exit"
-            //     exitFunction(); // Call the exit function
-            // }
-            else if (phoneInput.value.length < 9) {
-                alert("enter a valid number with at least 10 digit");
-                phoneInput.value = "";
-            }
+            const phoneInput = document.getElementById("phoneInput");
+            const numericValue = phoneInput.value.replace(/\D/g, ""); // Remove non-numeric characters
 
-            else if ((!/^\d{10}$/.test(phoneInput.value)) ) {
-                alert("Enter a valid  10 digits number");
-                phoneInput.value = "";
-                
-               } 
-            else {
-                showNextQuestion();
-                focusOnInputsOfCurrentQuestion();
-                // document.getElementById(questions[currentIndex]).querySelector("input").focus();
+            if (numericValue.length !== 10) {
+                alert("Enter a valid 10-digit number");
+                phoneInput.value = ""; // Clear the input
+            } else {
+                // The input is a valid 10-digit number; you can proceed with your logic here.
+                // For example: showNextQuestion() and focusOnInputsOfCurrentQuestion()
             }
+            showQuestion(3);
+            // showNextQuestion();
+            focusOnInputsOfCurrentQuestion();
         }
+
     });
+
+
+    // document.getElementById("phoneInput").addEventListener("keydown", function(event) {
+    //     let phoneInput = document.getElementById("phoneInput");
+    //     console.log(phoneInput.value.length, 'phoneNo.length');
+    //     if (phoneInput.value.length > 9) {
+
+    //         phoneInput.value = phoneInput.value.slice(0, 10);
+    //         alert("Enter a valid  10 digits number");
+    //         phoneInput.value = "";
+    //     }
+
+
+    //     if (event.key === "Enter") {
+    //         // if(!(/^[0-9]+$/.test(phoneInput.value))){
+    //         //     alert("jhgfjhg");
+    //         //      phoneInput.value = "";
+    //         // }
+    //         phoneInput.value = phoneInput.value.replace(/\D/g, "");
+    //         if (phoneInput.value.trim() == "") {
+    //             alert("Enter a Number");
+    //         }
+    //         //  else if (phoneInput.value.toLowerCase() === "exit") { // Check if input is "exit"
+    //         //     exitFunction(); // Call the exit function
+    //         // }
+    //         else if (phoneInput.value.length < 9) {
+    //             alert("enter a valid number with at least 10 digit");
+    //             phoneInput.value = "";
+    //         }
+
+    //         else if ((!/^\d{10}$/.test(phoneInput.value)) ) {
+    //             alert("Enter a valid  10 digits number");
+    //             phoneInput.value = "";
+
+    //            } 
+    //         else {
+    //             showNextQuestion();
+    //             focusOnInputsOfCurrentQuestion();
+    //             // document.getElementById(questions[currentIndex]).querySelector("input").focus();
+    //         }
+    //     }
+    // });
     document.getElementById("requireInput").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             const requireInput = document.getElementById("requireInput").value;
             if (requireInput.trim().toLowerCase() === "exit") {
                 exitFunction();
             } else {
-                showNextQuestion();
+                showQuestion(4);
+                // showNextQuestion();
                 document.getElementById(questions[currentIndex]).querySelector("input").focus();
             }
         }
@@ -399,7 +443,8 @@ const get_quote = () => {
             if (whenInput.trim().toLowerCase() === "exit") {
                 exitFunction();
             } else {
-                showNextQuestion();
+                showQuestion(5);
+                // showNextQuestion();
                 document.getElementById(questions[currentIndex]).querySelector(".textarea").focus();
             }
         }
@@ -410,7 +455,8 @@ const get_quote = () => {
             if (projectBriefInput.trim().toLowerCase() === "exit") {
                 exitFunction();
             } else
-                showNextQuestion();
+                showQuestion(6);
+            // showNextQuestion();
             document.getElementById(questions[currentIndex]).querySelector("input").focus();
         }
     });
@@ -423,7 +469,8 @@ const get_quote = () => {
             const conform = document.getElementById("submitInput").value;
             if (conform == "y") {
                 submitInput.setAttribute("readonly", true);
-                showNextQuestion();
+                // showNextQuestion();
+                showQuestion(7);
                 document.getElementById(questions[currentIndex]).querySelector("input").focus();
                 path();
 
@@ -598,20 +645,20 @@ minMaxBtn.addEventListener("click", () => {
     mydivid.classList.add("transition");
     resizeAtMinSize.style.display = "block";
     resize.style.display = "none";
-    mydiv.addEventListener("click",function(e){
-        if(e.target.matches('#mydivheader')){
-            
+    mydiv.addEventListener("click", function(e) {
+        if (e.target.matches('#mydivheader')) {
+
             mydivid.style.width = "800px";
             mydivid.style.height = "600px";
             mydivid.style.left = "50%";
             mydivid.style.top = "50%";
-            
-        } 
+
+        }
     })
-  
-  
-   
-    
+
+
+
+
     mydiv.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
             isDown = false;
@@ -680,11 +727,11 @@ resize.addEventListener("click", () => {
     minMaxBtn.style.display = "none";
     mydivid.classList.add("show-scroll");
     movingContainer();
-   
+
 })
 
 
-resizeAtMinSize.addEventListener("click",()=>{
+resizeAtMinSize.addEventListener("click", () => {
     mydivid.style.width = "800px";
     mydivid.style.height = "600px";
     mydivid.style.left = "50%";
@@ -717,7 +764,7 @@ function closeContainer() {
 //     const displayOutputContainer = document.getElementById("displayOutputContainer");
 
 // //    const displayOutputContainer = document.querySelector(".display_output");
-   
+
 //     // Clone and reappend all existing elements back to the container
 //     const existingElements = Array.from(displayOutputContainer.children);
 //     existingElements.forEach(function(element) {
@@ -741,37 +788,37 @@ function openContainer() {
     movingContainer();
     // clearContainer();
     // resetDisplayContainer();
- 
+
     //hello
-//    const firstPath = displayOutputContainer.firstElementChild;
-//    displayOutputContainer.innerHTML="";
-//    if(firstPath){
-//     displayOutputContainer.appendChild(firstPath);
-  
-//     const inputFields = firstPath.querySelectorAll("input[type='text']"); 
-//     inputFields.forEach(function(inputField) { 
-//         inputField.value = ""; 
-//         inputField.focus();
-//      });
-//      const firstInputField = firstPath.querySelector("input[type='text']");
-//      if(firstInputField){
-//         firstInputField .focus();
-//      }
+    //    const firstPath = displayOutputContainer.firstElementChild;
+    //    displayOutputContainer.innerHTML="";
+    //    if(firstPath){
+    //     displayOutputContainer.appendChild(firstPath);
 
-//    }
-//    const allPaths = document.querySelectorAll(".newgeneratedpath");
-//    for(let i=1; i<allPaths.length;i++){
-// allPaths[i].remove();
-// const inputField = allPaths[0].querySelector(".input-field");
-// inputField.value="";
-// setTimeout(()=>{
-//    inputField.focus();
-// },0);
-// console.log(allPaths);
-//     }
+    //     const inputFields = firstPath.querySelectorAll("input[type='text']"); 
+    //     inputFields.forEach(function(inputField) { 
+    //         inputField.value = ""; 
+    //         inputField.focus();
+    //      });
+    //      const firstInputField = firstPath.querySelector("input[type='text']");
+    //      if(firstInputField){
+    //         firstInputField .focus();
+    //      }
 
-   
-    minMaxBtn.style.display="block";
+    //    }
+    //    const allPaths = document.querySelectorAll(".newgeneratedpath");
+    //    for(let i=1; i<allPaths.length;i++){
+    // allPaths[i].remove();
+    // const inputField = allPaths[0].querySelector(".input-field");
+    // inputField.value="";
+    // setTimeout(()=>{
+    //    inputField.focus();
+    // },0);
+    // console.log(allPaths);
+    //     }
+
+
+    minMaxBtn.style.display = "block";
     maincon.classList.remove('fadeout');
 }
 
