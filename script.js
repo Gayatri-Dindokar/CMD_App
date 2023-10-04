@@ -39,16 +39,16 @@ document.addEventListener("click", (event) => {
     const inputField = document.querySelectorAll(".input-field");
     inputField.forEach(input => {
             input.focus();
+        });
+
+        const inputField1 = document.querySelectorAll(".input_getquote");
+        inputField1.forEach(input=>{
+            input.focus();
         })
-        // const inputField = document.querySelectorAll(".input_getquote");
-        // inputField.forEach(input=>{
-        //     input.focus();
-        // })
 
 })
 
 path();
-
 
 // console.log(userinput.value);
 //if user enter other command which is not involve above addcommand will call//
@@ -103,7 +103,8 @@ const get_quote = () => {
     <form>
            <div id="question1" class="que1">
               <p class="q1"><span> > </span>what is your name?</p>
-              <p><span>></span> <input data-question-index="0" type="text" id="nameInput" class="input_getquote"   autocomplete="off" required pattern="/^[A-Za-z\s]*$/"> </p>
+              <p><span>></span> 
+              <input data-question-index="0" type="text" id="nameInput" class="input_getquote" autocomplete="off" required pattern="/^[A-Za-z\s]*$/"> </p>
        </div>
 
           <div id="question2" style="display: none;">
@@ -127,8 +128,9 @@ const get_quote = () => {
        </div>
 
           <div id="question6" style="display: none;">
-           <p><span > > </span>Project Brief</p>
-           <p style="display:flex;"><span style="padding-top: 4px; margin-right: 5px;">></span><textarea id="Project-Brief" class="input_getquote textarea" cols="80"></textarea>  </p>
+           <p><span> > </span>Project Brief</p>
+           <p style="display:flex;"><span id="project-arrow-span">></span>
+           <textarea id="Project-Brief" class="input_getquote textarea input" cols="80"></textarea>  </p>
       </div> 
 
        <div id="question7" style="display: none;">
@@ -194,48 +196,48 @@ const get_quote = () => {
     //     });
     // });
 
-    // document.addEventListener("click", (event) => {
-    //     // Check if the clicked element is an input field with the class "input_getquote"
-    //     if (event.target.classList.contains("input_getquote")) {
-    //         event.target.focus();
-    //     }
-    // });
-
-    const inputFieldsQuotes = que1.querySelectorAll(".input_getquote");
-
-    // Focus the first input field
-    if (inputFieldsQuotes.length > 0) {
-        inputFieldsQuotes[0].focus();
-    }
-
-    // Add a click event listener to each input field
-    inputFieldsQuotes.forEach((inputField) => {
-        inputField.addEventListener("click", () => {
-            inputField.focus();
-        });
-    });
-
     document.addEventListener("click", (event) => {
         // Check if the clicked element is an input field with the class "input_getquote"
         if (event.target.classList.contains("input_getquote")) {
             event.target.focus();
-        } else {
-            // If clicked outside of an input field, focus the first input field
-            if (inputFieldsQuotes.length > 0) {
-                // inputFieldsQuotes[0].focus();
-                focusOnInputsOfCurrentQuestion()
-            }
         }
     });
 
-    function focusOnInputsOfCurrentQuestion() {
-        const currentQuestion = document.getElementById(questions[currentIndex]);
-        const inputFields = currentQuestion.querySelectorAll(".input_getquote");
+    const inputFieldsQuotes = que1.querySelectorAll(".input_getquote");
 
-        if (inputFields.length > 0) {
-            inputFields[0].focus();
-        }
-    }
+    // Focus the first input field
+    // if (inputFieldsQuotes.length > 0) {
+    //     inputFieldsQuotes[0].focus();
+    // }
+
+    // Add a click event listener to each input field
+    // inputFieldsQuotes.forEach((inputField) => {
+    //     inputField.addEventListener("click", () => {
+    //         inputField.focus();
+    //     });
+    // });
+
+    // document.addEventListener("click", (event) => {
+    //     // Check if the clicked element is an input field with the class "input_getquote"
+    //     if (event.target.classList.contains("input_getquote")) {
+    //         event.target.focus();
+    //     } else {
+    //         // If clicked outside of an input field, focus the first input field
+    //         if (inputFieldsQuotes.length > 0) {
+    //             // inputFieldsQuotes[0].focus();
+    //             // focusOnInputsOfCurrentQuestion()
+    //         }
+    //     }
+    // });
+
+    // function focusOnInputsOfCurrentQuestion() {
+    //     const currentQuestion = document.getElementById(questions[currentIndex]);
+    //     const inputFields = currentQuestion.querySelectorAll(".input_getquote");
+
+    //     if (inputFields.length > 0) {
+    //         inputFields[0].focus();
+    //     }
+    // }
 
 
 
@@ -265,8 +267,6 @@ const get_quote = () => {
     //display block the quetions
     function showQuestion(index) {
         document.getElementById(questions[index]).style.display = "block";
-
-
     }
     //for next quetions
     // function showNextQuestion() {
@@ -278,21 +278,25 @@ const get_quote = () => {
     //     }
     // }
 
-    function focusOnInputsOfCurrentQuestion() {
-        const currentQuestion = document.getElementById(questions[currentIndex]);
-        const inputFields = currentQuestion.querySelectorAll(".input_getquote");
+    // function focusOnInputsOfCurrentQuestion() {
+    //     const currentQuestion = document.getElementById(questions[currentIndex]);
+    //     const inputFields = currentQuestion.querySelectorAll(".input_getquote");
 
-        if (inputFields.length > 0) {
-            inputFields[0].focus();
+    //     if (inputFields.length > 0) {
+    //         inputFields[0].focus();
+    //     }
+    // }
+    function focusOnInputsOfCurrentQuestion(index){
+        const queInputs = document.getElementById(questions[index]).querySelectorAll(".input_getquote");
+      if(queInputs.length > 0){
+                        queInputs[0].focus();
         }
     }
+   
+    showQuestion(0);
 
-    function exitFunction() {
-        path();
-        // Handle the "exit" input here, e.g., show a different path or perform some other action
-        console.log("User typed 'exit' in input field");
-    }
-
+    // showNextQuestion();
+    focusOnInputsOfCurrentQuestion(0);
 
     // after 'enter' key is press  focuses the next quetions//
     document.getElementById("nameInput").addEventListener("keyup", function(event) {
@@ -320,7 +324,7 @@ const get_quote = () => {
                     showQuestion(1);
 
                     // showNextQuestion();
-                    // focusOnInputsOfCurrentQuestion();
+                    focusOnInputsOfCurrentQuestion(1);
                     // document.getElementById(questions[currentIndex]).querySelector("input").focus();
                 }
             }
@@ -346,7 +350,7 @@ const get_quote = () => {
             } else {
                 showQuestion(2);
                 // showNextQuestion();
-                focusOnInputsOfCurrentQuestion();
+                focusOnInputsOfCurrentQuestion(2);
                 // document.getElementById(questions[currentIndex]).querySelector("input").focus();
             }
         }
@@ -364,21 +368,24 @@ const get_quote = () => {
     //     }
     // });
 
-    document.getElementById("phoneInput").addEventListener("keydown", function(event) {
+    document.getElementById("phoneInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
+             event.preventDefault();
             const phoneInput = document.getElementById("phoneInput");
-            const numericValue = phoneInput.value.replace(/\D/g, ""); // Remove non-numeric characters
+            const numericValue = phoneInput.value.replace(/\D/g, ""); 
 
             if (numericValue.length !== 10) {
                 alert("Enter a valid 10-digit number");
-                phoneInput.value = ""; // Clear the input
-            } else {
+                phoneInput.value = ""; 
+            }
+             else {
+                showQuestion(3);
+                // showNextQuestion();
+                focusOnInputsOfCurrentQuestion(3);
                 // The input is a valid 10-digit number; you can proceed with your logic here.
                 // For example: showNextQuestion() and focusOnInputsOfCurrentQuestion()
             }
-            showQuestion(3);
-            // showNextQuestion();
-            focusOnInputsOfCurrentQuestion();
+          
         }
 
     });
@@ -424,54 +431,66 @@ const get_quote = () => {
     //         }
     //     }
     // });
-    document.getElementById("requireInput").addEventListener("keydown", function(event) {
+    document.getElementById("requireInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             const requireInput = document.getElementById("requireInput").value;
-            if (requireInput.trim().toLowerCase() === "exit") {
-                exitFunction();
-            } else {
-                showQuestion(4);
-                // showNextQuestion();
-                document.getElementById(questions[currentIndex]).querySelector("input").focus();
-            }
-        }
+            showQuestion(4);
+            focusOnInputsOfCurrentQuestion(4);
+           
+         } 
+        //  else {
+        //         showQuestion(4);
+        //         focusOnInputsOfCurrentQuestion(4);
+        //         showNextQuestion();
+        //         document.getElementById(questions[currentIndex]).querySelector("input").focus();
+        //     }
+        
     });
 
-    document.getElementById("whenInput").addEventListener("keydown", function(event) {
+    document.getElementById("whenInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
-            const whenInput = document.getElementById("whenInput").value;
-            if (whenInput.trim().toLowerCase() === "exit") {
-                exitFunction();
-            } else {
-                showQuestion(5);
-                // showNextQuestion();
-                document.getElementById(questions[currentIndex]).querySelector(".textarea").focus();
-            }
+            showQuestion(5);
+           
+            focusOnInputsOfCurrentQuestion(5);
+            // document.getElementById("Project-Brief").setAttribute('autofocus','autofocus').focus();
+          
         }
+        // else {
+        //         showQuestion(5);
+        //         focusOnInputsOfCurrentQuestion(5);
+        //         showNextQuestion();
+        //         document.getElementById(questions[currentIndex]).querySelector(".textarea").focus();
+        //     }
+        
     });
     document.getElementById("Project-Brief").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
-            const projectBriefInput = document.getElementById("Project-Brief").value;
-            if (projectBriefInput.trim().toLowerCase() === "exit") {
-                exitFunction();
-            } else
-                showQuestion(6);
-            // showNextQuestion();
-            document.getElementById(questions[currentIndex]).querySelector("input").focus();
+            showQuestion(6);
+            focusOnInputsOfCurrentQuestion(6);
+            // if (projectBriefInput.trim().toLowerCase() === "exit") {
+            //     exitFunction();
+            // } 
         }
+        // else
+                // showQuestion(6);
+                // focusOnInputsOfCurrentQuestion(6);
+            // showNextQuestion();
+            // document.getElementById(questions[currentIndex]).querySelector("input").focus();
+        
     });
     document.getElementById("submitInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             const submit = document.getElementById("submitInput").value;
-            if (submit.trim().toLowerCase() === "exit") {
-                exitFunction();
-            }
+            // if (submit.trim().toLowerCase() === "exit") {
+            //     exitFunction();
+            // }
             const conform = document.getElementById("submitInput").value;
             if (conform == "y") {
                 submitInput.setAttribute("readonly", true);
                 // showNextQuestion();
                 showQuestion(7);
-                document.getElementById(questions[currentIndex]).querySelector("input").focus();
+                focusOnInputsOfCurrentQuestion(7);
+                // document.getElementById(questions[currentIndex]).querySelector("input").focus();
                 path();
 
                 const formdata = {
@@ -488,28 +507,50 @@ const get_quote = () => {
                 submitInput.setAttribute("readonly", true);
                 // console.log("hjghd")
                 showQuestion(8);
-                document.getElementById(questions[8]).querySelector("input").focus();
+                focusOnInputsOfCurrentQuestion(8);
+                // document.getElementById(questions[8]).querySelector("input").focus();
             }
         }
     });
 
-    document.getElementById("messageNo").addEventListener("keyup", function(event) {
+    // document.getElementById("messageNo").addEventListener("keyup", function(event) {
+    //     if (event.key === "Enter") {
+    //         const messageNo = document.getElementById("messageNo").value;
+    //         // if (message.trim().toLowerCase() === "exit") {
+    //         //     exitFunction();
+    //         // }
+    //         const conform = document.getElementById("messageNo").value;
+    //         if (conform == "y") {
+    //             messageNo.setAttribute("readonly", true);
+    //             console.log("quit");
+    //             showQuestion(9);
+    //             // focusOnInputsOfCurrentQuestion(9);
+    //             // document.getElementById(questions[9]).querySelector("input").focus();
+    //             path();
+    //             console.log("help");
+    //         } else if (conform == "n") {
+    //             messageNo.setAttribute("readonly", true);
+    //             showQuestion(10);
+    //             // focusOnInputsOfCurrentQuestion(10);
+    //             // document.getElementById(questions[10]).querySelector("input").focus();
+    //         }
+    //     }
+    // });
+    document.getElementById("messageNo").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
-            const message = document.getElementById("messageNo").value;
-            if (message.trim().toLowerCase() === "exit") {
-                exitFunction();
-            }
             const conform = document.getElementById("messageNo").value;
             if (conform == "y") {
-                messageNo.setAttribute("readonly", true);
+                messageNo.setAttribute("disabled", true);
                 console.log("quit");
                 showQuestion(9);
+                 focusOnInputsOfCurrentQuestion(9);
                 document.getElementById(questions[9]).querySelector("input").focus();
                 path();
                 console.log("help");
             } else if (conform == "n") {
-                messageNo.setAttribute("readonly", true);
+                messageNo.setAttribute("disabled", true);
                 showQuestion(10);
+                 focusOnInputsOfCurrentQuestion(10);
                 document.getElementById(questions[10]).querySelector("input").focus();
             }
         }
@@ -520,7 +561,7 @@ const get_quote = () => {
             if (conform == "y") {
                 resubmission.setAttribute("readonly", true);
                 showQuestion(11);
-                document.getElementById(questions[11]).querySelector("input").focus();
+                // document.getElementById(questions[11]).querySelector("input").focus();
                 path();
 
                 const formdata = {
@@ -577,6 +618,7 @@ container.addEventListener("keyup", async function(e) {
             }
 
             e.target.setAttribute("readonly", true);
+
 
         }
     }

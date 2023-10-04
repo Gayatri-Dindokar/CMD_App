@@ -605,13 +605,16 @@ transition : all 0.5s;
         background-color: black;
         margin: 0;
         text-align: left;
-        margin-top: -12px;
+        margin-top: -9px;
         height: auto;
     }
     #project-brief-arrow{
         margin-top: 2px;
     }
-
+#project-arrow-span{
+    margin-top: -7px;
+    margin-right: 4px;
+}
     .msg {
         background-color: brown;
     }
