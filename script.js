@@ -1,9 +1,7 @@
-// import showHtmlModel from './model/showHtml.js'
 import * as showHtmlModel from './model/showHtml.js';
-
-document.addEventListener('click', function(event) {
-    console.log(event.target);
-})
+// document.addEventListener('click', function(event) {
+//     console.log(event.target);
+// })
 const userinput = document.querySelector(".input");
 const main = document.querySelector(".main");
 const help = document.querySelector(".help");
@@ -11,93 +9,86 @@ const enterCommand = document.querySelector(".enterCommand");
 const container = document.querySelector(".container");
 const paths = document.querySelectorAll(".paths");
 const containerFluid = document.querySelector(".container-fluid");
-
 const displayOutputContainer = document.querySelector(".display_output");
 const maincon = document.querySelector(".maincon");
 const resizeAtMinSize = document.getElementById("resize-at-minsize");
-
-
-function clearContainer() {
-    paths.insertAdjacentElement = "";
-}
-
+//min-max functionality
+const minMaxBtn = document.getElementById("minmaxbtn");
+const bottomDiv = document.querySelector(".bottom-div");
+const resize = document.getElementById("resize");
+const restore = document.getElementById("restore");
+const resizeBigscreen = document.querySelector(".resize-bigscreen");
+const crossbtn = document.querySelector(".crossbtn");
+const cmdImg = document.getElementById("cmd");
+const btnclose = document.querySelector(".btnclose");
+const crossBtnBigScreen = document.getElementById("crossBtnBigScreen");
+const bigScreenMinMaxBtn = document.getElementById("bigscreen-minmaxbtn");
+const doubleRestore = document.getElementById("double-restore");
+const mainconWidth = maincon.offsetWidth;
+const mainconHeight = maincon.offsetHeight;
+const hiddenNav = document.querySelector(".hidden-nav");
+const bottomIcon = document.querySelector(".bottom-icon");
+const desktopIcon = document.querySelector(".desktop-icon");
+const navbar = document.querySelector(".navbar");
+const mydivid = document.getElementById("mydiv");
 
 const path = () => {
-
     const newpath = document.createElement("p");
     newpath.classList.add("newgeneratedpath");
     newpath.innerHTML = `P<span>6</span>:\\user\\<input type="text" class="input input-field animated-input" autocomplete="off"  autofocus="autofocus"/>
 `;
     displayOutputContainer.insertAdjacentElement("beforeend", newpath);
-
     const inputField = newpath.querySelector(".input-field");
     inputField.focus();
-
 };
-
 document.addEventListener("click", (event) => {
     const inputField = document.querySelectorAll(".input-field");
     inputField.forEach(input => {
             input.focus();
         });
-
-        const inputField1 = document.querySelectorAll(".input_getquote");
-        inputField1.forEach(input=>{
+    const inputField1 = document.querySelectorAll(".input_getquote");
+    inputField1.forEach(input=>{
             input.focus();
         })
-
-})
-
+});
 path();
-
-// console.log(userinput.value);
-//if user enter other command which is not involve above addcommand will call//
 const addcommand = () => {
     const note = `<p class="note">This Command not found. </p>`;
-
     displayOutputContainer.insertAdjacentHTML("beforeend", note);
 };
 
 //when user type help command//
-async function showHelp() {
-
-    const html = await showHtmlModel.showHelp()
-    displayOutputContainer.insertAdjacentHTML("beforeend", html);
+ async function showHelp() {
+ const html = await showHtmlModel.showHelp()
+ displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
-
 //when user type home command//
-const showHome = async() => {
+    const showHome = async() => {
     const html = await showHtmlModel.showHome();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
-
 //when user type about command//
 const showAbout = async() => {
     const html = await showHtmlModel.showAbout();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
-
 //when user type projects command//
-const showProjects = async() => {
+    const showProjects = async() => {
     const html = await showHtmlModel.showprojects();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
-
 //when user type contact command//
-const showContact = async() => {
+    const showContact = async() => {
     const html = await showHtmlModel.showContact();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
-
 };
-
 //when user type jobs command//
-const showJobs = async() => {
+    const showJobs = async() => {
     const html = await showHtmlModel.showJobs();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
-
 //when user type get quote command//
-const get_quote = () => {
+    const get_quote = () => {
     const que1 = document.createElement("div");
     que1.innerHTML = `
     <form>
@@ -167,87 +158,15 @@ const get_quote = () => {
            
            </form>`;
 
-    // displayOutputContainer.insertAdjacentElement("beforeend", que1);
-    // const inputFieldquotes = que1.querySelectorAll(".input_getquote");
-
-    // inputFieldquotes.focus();
-
-    // document.addEventListener("click", () => {
-    //     inputFieldquotes.forEach((inputField) => {
-
-    //         inputField.focus();
-
-    //     });
-
-    // })
-
-    displayOutputContainer.insertAdjacentElement("beforeend", que1);
-    // const inputFieldsQuotes = que1.querySelectorAll(".input_getquote");
-
-    // // Focus the first input field
-    // if (inputFieldsQuotes.length > 0) {
-    //     inputFieldsQuotes[0].focus();
-    // }
-
-    // // Add a click event listener to each input field
-    // inputFieldsQuotes.forEach((inputField) => {
-    //     inputField.addEventListener("click", () => {
-    //         inputField.focus();
-    //     });
-    // });
-
-    document.addEventListener("click", (event) => {
+   displayOutputContainer.insertAdjacentElement("beforeend", que1);
+   document.addEventListener("click", (event) => {
         // Check if the clicked element is an input field with the class "input_getquote"
         if (event.target.classList.contains("input_getquote")) {
             event.target.focus();
         }
     });
-
-    const inputFieldsQuotes = que1.querySelectorAll(".input_getquote");
-
-    // Focus the first input field
-    // if (inputFieldsQuotes.length > 0) {
-    //     inputFieldsQuotes[0].focus();
-    // }
-
-    // Add a click event listener to each input field
-    // inputFieldsQuotes.forEach((inputField) => {
-    //     inputField.addEventListener("click", () => {
-    //         inputField.focus();
-    //     });
-    // });
-
-    // document.addEventListener("click", (event) => {
-    //     // Check if the clicked element is an input field with the class "input_getquote"
-    //     if (event.target.classList.contains("input_getquote")) {
-    //         event.target.focus();
-    //     } else {
-    //         // If clicked outside of an input field, focus the first input field
-    //         if (inputFieldsQuotes.length > 0) {
-    //             // inputFieldsQuotes[0].focus();
-    //             // focusOnInputsOfCurrentQuestion()
-    //         }
-    //     }
-    // });
-
-    // function focusOnInputsOfCurrentQuestion() {
-    //     const currentQuestion = document.getElementById(questions[currentIndex]);
-    //     const inputFields = currentQuestion.querySelectorAll(".input_getquote");
-
-    //     if (inputFields.length > 0) {
-    //         inputFields[0].focus();
-    //     }
-    // }
-
-
-
-
-
-
-
-
-    //we created divs of quetions and put it into an array to get one by one que//
-    const questions = [
+   const inputFieldsQuotes = que1.querySelectorAll(".input_getquote");
+   const questions = [
         "question1",
         "question2",
         "question3",
@@ -262,58 +181,25 @@ const get_quote = () => {
         "question12",
     ];
     let currentIndex = 0;
-    // console.log("dghdjgdrgfg");
-
-    //display block the quetions
     function showQuestion(index) {
         document.getElementById(questions[index]).style.display = "block";
     }
-    //for next quetions
-    // function showNextQuestion() {
-    //     if (currentIndex < questions.length) {
-    //         currentIndex++;
-    //         if (currentIndex < questions.length) {
-    //             showQuestion(currentIndex);
-    //         }
-    //     }
-    // }
-
-    // function focusOnInputsOfCurrentQuestion() {
-    //     const currentQuestion = document.getElementById(questions[currentIndex]);
-    //     const inputFields = currentQuestion.querySelectorAll(".input_getquote");
-
-    //     if (inputFields.length > 0) {
-    //         inputFields[0].focus();
-    //     }
-    // }
-    function focusOnInputsOfCurrentQuestion(index){
+   function focusOnInputsOfCurrentQuestion(index){
         const queInputs = document.getElementById(questions[index]).querySelectorAll(".input_getquote");
       if(queInputs.length > 0){
-                        queInputs[0].focus();
+         queInputs[0].focus();
         }
     }
-   
     showQuestion(0);
-
-    // showNextQuestion();
     focusOnInputsOfCurrentQuestion(0);
 
-    // after 'enter' key is press  focuses the next quetions//
     document.getElementById("nameInput").addEventListener("keyup", function(event) {
-        let nameInput = document.getElementById("nameInput");
-        let store = document.getElementById("nameInput").value;
-
-
-
-        if (event.key === "Enter") {
-
-            if (store.trim() == "") {
-                alert("Enter a Name");
-            }
-            // else if (store.toLowerCase() === "exit") { // Check if input is "exit"
-            //     exitFunction(); // Call the exit function
-            // }
-            else if (store.length > 0) {
+    let nameInput = document.getElementById("nameInput");
+    let store = document.getElementById("nameInput").value;
+     if (event.key === "Enter") {
+     if (store.trim() == "") {
+      alert("Enter a Name");
+    }else if (store.length > 0) {
                 let spli = store.split(" ");
                 //    console.log(spli);
                 const fullNamePattern = /^[A-Za-z\s']+$/;
@@ -322,27 +208,19 @@ const get_quote = () => {
                     nameInput.value = "";
                 } else {
                     showQuestion(1);
-
-                    // showNextQuestion();
                     focusOnInputsOfCurrentQuestion(1);
-                    // document.getElementById(questions[currentIndex]).querySelector("input").focus();
-                }
-            }
-        }
+                     }
+                 }
+             }
     });
     document.getElementById("emailInput").addEventListener("keyup", function(event) {
         let email = document.getElementById("emailInput").value;
         let emailInput = document.getElementById("emailInput");
-
-        if (event.key === "Enter") {
-
-            if (email.trim() == "") {
+         if (event.key === "Enter") {
+         if (email.trim() == "") {
                 alert("Enter a Email");
             }
-            // else if (email.toLowerCase() === "exit") { // Check if input is "exit"
-            //     exitFunction(); // Call the exit function
-            // }
-            const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+           const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             if (!email.match(emailPattern)) {
                 console.log("incorrect email");
                 alert("Incorrect Pattern Please Enter Correct Email Id");
@@ -351,23 +229,8 @@ const get_quote = () => {
                 showQuestion(2);
                 // showNextQuestion();
                 focusOnInputsOfCurrentQuestion(2);
-                // document.getElementById(questions[currentIndex]).querySelector("input").focus();
-            }
-        }
-    });
-
-
-    // document.getElementById("phoneInput").addEventListener("input", function(event) {
-    //     const phoneInput = document.getElementById("phoneInput");
-    //     const inputValue = phoneInput.value.replace(/\D/g, ""); // Remove non-numeric characters
-
-    //     if (inputValue.length > 10) {
-    //         phoneInput.value = inputValue.slice(0, 10);
-    //     } else {
-    //         phoneInput.value = inputValue; // Update the input with the cleaned numeric value
-    //     }
-    // });
-
+               }}
+            });
     document.getElementById("phoneInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
              event.preventDefault();
@@ -382,160 +245,52 @@ const get_quote = () => {
                 showQuestion(3);
                 // showNextQuestion();
                 focusOnInputsOfCurrentQuestion(3);
-                // The input is a valid 10-digit number; you can proceed with your logic here.
-                // For example: showNextQuestion() and focusOnInputsOfCurrentQuestion()
-            }
-          
-        }
-
-    });
-
-
-    // document.getElementById("phoneInput").addEventListener("keydown", function(event) {
-    //     let phoneInput = document.getElementById("phoneInput");
-    //     console.log(phoneInput.value.length, 'phoneNo.length');
-    //     if (phoneInput.value.length > 9) {
-
-    //         phoneInput.value = phoneInput.value.slice(0, 10);
-    //         alert("Enter a valid  10 digits number");
-    //         phoneInput.value = "";
-    //     }
-
-
-    //     if (event.key === "Enter") {
-    //         // if(!(/^[0-9]+$/.test(phoneInput.value))){
-    //         //     alert("jhgfjhg");
-    //         //      phoneInput.value = "";
-    //         // }
-    //         phoneInput.value = phoneInput.value.replace(/\D/g, "");
-    //         if (phoneInput.value.trim() == "") {
-    //             alert("Enter a Number");
-    //         }
-    //         //  else if (phoneInput.value.toLowerCase() === "exit") { // Check if input is "exit"
-    //         //     exitFunction(); // Call the exit function
-    //         // }
-    //         else if (phoneInput.value.length < 9) {
-    //             alert("enter a valid number with at least 10 digit");
-    //             phoneInput.value = "";
-    //         }
-
-    //         else if ((!/^\d{10}$/.test(phoneInput.value)) ) {
-    //             alert("Enter a valid  10 digits number");
-    //             phoneInput.value = "";
-
-    //            } 
-    //         else {
-    //             showNextQuestion();
-    //             focusOnInputsOfCurrentQuestion();
-    //             // document.getElementById(questions[currentIndex]).querySelector("input").focus();
-    //         }
-    //     }
-    // });
+               }
+           } });
     document.getElementById("requireInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             const requireInput = document.getElementById("requireInput").value;
             showQuestion(4);
             focusOnInputsOfCurrentQuestion(4);
-           
-         } 
-        //  else {
-        //         showQuestion(4);
-        //         focusOnInputsOfCurrentQuestion(4);
-        //         showNextQuestion();
-        //         document.getElementById(questions[currentIndex]).querySelector("input").focus();
-        //     }
-        
-    });
-
-    document.getElementById("whenInput").addEventListener("keyup", function(event) {
+            } 
+        });
+   document.getElementById("whenInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             showQuestion(5);
-           
             focusOnInputsOfCurrentQuestion(5);
-            // document.getElementById("Project-Brief").setAttribute('autofocus','autofocus').focus();
-          
-        }
-        // else {
-        //         showQuestion(5);
-        //         focusOnInputsOfCurrentQuestion(5);
-        //         showNextQuestion();
-        //         document.getElementById(questions[currentIndex]).querySelector(".textarea").focus();
-        //     }
-        
-    });
+             }
+      });
     document.getElementById("Project-Brief").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             showQuestion(6);
             focusOnInputsOfCurrentQuestion(6);
-            // if (projectBriefInput.trim().toLowerCase() === "exit") {
-            //     exitFunction();
-            // } 
-        }
-        // else
-                // showQuestion(6);
-                // focusOnInputsOfCurrentQuestion(6);
-            // showNextQuestion();
-            // document.getElementById(questions[currentIndex]).querySelector("input").focus();
-        
-    });
+           }
+        });
     document.getElementById("submitInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             const submit = document.getElementById("submitInput").value;
-            // if (submit.trim().toLowerCase() === "exit") {
-            //     exitFunction();
-            // }
             const conform = document.getElementById("submitInput").value;
             if (conform == "y") {
                 submitInput.setAttribute("readonly", true);
-                // showNextQuestion();
                 showQuestion(7);
                 focusOnInputsOfCurrentQuestion(7);
-                // document.getElementById(questions[currentIndex]).querySelector("input").focus();
                 path();
-
                 const formdata = {
-                    name: document.getElementById("nameInput").value,
-                    email: document.getElementById("emailInput").value,
-                    phone: document.getElementById("phoneInput").value,
-                    require: document.getElementById("requireInput").value,
-                    when: document.getElementById("whenInput").value,
-                    ProjectBrief: document.getElementById("Project-Brief").value,
-                    submit: document.getElementById("submitInput").value,
+                name: document.getElementById("nameInput").value,
+                email: document.getElementById("emailInput").value,
+                 phone: document.getElementById("phoneInput").value,
+                 require: document.getElementById("requireInput").value,
+                 when: document.getElementById("whenInput").value,
+                 ProjectBrief: document.getElementById("Project-Brief").value,
+                 submit: document.getElementById("submitInput").value,
                 };
                 sessionStorage.setItem("key", JSON.stringify(formdata));
             } else if (conform == "n") {
                 submitInput.setAttribute("readonly", true);
-                // console.log("hjghd")
                 showQuestion(8);
                 focusOnInputsOfCurrentQuestion(8);
-                // document.getElementById(questions[8]).querySelector("input").focus();
-            }
-        }
-    });
-
-    // document.getElementById("messageNo").addEventListener("keyup", function(event) {
-    //     if (event.key === "Enter") {
-    //         const messageNo = document.getElementById("messageNo").value;
-    //         // if (message.trim().toLowerCase() === "exit") {
-    //         //     exitFunction();
-    //         // }
-    //         const conform = document.getElementById("messageNo").value;
-    //         if (conform == "y") {
-    //             messageNo.setAttribute("readonly", true);
-    //             console.log("quit");
-    //             showQuestion(9);
-    //             // focusOnInputsOfCurrentQuestion(9);
-    //             // document.getElementById(questions[9]).querySelector("input").focus();
-    //             path();
-    //             console.log("help");
-    //         } else if (conform == "n") {
-    //             messageNo.setAttribute("readonly", true);
-    //             showQuestion(10);
-    //             // focusOnInputsOfCurrentQuestion(10);
-    //             // document.getElementById(questions[10]).querySelector("input").focus();
-    //         }
-    //     }
-    // });
+                 } }
+            });
     document.getElementById("messageNo").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("messageNo").value;
@@ -561,10 +316,8 @@ const get_quote = () => {
             if (conform == "y") {
                 resubmission.setAttribute("readonly", true);
                 showQuestion(11);
-                // document.getElementById(questions[11]).querySelector("input").focus();
                 path();
-
-                const formdata = {
+             const formdata = {
                     name: document.getElementById("nameInput").value,
                     email: document.getElementById("emailInput").value,
                     phone: document.getElementById("phoneInput").value,
@@ -574,14 +327,11 @@ const get_quote = () => {
                     submit: document.getElementById("submitInput").value,
                 };
                 sessionStorage.setItem("key", JSON.stringify(formdata));
-                // showNextQuestion();
-                // document.getElementById(questions[currentIndex]).querySelector('input').focus();
+                
             }
         }
     });
 };
-
-
 // main function
 container.addEventListener("keyup", async function(e) {
     // console.log(e.target);
@@ -616,42 +366,14 @@ container.addEventListener("keyup", async function(e) {
                     path();
                 }, 0)
             }
-
-            e.target.setAttribute("readonly", true);
-
-
-        }
+        e.target.setAttribute("readonly", true);
+            }
     }
 });
-
-function stopDragging() {
-    document.onmousemove = null;
-    document.onmouseup = null;
-}
-//min-max functionality
-const minMaxBtn = document.getElementById("minmaxbtn");
-const bottomDiv = document.querySelector(".bottom-div");
-// const maincon = document.querySelector(".maincon");
-const resize = document.getElementById("resize");
-const restore = document.getElementById("restore");
-const resizeBigscreen = document.querySelector(".resize-bigscreen");
-const crossbtn = document.querySelector(".crossbtn");
-const cmdImg = document.getElementById("cmd");
-const btnclose = document.querySelector(".btnclose");
-const crossBtnBigScreen = document.getElementById("crossBtnBigScreen");
-const bigScreenMinMaxBtn = document.getElementById("bigscreen-minmaxbtn");
-const doubleRestore = document.getElementById("double-restore");
-const mainconWidth = maincon.offsetWidth;
-const mainconHeight = maincon.offsetHeight;
-const hiddenNav = document.querySelector(".hidden-nav");
-const bottomIcon = document.querySelector(".bottom-icon");
-const desktopIcon = document.querySelector(".desktop-icon");
-const navbar = document.querySelector(".navbar");
-const mydivid = document.getElementById("mydiv");
-
-
-
-
+// function stopDragging() {
+//     document.onmousemove = null;
+//     document.onmouseup = null;
+// }
 function movingContainer() {
     mydiv.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
@@ -663,20 +385,6 @@ function movingContainer() {
         }
     }, true);
 }
-// mydivheader.addEventListener("click",()=>{
-//    if(mydivid.style.width === "254px"){
-//     console.log("content");
-// mydiv.style.width ="800px";
-// mydiv.style.height = "600px";
-// mydiv.style.left = "50%";
-// mydiv.style.top = "50%";
-//    }
-// })
-// let isMinimisez = true;
-
-
-
-
 minMaxBtn.addEventListener("click", () => {
     mydivid.style.width = "254px";
     mydivid.style.height = "35px";
@@ -688,23 +396,16 @@ minMaxBtn.addEventListener("click", () => {
     mydivid.classList.add("transition");
     resizeAtMinSize.style.display = "block";
     resize.style.display = "none";
-
     mydiv.addEventListener("click", function(e) {
-        if (e.target.matches('#mydivheader')) {
-
-            mydivid.style.width = "800px";
-            mydivid.style.height = "600px";
-            mydivid.style.left = "50%";
-            mydivid.style.top = "50%";
-            mydivid.style.overflow="auto";
-
-        }
+    if (e.target.matches('#mydivheader')) {
+     mydivid.style.width = "800px";
+     mydivid.style.height = "600px";
+     mydivid.style.left = "50%";
+     mydivid.style.top = "50%";
+    mydivid.style.overflow="auto";
+    }
     })
-
-
-
-
-    mydiv.addEventListener('mousedown', function(e) {
+   mydiv.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
             isDown = false;
             offset = [
@@ -713,37 +414,7 @@ minMaxBtn.addEventListener("click", () => {
             ];
         }
     }, true);
-
-    // mydiv.style.position = "fixed";
-    // isDown = false;
-    // minMaxBtn.style.display ="none";
-    //    if(isMinimisez){
-    //     setTimeout(()=>{
-    //         mydiv.style.display = "none";
-    //         bottomDiv.style.display = "flex";
-
-    //     },100);
-    //      isMinimisez = false;
-    //    }
-    // maincon.style.display = "none";
-    //   bottomDiv.style.display = "flex";
-
-    // hiddenNav.style.display ="block";
-
-    //  maincon.style.position ="absolute";
-
-    // mydiv.style.position = "fixed";
-
-    //  maincon.classList.add('fadeout')
-    // maincon.classList.add('fadeout');
-    // bottomDiv.style.display = "bl";
-    // maincon.classList.add('fadeOutBottomLeft');
-
-
 });
-
-
-
 resizeBigscreen.addEventListener("click", () => {
     maincon.style.display = "block";
     bottomDiv.style.display = "none";
@@ -752,12 +423,7 @@ resizeBigscreen.addEventListener("click", () => {
     mydivid.style.left = "50%";
     mydivid.style.top = "50%";
     mydivid.classList.add("show-scroll");
-
-    // maincon.classList.remove('fadeout');
-    // maincon.classList.add('fadeInAnimation');
-
 })
-
 resize.addEventListener("click", () => {
     maincon.style.width = "100%";
     maincon.style.height = "100vh";
@@ -772,10 +438,7 @@ resize.addEventListener("click", () => {
     minMaxBtn.style.display = "none";
     mydivid.classList.add("show-scroll");
     movingContainer();
-
 })
-
-
 resizeAtMinSize.addEventListener("click", () => {
     mydivid.style.width = "800px";
     mydivid.style.height = "600px";
@@ -793,34 +456,15 @@ restore.addEventListener("click", () => {
     mydivid.classList.add("show-scroll");
     movingContainer();
 })
-
-
 function closeContainer() {
     // maincon.style.left='-700px';
     maincon.style.display = 'none';
     // maincon.classList.add('fadeout');
     // maincon.classList.remove('fadeInAnimation');
     bottomDiv.style.display = "none";
-
-
 }
-
-// function resetDisplayContainer() {
-//     // Get a reference to the displayOutputContainer
-//     const displayOutputContainer = document.getElementById("displayOutputContainer");
-
-// //    const displayOutputContainer = document.querySelector(".display_output");
-
-//     // Clone and reappend all existing elements back to the container
-//     const existingElements = Array.from(displayOutputContainer.children);
-//     existingElements.forEach(function(element) {
-//     const clonedElement = element.cloneNode(true);
-//     displayOutputContainer.appendChild(clonedElement);
-//     });
-//    }
 function openContainer() {
     location.reload();
-    // maincon.classList.add('fadeInAnimation');
     maincon.style.display = 'block';
     bottomDiv.style.display = "none";
     maincon.style.width = "800px";
@@ -832,50 +476,12 @@ function openContainer() {
     restore.style.display = "none";
     mydivid.classList.add("show-scroll");
     movingContainer();
-    // clearContainer();
-    // resetDisplayContainer();
-
-    //hello
-    //    const firstPath = displayOutputContainer.firstElementChild;
-    //    displayOutputContainer.innerHTML="";
-    //    if(firstPath){
-    //     displayOutputContainer.appendChild(firstPath);
-
-    //     const inputFields = firstPath.querySelectorAll("input[type='text']"); 
-    //     inputFields.forEach(function(inputField) { 
-    //         inputField.value = ""; 
-    //         inputField.focus();
-    //      });
-    //      const firstInputField = firstPath.querySelector("input[type='text']");
-    //      if(firstInputField){
-    //         firstInputField .focus();
-    //      }
-
-    //    }
-    //    const allPaths = document.querySelectorAll(".newgeneratedpath");
-    //    for(let i=1; i<allPaths.length;i++){
-    // allPaths[i].remove();
-    // const inputField = allPaths[0].querySelector(".input-field");
-    // inputField.value="";
-    // setTimeout(()=>{
-    //    inputField.focus();
-    // },0);
-    // console.log(allPaths);
-    //     }
-
-
     minMaxBtn.style.display = "block";
     maincon.classList.remove('fadeout');
 }
-
-
-
-
 crossbtn.addEventListener("click", () => {
     bottomDiv.style.display = "none";
-
 });
-
 function mainconNone() {
     maincon.style.display = 'none';
     bottomDiv.style.display = "none";
@@ -884,10 +490,6 @@ btnclose.addEventListener("click", closeContainer);
 cmdImg.addEventListener("click", openContainer)
 crossBtnBigScreen.addEventListener("click", mainconNone);
 bigScreenMinMaxBtn.addEventListener("click", () => {
-    // maincon.style.display = 'none';
-    // bottomDiv.style.display = "flex";
-    // doubleRestore.style.display = "block";
-    // resizeBigscreen.style.display = "none";
     restore.style.display = "none";
     resize.style.display = "block";
     mydivid.style.width = "254px";
@@ -908,24 +510,18 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
             ];
         }
     }, true);
-    // bigScreenMinMaxBtn.style.display ="none";
-});
+    });
 doubleRestore.addEventListener("click", () => {
-    // maincon.classList.add('fadeInAnimation');
     maincon.style.display = 'block';
     bottomDiv.style.display = "none";
     console.log("hii")
 })
-
-
 var mousePosition;
 var offset = [0, 0];
 var isDown = false;
-
 var mydiv = document.getElementById("mydiv");
 var originalWidth = mydiv.style.width;
 var originalHeight = mydiv.style.height;
-
 mydiv.addEventListener('mousedown', function(e) {
     if (e.button === 0) {
         isDown = true;
@@ -935,11 +531,9 @@ mydiv.addEventListener('mousedown', function(e) {
         ];
     }
 }, true);
-
 mydiv.addEventListener('mouseup', function() {
     isDown = false;
 }, true);
-
 mydiv.addEventListener('mousemove', function(event) {
     event.preventDefault();
 
@@ -948,26 +542,16 @@ mydiv.addEventListener('mousemove', function(event) {
             x: event.clientX,
             y: event.clientY
         };
-        // mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
-        // mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
         var pageWidth = window.innerWidth;
         var pageHeight = window.innerHeight;
-        // console.log(pageWidth,pageHeight);
-        // console.log((mousePosition.x + offset[0]),'(mousePosition.x + offset[0])');
         if ((mousePosition.x + offset[0]) > 0) {
             mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
-
         }
         mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
         if ((mousePosition.y + offset[1]) > (pageHeight - 600)) {
-
         }
     }
 }, true);
-
-
-
-
 const recy = document.getElementById("recyclebin");
 recy.addEventListener("click", () => {
     alert("recycle bin is empty");

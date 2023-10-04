@@ -1,5 +1,3 @@
-
-
 export const showHome = async function() {
   return `<div class="home">  <dl>
   <dt>UI ENGINEERING</dt>
