@@ -682,11 +682,13 @@ minMaxBtn.addEventListener("click", () => {
     mydivid.style.height = "35px";
     mydivid.style.top = "98vh";
     mydivid.style.left = "127px";
+    mydivid.style.overflow="hidden";
     mydivheader.classList.add("color");
     mydivid.classList.add("hidden-scroll");
     mydivid.classList.add("transition");
     resizeAtMinSize.style.display = "block";
     resize.style.display = "none";
+
     mydiv.addEventListener("click", function(e) {
         if (e.target.matches('#mydivheader')) {
 
@@ -694,6 +696,7 @@ minMaxBtn.addEventListener("click", () => {
             mydivid.style.height = "600px";
             mydivid.style.left = "50%";
             mydivid.style.top = "50%";
+            mydivid.style.overflow="auto";
 
         }
     })
@@ -780,6 +783,7 @@ resizeAtMinSize.addEventListener("click", () => {
     mydivid.style.top = "50%";
     resizeAtMinSize.style.display = "none";
     resize.style.display = "block";
+    mydivid.style.overflow="auto";
 })
 restore.addEventListener("click", () => {
     maincon.style.width = "800px";
@@ -890,6 +894,7 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
     mydivid.style.height = "35px";
     mydivid.style.top = "98vh";
     mydivid.style.left = "127px";
+    mydivid.style.overflow="hidden";
     mydivid.classList.add('minimized');
     mydivid.classList.add("hidden-scroll");
     resizeAtMinSize.style.display = "block";
