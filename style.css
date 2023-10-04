@@ -244,7 +244,7 @@ transition : all 0.5s;
     font-size: 14px;
     color: #c01a20;
 }
-    img {
+   .btn img {
         height: 15px;
         width: 15px;
     }
@@ -739,4 +739,37 @@ transition : all 0.5s;
 #requireInput{
     width: 50%;
     /* background-color: #c01a20; */
+}
+
+.status-bar{
+    /* height: 30px; */
+    width: 100%;
+    /* background-color: #c01a20; */
+    /* padding: 10px 0; */
+    align-items: center;
+    background: linear-gradient(rgb(31, 47, 134) 0px, rgb(49, 101, 196) 3%, rgb(54, 130, 229) 6%, rgb(68, 144, 230) 10%, rgb(56, 131, 229) 12%, rgb(43, 113, 224) 15%, rgb(38, 99, 218) 18%, rgb(35, 91, 214) 20%, rgb(34, 88, 213) 23%, rgb(33, 87, 214) 38%, rgb(36, 93, 219) 54%, rgb(37, 98, 223) 86%, rgb(36, 95, 220) 89%, rgb(33, 88, 212) 92%, rgb(29, 78, 192) 95%, rgb(25, 65, 165) 98%);
+    background-color: rgba(0, 0, 0, 0);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-image: linear-gradient(rgb(31, 47, 134) 0px, rgb(49, 101, 196) 3%, rgb(54, 130, 229) 6%, rgb(68, 144, 230) 10%, rgb(56, 131, 229) 12%, rgb(43, 113, 224) 15%, rgb(38, 99, 218) 18%, rgb(35, 91, 214) 20%, rgb(34, 88, 213) 23%, rgb(33, 87, 214) 38%, rgb(36, 93, 219) 54%, rgb(37, 98, 223) 86%, rgb(36, 95, 220) 89%, rgb(33, 88, 212) 92%, rgb(29, 78, 192) 95%, rgb(25, 65, 165) 98%);
+    background-size: auto;
+    background-origin: padding-box;
+    background-clip: border-box;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  display: flex;
+}
+.left-startWindow{
+   
+  margin-right: 10px;
+  position: relative;
+ 
+}
+.left-startWindow-img{
+   height: 35px;
+
 }
