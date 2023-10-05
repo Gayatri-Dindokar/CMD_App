@@ -2,6 +2,7 @@ import * as showHtmlModel from './model/showHtml.js';
 // document.addEventListener('click', function(event) {
 //     console.log(event.target);
 // })
+
 const userinput = document.querySelector(".input");
 const main = document.querySelector(".main");
 const help = document.querySelector(".help");
@@ -31,6 +32,7 @@ const bottomIcon = document.querySelector(".bottom-icon");
 const desktopIcon = document.querySelector(".desktop-icon");
 const navbar = document.querySelector(".navbar");
 const mydivid = document.getElementById("mydiv");
+// const bottomDiv = document.querySelector(".bottom-div")
 
 const path = () => {
     const newpath = document.createElement("p");
@@ -389,13 +391,15 @@ minMaxBtn.addEventListener("click", () => {
     mydivid.style.width = "254px";
     mydivid.style.height = "35px";
     mydivid.style.top = "98vh";
-    mydivid.style.left = "127px";
+    mydivid.style.left = "238px";
     mydivid.style.overflow="hidden";
     mydivheader.classList.add("color");
     mydivid.classList.add("hidden-scroll");
     mydivid.classList.add("transition");
     resizeAtMinSize.style.display = "block";
     resize.style.display = "none";
+      mydivid.style.borderRadius = "0px";
+    // mydivid.style.marginBottom = "-2px";
     mydiv.addEventListener("click", function(e) {
     if (e.target.matches('#mydivheader')) {
      mydivid.style.width = "800px";
@@ -403,8 +407,18 @@ minMaxBtn.addEventListener("click", () => {
      mydivid.style.left = "50%";
      mydivid.style.top = "50%";
     mydivid.style.overflow="auto";
+    mydivid.classList.add("mydividHov");
+   
+  
     }
     })
+    if(  mydivid.style.width = "254px"){
+        setTimeout(() => {
+            mydivid.classList.toggle('hidden')
+        }, 400)
+       
+        
+    }
    mydiv.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
             isDown = false;
@@ -415,6 +429,25 @@ minMaxBtn.addEventListener("click", () => {
         }
     }, true);
 });
+
+
+document.querySelector('.ddd').addEventListener('click',()=>{
+  
+    mydivid.style.width = "800px";
+    mydivid.style.height = "600px";
+    mydivid.style.left = "50%";
+    mydivid.style.top = "50%";
+    // maincon.style.display = "block";
+    // mydivid.classList.add("fff");
+    mydivid.classList.toggle("hidden");
+    mydivid.classList.add("show-scroll");
+    mydivid.classList.add("transition");
+  
+
+})
+
+
+
 resizeBigscreen.addEventListener("click", () => {
     maincon.style.display = "block";
     bottomDiv.style.display = "none";
@@ -447,7 +480,9 @@ resizeAtMinSize.addEventListener("click", () => {
     resizeAtMinSize.style.display = "none";
     resize.style.display = "block";
     mydivid.style.overflow="auto";
-})
+    mydivid.style.borderTopleftRadius = "15px";
+    mydivid.style.borderTopRightRadius = "15px";
+  })
 restore.addEventListener("click", () => {
     maincon.style.width = "800px";
     maincon.style.height = "600px";
@@ -462,10 +497,13 @@ function closeContainer() {
     // maincon.classList.add('fadeout');
     // maincon.classList.remove('fadeInAnimation');
     bottomDiv.style.display = "none";
+    bottomdivCover.style.display = "none";
+
 }
 function openContainer() {
     location.reload();
     maincon.style.display = 'block';
+    bottomdivCover.style.display = "block";
     bottomDiv.style.display = "none";
     maincon.style.width = "800px";
     maincon.style.height = "600px";
@@ -482,9 +520,11 @@ function openContainer() {
 crossbtn.addEventListener("click", () => {
     bottomDiv.style.display = "none";
 });
+const bottomdivCover = document.getElementById("bottom-div-cover");
 function mainconNone() {
     maincon.style.display = 'none';
-    bottomDiv.style.display = "none";
+    // bottomDiv.style.display = "none";
+    bottomdivCover.style.display = "none";
 }
 btnclose.addEventListener("click", closeContainer);
 cmdImg.addEventListener("click", openContainer)
@@ -495,12 +535,13 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
     mydivid.style.width = "254px";
     mydivid.style.height = "35px";
     mydivid.style.top = "98vh";
-    mydivid.style.left = "127px";
+    mydivid.style.left = "238px";
     mydivid.style.overflow="hidden";
     mydivid.classList.add('minimized');
     mydivid.classList.add("hidden-scroll");
     resizeAtMinSize.style.display = "block";
     resize.style.display = "none";
+    mydivid.classList.add("transition");
     mydiv.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
             isDown = false;
@@ -510,6 +551,13 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
             ];
         }
     }, true);
+    if(  mydivid.style.width = "254px"){
+        setTimeout(() => {
+            mydivid.classList.toggle('hidden')
+        }, 500)
+       
+        
+    }
     });
 doubleRestore.addEventListener("click", () => {
     maincon.style.display = 'block';
@@ -556,3 +604,41 @@ const recy = document.getElementById("recyclebin");
 recy.addEventListener("click", () => {
     alert("recycle bin is empty");
 })
+
+const anchr = document.querySelector(".anchr");
+anchr.addEventListener("click",()=>{
+    // window.location. href="https://pixel6.co/";
+    window.open("https://pixel6.co/" ,"_blank");
+    console.log("khafukyweifyi")
+});
+const fetchTime = document.getElementById('fetch-time');
+function time() {
+    var date = new Date;
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+     hours = hours ? hours : 12; 
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    fetchTime.textContent = 
+      ("0" +  hours).substr(-2) + ":" + ("0" +  minutes).substr(-2) + ampm ;
+  }
+  
+  setInterval(time, 1000);
+
+
+
+//   <span id="fetch-time"></span>
+
+//   function formatAMPM(date) {
+//     var hours = date.getHours();
+//     var minutes = date.getMinutes();
+//     var ampm = hours >= 12 ? 'pm' : 'am';
+//     hours = hours % 12;
+//     hours = hours ? hours : 12; // the hour '0' should be '12'
+//     minutes = minutes < 10 ? '0'+minutes : minutes;
+//     var strTime = hours + ':' + minutes + ' ' + ampm;
+//     return strTime;
+//    }
+   
+//    console.log(formatAMPM(new Date));
