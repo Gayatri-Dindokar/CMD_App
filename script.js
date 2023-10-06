@@ -32,7 +32,10 @@ const bottomIcon = document.querySelector(".bottom-icon");
 const desktopIcon = document.querySelector(".desktop-icon");
 const navbar = document.querySelector(".navbar");
 const mydivid = document.getElementById("mydiv");
+const errorIcon = document.querySelector(".error-icon");
+const test = document.querySelector(".test");
 // const bottomDiv = document.querySelector(".bottom-div")
+const bottomdivCover = document.getElementById("bottom-div-cover");
 
 const path = () => {
     const newpath = document.createElement("p");
@@ -430,24 +433,6 @@ minMaxBtn.addEventListener("click", () => {
     }, true);
 });
 
-
-document.querySelector('.ddd').addEventListener('click',()=>{
-  
-    mydivid.style.width = "800px";
-    mydivid.style.height = "600px";
-    mydivid.style.left = "50%";
-    mydivid.style.top = "50%";
-    // maincon.style.display = "block";
-    // mydivid.classList.add("fff");
-    mydivid.classList.toggle("hidden");
-    mydivid.classList.add("show-scroll");
-    mydivid.classList.add("transition");
-  
-
-})
-
-
-
 resizeBigscreen.addEventListener("click", () => {
     maincon.style.display = "block";
     bottomDiv.style.display = "none";
@@ -520,7 +505,7 @@ function openContainer() {
 crossbtn.addEventListener("click", () => {
     bottomDiv.style.display = "none";
 });
-const bottomdivCover = document.getElementById("bottom-div-cover");
+
 function mainconNone() {
     maincon.style.display = 'none';
     // bottomDiv.style.display = "none";
@@ -626,19 +611,52 @@ function time() {
   
   setInterval(time, 1000);
 
+// status bar operation
+errorIcon.addEventListener("mouseover", ()=>{
+test.style.opacity = "1";
+volume.classList.toggle("volume-setter");
+// volume.style.opacity ="0";
+// test.classList.add("smooth-transition");
 
+setTimeout(()=>{
+    test.style.opacity = "0";
+},5000);
 
-//   <span id="fetch-time"></span>
+});
+// volume controller//
+const volumeSlider = document.getElementById("volume-slider");
+const soundon = document.querySelector(".soundon")
+const volumeControls = document.getElementById("volume-controls");
+const volume = document.querySelector(".volume");
+soundon.addEventListener("click",()=>{
+    // volume.style.opacity ="1";
+    volume.classList.toggle("volume-setter");
+    test.style.opacity = "0";
 
-//   function formatAMPM(date) {
-//     var hours = date.getHours();
-//     var minutes = date.getMinutes();
-//     var ampm = hours >= 12 ? 'pm' : 'am';
-//     hours = hours % 12;
-//     hours = hours ? hours : 12; // the hour '0' should be '12'
-//     minutes = minutes < 10 ? '0'+minutes : minutes;
-//     var strTime = hours + ':' + minutes + ' ' + ampm;
-//     return strTime;
-//    }
-   
-//    console.log(formatAMPM(new Date));
+});
+
+document.getElementById('bottom-div-cover').addEventListener('click',()=>{
+    // mydivid.style.width = "800px";
+    // mydivid.style.height = "600px";
+    // mydivid.style.left = "50%";
+    // mydivid.style.top = "50%";
+
+    // maincon.style.display = "block";
+    // mydivid.classList.add("fff");
+    mydivid.style.width = "254px";
+    mydivid.style.height = "35px";
+    mydivid.style.top = "98vh";
+    mydivid.style.left = "238px";
+    mydivid.style.overflow="hidden";
+    mydivid.classList.toggle("hidden");
+    mydivid.classList.add("show-scroll");
+    mydivid.classList.add("transition");
+    setTimeout(()=>{
+        mydivid.style.width = "800px";
+        mydivid.style.height = "600px";
+        mydivid.style.left = "50%";
+        mydivid.style.top = "50%";  
+    },0.1);
+  
+
+})
