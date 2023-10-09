@@ -659,4 +659,30 @@ document.getElementById('bottom-div-cover').addEventListener('click',()=>{
     },0.1);
   
 
+});
+
+// function turnoff(){
+
+// }
+const modal = document.querySelector(".modal");
+const modelWindow  = document.querySelector(".model-window ");
+const modALCancel = document.querySelector(".footer-button");
+const modalcancalBtn = document.querySelector(".modal-log-off-btn");
+const modelwindowlogof = document.querySelector(".model-window-log-of");
+
+
+document.getElementById("turn-off").addEventListener("click",()=>{
+    modelWindow.style.display = "block";
+});
+modALCancel.addEventListener("click",()=>{
+    modelWindow.style.display = "none";
+});
+modalcancalBtn.addEventListener("click",()=>{
+   
+    console.log("heloojj");
+
+});
+document.getElementById("logging-off"),addEventListener("click",()=>{
+    modelwindowlogof.style.display = "block";
+    console.log("zzzzz")
 })
