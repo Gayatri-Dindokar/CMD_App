@@ -2,402 +2,393 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Command prompt interface</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine" />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet" />
-  <link rel="icon" href="asset\images\fevicon.png" type="image/x-icon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Command prompt interface</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet" />
+    <link rel="icon" href="asset\images\fevicon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <div class="desktop-icon-container">
-    <div class="desktop-icon">
+    <div class="desktop-icon-container">
+        <div class="desktop-icon">
 
 
-      <div class="d-flex d-coloumn">
-        <div class="anchr"><img id="pixel6icon" class="cmd" src="asset/images/iconpixel6.png" alt="pixel6icon"
-            title="Pixel6" />
+            <div class="d-flex d-coloumn">
+                <div class="anchr"><img id="pixel6icon" class="cmd" src="asset/images/iconpixel6.png" alt="pixel6icon" title="Pixel6" />
+                </div>
+                <span class="pixel6-web-text">Pixel6 Web</span>
+            </div>
+
+
+            <div class="d-flex d-coloumn"><img id="recyclebin" class="cmd" src="asset/images/recyclebinbox.png" alt="recyclebin" title="recycle bin" />
+                <span class=" recycleBin-text"> Recycle Bin</span>
+            </div>
+
+            <!-- <div class=" recycleBin-text"><h6>Recycle Bin</h6></div> -->
+            <!-- <span class="icon-text">Recycle Bin</span> -->
         </div>
-        <span class="pixel6-web-text">Pixel6 Web</span>
-      </div>
 
+        <div class="cmdIcon d-flex d-coloumn">
+            <img id="cmd" class="cmd" src="asset/images/cmd.svg" alt="cmd" title="cmd" />
+            <span class="cmd-text">CMD</span>
+        </div>
 
-      <div class="d-flex d-coloumn"><img id="recyclebin" class="cmd" src="asset/images/recyclebinbox.png"
-          alt="recyclebin" title="recycle bin" />
-        <span class=" recycleBin-text"> Recycle Bin</span>
-      </div>
-
-      <!-- <div class=" recycleBin-text"><h6>Recycle Bin</h6></div> -->
-      <!-- <span class="icon-text">Recycle Bin</span> -->
     </div>
+    <main class="maincon" id="mydiv">
+        <nav class="navbar color  " id="mydivheader">
+            <div><img class="px-icon" src="asset/images/cmd.png" alt="" /></div>
+            <p class="pixel-6">Pixel<span class="six">6</span></p>
 
-    <div class="cmdIcon d-flex d-coloumn">
-      <img id="cmd" class="cmd" src="asset/images/cmd.svg" alt="cmd" title="cmd" />
-      <span class="cmd-text">CMD</span>
-    </div>
-
-  </div>
-  <main class="maincon" id="mydiv">
-    <nav class="navbar color  " id="mydivheader">
-      <div><img class="px-icon" src="asset/images/cmd.png" alt="" /></div>
-      <p class="pixel-6">Pixel<span class="six">6</span></p>
-
-      <div class="btn">
-        <button class="btnremove" id="minmaxbtn">
+            <div class="btn">
+                <button class="btnremove" id="minmaxbtn">
           <img src="asset/images/minimize.png" alt="" />
           <!-- <span id="underscore">_</span> -->
         </button>
-        <button class="btnremove" id="bigscreen-minmaxbtn" style="display: none">
+                <button class="btnremove" id="bigscreen-minmaxbtn" style="display: none">
           <img src="asset/images/bigscreenminimize.png" alt="" />
         </button>
-        <button class="btnremove" id="resize">
+                <button class="btnremove" id="resize">
           <img src="asset/images/resize.png" alt="" />
         </button>
-        <button class="btnremove d-none" id="resize-at-minsize">
+                <button class="btnremove d-none" id="resize-at-minsize">
           <img src="asset/images/resize.png" alt="" />
         </button>
-        <button class="btnremove d-none" id="restore">
+                <button class="btnremove d-none" id="restore">
           <img src="asset/images/restore.png" alt="restore" />
         </button>
-        <button class="btnclose">
+                <button class="btnclose">
           <img src="asset/images/close.png" alt="" />
         </button>
-        <button id="crossBtnBigScreen" style="display: none">
+                <button id="crossBtnBigScreen" style="display: none">
           <img src="asset/images/closeforbig.png" alt="" />
         </button>
-      </div>
-    </nav>
+            </div>
+        </nav>
 
 
-    <div class="container-fluid">
-      <div class="container">
-        <div class="heading">
-          <p>
-            Pixel<span class="six">6</span> Web Studio Pvt. Ltd.(c) 2018
-            Corporation. All rights reserved.
-          </p>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="heading">
+                    <p>
+                        Pixel<span class="six">6</span> Web Studio Pvt. Ltd.(c) 2018 Corporation. All rights reserved.
+                    </p>
+                </div>
+                <div class="blink-container">
+                    <!-- <p id="demo"></p> -->
+                    <div class="line txt" id="demo">0100100100101</div>
+                    <div class="line margine-1">11001010111001</div>
+                    <div class="line margine-1">
+                        010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100
+                    </div>
+                    <div class="line margine-1">
+                        010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;101
+                    </div>
+                    <div class="line margine-1">
+                        110&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0101001
+                    </div>
+                    <div class="line margine-1">
+                        111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0110010
+                    </div>
+                    <div class="line margine-1">110</div>
+                    <div class="line margine-1">100</div>
+                    <div class="line margine-1">
+                        &nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0101
+                    </div>
+                    <div class="line margine-1">
+                        &nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0110
+                    </div>
+                </div>
+                <div class="instruction_px">
+                    <p>Type "help " to see a list of commands</p>
+                </div>
+                <div class="prompt display_output" id="displayOutputContainer">
+                    <!--genearated path -->
+                    <!-- display command output -->
+                </div>
+            </div>
         </div>
-        <div class="blink-container">
-          <!-- <p id="demo"></p> -->
-          <div class="line txt" id="demo">0100100100101</div>
-          <div class="line margine-1">11001010111001</div>
-          <div class="line margine-1">
-            010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100
-          </div>
-          <div class="line margine-1">
-            010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;101
-          </div>
-          <div class="line margine-1">
-            110&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0101001
-          </div>
-          <div class="line margine-1">
-            111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0110010
-          </div>
-          <div class="line margine-1">110</div>
-          <div class="line margine-1">100</div>
-          <div class="line margine-1">
-            &nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0101
-          </div>
-          <div class="line margine-1">
-            &nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0110
-          </div>
-        </div>
-        <div class="instruction_px">
-          <p>Type "help " to see a list of commands</p>
-        </div>
-        <div class="prompt display_output" id="displayOutputContainer">
-          <!--genearated path -->
-          <!-- display command output -->
-        </div>
-      </div>
-    </div>
-  </main>
+    </main>
 
-  <div class="bottom-div d-flex d-none">
-    <div class="d-flex">
-      <p class="bottom-p6">
-        Pixel<span class="six" style="color: #c01a20">6</span>
-      </p>
-    </div>
-    <div class="d-flex bottom-icon">
-      <button class="btnremove resize-bigscreen">
+    <div class="bottom-div d-flex d-none">
+        <div class="d-flex">
+            <p class="bottom-p6">
+                Pixel<span class="six" style="color: #c01a20">6</span>
+            </p>
+        </div>
+        <div class="d-flex bottom-icon">
+            <button class="btnremove resize-bigscreen">
         <img src="asset/images/restore.png" alt="restore" />
       </button>
-      <button class="btnremove" id="double-restore" style="display: none">
+            <button class="btnremove" id="double-restore" style="display: none">
         <img src="asset/images/bottomdivdoublerestore.png" alt="restore" />
       </button>
-      <button class="btnclose crossbtn">
+            <button class="btnclose crossbtn">
         <img src="asset/images/close.png" alt="" />
       </button>
-    </div>
-  </div>
-
-
-
-
-  <!-- footer part starts here -->
-  <footer>
-    <div class="dialog-box">
-      <div class="test ">
-        <header class="test-error-header">
-          <div><img id="test-error-header-picture" src="asset/images/windowsanitivirus.png" alt=""></div>
-          <div>your computer might be at risk</div>
-        </header>
-        <div>
-          <p>Antivirus software might not be installed
-            click this balloon to fix this problem</p>
         </div>
-      </div>
-
     </div>
-    <div class="volume">
-      <div id="volume-controls">
-        <input type="range" id="volume-slider">
-      </div>
-    </div>
-    <div class="status-bar">
-      <div class="startWindow-popup">
-        <header class="window-popup-header">
-          <img class="chess-img" src="asset/images/chess.jpg" alt="">
-          <span>user</span>
-        </header>
-        <section class="desktop-menu">
-          <hr class="horizontal-row">
-          <div class="menu-items">
-            <div class="menu-left">
-              <div class="menu-items-content">
-                <div class="explorar-img all-desktop-left-icon">
-                  <img class="menu-items-img " src="asset/images/internet-explorar-removebg-preview.png" alt="">
-                </div>
-                <div class="menu-item-texts">
-                  <div>Internet</div>
-                  <div>Internet explorar</div>
-                </div>
-              </div>
 
 
-              <div class="menu-items-content">
-                <div class="all-desktop-left-icon">
-                  <img class="menu-items-img" src="asset/images/iconpixel6.png" alt="">
-                </div>
-                <div class="menu-item-texts">
-                  <div>pixel6</div>
 
-                </div>
-              </div>
 
-              <div class="menu-items-content">
-                <div class="all-desktop-left-icon">
-                  <img class="menu-items-img" src="asset/images/cmd.svg" alt="">
+    <!-- footer part starts here -->
+    <footer>
+        <div class="dialog-box">
+            <div class="test ">
+                <header class="test-error-header">
+                    <div><img id="test-error-header-picture" src="asset/images/windowsanitivirus.png" alt=""></div>
+                    <div>your computer might be at risk</div>
+                </header>
+                <div>
+                    <p>Antivirus software might not be installed click this balloon to fix this problem</p>
                 </div>
-                <div class="menu-item-texts">
-                  <div>cmd</div>
-                </div>
-              </div>
+            </div>
 
-              <div class="menu-items-content">
-                <div class="all-desktop-left-icon">
-                  <img class="menu-items-img" src="asset/images/recyclebinbox.png" alt="">
-                </div>
-                <div class="menu-item-texts">
-                  <div>Recycle-bin</div>
+        </div>
+        <div class="volume">
+            <div id="volume-controls">
+                <input type="range" id="volume-slider">
+            </div>
+        </div>
+        <div class="status-bar">
+            <div class="startWindow-popup " style="display: none;">
+                <header class="window-popup-header">
+                    <img class="chess-img" src="asset/images/chess.jpg" alt="">
+                    <span>user</span>
+                </header>
+                <section class="desktop-menu">
+                    <hr class="horizontal-row">
+                    <div class="menu-items">
+                        <div class="menu-left">
+                            <div class="menu-items-content">
+                                <div class="explorar-img all-desktop-left-icon">
+                                    <img class="menu-items-img " src="asset/images/internet-explorar-removebg-preview.png" alt="">
+                                </div>
+                                <div class="menu-item-texts">
+                                    <div>Internet</div>
+                                    <div>Internet explorar</div>
+                                </div>
+                            </div>
 
-                </div>
-              </div>
-              <div class="menu-items-content">
-                <div class="all-desktop-left-icon">
-                  <img class="menu-items-img" src="asset/images/guess-number.png" alt="">
-                </div>
-                <div class="menu-item-texts">
-                  <div>game</div>
 
-                </div>
-              </div>
-              <div class="menu-items-content notepad">
-                <div class="all-desktop-left-icon">
-                  <img class="menu-items-img" src="asset/images/notepad.webp" alt="">
-                </div>
-                <div class="menu-item-texts">
-                  <span>notepad</span>
-                </div>
-              </div>
+                            <div class="menu-items-content">
+                                <div class="all-desktop-left-icon">
+                                    <img class="menu-items-img" src="asset/images/iconpixel6.png" alt="">
+                                </div>
+                                <div class="menu-item-texts">
+                                    <div>pixel6</div>
 
-              <div class="menu-separator menu-separator-padding"></div>
-              <div class=" all-programs_tab">
-                <div class="menu-item-texts all_programs_text">
-                  <div class=" all_programs_text"><span class="allprograms-text1">All programs</span> <span> <img
+                                </div>
+                            </div>
+
+                            <div class="menu-items-content">
+                                <div class="all-desktop-left-icon">
+                                    <img class="menu-items-img" src="asset/images/cmd.svg" alt="">
+                                </div>
+                                <div class="menu-item-texts">
+                                    <div>cmd</div>
+                                </div>
+                            </div>
+
+                            <div class="menu-items-content">
+                                <div class="all-desktop-left-icon">
+                                    <img class="menu-items-img" src="asset/images/recyclebinbox.png" alt="">
+                                </div>
+                                <div class="menu-item-texts">
+                                    <div>Recycle-bin</div>
+
+                                </div>
+                            </div>
+                            <div class="menu-items-content">
+                                <div class="all-desktop-left-icon">
+                                    <img class="menu-items-img" src="asset/images/guess-number.png" alt="">
+                                </div>
+                                <div class="menu-item-texts">
+                                    <div>game</div>
+
+                                </div>
+                            </div>
+                            <div class="menu-items-content notepad">
+                                <div class="all-desktop-left-icon">
+                                    <img class="menu-items-img" src="asset/images/notepad.webp" alt="">
+                                </div>
+                                <div class="menu-item-texts">
+                                    <span>notepad</span>
+                                </div>
+                            </div>
+
+                            <div class="menu-separator menu-separator-padding"></div>
+                            <div class=" all-programs_tab">
+                                <div class="menu-item-texts all_programs_text">
+                                    <div class=" all_programs_text"><span class="allprograms-text1">All programs</span> <span> <img
                         class="allprograms-img" src="asset/images/all programs.png" alt=""></span></div>
 
+                                </div>
+                                <div class="all_program-img"> <img src="" alt=""></div>
+                            </div>
+                        </div>
+                        <!-- right part of start-window-popup -->
+                        <div class="menu-itens-right">
+                            <div class="menu-items-content">
+                                <div class="all-desktop-left-icon">
+                                    <img class="menu-items-img" src="asset/images/mycomputer-removebg-preview.png" alt="">
+                                </div>
+                                <div class="menu-item-texts">
+                                    <div>My Computer</div>
+                                </div>
+                            </div>
+
+
+                            <div class="menu-items-content">
+                                <div class="all-desktop-left-icon">
+                                    <img class="menu-items-img" src="asset/images/controlpanel-removebg-preview.png" alt="">
+                                </div>
+                                <div class="menu-item-texts">
+                                    <div>Control Panel</div>
+                                </div>
+                            </div>
+
+                            <div class="menu-items-content">
+                                <div class="all-desktop-left-icon">
+                                    <img class="menu-items-img" src="asset/images/connectTo-removebg-preview.png" alt="">
+                                </div>
+                                <div class="menu-item-texts">
+                                    <div>Connect To</div>
+                                </div>
+                            </div>
+                            <div class="menu-separator"></div>
+
+                            <div class="menu-items-content">
+                                <div class="all-desktop-left-icon">
+                                    <img class="menu-items-img" src="asset/images/notepad.webp" alt="">
+                                </div>
+                                <div class="menu-item-texts">
+                                    <div>notepad</div>
+                                </div>
+                            </div>
+
+
+                            <div class="menu-items-content">
+                                <div class="all-desktop-left-icon">
+                                    <img class="menu-items-img" src="asset/images/notepad.webp" alt="">
+                                </div>
+                                <div class="menu-item-texts">
+                                    <div>notepad</div>
+                                </div>
+
+                            </div>
+                            <div class="menu-separator"></div>
+
+                            <div class="menu-items-content">
+                                <div class="all-desktop-left-icon">
+                                    <img class="menu-items-img" src="asset/images/helpandsupport-removebg-preview.png" alt="">
+                                </div>
+                                <div class="menu-item-texts">
+                                    <div>Help and Support</div>
+                                </div>
+                            </div>
+
+                            <div class="menu-items-content">
+                                <div class="all-desktop-left-icon">
+                                    <img class="menu-items-img" src="asset/images/searchxp-removebg-preview.png" alt="">
+                                </div>
+                                <div class="menu-item-texts">
+                                    <div>Search</div>
+                                </div>
+                            </div>
+
+                            <div class="menu-items-content">
+                                <div class="all-desktop-left-icon">
+                                    <img class="menu-items-img" src="asset/images/run-removebg-preview.png" alt="">
+                                </div>
+                                <div class="menu-item-texts">
+                                    <div>Run</div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                <footer class="window-popup-footer">
+                    <div class="footer_items" id="logOfPopup">
+                        <img class="footer_item-img" src="asset/images/log off.png" alt="">
+                        <span>Log Off</span>
+                    </div>
+                    <div class="footer_items" id="turn-off">
+                        <img class="footer_item-img" src="asset/images/turn off.png" alt="">
+                        <span>Turn Off Computer</span>
+
+                    </div>
+                </footer>
                 </div>
-                <div class="all_program-img"> <img src="" alt=""></div>
-              </div>
+                <!-- status bar  -->
+                <div class="status-bar-items-left">
+                    <div class="left-startWindow">
+                        <img class="left-startWindow-img" src="asset/images/starwindow.png" alt="">
+
+                        <div class="bottom-div d-flex justify-center ddd" id="bottom-div-cover">
+                            <div class="d-flex ">
+                                <p class="bottom-p6">
+                                    Pixel<span class="six" style="color: #c01a20">6</span>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="status-bar-items-right">
+                    <img class="soundon" src="asset/images/soundicon.webp" alt="">
+                    <img class="error-icon" src="asset/images/windowsanitivirus.png" alt="">
+                    <div class="time">
+                        <span id="fetch-time"></span>
+                    </div>
+
+                </div>
             </div>
-            <!-- right part of start-window-popup -->
-            <div class="menu-itens-right">
-              <div class="menu-items-content">
-                <div class="all-desktop-left-icon">
-                  <img class="menu-items-img" src="asset/images/mycomputer-removebg-preview.png" alt="">
-                </div>
-                <div class="menu-item-texts">
-                  <div>My Computer</div>
-                </div>
-              </div>
-
-
-              <div class="menu-items-content">
-                <div class="all-desktop-left-icon">
-                  <img class="menu-items-img" src="asset/images/controlpanel-removebg-preview.png" alt="">
-                </div>
-                <div class="menu-item-texts">
-                  <div>Control Panel</div>
-                </div>
-              </div>
-
-              <div class="menu-items-content">
-                <div class="all-desktop-left-icon">
-                  <img class="menu-items-img" src="asset/images/connectTo-removebg-preview.png" alt="">
-                </div>
-                <div class="menu-item-texts">
-                  <div>Connect To</div>
-                </div>
-              </div>
-              <div class="menu-separator"></div>
-
-              <div class="menu-items-content">
-                <div class="all-desktop-left-icon">
-                  <img class="menu-items-img" src="asset/images/notepad.webp" alt="">
-                </div>
-                <div class="menu-item-texts">
-                  <div>notepad</div>
-                </div>
-              </div>
-
-
-              <div class="menu-items-content">
-                <div class="all-desktop-left-icon">
-                  <img class="menu-items-img" src="asset/images/notepad.webp" alt="">
-                </div>
-                <div class="menu-item-texts">
-                  <div>notepad</div>
-                </div>
-
-              </div>
-              <div class="menu-separator"></div>
-
-              <div class="menu-items-content">
-                <div class="all-desktop-left-icon">
-                  <img class="menu-items-img" src="asset/images/helpandsupport-removebg-preview.png" alt="">
-                </div>
-                <div class="menu-item-texts">
-                  <div>Help and Support</div>
-                </div>
-              </div>
-
-              <div class="menu-items-content">
-                <div class="all-desktop-left-icon">
-                  <img class="menu-items-img" src="asset/images/searchxp-removebg-preview.png" alt="">
-                </div>
-                <div class="menu-item-texts">
-                  <div>Search</div>
-                </div>
-              </div>
-
-              <div class="menu-items-content">
-                <div class="all-desktop-left-icon">
-                  <img class="menu-items-img" src="asset/images/run-removebg-preview.png" alt="">
-                </div>
-                <div class="menu-item-texts">
-                  <div>Run</div>
-                </div>
-              </div>
-            </div>
-        </section>
-        <footer class="window-popup-footer">
-          <div class="footer_items" id="logging-off">
-            <img class="footer_item-img" src="asset/images/log off.png" alt="">
-            <span>Log Off</span>
-          </div>
-          <div class="footer_items" id="turn-off">
-            <img class="footer_item-img" src="asset/images/turn off.png" alt="">
-            <span>Turn Off Computer</span>
-
-          </div>
-        </footer>
-      </div>
-      <!-- status bar  -->
-      <div class="status-bar-items-left">
-        <div class="left-startWindow">
-          <img class="left-startWindow-img" src="asset/images/starwindow.png" alt="">
-
-          <div class="bottom-div d-flex justify-center ddd" id="bottom-div-cover">
-            <div class="d-flex ">
-              <p class="bottom-p6">
-                Pixel<span class="six" style="color: #c01a20">6</span>
-              </p>
-            </div>
-          </div>
-
         </div>
-      </div>
-      <div class="status-bar-items-right">
-        <img class="soundon" src="asset/images/soundicon.webp" alt="">
-        <img class="error-icon" src="asset/images/windowsanitivirus.png" alt="">
-        <div class="time">
-          <span id="fetch-time"></span>
+    </footer>
+
+    <div class="model-window  d-none" style="background-color: aqua;">
+        <div class="modal">
+            <header class="model_window-header">
+                <span class="model_window-header-text">Log Off Windows</span>
+                <img src="asset/images/" alt="">
+            </header>
+            <div class="model_window-content">
+                <div class="model_window-content-items" id="stand-by"><img class="model_window-content-items " src="asset/images/turn off.png" alt="stand by"><span>Stand By</span></div>
+                <div class="model_window-content-items"><img class="model_window-content-items  " src="asset/images/turn off.png" alt=""><span> Turn Off</span></div>
+                <div class="model_window-content-items"><img class="model_window-content-items turnoff-img" src="asset/images/green-restart-icon-19-removebg-preview.png" alt=""><span>Restart</span></div>
+            </div>
+            <footer class="model_window-footer">
+                <button class="footer-button">Cancel</button>
+            </footer>
         </div>
-
-      </div>
     </div>
-    </div>
-  </footer>
+    <!-- logoff modal -->
 
-  <div class="model-window  d-none" style="background-color: aqua;">
-    <div class="modal">
-      <header class="model_window-header">
-        <span class="model_window-header-text">Log Off Windows</span>
-        <img src="asset/images/" alt="">
-      </header>
-      <div class="model_window-content">
-        <div class="model_window-content-items" id="stand-by"><img class="model_window-content-items "
-            src="asset/images/turn off.png" alt="stand by"><span>Stand By</span></div>
-        <div class="model_window-content-items"><img class="model_window-content-items  "
-            src="asset/images/turn off.png" alt=""><span> Turn Off</span></div>
-        <div class="model_window-content-items"><img class="model_window-content-items turnoff-img"
-            src="asset/images/green-restart-icon-19-removebg-preview.png" alt=""><span>Restart</span></div>
-      </div>
-      <footer class="model_window-footer">
-        <button class="footer-button">Cancel</button>
-      </footer>
+    <div class="modal_logof-container d-none">
+        <div class="modal-logOf">
+            <header class="modal_logof-header">
+                <span class="model_window-header-text">Log Off Windows</span>
+                <img src="asset/images/" alt="">
+            </header>
+            <div class="model_window-content">
+                <div class="model_window-content-items"><img class="model_window-content-items  " src="asset/images/turn off.png" alt=""><span> Switch User</span></div>
+                <div class="model_window-content-items"><img class="model_window-content-items turnoff-img" src="asset/images/log off.png" alt=""><span>Log Off</span></div>
+            </div>
+            <footer class="moda_logof-footer">
+                <button class="modal_logoff-btn">Cancel</button>
+            </footer>
+        </div>
     </div>
-  </div>
-  <!-- logoff modal -->
 
-  <div class="model-window-log-of " style="background-color: aqua; display: none; ">
-    <div class="modal-logof">
-      <header class="model_window-header">
-        <span class="model_window-header-text">Log Off Windows</span>
-        <img src="asset/images/" alt="">
-      </header>
-      <div class="model_window-content">
-      <div class="model_window-content-items"><img class="model_window-content-items"
-            src="asset/images/turn off.png" alt=""><span> Switch User</span></div>
-        <div class="model_window-content-items"><img class="model_window-content-items turnoff-img"
-            src="asset/images/log off.png" alt=""><span>Log Off</span></div>
-      </div>
-      <footer class="model_window-footer">
-        <button class="footer-button modal-log-off-btn">Cancel</button>
-      </footer>
-    </div>
-  </div>
-
-  <script type="module" src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>

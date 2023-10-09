@@ -49,12 +49,12 @@ const path = () => {
 document.addEventListener("click", (event) => {
     const inputField = document.querySelectorAll(".input-field");
     inputField.forEach(input => {
-            input.focus();
-        });
+        input.focus();
+    });
     const inputField1 = document.querySelectorAll(".input_getquote");
-    inputField1.forEach(input=>{
-            input.focus();
-        })
+    inputField1.forEach(input => {
+        input.focus();
+    })
 });
 path();
 const addcommand = () => {
@@ -63,12 +63,12 @@ const addcommand = () => {
 };
 
 //when user type help command//
- async function showHelp() {
- const html = await showHtmlModel.showHelp()
- displayOutputContainer.insertAdjacentHTML("beforeend", html);
+async function showHelp() {
+    const html = await showHtmlModel.showHelp()
+    displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type home command//
-    const showHome = async() => {
+const showHome = async() => {
     const html = await showHtmlModel.showHome();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
@@ -78,22 +78,22 @@ const showAbout = async() => {
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type projects command//
-    const showProjects = async() => {
+const showProjects = async() => {
     const html = await showHtmlModel.showprojects();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type contact command//
-    const showContact = async() => {
+const showContact = async() => {
     const html = await showHtmlModel.showContact();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type jobs command//
-    const showJobs = async() => {
+const showJobs = async() => {
     const html = await showHtmlModel.showJobs();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type get quote command//
-    const get_quote = () => {
+const get_quote = () => {
     const que1 = document.createElement("div");
     que1.innerHTML = `
     <form>
@@ -163,15 +163,15 @@ const showAbout = async() => {
            
            </form>`;
 
-   displayOutputContainer.insertAdjacentElement("beforeend", que1);
-   document.addEventListener("click", (event) => {
+    displayOutputContainer.insertAdjacentElement("beforeend", que1);
+    document.addEventListener("click", (event) => {
         // Check if the clicked element is an input field with the class "input_getquote"
         if (event.target.classList.contains("input_getquote")) {
             event.target.focus();
         }
     });
-   const inputFieldsQuotes = que1.querySelectorAll(".input_getquote");
-   const questions = [
+    const inputFieldsQuotes = que1.querySelectorAll(".input_getquote");
+    const questions = [
         "question1",
         "question2",
         "question3",
@@ -186,25 +186,27 @@ const showAbout = async() => {
         "question12",
     ];
     let currentIndex = 0;
+
     function showQuestion(index) {
         document.getElementById(questions[index]).style.display = "block";
     }
-   function focusOnInputsOfCurrentQuestion(index){
+
+    function focusOnInputsOfCurrentQuestion(index) {
         const queInputs = document.getElementById(questions[index]).querySelectorAll(".input_getquote");
-      if(queInputs.length > 0){
-         queInputs[0].focus();
+        if (queInputs.length > 0) {
+            queInputs[0].focus();
         }
     }
     showQuestion(0);
     focusOnInputsOfCurrentQuestion(0);
 
     document.getElementById("nameInput").addEventListener("keyup", function(event) {
-    let nameInput = document.getElementById("nameInput");
-    let store = document.getElementById("nameInput").value;
-     if (event.key === "Enter") {
-     if (store.trim() == "") {
-      alert("Enter a Name");
-    }else if (store.length > 0) {
+        let nameInput = document.getElementById("nameInput");
+        let store = document.getElementById("nameInput").value;
+        if (event.key === "Enter") {
+            if (store.trim() == "") {
+                alert("Enter a Name");
+            } else if (store.length > 0) {
                 let spli = store.split(" ");
                 //    console.log(spli);
                 const fullNamePattern = /^[A-Za-z\s']+$/;
@@ -214,18 +216,18 @@ const showAbout = async() => {
                 } else {
                     showQuestion(1);
                     focusOnInputsOfCurrentQuestion(1);
-                     }
-                 }
-             }
+                }
+            }
+        }
     });
     document.getElementById("emailInput").addEventListener("keyup", function(event) {
         let email = document.getElementById("emailInput").value;
         let emailInput = document.getElementById("emailInput");
-         if (event.key === "Enter") {
-         if (email.trim() == "") {
+        if (event.key === "Enter") {
+            if (email.trim() == "") {
                 alert("Enter a Email");
             }
-           const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             if (!email.match(emailPattern)) {
                 console.log("incorrect email");
                 alert("Incorrect Pattern Please Enter Correct Email Id");
@@ -234,43 +236,44 @@ const showAbout = async() => {
                 showQuestion(2);
                 // showNextQuestion();
                 focusOnInputsOfCurrentQuestion(2);
-               }}
-            });
+            }
+        }
+    });
     document.getElementById("phoneInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
-             event.preventDefault();
+            event.preventDefault();
             const phoneInput = document.getElementById("phoneInput");
-            const numericValue = phoneInput.value.replace(/\D/g, ""); 
+            const numericValue = phoneInput.value.replace(/\D/g, "");
 
             if (numericValue.length !== 10) {
                 alert("Enter a valid 10-digit number");
-                phoneInput.value = ""; 
-            }
-             else {
+                phoneInput.value = "";
+            } else {
                 showQuestion(3);
                 // showNextQuestion();
                 focusOnInputsOfCurrentQuestion(3);
-               }
-           } });
+            }
+        }
+    });
     document.getElementById("requireInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             const requireInput = document.getElementById("requireInput").value;
             showQuestion(4);
             focusOnInputsOfCurrentQuestion(4);
-            } 
-        });
-   document.getElementById("whenInput").addEventListener("keyup", function(event) {
+        }
+    });
+    document.getElementById("whenInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             showQuestion(5);
             focusOnInputsOfCurrentQuestion(5);
-             }
-      });
+        }
+    });
     document.getElementById("Project-Brief").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             showQuestion(6);
             focusOnInputsOfCurrentQuestion(6);
-           }
-        });
+        }
+    });
     document.getElementById("submitInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             const submit = document.getElementById("submitInput").value;
@@ -281,36 +284,37 @@ const showAbout = async() => {
                 focusOnInputsOfCurrentQuestion(7);
                 path();
                 const formdata = {
-                name: document.getElementById("nameInput").value,
-                email: document.getElementById("emailInput").value,
-                 phone: document.getElementById("phoneInput").value,
-                 require: document.getElementById("requireInput").value,
-                 when: document.getElementById("whenInput").value,
-                 ProjectBrief: document.getElementById("Project-Brief").value,
-                 submit: document.getElementById("submitInput").value,
+                    name: document.getElementById("nameInput").value,
+                    email: document.getElementById("emailInput").value,
+                    phone: document.getElementById("phoneInput").value,
+                    require: document.getElementById("requireInput").value,
+                    when: document.getElementById("whenInput").value,
+                    ProjectBrief: document.getElementById("Project-Brief").value,
+                    submit: document.getElementById("submitInput").value,
                 };
                 sessionStorage.setItem("key", JSON.stringify(formdata));
             } else if (conform == "n") {
                 submitInput.setAttribute("readonly", true);
                 showQuestion(8);
                 focusOnInputsOfCurrentQuestion(8);
-                 } }
-            });
-    document.getElementById("messageNo").addEventListener("keyup", function (event) {
+            }
+        }
+    });
+    document.getElementById("messageNo").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("messageNo").value;
             if (conform == "y") {
                 messageNo.setAttribute("disabled", true);
                 console.log("quit");
                 showQuestion(9);
-                 focusOnInputsOfCurrentQuestion(9);
+                focusOnInputsOfCurrentQuestion(9);
                 document.getElementById(questions[9]).querySelector("input").focus();
                 path();
                 console.log("help");
             } else if (conform == "n") {
                 messageNo.setAttribute("disabled", true);
                 showQuestion(10);
-                 focusOnInputsOfCurrentQuestion(10);
+                focusOnInputsOfCurrentQuestion(10);
                 document.getElementById(questions[10]).querySelector("input").focus();
             }
         }
@@ -322,7 +326,7 @@ const showAbout = async() => {
                 resubmission.setAttribute("readonly", true);
                 showQuestion(11);
                 path();
-             const formdata = {
+                const formdata = {
                     name: document.getElementById("nameInput").value,
                     email: document.getElementById("emailInput").value,
                     phone: document.getElementById("phoneInput").value,
@@ -332,7 +336,7 @@ const showAbout = async() => {
                     submit: document.getElementById("submitInput").value,
                 };
                 sessionStorage.setItem("key", JSON.stringify(formdata));
-                
+
             }
         }
     });
@@ -371,8 +375,8 @@ container.addEventListener("keyup", async function(e) {
                     path();
                 }, 0)
             }
-        e.target.setAttribute("readonly", true);
-            }
+            e.target.setAttribute("readonly", true);
+        }
     }
 });
 // function stopDragging() {
@@ -395,34 +399,34 @@ minMaxBtn.addEventListener("click", () => {
     mydivid.style.height = "35px";
     mydivid.style.top = "98vh";
     mydivid.style.left = "238px";
-    mydivid.style.overflow="hidden";
+    mydivid.style.overflow = "hidden";
     mydivheader.classList.add("color");
     mydivid.classList.add("hidden-scroll");
     mydivid.classList.add("transition");
     resizeAtMinSize.style.display = "block";
     resize.style.display = "none";
-      mydivid.style.borderRadius = "0px";
+    mydivid.style.borderRadius = "0px";
     // mydivid.style.marginBottom = "-2px";
     mydiv.addEventListener("click", function(e) {
-    if (e.target.matches('#mydivheader')) {
-     mydivid.style.width = "800px";
-     mydivid.style.height = "600px";
-     mydivid.style.left = "50%";
-     mydivid.style.top = "50%";
-    mydivid.style.overflow="auto";
-    mydivid.classList.add("mydividHov");
-   
-  
-    }
+        if (e.target.matches('#mydivheader')) {
+            mydivid.style.width = "800px";
+            mydivid.style.height = "600px";
+            mydivid.style.left = "50%";
+            mydivid.style.top = "50%";
+            mydivid.style.overflow = "auto";
+            mydivid.classList.add("mydividHov");
+
+
+        }
     })
-    if(  mydivid.style.width = "254px"){
+    if (mydivid.style.width = "254px") {
         setTimeout(() => {
             mydivid.classList.toggle('hidden')
         }, 400)
-       
-        
+
+
     }
-   mydiv.addEventListener('mousedown', function(e) {
+    mydiv.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
             isDown = false;
             offset = [
@@ -464,10 +468,10 @@ resizeAtMinSize.addEventListener("click", () => {
     mydivid.style.top = "50%";
     resizeAtMinSize.style.display = "none";
     resize.style.display = "block";
-    mydivid.style.overflow="auto";
+    mydivid.style.overflow = "auto";
     mydivid.style.borderTopleftRadius = "15px";
     mydivid.style.borderTopRightRadius = "15px";
-  })
+})
 restore.addEventListener("click", () => {
     maincon.style.width = "800px";
     maincon.style.height = "600px";
@@ -476,6 +480,7 @@ restore.addEventListener("click", () => {
     mydivid.classList.add("show-scroll");
     movingContainer();
 })
+
 function closeContainer() {
     // maincon.style.left='-700px';
     maincon.style.display = 'none';
@@ -485,6 +490,7 @@ function closeContainer() {
     bottomdivCover.style.display = "none";
 
 }
+
 function openContainer() {
     location.reload();
     maincon.style.display = 'block';
@@ -521,7 +527,7 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
     mydivid.style.height = "35px";
     mydivid.style.top = "98vh";
     mydivid.style.left = "238px";
-    mydivid.style.overflow="hidden";
+    mydivid.style.overflow = "hidden";
     mydivid.classList.add('minimized');
     mydivid.classList.add("hidden-scroll");
     resizeAtMinSize.style.display = "block";
@@ -536,14 +542,14 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
             ];
         }
     }, true);
-    if(  mydivid.style.width = "254px"){
+    if (mydivid.style.width = "254px") {
         setTimeout(() => {
             mydivid.classList.toggle('hidden')
         }, 500)
-       
-        
+
+
     }
-    });
+});
 doubleRestore.addEventListener("click", () => {
     maincon.style.display = 'block';
     bottomDiv.style.display = "none";
@@ -581,8 +587,7 @@ mydiv.addEventListener('mousemove', function(event) {
             mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
         }
         mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
-        if ((mousePosition.y + offset[1]) > (pageHeight - 600)) {
-        }
+        if ((mousePosition.y + offset[1]) > (pageHeight - 600)) {}
     }
 }, true);
 const recy = document.getElementById("recyclebin");
@@ -591,36 +596,37 @@ recy.addEventListener("click", () => {
 })
 
 const anchr = document.querySelector(".anchr");
-anchr.addEventListener("click",()=>{
+anchr.addEventListener("click", () => {
     // window.location. href="https://pixel6.co/";
-    window.open("https://pixel6.co/" ,"_blank");
+    window.open("https://pixel6.co/", "_blank");
     console.log("khafukyweifyi")
 });
 const fetchTime = document.getElementById('fetch-time');
+
 function time() {
     var date = new Date;
     var hours = date.getHours();
     var minutes = date.getMinutes();
     var ampm = hours >= 12 ? 'pm' : 'am';
     hours = hours % 12;
-     hours = hours ? hours : 12; 
-    minutes = minutes < 10 ? '0'+minutes : minutes;
-    fetchTime.textContent = 
-      ("0" +  hours).substr(-2) + ":" + ("0" +  minutes).substr(-2) + ampm ;
-  }
-  
-  setInterval(time, 1000);
+    hours = hours ? hours : 12;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    fetchTime.textContent =
+        ("0" + hours).substr(-2) + ":" + ("0" + minutes).substr(-2) + ampm;
+}
+
+setInterval(time, 1000);
 
 // status bar operation
-errorIcon.addEventListener("mouseover", ()=>{
-test.style.opacity = "1";
-volume.classList.toggle("volume-setter");
-// volume.style.opacity ="0";
-// test.classList.add("smooth-transition");
+errorIcon.addEventListener("mouseover", () => {
+    test.style.opacity = "1";
+    volume.classList.toggle("volume-setter");
+    // volume.style.opacity ="0";
+    // test.classList.add("smooth-transition");
 
-setTimeout(()=>{
-    test.style.opacity = "0";
-},5000);
+    setTimeout(() => {
+        test.style.opacity = "0";
+    }, 5000);
 
 });
 // volume controller//
@@ -628,14 +634,14 @@ const volumeSlider = document.getElementById("volume-slider");
 const soundon = document.querySelector(".soundon")
 const volumeControls = document.getElementById("volume-controls");
 const volume = document.querySelector(".volume");
-soundon.addEventListener("click",()=>{
+soundon.addEventListener("click", () => {
     // volume.style.opacity ="1";
     volume.classList.toggle("volume-setter");
     test.style.opacity = "0";
 
 });
 
-document.getElementById('bottom-div-cover').addEventListener('click',()=>{
+document.getElementById('bottom-div-cover').addEventListener('click', () => {
     // mydivid.style.width = "800px";
     // mydivid.style.height = "600px";
     // mydivid.style.left = "50%";
@@ -647,17 +653,17 @@ document.getElementById('bottom-div-cover').addEventListener('click',()=>{
     mydivid.style.height = "35px";
     mydivid.style.top = "98vh";
     mydivid.style.left = "238px";
-    mydivid.style.overflow="hidden";
+    mydivid.style.overflow = "hidden";
     mydivid.classList.toggle("hidden");
     mydivid.classList.add("show-scroll");
     mydivid.classList.add("transition");
-    setTimeout(()=>{
+    setTimeout(() => {
         mydivid.style.width = "800px";
         mydivid.style.height = "600px";
         mydivid.style.left = "50%";
-        mydivid.style.top = "50%";  
-    },0.1);
-  
+        mydivid.style.top = "50%";
+    }, 0.1);
+
 
 });
 
@@ -665,24 +671,54 @@ document.getElementById('bottom-div-cover').addEventListener('click',()=>{
 
 // }
 const modal = document.querySelector(".modal");
-const modelWindow  = document.querySelector(".model-window ");
+const modelWindow = document.querySelector(".model-window ");
 const modALCancel = document.querySelector(".footer-button");
-const modalcancalBtn = document.querySelector(".modal-log-off-btn");
-const modelwindowlogof = document.querySelector(".model-window-log-of");
+const startWindowpopup = document.querySelector(".startWindow-popup");
+const startWindowImg = document.querySelector(".left-startWindow-img");
+const logOf = document.getElementById("logOfPopup");
+const modalLogOfContainer = document.querySelector(".modal_logof-container");
 
 
-document.getElementById("turn-off").addEventListener("click",()=>{
+document.getElementById("turn-off").addEventListener("click", () => {
     modelWindow.style.display = "block";
 });
-modALCancel.addEventListener("click",()=>{
+modALCancel.addEventListener("click", () => {
     modelWindow.style.display = "none";
 });
-modalcancalBtn.addEventListener("click",()=>{
-   
-    console.log("heloojj");
+document.querySelector(".modal_logoff-btn").addEventListener("click", () => {
+    console.log("hgghhjhjghhhh");
+    modalLogOfContainer.style.display = "none";
+});
+logOf.addEventListener("click", () => {
+    modalLogOfContainer.style.display = "block";
 
 });
-document.getElementById("logging-off"),addEventListener("click",()=>{
-    modelwindowlogof.style.display = "block";
-    console.log("zzzzz")
-})
+
+startWindowImg.addEventListener("click", () => {
+    console.log("mmmm");
+    //startWindowpopup.style.display = "block";
+    // if (startWindowpopup.style.display === "none" || startWindowpopup.classList.add("slide-out")) {
+    //     startWindowpopup.style.display = "block";
+    //     startWindowpopup.classList.add("slide-in");
+    // } else {
+
+    //     startWindowpopup.classList.add("slide-out");
+    //     // startWindowpopup.style.display = "none";
+    // }
+
+    if (!startWindowpopup.classList.contains("popup-visible")) {
+        // If it's not visible, show it
+        startWindowpopup.style.display = "block";
+        setTimeout(() => {
+            startWindowpopup.classList.add("popup-visible");
+        }, 0);
+    } else {
+        // If it's visible, hide it
+        startWindowpopup.classList.remove("popup-visible");
+        setTimeout(() => {
+            startWindowpopup.style.display = "none";
+        }, 300); // Adjust this timing to match the transition duration (0.3s in this case)
+    }
+
+
+});
