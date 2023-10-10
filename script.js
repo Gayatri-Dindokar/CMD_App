@@ -677,20 +677,46 @@ const startWindowpopup = document.querySelector(".startWindow-popup");
 const startWindowImg = document.querySelector(".left-startWindow-img");
 const logOf = document.getElementById("logOfPopup");
 const modalLogOfContainer = document.querySelector(".modal_logof-container");
+function forcancelbtn(){
+    if (!startWindowpopup.classList.contains("popup-visible")) {
+        
+        startWindowpopup.style.display = "block";
+        setTimeout(() => {
+            startWindowpopup.classList.add("popup-visible");
+        }, 0);
+    } else {
+       
+        startWindowpopup.classList.remove("popup-visible");
+        setTimeout(() => {
+            startWindowpopup.style.display = "none";
+        }, 300); 
+    }
+
+}
 
 
 document.getElementById("turn-off").addEventListener("click", () => {
     modelWindow.style.display = "block";
+     maincon.style.display = "none";
+     bottomdivCover .style.display = "none";
+
 });
 modALCancel.addEventListener("click", () => {
     modelWindow.style.display = "none";
+    startWindowpopup.style.display = "none";
+    forcancelbtn();
+
 });
 document.querySelector(".modal_logoff-btn").addEventListener("click", () => {
     console.log("hgghhjhjghhhh");
     modalLogOfContainer.style.display = "none";
+    startWindowpopup.style.display = "none";
+    forcancelbtn();
 });
 logOf.addEventListener("click", () => {
     modalLogOfContainer.style.display = "block";
+    maincon.style.display = "none";
+    bottomdivCover .style.display = "none";
 
 });
 
@@ -707,18 +733,43 @@ startWindowImg.addEventListener("click", () => {
     // }
 
     if (!startWindowpopup.classList.contains("popup-visible")) {
-        // If it's not visible, show it
+        
         startWindowpopup.style.display = "block";
         setTimeout(() => {
             startWindowpopup.classList.add("popup-visible");
         }, 0);
     } else {
-        // If it's visible, hide it
+       
         startWindowpopup.classList.remove("popup-visible");
         setTimeout(() => {
             startWindowpopup.style.display = "none";
-        }, 300); // Adjust this timing to match the transition duration (0.3s in this case)
+        }, 300); 
     }
 
 
 });
+const dropdownAllPrograms= document.querySelector(".dropdown_all-programs")
+document.querySelector(".all-programs_tab").addEventListener("mouseover",()=>{
+  if(dropdownAllPrograms.style.display === "none"){
+    dropdownAllPrograms.style.display = "block";
+  }
+ 
+});
+document.querySelector(".all-programs_tab").addEventListener("mouseout",()=>{
+    if(dropdownAllPrograms.style.display === "block"){
+      dropdownAllPrograms.style.display = "none";
+    }
+   
+  });
+  document.getElementById("games-text-ev").addEventListener("mouseover",()=>{
+    document.querySelector(".games-dropdown").style.display = "block";
+  });
+  document.getElementById("games-text-ev").addEventListener("mouseout",()=>{
+    document.querySelector(".games-dropdown").style.display = "none";
+  });
+  document.getElementById("cmd-command-ev").addEventListener("mouseover",()=>{
+    document.getElementById("cmd-dropdown").style.display = "block";
+  });
+  document.getElementById("cmd-command-ev").addEventListener("mouseout",()=>{
+    document.getElementById("cmd-dropdown").style.display = "none";
+  })
