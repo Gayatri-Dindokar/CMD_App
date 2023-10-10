@@ -620,23 +620,22 @@ setInterval(time, 1000);
 // status bar operation
 errorIcon.addEventListener("mouseover", () => {
     test.style.opacity = "1";
-    volume.classList.toggle("volume-setter");
-    // volume.style.opacity ="0";
-    // test.classList.add("smooth-transition");
+   
+   
 
     setTimeout(() => {
         test.style.opacity = "0";
     }, 5000);
 
 });
-// volume controller//
-const volumeSlider = document.getElementById("volume-slider");
+
+
 const soundon = document.querySelector(".soundon")
-const volumeControls = document.getElementById("volume-controls");
-const volume = document.querySelector(".volume");
+
+
 soundon.addEventListener("click", () => {
-    // volume.style.opacity ="1";
-    volume.classList.toggle("volume-setter");
+    
+  
     test.style.opacity = "0";
 
 });
@@ -699,6 +698,7 @@ document.getElementById("turn-off").addEventListener("click", () => {
     modelWindow.style.display = "block";
      maincon.style.display = "none";
      bottomdivCover .style.display = "none";
+     startWindowpopup.style.display = "none";
 
 });
 modALCancel.addEventListener("click", () => {
@@ -717,6 +717,7 @@ logOf.addEventListener("click", () => {
     modalLogOfContainer.style.display = "block";
     maincon.style.display = "none";
     bottomdivCover .style.display = "none";
+    startWindowpopup.style.display = "none";
 
 });
 
@@ -767,9 +768,11 @@ document.querySelector(".all-programs_tab").addEventListener("mouseout",()=>{
   document.getElementById("games-text-ev").addEventListener("mouseout",()=>{
     document.querySelector(".games-dropdown").style.display = "none";
   });
-  document.getElementById("cmd-command-ev").addEventListener("mouseover",()=>{
-    document.getElementById("cmd-dropdown").style.display = "block";
+  document.getElementById("cmd-command-ev").addEventListener("click",()=>{
+    setTimeout(() => {
+        mydivid.classList.toggle('hidden')
+    }, 100)
   });
-  document.getElementById("cmd-command-ev").addEventListener("mouseout",()=>{
-    document.getElementById("cmd-dropdown").style.display = "none";
-  })
+  document.getElementById("pixel6-dropdown-all-programs").addEventListener("click",()=>{
+ window.open("https://pixel6.co/", "_blank");
+  });

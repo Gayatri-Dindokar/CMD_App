@@ -159,16 +159,14 @@
       </div>
 
     </div>
-    <div class="volume">
-      <div id="volume-controls">
-        <input type="range" id="volume-slider">
-      </div>
-    </div>
+  
     <div class="status-bar">
       <div class="startWindow-popup " style="display: none;">
+        <!-- popup-header -->
         <header class="window-popup-header">
-          <img class="chess-img" src="asset/images/chess.jpg" alt="">
-          <span>user</span>
+          <!-- <img class="chess-img" src="asset/images/chess.jpg" alt=""> -->
+          <img class="replacable-chess-p6 " src="asset/images/iconpixel6.png" alt="">
+          <span id="user-name">user</span>
         </header>
         <section class="desktop-menu">
           <hr class="horizontal-row">
@@ -243,8 +241,8 @@
                 <!-- dropdown content -->
                 <div class="dropdown_all-programs" style="display: none;">
 
-                  <div class="dropdown_items">
-                    <img class="menu-items-img" src="asset/images/update-icon.png" alt=""><span>Windows Update</span>
+                  <div class="dropdown_items" id="pixel6-dropdown-all-programs">
+                    <img class="menu-items-img"  src="asset/images/iconpixel6.png" alt=""><span>Pixel6</span>
                   </div>
 
                   <div class="dropdown_items" id="games-text-ev">
@@ -271,11 +269,9 @@
                   <div class="dropdown_items" id="cmd-command-ev">
                     <img class="menu-items-img" src="asset/images/cmd.svg" alt=""><span class="margin-rt-dropdown-text-cmd">Cmd Command</span>
                     <div style="display: flex; justify-content: flex-end;">
-                      <span><i
-                        class="fa fa-caret-right" aria-hidden="true"></i>
-                    </span>
+                      
                     <!-- cmd command dropdown -->
-                    <div class="games-dropdown" id="cmd-dropdown" style="display: none;">
+                    <!-- <div class="games-dropdown" id="cmd-dropdown" style="display: none;">
                       <div class="games_dropdown-items">
                         <img class="menu-items-img" src="asset/images/h-removebg-preview.png" alt=""><span>help</span>
                       </div>
@@ -301,7 +297,7 @@
                       <div class="games_dropdown-items">
                         <img class="menu-items-img" src="asset/images/exi-removebg-preview.png" alt=""><span>exit</span>
                       </div>
-                    </div>
+                    </div> -->
                     </div>
                   </div>
 
@@ -342,9 +338,9 @@
                   <div>Connect To</div>
                 </div>
               </div>
-              <div class="menu-separator"></div>
+              <!-- <div class="menu-separator"></div> -->
 
-              <div class="menu-items-content">
+              <!-- <div class="menu-items-content">
                 <div class="all-desktop-left-icon">
                   <img class="menu-items-img" src="asset/images/notepad.webp" alt="">
                 </div>
@@ -362,7 +358,7 @@
                   <div>notepad</div>
                 </div>
 
-              </div>
+              </div> -->
               <div class="menu-separator"></div>
 
               <div class="menu-items-content">

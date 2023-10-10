@@ -940,40 +940,18 @@
         width: 37px;
     }
 
-    #volume-controls {
-        width: 100px;
-        /* position: fixed; */
-        right: 35px;
-        bottom: 56px;
-        /* opacity: 0; */
-    }
-
-    #volume-slider {
-        width: 100%;
-        color: rgb(0, 81, 255);
-    }
-
-    .volume {
-        position: fixed;
-        bottom: 51px;
-        /* background-color: red; */
-        right: 14px;
-        z-index: 1;
-        opacity: 0;
-    }
-
-    .volume-setter {
-        opacity: 1;
-    }
-
-    .chess-img {
-        width: 42px;
-        height: 42px;
+  .replacable-chess-p6 {
+        /* width: 42px; */
+        /* height: 42px; */
+        width: 38px;
         margin-right: 10px;
         border-radius: 3px;
-        border: 2px solid rgba(222, 222, 222, 0.8);
+        /* border: 2px solid rgba(222, 222, 222, 0.8); */
         font-family: inherit;
         margin-left: 5px;
+    }
+    #user-name{
+font-size: large;
     }
 
     .horizontal-row {
@@ -1134,10 +1112,7 @@
         /* border-bottom: 2px solid rgb(209, 199, 199); */
     }
 
-    .menu-items-content:hover {
-        background-color: rgb(47, 113, 205);
-        /* color: rgb(255, 255, 255); */
-    }
+ 
 
     .menu-items-content:hover {
         color: white;
