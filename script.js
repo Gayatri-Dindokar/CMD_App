@@ -68,27 +68,27 @@ async function showHelp() {
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type home command//
-const showHome = async() => {
+const showHome = async () => {
     const html = await showHtmlModel.showHome();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type about command//
-const showAbout = async() => {
+const showAbout = async () => {
     const html = await showHtmlModel.showAbout();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type projects command//
-const showProjects = async() => {
+const showProjects = async () => {
     const html = await showHtmlModel.showprojects();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type contact command//
-const showContact = async() => {
+const showContact = async () => {
     const html = await showHtmlModel.showContact();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type jobs command//
-const showJobs = async() => {
+const showJobs = async () => {
     const html = await showHtmlModel.showJobs();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
@@ -200,7 +200,7 @@ const get_quote = () => {
     showQuestion(0);
     focusOnInputsOfCurrentQuestion(0);
 
-    document.getElementById("nameInput").addEventListener("keyup", function(event) {
+    document.getElementById("nameInput").addEventListener("keyup", function (event) {
         let nameInput = document.getElementById("nameInput");
         let store = document.getElementById("nameInput").value;
         if (event.key === "Enter") {
@@ -220,7 +220,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("emailInput").addEventListener("keyup", function(event) {
+    document.getElementById("emailInput").addEventListener("keyup", function (event) {
         let email = document.getElementById("emailInput").value;
         let emailInput = document.getElementById("emailInput");
         if (event.key === "Enter") {
@@ -239,7 +239,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("phoneInput").addEventListener("keyup", function(event) {
+    document.getElementById("phoneInput").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
             const phoneInput = document.getElementById("phoneInput");
@@ -255,26 +255,26 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("requireInput").addEventListener("keyup", function(event) {
+    document.getElementById("requireInput").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const requireInput = document.getElementById("requireInput").value;
             showQuestion(4);
             focusOnInputsOfCurrentQuestion(4);
         }
     });
-    document.getElementById("whenInput").addEventListener("keyup", function(event) {
+    document.getElementById("whenInput").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             showQuestion(5);
             focusOnInputsOfCurrentQuestion(5);
         }
     });
-    document.getElementById("Project-Brief").addEventListener("keydown", function(event) {
+    document.getElementById("Project-Brief").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             showQuestion(6);
             focusOnInputsOfCurrentQuestion(6);
         }
     });
-    document.getElementById("submitInput").addEventListener("keyup", function(event) {
+    document.getElementById("submitInput").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const submit = document.getElementById("submitInput").value;
             const conform = document.getElementById("submitInput").value;
@@ -300,7 +300,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("messageNo").addEventListener("keyup", function(event) {
+    document.getElementById("messageNo").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("messageNo").value;
             if (conform == "y") {
@@ -319,7 +319,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("resubmission").addEventListener("keyup", function(event) {
+    document.getElementById("resubmission").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("resubmission").value;
             if (conform == "y") {
@@ -342,7 +342,7 @@ const get_quote = () => {
     });
 };
 // main function
-container.addEventListener("keyup", async function(e) {
+container.addEventListener("keyup", async function (e) {
     // console.log(e.target);
     if (e.target.matches(".input")) {
         const userinput = e.target.value.trim();
@@ -384,7 +384,7 @@ container.addEventListener("keyup", async function(e) {
 //     document.onmouseup = null;
 // }
 function movingContainer() {
-    mydiv.addEventListener('mousedown', function(e) {
+    mydiv.addEventListener('mousedown', function (e) {
         if (e.button === 0) {
             isDown = true;
             offset = [
@@ -407,7 +407,7 @@ minMaxBtn.addEventListener("click", () => {
     resize.style.display = "none";
     mydivid.style.borderRadius = "0px";
     // mydivid.style.marginBottom = "-2px";
-    mydiv.addEventListener("click", function(e) {
+    mydiv.addEventListener("click", function (e) {
         if (e.target.matches('#mydivheader')) {
             mydivid.style.width = "800px";
             mydivid.style.height = "600px";
@@ -418,7 +418,7 @@ minMaxBtn.addEventListener("click", () => {
 
 
         }
-    })
+    });
     if (mydivid.style.width = "254px") {
         setTimeout(() => {
             mydivid.classList.toggle('hidden')
@@ -426,7 +426,8 @@ minMaxBtn.addEventListener("click", () => {
 
 
     }
-    mydiv.addEventListener('mousedown', function(e) {
+
+    mydiv.addEventListener('mousedown', function (e) {
         if (e.button === 0) {
             isDown = false;
             offset = [
@@ -436,6 +437,9 @@ minMaxBtn.addEventListener("click", () => {
         }
     }, true);
 });
+
+
+
 
 resizeBigscreen.addEventListener("click", () => {
     maincon.style.display = "block";
@@ -533,7 +537,7 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
     resizeAtMinSize.style.display = "block";
     resize.style.display = "none";
     mydivid.classList.add("transition");
-    mydiv.addEventListener('mousedown', function(e) {
+    mydiv.addEventListener('mousedown', function (e) {
         if (e.button === 0) {
             isDown = false;
             offset = [
@@ -561,7 +565,7 @@ var isDown = false;
 var mydiv = document.getElementById("mydiv");
 var originalWidth = mydiv.style.width;
 var originalHeight = mydiv.style.height;
-mydiv.addEventListener('mousedown', function(e) {
+mydiv.addEventListener('mousedown', function (e) {
     if (e.button === 0) {
         isDown = true;
         offset = [
@@ -570,10 +574,10 @@ mydiv.addEventListener('mousedown', function(e) {
         ];
     }
 }, true);
-mydiv.addEventListener('mouseup', function() {
+mydiv.addEventListener('mouseup', function () {
     isDown = false;
 }, true);
-mydiv.addEventListener('mousemove', function(event) {
+mydiv.addEventListener('mousemove', function (event) {
     event.preventDefault();
 
     if (isDown) {
@@ -587,7 +591,7 @@ mydiv.addEventListener('mousemove', function(event) {
             mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
         }
         mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
-        if ((mousePosition.y + offset[1]) > (pageHeight - 600)) {}
+        if ((mousePosition.y + offset[1]) > (pageHeight - 600)) { }
     }
 }, true);
 const recy = document.getElementById("recyclebin");
@@ -620,9 +624,6 @@ setInterval(time, 1000);
 // status bar operation
 errorIcon.addEventListener("mouseover", () => {
     test.style.opacity = "1";
-   
-   
-
     setTimeout(() => {
         test.style.opacity = "0";
     }, 5000);
@@ -630,15 +631,14 @@ errorIcon.addEventListener("mouseover", () => {
 });
 
 
-const soundon = document.querySelector(".soundon")
+// const soundon = document.querySelector(".soundon")
 
 
-soundon.addEventListener("click", () => {
-    
-  
-    test.style.opacity = "0";
+// soundon.addEventListener("click", () => {
 
-});
+// test.style.opacity = "0";
+
+// });
 
 document.getElementById('bottom-div-cover').addEventListener('click', () => {
     // mydivid.style.width = "800px";
@@ -676,19 +676,19 @@ const startWindowpopup = document.querySelector(".startWindow-popup");
 const startWindowImg = document.querySelector(".left-startWindow-img");
 const logOf = document.getElementById("logOfPopup");
 const modalLogOfContainer = document.querySelector(".modal_logof-container");
-function forcancelbtn(){
+function forcancelbtn() {
     if (!startWindowpopup.classList.contains("popup-visible")) {
-        
+
         startWindowpopup.style.display = "block";
         setTimeout(() => {
             startWindowpopup.classList.add("popup-visible");
         }, 0);
     } else {
-       
+
         startWindowpopup.classList.remove("popup-visible");
         setTimeout(() => {
             startWindowpopup.style.display = "none";
-        }, 300); 
+        }, 300);
     }
 
 }
@@ -696,9 +696,9 @@ function forcancelbtn(){
 
 document.getElementById("turn-off").addEventListener("click", () => {
     modelWindow.style.display = "block";
-     maincon.style.display = "none";
-     bottomdivCover .style.display = "none";
-     startWindowpopup.style.display = "none";
+    maincon.style.display = "none";
+    bottomdivCover.style.display = "none";
+    startWindowpopup.style.display = "none";
 
 });
 modALCancel.addEventListener("click", () => {
@@ -716,7 +716,7 @@ document.querySelector(".modal_logoff-btn").addEventListener("click", () => {
 logOf.addEventListener("click", () => {
     modalLogOfContainer.style.display = "block";
     maincon.style.display = "none";
-    bottomdivCover .style.display = "none";
+    bottomdivCover.style.display = "none";
     startWindowpopup.style.display = "none";
 
 });
@@ -734,45 +734,114 @@ startWindowImg.addEventListener("click", () => {
     // }
 
     if (!startWindowpopup.classList.contains("popup-visible")) {
-        
+
         startWindowpopup.style.display = "block";
         setTimeout(() => {
             startWindowpopup.classList.add("popup-visible");
         }, 0);
     } else {
-       
+
         startWindowpopup.classList.remove("popup-visible");
         setTimeout(() => {
             startWindowpopup.style.display = "none";
-        }, 300); 
+        }, 300);
     }
 
 
 });
-const dropdownAllPrograms= document.querySelector(".dropdown_all-programs")
-document.querySelector(".all-programs_tab").addEventListener("mouseover",()=>{
-  if(dropdownAllPrograms.style.display === "none"){
-    dropdownAllPrograms.style.display = "block";
-  }
- 
-});
-document.querySelector(".all-programs_tab").addEventListener("mouseout",()=>{
-    if(dropdownAllPrograms.style.display === "block"){
-      dropdownAllPrograms.style.display = "none";
+const dropdownAllPrograms = document.querySelector(".dropdown_all-programs")
+document.querySelector(".all-programs_tab").addEventListener("mouseover", () => {
+    if (dropdownAllPrograms.style.display === "none") {
+        dropdownAllPrograms.style.display = "block";
     }
-   
-  });
-  document.getElementById("games-text-ev").addEventListener("mouseover",()=>{
+
+});
+document.querySelector(".all-programs_tab").addEventListener("mouseout", () => {
+    if (dropdownAllPrograms.style.display === "block") {
+        dropdownAllPrograms.style.display = "none";
+    }
+
+});
+document.getElementById("games-text-ev").addEventListener("mouseover", () => {
     document.querySelector(".games-dropdown").style.display = "block";
-  });
-  document.getElementById("games-text-ev").addEventListener("mouseout",()=>{
+});
+document.getElementById("games-text-ev").addEventListener("mouseout", () => {
     document.querySelector(".games-dropdown").style.display = "none";
-  });
-  document.getElementById("cmd-command-ev").addEventListener("click",()=>{
-    setTimeout(() => {
-        mydivid.classList.toggle('hidden')
-    }, 100)
-  });
-  document.getElementById("pixel6-dropdown-all-programs").addEventListener("click",()=>{
- window.open("https://pixel6.co/", "_blank");
-  });
+});
+//   document.getElementById("cmd-command-ev").addEventListener("click",()=>{
+//     setTimeout(() => {
+//         mydivid.classList.toggle('hidden')
+//     }, 100)
+//   });
+
+// popup icons//
+document.getElementById("window_popup-pixel6-icon").addEventListener("click", () => {
+    window.open("https://pixel6.co/", "_blank");
+});
+document.getElementById("pixel6-dropdown-all-programs").addEventListener("click", () => {
+    window.open("https://pixel6.co/", "_blank");
+});
+document.getElementById("window_popup-cmd-icon").addEventListener("click", () => {
+
+    // mydivid.style.display = "block";
+    // mydivid.style.width = "800px";
+    // mydivid.style.height = "600px";
+    // mydivid.style.left = "50%";
+    // mydivid.style.top = "50%";
+    // mydivid.style.overflow = "auto";
+    // mydivid.classList.add("mydividHov");
+    location.reload();
+    maincon.style.display = 'block';
+    bottomdivCover.style.display = "block";
+    bottomDiv.style.display = "none";
+    maincon.style.width = "800px";
+    maincon.style.height = "600px";
+    maincon.style.left = "50%";
+    maincon.style.top = "50%";
+    resize.style.display = "block";
+    resizeBigscreen.style.display = "none";
+    restore.style.display = "none";
+    mydivid.classList.add("show-scroll");
+    movingContainer();
+    minMaxBtn.style.display = "block";
+    maincon.classList.remove('fadeout');
+  
+      
+    
+    forcancelbtn();
+});
+
+document.getElementById("cmd-command-ev").addEventListener("click", (e) => {
+
+    location.reload();
+    maincon.style.display = 'block';
+    bottomdivCover.style.display = "block";
+    bottomDiv.style.display = "none";
+    maincon.style.width = "800px";
+    maincon.style.height = "600px";
+    maincon.style.left = "50%";
+    maincon.style.top = "50%";
+    resize.style.display = "block";
+    resizeBigscreen.style.display = "none";
+    restore.style.display = "none";
+    mydivid.classList.add("show-scroll");
+    movingContainer();
+    minMaxBtn.style.display = "block";
+    maincon.classList.remove('fadeout');
+    forcancelbtn();
+});
+document.getElementById("window_popup-recyclebin-icon").addEventListener("click", () => {
+    forcancelbtn();
+    alert("recycle bin is empty");
+   
+});
+document.getElementById("dialogbox-cross1").addEventListener("mouseover", () => {
+    document.getElementById("dialogbox-cross2").style.display = "block";
+    document.getElementById("dialogbox-cross1").style.display = "none";
+   
+});
+document.getElementById("dialogbox-cross2").addEventListener("click", () => {
+//    document.querySelector(".dialog-box").style.display = "none";
+test.style.opacity = "0";
+});
+

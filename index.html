@@ -49,7 +49,7 @@
 
   </div>
   <main class="maincon" id="mydiv">
-    <nav class="navbar color  " id="mydivheader">
+    <nav class="navbar color" id="mydivheader">
       <div><img class="px-icon" src="asset/images/cmd.png" alt="" /></div>
       <p class="pixel-6">Pixel<span class="six">6</span></p>
 
@@ -70,7 +70,7 @@
         <button class="btnremove d-none" id="restore">
           <img src="asset/images/restore.png" alt="restore" />
         </button>
-        <button class="btnclose">
+        <button class="btnclose ">
           <img src="asset/images/close.png" alt="" />
         </button>
         <button id="crossBtnBigScreen" style="display: none">
@@ -152,6 +152,8 @@
         <header class="test-error-header">
           <div><img id="test-error-header-picture" src="asset/images/windowsanitivirus.png" alt=""></div>
           <div>your computer might be at risk</div>
+          <div><img  style="height: 30px;width: 30px;"   src="asset/images/dialogbox-cross1.png" alt="" id="dialogbox-cross1"></div>
+          <div><img id="dialogbox-cross2" style="height: 30px;width: 30px; display: none;"  src="asset/images/dialogbox-cross2.png" alt="" ></div>
         </header>
         <div>
           <p>Antivirus software might not be installed click this balloon to fix this problem</p>
@@ -171,6 +173,7 @@
         <section class="desktop-menu">
           <hr class="horizontal-row">
           <div class="menu-items">
+
             <div class="menu-left">
               <div class="menu-items-content">
                 <div class="explorar-img all-desktop-left-icon">
@@ -183,7 +186,7 @@
               </div>
 
 
-              <div class="menu-items-content">
+              <div class="menu-items-content window_popup-hover" id="window_popup-pixel6-icon">
                 <div class="all-desktop-left-icon">
                   <img class="menu-items-img" src="asset/images/iconpixel6.png" alt="">
                 </div>
@@ -193,7 +196,7 @@
                 </div>
               </div>
 
-              <div class="menu-items-content">
+              <div class="menu-items-content window_popup-hover" id="window_popup-cmd-icon">
                 <div class="all-desktop-left-icon">
                   <img class="menu-items-img" src="asset/images/cmd.svg" alt="">
                 </div>
@@ -202,7 +205,7 @@
                 </div>
               </div>
 
-              <div class="menu-items-content">
+              <div class="menu-items-content  window_popup-hover"  id="window_popup-recyclebin-icon">
                 <div class="all-desktop-left-icon">
                   <img class="menu-items-img" src="asset/images/recyclebinbox.png" alt="">
                 </div>
@@ -211,7 +214,7 @@
 
                 </div>
               </div>
-              <div class="menu-items-content">
+              <div class="menu-items-content window_popup-hover" id="window_popup-game-icon">
                 <div class="all-desktop-left-icon">
                   <img class="menu-items-img" src="asset/images/guess-number.png" alt="">
                 </div>
@@ -406,18 +409,21 @@
         <div class="left-startWindow">
           <img class="left-startWindow-img" src="asset/images/starwindow.png" alt="">
 
-          <div class="bottom-div d-flex justify-center ddd" id="bottom-div-cover">
+          <div class="bottom-div d-flex  ddd" id="bottom-div-cover">
             <div class="d-flex ">
               <p class="bottom-p6">
-                Pixel<span class="six" style="color: #c01a20">6</span>
+                <img src="asset/images/iconpixel6.png" alt="" style="height: 15px;width: 15px;">
+              <span style="font-size: 12px;">  Pixel6</span>
               </p>
             </div>
           </div>
 
         </div>
       </div>
+
+      <!-- status bar right part -->
       <div class="status-bar-items-right">
-        <img class="soundon" src="asset/images/soundicon.webp" alt="">
+        <img class="soundon" src="asset/images/windows xp sound icon.png" alt="">
         <img class="error-icon" src="asset/images/windowsanitivirus.png" alt="">
         <div class="time">
           <span id="fetch-time"></span>
