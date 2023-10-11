@@ -1461,7 +1461,7 @@
     
     .player {
         flex: 50%;
-        padding: 223px;
+        padding: 74px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1526,9 +1526,9 @@
     }
     /* ABSOLUTE POSITIONED ELEMENTS */
     
-    .btn {
+    .btn-btn {
         width: 288px;
-        margin-right: 348px;
+        margin-right: 65px;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -1545,7 +1545,7 @@
         background-color: rgba(255, 255, 255, 0.6);
         backdrop-filter: blur(10px);
         /* padding: 0.7rem 2.5rem; */
-        padding: 20px 43px 27px 5px;
+        /* padding: 20px 43px 27px 5px; */
         border-radius: 50rem;
         box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
     }
@@ -1561,16 +1561,15 @@
         margin-right: 0.7rem;
     }
     
-    .btn--new {
-        top: 4rem;
-    }
-    
-    .btn--roll {
-        top: 39.3rem;
-    }
+     .btn--new {
+       top: 33px;
+    } 
+ .btn--roll {
+      top: 338px;
+    } 
     
     .btn--hold {
-        top: 46.1rem;
+    top: 396px;
     }
     
     .btn:active {
@@ -1586,7 +1585,7 @@
         width: 150px;
         position: absolute;
         left: 50%;
-        top: 16.5rem;
+        top: 92px;
         transform: translateX(-50%);
         height: 10rem;
         box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);

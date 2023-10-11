@@ -3,10 +3,10 @@ const score1 = document.getElementById("score--1");
 const scoresss = document.querySelector('.score');
 
 const diceimg = document.querySelector('.dice');
-const newgame = document.querySelector('.btn btn--new');
-const roll = document.querySelector('.btn btn--roll');
-const hold = document.querySelector('.btn btn--hold');
-const btn = document.querySelector(".btn");
+const newgame = document.querySelector('.btn-btn btn--new');
+const roll = document.querySelector('.btn-btn btn--roll');
+const hold = document.querySelector('.btn-btn btn--hold');
+const btn = document.querySelector(".btn-btn");
 const currentscore1 = document.getElementById("current--0");
 const currentscore2 = document.getElementById("current--1");
 
