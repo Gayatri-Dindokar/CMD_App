@@ -510,7 +510,7 @@
     }
     
     .aboutwrap {
-        margin-left: 72px;
+        margin-left: 40px;
         height: 285px;
         width: 407px;
         text-align: justify;
@@ -562,9 +562,12 @@
         text-align: justify;
         margin-top: 20px;
     }
-    
+    .jobs ol{
+        margin-left: -21px;
+    }
     .jobs-px {
         width: 406px;
+        margin-left: 40px;
         /* background-color: aquamarine; */
     }
     

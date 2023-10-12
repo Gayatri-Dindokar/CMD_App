@@ -275,11 +275,12 @@
                                         </span>
                                         <!-- games dropdown -->
                                         <div class="games-dropdown" style="display: none;">
+
                                             <div class="games_dropdown-items" id="games-dropdown-guess-number">
                                                 <img class="menu-items-img" src="asset/images/guess-number.png" alt=""><span>Guess The Number</span>
                                             </div>
 
-                                            <div class="games_dropdown-items">
+                                            <div class="games_dropdown-items" id="dice-dropdown-game">
                                                 <img class="menu-items-img" src="asset/images/dice-removebg-preview.png" alt=""><span>Dice</span>
                                             </div>
 
@@ -523,13 +524,13 @@
         <header class="header-guess">
             <h1>Guess My Number!</h1>
             <p class="between">(Between 1 and 20)</p>
-            <button class="btn-guess again" onclick="againeplay()">Again!</button>
+            <button class="btn-guess again" id="again-btn-guess">Again!</button>
             <div class="number">?</div>
         </header>
         <main class="main-guess">
             <section class="left">
                 <input type="number" class="guess" />
-                <button class="btn-cheack-guess check" onclick="guessthenumber()">Check!</button>
+                <button class="btn-cheack-guess check" id="cheack-btn">Check!</button>
             </section>
 
 

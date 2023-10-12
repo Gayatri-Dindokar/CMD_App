@@ -68,27 +68,27 @@ async function showHelp() {
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type home command//
-const showHome = async() => {
+const showHome = async () => {
     const html = await showHtmlModel.showHome();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type about command//
-const showAbout = async() => {
+const showAbout = async () => {
     const html = await showHtmlModel.showAbout();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type projects command//
-const showProjects = async() => {
+const showProjects = async () => {
     const html = await showHtmlModel.showprojects();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type contact command//
-const showContact = async() => {
+const showContact = async () => {
     const html = await showHtmlModel.showContact();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type jobs command//
-const showJobs = async() => {
+const showJobs = async () => {
     const html = await showHtmlModel.showJobs();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
@@ -200,7 +200,7 @@ const get_quote = () => {
     showQuestion(0);
     focusOnInputsOfCurrentQuestion(0);
 
-    document.getElementById("nameInput").addEventListener("keyup", function(event) {
+    document.getElementById("nameInput").addEventListener("keyup", function (event) {
         let nameInput = document.getElementById("nameInput");
         let store = document.getElementById("nameInput").value;
         if (event.key === "Enter") {
@@ -220,7 +220,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("emailInput").addEventListener("keyup", function(event) {
+    document.getElementById("emailInput").addEventListener("keyup", function (event) {
         let email = document.getElementById("emailInput").value;
         let emailInput = document.getElementById("emailInput");
         if (event.key === "Enter") {
@@ -239,7 +239,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("phoneInput").addEventListener("keyup", function(event) {
+    document.getElementById("phoneInput").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
             const phoneInput = document.getElementById("phoneInput");
@@ -255,26 +255,26 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("requireInput").addEventListener("keyup", function(event) {
+    document.getElementById("requireInput").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const requireInput = document.getElementById("requireInput").value;
             showQuestion(4);
             focusOnInputsOfCurrentQuestion(4);
         }
     });
-    document.getElementById("whenInput").addEventListener("keyup", function(event) {
+    document.getElementById("whenInput").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             showQuestion(5);
             focusOnInputsOfCurrentQuestion(5);
         }
     });
-    document.getElementById("Project-Brief").addEventListener("keydown", function(event) {
+    document.getElementById("Project-Brief").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             showQuestion(6);
             focusOnInputsOfCurrentQuestion(6);
         }
     });
-    document.getElementById("submitInput").addEventListener("keyup", function(event) {
+    document.getElementById("submitInput").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const submit = document.getElementById("submitInput").value;
             const conform = document.getElementById("submitInput").value;
@@ -300,7 +300,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("messageNo").addEventListener("keyup", function(event) {
+    document.getElementById("messageNo").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("messageNo").value;
             if (conform == "y") {
@@ -319,7 +319,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("resubmission").addEventListener("keyup", function(event) {
+    document.getElementById("resubmission").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("resubmission").value;
             if (conform == "y") {
@@ -342,7 +342,7 @@ const get_quote = () => {
     });
 };
 // main function
-container.addEventListener("keyup", async function(e) {
+container.addEventListener("keyup", async function (e) {
     // console.log(e.target);
     if (e.target.matches(".input")) {
         const userinput = e.target.value.trim();
@@ -384,7 +384,7 @@ container.addEventListener("keyup", async function(e) {
 //     document.onmouseup = null;
 // }
 function movingContainer() {
-    mydiv.addEventListener('mousedown', function(e) {
+    mydiv.addEventListener('mousedown', function (e) {
         if (e.button === 0) {
             isDown = true;
             offset = [
@@ -407,7 +407,7 @@ minMaxBtn.addEventListener("click", () => {
     resize.style.display = "none";
     mydivid.style.borderRadius = "0px";
     // mydivid.style.marginBottom = "-2px";
-    mydiv.addEventListener("click", function(e) {
+    mydiv.addEventListener("click", function (e) {
         if (e.target.matches('#mydivheader')) {
             mydivid.style.width = "800px";
             mydivid.style.height = "600px";
@@ -427,7 +427,7 @@ minMaxBtn.addEventListener("click", () => {
 
     }
 
-    mydiv.addEventListener('mousedown', function(e) {
+    mydiv.addEventListener('mousedown', function (e) {
         if (e.button === 0) {
             isDown = false;
             offset = [
@@ -537,7 +537,7 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
     resizeAtMinSize.style.display = "block";
     resize.style.display = "none";
     mydivid.classList.add("transition");
-    mydiv.addEventListener('mousedown', function(e) {
+    mydiv.addEventListener('mousedown', function (e) {
         if (e.button === 0) {
             isDown = false;
             offset = [
@@ -565,7 +565,7 @@ var isDown = false;
 var mydiv = document.getElementById("mydiv");
 var originalWidth = mydiv.style.width;
 var originalHeight = mydiv.style.height;
-mydiv.addEventListener('mousedown', function(e) {
+mydiv.addEventListener('mousedown', function (e) {
     if (e.button === 0) {
         isDown = true;
         offset = [
@@ -574,10 +574,10 @@ mydiv.addEventListener('mousedown', function(e) {
         ];
     }
 }, true);
-mydiv.addEventListener('mouseup', function() {
+mydiv.addEventListener('mouseup', function () {
     isDown = false;
 }, true);
-mydiv.addEventListener('mousemove', function(event) {
+mydiv.addEventListener('mousemove', function (event) {
     event.preventDefault();
 
     if (isDown) {
@@ -591,7 +591,7 @@ mydiv.addEventListener('mousemove', function(event) {
             mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
         }
         mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
-        if ((mousePosition.y + offset[1]) > (pageHeight - 600)) {}
+        if ((mousePosition.y + offset[1]) > (pageHeight - 600)) { }
     }
 }, true);
 const recy = document.getElementById("recyclebin");
@@ -766,7 +766,8 @@ document.querySelector(".all-programs_tab").addEventListener("mouseout", () => {
 document.getElementById("games-text-ev").addEventListener("mouseover", () => {
     document.querySelector(".games-dropdown").style.display = "block";
 });
-document.querySelector(".games-dropdown").addEventListener("click", () => {
+document.getElementById("dice-dropdown-game").addEventListener("click", () => {
+    console.log("dicegame")
     pigGame.style.display = "block";
     pigGame.style.left = "30%";
     pigGame.style.top = "30%";
@@ -871,16 +872,16 @@ document.getElementById("window_popup-game-icon").addEventListener("mouseout", (
 
 
 // guess the number//
-const again = document.querySelector('.btn again');
+const again = document.querySelector('.btn-guess again');
 const number = document.querySelector('.number');
 const guesss = document.querySelector('.guess');
-const check = document.querySelector('.btn check');
+const check = document.querySelector('.btn-cheack-guess ');
 const message = document.querySelector('.message');
 const score = document.querySelector('.score');
 const highscore = document.querySelector('.highscore');
 
 // document.querySelector('.number').textContent = 13;
-let assume = document.querySelector('.guess').value;
+// let assume = document.querySelector('.guess').value;
 
 let random = Math.floor(Math.random() * 20) + 1;
 console.log(random);
@@ -890,9 +891,7 @@ let highscores = 0;
 
 
 function guessthenumber() {
-
-
-
+    console.log("guess the number")
     const assume = Number(document.querySelector('.guess').value);
 
     if (!assume) {
@@ -902,7 +901,7 @@ function guessthenumber() {
         document.querySelector('.number').textContent = random;
         document.querySelector('.message').textContent = 'Correct Number';
         document.querySelector('.body-guess').style.backgroundColor = "green";
-        if (scores > highscores) {
+        if (scoresg > highscores) {
             highscores = scoresg;
             document.querySelector('.highscore').textContent = highscores;
         }
@@ -927,18 +926,15 @@ function guessthenumber() {
             document.querySelector('.message').textContent = 'You  lost the game';
             document.querySelector('.score').textContent = scoresg;
         }
-
-
-
-
-    }
+ }
 }
-guessthenumber();
+// guessthenumber();
+document.getElementById("cheack-btn").addEventListener("click", guessthenumber );
 
 function againeplay() {
     scoresg = 20;
-
-    document.querySelector('.score').textContent = scores;
+    highscores = 0;
+    document.querySelector('.score').textContent = scoresg;
     random = Math.floor(Math.random() * 20) + 1;
     console.log(random);
     document.querySelector('.number').textContent = '?';
@@ -948,25 +944,29 @@ function againeplay() {
     console.log("heloo players")
 
 }
+againeplay();
+document.getElementById("again-btn-guess").addEventListener("click",againeplay);
 
 document.querySelector(".exit-guess-container").addEventListener("click", () => {
     document.querySelector(".body-guess").style.display = "none";
 });
 
-const guessGame = document.querySelector(".body-guess");
+const guessgame = document.querySelector(".body-guess");
 document.getElementById("guess-number-game").addEventListener("click", () => {
     console.log("pppp")
-    guessGame.style.display = "block";
-    guessGame.style.left = "30%";
-    guessGame.style.top = "30%";
+    guessgame.style.display = "block";
+    guessgame.style.left = "30%";
+    guessgame.style.top = "30%";
     forcancelbtn();
     mydivid.style.display = "none";
 });
+
 document.getElementById("games-dropdown-guess-number").addEventListener("click", () => {
     console.log("zxcvbnm,")
-    guessGame.style.display = "block";
-    guessGame.style.left = "30%";
-    guessGame.style.top = "30%";
+    guessgame.style.display = "block";
+    guessgame.style.left = "30%";
+    guessgame.style.top = "30%";
     forcancelbtn();
     mydivid.style.display = "none";
+
 });

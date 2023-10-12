@@ -26,6 +26,7 @@ return `<div class="helps"> <p>--use keywords to navigate</p>
     <li>contact</li>
     <li>get quote</li>
     <li>jobs</li>
+    <li>exit</li>
     </ul> </div>`;
     };
 
@@ -45,7 +46,8 @@ return `<div class="helps"> <p>--use keywords to navigate</p>
                                 development experts focused on UI/UX Design, Mobile/App and Web Application and development. We extend our services to the design, development and marketing departments of growing start ups and established organizations the
                                 same.
                             </p>
-                        </div>`;
+                        </div>
+                        <br><br>`;
             };
         
             export const showprojects = async function(){
