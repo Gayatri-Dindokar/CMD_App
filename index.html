@@ -515,6 +515,7 @@
     </div>
     <!-- gamming -->
     <div class="bodyy" style="display: none;">
+      <div class="exit-dice-btn-container">  <button class="exit-dice-btn">Exit</button></div>
         <main class="main-dice">
             <section class="player player--0 player--active">
                 <h2 class="name" id="name--0">Player 1</h2>
@@ -534,8 +535,8 @@
             </section>
 
             <img src="dice-5.png" alt="Playing dice" class="dice" />
-            <button class="exit-dice-btn">Exit</button>
-            <button class="btn-btn btn--new" onclick="reset()">🔄 New game</button>
+           
+            <button class="btn-btn btn--new" onclick="reset()" id="nnnn">🔄 New game</button>
             <button class="btn-btn btn--roll" onclick="btnroll()">🎲 Roll dice</button>
             <button class="btn-btn btn--hold" onclick="btnhold()"><span id="hold">📥 Hold</span></button>
         </main>

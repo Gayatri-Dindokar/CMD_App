@@ -4,8 +4,8 @@ const scoresss = document.querySelector('.score');
 
 const diceimg = document.querySelector('.dice');
 const newgame = document.querySelector('.btn-btn btn--new');
-const roll = document.querySelector('.btn-btn btn--roll');
-const hold = document.querySelector('.btn-btn btn--hold');
+const roll = document.querySelector('.btn--roll');
+const hold = document.querySelector('.btn--hold');
 const btn = document.querySelector(".btn-btn");
 const currentscore1 = document.getElementById("current--0");
 const currentscore2 = document.getElementById("current--1");
@@ -106,7 +106,7 @@ function reset() {
     score1.textContent = 0;
     currentscore1.textContent = 0;
     currentscore2.textContent = 0;
-
+    playing = true;
     const random = Math.trunc(Math.random() * 6) + 1;
     console.log(random);
 
@@ -127,3 +127,7 @@ function reset() {
 
 }
 reset();
+
+// document.getElementById("nnnn").addEventListener("click",()=>{
+
+// })
