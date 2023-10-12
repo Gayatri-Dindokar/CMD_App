@@ -766,6 +766,14 @@ document.querySelector(".all-programs_tab").addEventListener("mouseout", () => {
 document.getElementById("games-text-ev").addEventListener("mouseover", () => {
     document.querySelector(".games-dropdown").style.display = "block";
 });
+document.querySelector(".games-dropdown").addEventListener("click", () => {
+    pigGame.style.display = "block";
+    pigGame.style.left = "30%";
+    pigGame.style.top = "30%";
+    forcancelbtn();
+    mydiv.style.display="none";
+   
+});
 document.getElementById("games-text-ev").addEventListener("mouseout", () => {
     document.querySelector(".games-dropdown").style.display = "none";
 });
@@ -846,4 +854,23 @@ document.getElementById("dialogbox-cross2").addEventListener("click", () => {
     test.style.opacity = "0";
 });
 
-// gaming//
+document.getElementById("window_popup-game-icon").addEventListener("mouseover",()=>{
+   document.querySelector(".games-dropdown-left-side").style.display = "block";
+});
+
+document.getElementById("window_popup-game-icon").addEventListener("mouseout",()=>{
+    document.querySelector(".games-dropdown-left-side").style.display = "none";
+ });
+
+ const pigGame =  document.querySelector(".bodyy");
+ document.getElementById("dice-game").addEventListener("click",()=>{
+    console.log("llll")
+    pigGame.style.display = "block";
+    pigGame.style.left = "30%";
+    pigGame.style.top = "30%";
+    forcancelbtn();
+    mydiv.style.display="none";
+ });
+ document.querySelector(".exit-dice-btn").addEventListener("click",()=>{
+    pigGame.style.display = "none";
+ })
