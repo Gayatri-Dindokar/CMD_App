@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Command prompt interface</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine" />
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet" />
@@ -27,15 +26,13 @@
 
 
             <div class="d-flex d-coloumn">
-                <div class="anchr"><img id="pixel6icon" class="cmd" src="asset/images/iconpixel6.png" alt="pixel6icon"
-                        title="Pixel6" />
+                <div class="anchr"><img id="pixel6icon" class="cmd" src="asset/images/iconpixel6.png" alt="pixel6icon" title="Pixel6" />
                 </div>
                 <span class="pixel6-web-text">Pixel6 Web</span>
             </div>
 
 
-            <div class="d-flex d-coloumn"><img id="recyclebin" class="cmd" src="asset/images/recyclebinbox.png"
-                    alt="recyclebin" title="recycle bin" />
+            <div class="d-flex d-coloumn"><img id="recyclebin" class="cmd" src="asset/images/recyclebinbox.png" alt="recyclebin" title="recycle bin" />
                 <span class=" recycleBin-text"> Recycle Bin</span>
             </div>
 
@@ -153,10 +150,8 @@
                 <header class="test-error-header">
                     <div><img id="test-error-header-picture" src="asset/images/windowsanitivirus.png" alt=""></div>
                     <div>your computer might be at risk</div>
-                    <div><img style="height: 30px;width: 30px;" src="asset/images/dialogbox-cross1.png" alt=""
-                            id="dialogbox-cross1"></div>
-                    <div><img id="dialogbox-cross2" style="height: 30px;width: 30px; display: none;"
-                            src="asset/images/dialogbox-cross2.png" alt=""></div>
+                    <div><img style="height: 30px;width: 30px;" src="asset/images/dialogbox-cross1.png" alt="" id="dialogbox-cross1"></div>
+                    <div><img id="dialogbox-cross2" style="height: 30px;width: 30px; display: none;" src="asset/images/dialogbox-cross2.png" alt=""></div>
                 </header>
                 <div>
                     <p>Antivirus software might not be installed click this balloon to fix this problem</p>
@@ -180,8 +175,7 @@
                         <div class="menu-left">
                             <div class="menu-items-content">
                                 <div class="explorar-img all-desktop-left-icon">
-                                    <img class="menu-items-img "
-                                        src="asset/images/internet-explorar-removebg-preview.png" alt="">
+                                    <img class="menu-items-img " src="asset/images/internet-explorar-removebg-preview.png" alt="">
                                 </div>
                                 <div class="menu-item-texts">
                                     <div>Internet</div>
@@ -225,20 +219,18 @@
                                 </div>
                                 <div class="menu-item-texts">
                                     <div>game</div>
+                                    <!-- dropdown -->
                                     <div class="games-dropdown-left-side" style="display: none;">
-                                        <div class="games_dropdown-items">
-                                            <img class="menu-items-img" src="asset/images/guess-number.png"
-                                                alt=""><span>Guess The Number</span>
+                                        <div class="games_dropdown-items" id="guess-number-game">
+                                            <img class="menu-items-img" src="asset/images/guess-number.png" alt=""><span>Guess The Number</span>
                                         </div>
 
                                         <div class="games_dropdown-items" id="dice-game">
-                                            <img class="menu-items-img" src="asset/images/dice-removebg-preview.png"
-                                                alt=""><span>Dice</span>
+                                            <img class="menu-items-img" src="asset/images/dice-removebg-preview.png" alt=""><span>Dice</span>
                                         </div>
 
                                         <div class="games_dropdown-items">
-                                            <img class="menu-items-img" src="asset/images/cards-removebg-preview.png"
-                                                alt=""><span>Cards</span>
+                                            <img class="menu-items-img" src="asset/images/cards-removebg-preview.png" alt=""><span>Cards</span>
                                         </div>
 
                                     </div>
@@ -274,39 +266,32 @@
                                 <div class="dropdown_all-programs" style="display: none;">
 
                                     <div class="dropdown_items" id="pixel6-dropdown-all-programs">
-                                        <img class="menu-items-img" src="asset/images/iconpixel6.png"
-                                            alt=""><span>Pixel6</span>
+                                        <img class="menu-items-img" src="asset/images/iconpixel6.png" alt=""><span>Pixel6</span>
                                     </div>
 
                                     <div class="dropdown_items" id="games-text-ev">
-                                        <img class="menu-items-img" src="asset/images/guess-number.png" alt=""><span
-                                            class="margin-rt-dropdown-text">Games</span><span><i
+                                        <img class="menu-items-img" src="asset/images/guess-number.png" alt=""><span class="margin-rt-dropdown-text">Games</span><span><i
                                                 class="fa fa-caret-right" aria-hidden="true"></i>
                                         </span>
                                         <!-- games dropdown -->
                                         <div class="games-dropdown" style="display: none;">
-                                            <div class="games_dropdown-items">
-                                                <img class="menu-items-img" src="asset/images/guess-number.png"
-                                                    alt=""><span>Guess The Number</span>
+                                            <div class="games_dropdown-items" id="games-dropdown-guess-number">
+                                                <img class="menu-items-img" src="asset/images/guess-number.png" alt=""><span>Guess The Number</span>
                                             </div>
 
                                             <div class="games_dropdown-items">
-                                                <img class="menu-items-img" src="asset/images/dice-removebg-preview.png"
-                                                    alt=""><span>Dice</span>
+                                                <img class="menu-items-img" src="asset/images/dice-removebg-preview.png" alt=""><span>Dice</span>
                                             </div>
 
                                             <div class="games_dropdown-items">
-                                                <img class="menu-items-img"
-                                                    src="asset/images/cards-removebg-preview.png"
-                                                    alt=""><span>Cards</span>
+                                                <img class="menu-items-img" src="asset/images/cards-removebg-preview.png" alt=""><span>Cards</span>
                                             </div>
 
                                         </div>
                                     </div>
 
                                     <div class="dropdown_items" id="cmd-command-ev">
-                                        <img class="menu-items-img" src="asset/images/cmd.svg" alt=""><span
-                                            class="margin-rt-dropdown-text-cmd">Cmd Command</span>
+                                        <img class="menu-items-img" src="asset/images/cmd.svg" alt=""><span class="margin-rt-dropdown-text-cmd">Cmd Command</span>
                                         <div style="display: flex; justify-content: flex-end;">
 
                                             <!-- cmd command dropdown -->
@@ -341,8 +326,7 @@
                                     </div>
 
                                     <div class="dropdown_items">
-                                        <img class="menu-items-img" src="asset/images/calculator.png"
-                                            alt=""><span>Calculator</span>
+                                        <img class="menu-items-img" src="asset/images/calculator.png" alt=""><span>Calculator</span>
                                     </div>
 
                                 </div>
@@ -353,8 +337,7 @@
                         <div class="menu-itens-right">
                             <div class="menu-items-content">
                                 <div class="all-desktop-left-icon">
-                                    <img class="menu-items-img" src="asset/images/mycomputer-removebg-preview.png"
-                                        alt="">
+                                    <img class="menu-items-img" src="asset/images/mycomputer-removebg-preview.png" alt="">
                                 </div>
                                 <div class="menu-item-texts">
                                     <div>My Computer</div>
@@ -364,8 +347,7 @@
 
                             <div class="menu-items-content">
                                 <div class="all-desktop-left-icon">
-                                    <img class="menu-items-img" src="asset/images/controlpanel-removebg-preview.png"
-                                        alt="">
+                                    <img class="menu-items-img" src="asset/images/controlpanel-removebg-preview.png" alt="">
                                 </div>
                                 <div class="menu-item-texts">
                                     <div>Control Panel</div>
@@ -374,8 +356,7 @@
 
                             <div class="menu-items-content">
                                 <div class="all-desktop-left-icon">
-                                    <img class="menu-items-img" src="asset/images/connectTo-removebg-preview.png"
-                                        alt="">
+                                    <img class="menu-items-img" src="asset/images/connectTo-removebg-preview.png" alt="">
                                 </div>
                                 <div class="menu-item-texts">
                                     <div>Connect To</div>
@@ -406,8 +387,7 @@
 
                             <div class="menu-items-content">
                                 <div class="all-desktop-left-icon">
-                                    <img class="menu-items-img" src="asset/images/helpandsupport-removebg-preview.png"
-                                        alt="">
+                                    <img class="menu-items-img" src="asset/images/helpandsupport-removebg-preview.png" alt="">
                                 </div>
                                 <div class="menu-item-texts">
                                     <div>Help and Support</div>
@@ -444,34 +424,34 @@
 
                     </div>
                 </footer>
-            </div>
-            <!-- status bar  -->
-            <div class="status-bar-items-left">
-                <div class="left-startWindow">
-                    <img class="left-startWindow-img" src="asset/images/starwindow.png" alt="">
+                </div>
+                <!-- status bar  -->
+                <div class="status-bar-items-left">
+                    <div class="left-startWindow">
+                        <img class="left-startWindow-img" src="asset/images/starwindow.png" alt="">
 
-                    <div class="bottom-div d-flex  ddd" id="bottom-div-cover">
-                        <div class="d-flex ">
-                            <p class="bottom-p6">
-                                <img src="asset/images/iconpixel6.png" alt="" style="height: 15px;width: 15px;">
-                                <span style="font-size: 12px;"> Pixel6</span>
-                            </p>
+                        <div class="bottom-div d-flex  ddd" id="bottom-div-cover">
+                            <div class="d-flex ">
+                                <p class="bottom-p6">
+                                    <img src="asset/images/iconpixel6.png" alt="" style="height: 15px;width: 15px;">
+                                    <span style="font-size: 12px;"> Pixel6</span>
+                                </p>
+                            </div>
                         </div>
+
+                    </div>
+                </div>
+
+                <!-- status bar right part -->
+                <div class="status-bar-items-right">
+                    <img class="soundon" src="asset/images/windows xp sound icon.png" alt="">
+                    <img class="error-icon" src="asset/images/windowsanitivirus.png" alt="">
+                    <div class="time">
+                        <span id="fetch-time"></span>
                     </div>
 
                 </div>
             </div>
-
-            <!-- status bar right part -->
-            <div class="status-bar-items-right">
-                <img class="soundon" src="asset/images/windows xp sound icon.png" alt="">
-                <img class="error-icon" src="asset/images/windowsanitivirus.png" alt="">
-                <div class="time">
-                    <span id="fetch-time"></span>
-                </div>
-
-            </div>
-        </div>
         </div>
     </footer>
 
@@ -482,12 +462,9 @@
                 <img src="asset/images/" alt="">
             </header>
             <div class="model_window-content">
-                <div class="model_window-content-items" id="stand-by"><img class="model_window-content-items "
-                        src="asset/images/turn off.png" alt="stand by"><span>Stand By</span></div>
-                <div class="model_window-content-items"><img class="model_window-content-items  "
-                        src="asset/images/turn off.png" alt=""><span> Turn Off</span></div>
-                <div class="model_window-content-items"><img class="model_window-content-items turnoff-img"
-                        src="asset/images/green-restart-icon-19-removebg-preview.png" alt=""><span>Restart</span></div>
+                <div class="model_window-content-items" id="stand-by"><img class="model_window-content-items " src="asset/images/turn off.png" alt="stand by"><span>Stand By</span></div>
+                <div class="model_window-content-items"><img class="model_window-content-items  " src="asset/images/turn off.png" alt=""><span> Turn Off</span></div>
+                <div class="model_window-content-items"><img class="model_window-content-items turnoff-img" src="asset/images/green-restart-icon-19-removebg-preview.png" alt=""><span>Restart</span></div>
             </div>
             <footer class="model_window-footer">
                 <button class="footer-button">Cancel</button>
@@ -503,10 +480,8 @@
                 <img src="asset/images/" alt="">
             </header>
             <div class="model_window-content">
-                <div class="model_window-content-items"><img class="model_window-content-items  "
-                        src="asset/images/turn off.png" alt=""><span> Switch User</span></div>
-                <div class="model_window-content-items"><img class="model_window-content-items turnoff-img"
-                        src="asset/images/log off.png" alt=""><span>Log Off</span></div>
+                <div class="model_window-content-items"><img class="model_window-content-items  " src="asset/images/turn off.png" alt=""><span> Switch User</span></div>
+                <div class="model_window-content-items"><img class="model_window-content-items turnoff-img" src="asset/images/log off.png" alt=""><span>Log Off</span></div>
             </div>
             <footer class="moda_logof-footer">
                 <button class="modal_logoff-btn">Cancel</button>
@@ -515,7 +490,7 @@
     </div>
     <!-- gamming -->
     <div class="bodyy" style="display: none;">
-      <div class="exit-dice-btn-container">  <button class="exit-dice-btn">Exit</button></div>
+        <div class="exit-dice-btn-container"> <button class="exit-dice-btn">Exit</button></div>
         <main class="main-dice">
             <section class="player player--0 player--active">
                 <h2 class="name" id="name--0">Player 1</h2>
@@ -535,10 +510,36 @@
             </section>
 
             <img src="dice-5.png" alt="Playing dice" class="dice" />
-           
+
             <button class="btn-btn btn--new" onclick="reset()" id="nnnn">🔄 New game</button>
             <button class="btn-btn btn--roll" onclick="btnroll()">🎲 Roll dice</button>
             <button class="btn-btn btn--hold" onclick="btnhold()"><span id="hold">📥 Hold</span></button>
+        </main>
+    </div>
+
+    <!-- guess the number game -->
+    <div class="body-guess" style="display: none;">
+        <div class="exit-guess-container"> <button class="exit-guess">Exit</button></div>
+        <header class="header-guess">
+            <h1>Guess My Number!</h1>
+            <p class="between">(Between 1 and 20)</p>
+            <button class="btn-guess again" onclick="againeplay()">Again!</button>
+            <div class="number">?</div>
+        </header>
+        <main class="main-guess">
+            <section class="left">
+                <input type="number" class="guess" />
+                <button class="btn-cheack-guess check" onclick="guessthenumber()">Check!</button>
+            </section>
+
+
+            <section class="right">
+                <p class="message">Start guessing...</p>
+                <p class="label-score">💯 Score: <span class="score">20</span></p>
+                <p class="label-highscore">
+                    🥇 Highscore: <span class="highscore">0</span>
+                </p>
+            </section>
         </main>
     </div>
     <script type="module" src="script.js"></script>

@@ -35,6 +35,7 @@
     transition: all 0.75s;
 }
 
+
 /* ELEMENTS */
 
 .name {
@@ -93,6 +94,7 @@
     font-size: 41px;
 }
 
+
 /* ABSOLUTE POSITIONED ELEMENTS */
 
 .btn-btn {
@@ -118,7 +120,6 @@
     border-radius: 50rem;
     box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
 }
-
 
 .btn-btn ::first-letter {
     font-size: 2.4rem;
@@ -176,8 +177,152 @@
     margin-top: 2px;
     margin-right: 2px;
 }
-.exit-dice-btn-container{
+
+.exit-dice-btn-container {
     display: flex;
     justify-content: flex-end;
     background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+}
+
+
+/* guess the number */
+
+.body-guess {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #eee;
+    background-color: #222;
+    width: 917px;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    /* background-color: #60b347; */
+}
+
+
+/* LAYOUT */
+
+.header-guess {
+    position: relative;
+    height: 28vh;
+    border-bottom: 7px solid #eee;
+}
+
+.main-guess {
+    height: 44vh;
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.left {
+    width: 52rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right {
+    width: 52rem;
+    font-size: 2rem;
+}
+
+
+/* ELEMENTS STYLE */
+
+.header-guess h1 {
+    font-size: 4rem;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.number {
+    background: #eee;
+    color: #333;
+    font-size: 6rem;
+    width: 8rem;
+    /* padding: 3rem 0rem; */
+    text-align: center;
+    position: absolute;
+    /* bottom: 0; */
+    left: 50%;
+    transform: translate(-50%, 50%);
+    margin-top: -26px;
+    top: 144px;
+}
+
+.between {
+    font-size: 1.4rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.again {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.guess {
+    background: none;
+    border: 4px solid #eee;
+    font-family: inherit;
+    color: inherit;
+    font-size: 4rem;
+    /* padding: 2.5rem; */
+    width: 12rem;
+    text-align: center;
+    display: block;
+    margin-bottom: 3rem;
+}
+
+.btn-guess {
+    border: none;
+    background-color: #eee;
+    color: #222;
+    font-size: 2rem;
+    font-family: inherit;
+    /* padding: 2rem 3rem; */
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.btn:hover {
+    background-color: #ccc;
+}
+
+
+/* .message {
+    margin-bottom: 8rem;
+    height: 3rem;
+} */
+
+.label-score {
+    margin-bottom: 2rem;
+}
+
+.btn-cheack-guess {
+    padding: 12px 41px;
+}
+
+.score {
+    font-size: 37px;
+}
+
+.exit-guess-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.exit-guess {
+    padding: 2px 2px;
+    height: 32px;
+    width: 75px;
 }

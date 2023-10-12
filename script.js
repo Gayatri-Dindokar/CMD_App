@@ -771,8 +771,8 @@ document.querySelector(".games-dropdown").addEventListener("click", () => {
     pigGame.style.left = "30%";
     pigGame.style.top = "30%";
     forcancelbtn();
-    mydiv.style.display="none";
-   
+    mydiv.style.display = "none";
+
 });
 document.getElementById("games-text-ev").addEventListener("mouseout", () => {
     document.querySelector(".games-dropdown").style.display = "none";
@@ -854,23 +854,119 @@ document.getElementById("dialogbox-cross2").addEventListener("click", () => {
     test.style.opacity = "0";
 });
 
-document.getElementById("window_popup-game-icon").addEventListener("mouseover",()=>{
-   document.querySelector(".games-dropdown-left-side").style.display = "block";
+document.getElementById("window_popup-game-icon").addEventListener("mouseover", () => {
+    document.querySelector(".games-dropdown-left-side").style.display = "block";
 });
 
-document.getElementById("window_popup-game-icon").addEventListener("mouseout",()=>{
+document.getElementById("window_popup-game-icon").addEventListener("mouseout", () => {
     document.querySelector(".games-dropdown-left-side").style.display = "none";
- });
+});
 
- const pigGame =  document.querySelector(".bodyy");
- document.getElementById("dice-game").addEventListener("click",()=>{
-    console.log("llll")
-    pigGame.style.display = "block";
-    pigGame.style.left = "30%";
-    pigGame.style.top = "30%";
+
+// ////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+
+
+// guess the number//
+const again = document.querySelector('.btn again');
+const number = document.querySelector('.number');
+const guesss = document.querySelector('.guess');
+const check = document.querySelector('.btn check');
+const message = document.querySelector('.message');
+const score = document.querySelector('.score');
+const highscore = document.querySelector('.highscore');
+
+// document.querySelector('.number').textContent = 13;
+let assume = document.querySelector('.guess').value;
+
+let random = Math.floor(Math.random() * 20) + 1;
+console.log(random);
+let scoresg = 20;
+let highscores = 0;
+
+
+
+function guessthenumber() {
+
+
+
+    const assume = Number(document.querySelector('.guess').value);
+
+    if (!assume) {
+        document.querySelector('.message').textContent = 'No number'
+
+    } else if (assume === random) {
+        document.querySelector('.number').textContent = random;
+        document.querySelector('.message').textContent = 'Correct Number';
+        document.querySelector('.body-guess').style.backgroundColor = "green";
+        if (scores > highscores) {
+            highscores = scoresg;
+            document.querySelector('.highscore').textContent = highscores;
+        }
+
+    } else if (assume > random) {
+        if (scoresg > 1) {
+            document.querySelector('.message').textContent = 'To High'
+            scoresg--;
+            document.querySelector('.score').textContent = scoresg;
+        } else {
+            document.querySelector('.message').textContent = 'You  lost the game';
+            document.querySelector('.score').textContent = 0;
+        }
+
+    } else if (assume < random) {
+        if (scoresg > 1) {
+            document.querySelector('.message').textContent = 'To Low'
+            scoresg--;
+
+            document.querySelector('.score').textContent = scoresg;
+        } else {
+            document.querySelector('.message').textContent = 'You  lost the game';
+            document.querySelector('.score').textContent = scoresg;
+        }
+
+
+
+
+    }
+}
+guessthenumber();
+
+function againeplay() {
+    scoresg = 20;
+
+    document.querySelector('.score').textContent = scores;
+    random = Math.floor(Math.random() * 20) + 1;
+    console.log(random);
+    document.querySelector('.number').textContent = '?';
+    document.querySelector('.message').textContent = 'Start guessing...';
+    document.querySelector('.body-guess').style.backgroundColor = "black";
+    document.querySelector('.guess').value = "";
+    console.log("heloo players")
+
+}
+
+document.querySelector(".exit-guess-container").addEventListener("click", () => {
+    document.querySelector(".body-guess").style.display = "none";
+});
+
+const guessGame = document.querySelector(".body-guess");
+document.getElementById("guess-number-game").addEventListener("click", () => {
+    console.log("pppp")
+    guessGame.style.display = "block";
+    guessGame.style.left = "30%";
+    guessGame.style.top = "30%";
     forcancelbtn();
-    mydiv.style.display="none";
- });
- document.querySelector(".exit-dice-btn").addEventListener("click",()=>{
-    pigGame.style.display = "none";
- })
+    mydivid.style.display = "none";
+});
+document.getElementById("games-dropdown-guess-number").addEventListener("click", () => {
+    console.log("zxcvbnm,")
+    guessGame.style.display = "block";
+    guessGame.style.left = "30%";
+    guessGame.style.top = "30%";
+    forcancelbtn();
+    mydivid.style.display = "none";
+});
