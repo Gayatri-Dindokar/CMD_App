@@ -134,6 +134,7 @@ reset();
 
 const startWindowImg = document.querySelector(".left-startWindow-img");
 const startWindowpopup = document.querySelector(".startWindow-popup");
+
 function forcancelbtn() {
     if (!startWindowpopup.classList.contains("popup-visible")) {
 
@@ -165,4 +166,3 @@ document.querySelector(".exit-dice-btn").addEventListener("click", () => {
     pigGame.style.display = "none";
     reset();
 });
-

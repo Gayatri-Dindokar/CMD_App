@@ -562,9 +562,11 @@
         text-align: justify;
         margin-top: 20px;
     }
-    .jobs ol{
+    
+    .jobs ol {
         margin-left: -21px;
     }
+    
     .jobs-px {
         width: 406px;
         margin-left: 40px;
@@ -1172,7 +1174,8 @@
         /* padding-left: 1px; */
         box-shadow: rgb(114, 173, 233) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.5) 2px 3px 3px;
     }
-    .games-dropdown-left-side{
+    
+    .games-dropdown-left-side {
         position: absolute;
         font-family: roboto;
         z-index: 1;
@@ -1184,8 +1187,9 @@
         flex-direction: column;
         background-color: white;
         /* padding-left: 1px; */
-        box-shadow: rgb(114, 173, 233) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.5) 2px 3px 3px;  
+        box-shadow: rgb(114, 173, 233) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.5) 2px 3px 3px;
     }
+    
     .dropdown_all-programs {
         position: absolute;
         font-family: roboto;
@@ -1448,5 +1452,3 @@
         color: rgb(255, 255, 255) !important;
     }
     /* gamming */
-    
-   
