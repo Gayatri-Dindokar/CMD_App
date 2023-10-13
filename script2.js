@@ -158,11 +158,8 @@ document.getElementById("dice-game").addEventListener("click", () => {
     console.log("llll")
     pigGame.style.display = "block";
     pigGame.style.left = "30%";
-    pigGame.style.top = "30%";
+    pigGame.style.top = "12%";
     forcancelbtn();
-    mydivid.style.display = "none";
-});
-document.querySelector(".exit-dice-btn").addEventListener("click", () => {
-    pigGame.style.display = "none";
-    reset();
+    // mydivid.style.display = "none";
+    mydivid.classList.toggle('hidden');
 });

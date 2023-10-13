@@ -51,31 +51,31 @@
         <main class="maincon" id="mydiv">
             <nav class="navbar color" id="mydivheader">
                 <div><img class="px-icon" src="asset/images/cmd.png" alt="" /></div>
-                <p class="pixel-6">Pixel<span>6</span></p>
+                <p class="pixel-6">Pixel<span class="six">6</span></p>
 
                 <div class="btn">
                     <button class="btnremove" id="minmaxbtn">
-                    <img src="asset/images/minimize.png" alt="" />
-                    <!-- <span id="underscore">_</span> -->
-                </button>
+                        <img src="asset/images/minimize.png" alt="" />
+                        <!-- <span id="underscore">_</span> -->
+                    </button>
                     <button class="btnremove" id="bigscreen-minmaxbtn" style="display: none">
-                    <img src="asset/images/bigscreenminimize.png" alt="" />
-                </button>
+                        <img src="asset/images/bigscreenminimize.png" alt="" />
+                    </button>
                     <button class="btnremove" id="resize">
-                    <img src="asset/images/resize.png" alt="" />
-                </button>
+                        <img src="asset/images/resize.png" alt="" />
+                    </button>
                     <button class="btnremove d-none" id="resize-at-minsize">
-                    <img src="asset/images/resize.png" alt="" />
-                </button>
+                        <img src="asset/images/resize.png" alt="" />
+                    </button>
                     <button class="btnremove d-none" id="restore">
-                    <img src="asset/images/restore.png" alt="restore" />
-                </button>
+                        <img src="asset/images/restore.png" alt="restore" />
+                    </button>
                     <button class="btnclose ">
-                    <img src="asset/images/close.png" alt="" />
-                </button>
+                        <img src="asset/images/close.png" alt="" />
+                    </button>
                     <button id="crossBtnBigScreen" style="display: none">
-                    <img src="asset/images/closeforbig.png" alt="" />
-                </button>
+                        <img src="asset/images/closeforbig.png" alt="" />
+                    </button>
                 </div>
             </nav>
 
@@ -131,14 +131,14 @@
             </div>
             <div class="d-flex bottom-icon">
                 <button class="btnremove resize-bigscreen">
-                <img src="asset/images/restore.png" alt="restore" />
-            </button>
+                    <img src="asset/images/restore.png" alt="restore" />
+                </button>
                 <button class="btnremove" id="double-restore" style="display: none">
-                <img src="asset/images/bottomdivdoublerestore.png" alt="restore" />
-            </button>
+                    <img src="asset/images/bottomdivdoublerestore.png" alt="restore" />
+                </button>
                 <button class="btnclose crossbtn">
-                <img src="asset/images/close.png" alt="" />
-            </button>
+                    <img src="asset/images/close.png" alt="" />
+                </button>
             </div>
         </div>
 
@@ -258,9 +258,11 @@
 
                                 <div class=" all-programs_tab ">
                                     <div class="menu-item-texts all_programs_text">
-                                        <div class=" all_programs_text"><span class="allprograms-text1">All programs</span>
+                                        <div class=" all_programs_text"><span class="allprograms-text1">All
+                                                programs</span>
                                             <span> <img class="allprograms-img" src="asset/images/all programs.png"
-                                                alt=""></span></div>
+                                                    alt=""></span>
+                                        </div>
                                     </div>
                                     <div class="all_program-img"> <img src="" alt=""></div>
 
@@ -273,8 +275,8 @@
 
                                         <div class="dropdown_items" id="games-text-ev">
                                             <img class="menu-items-img" src="asset/images/guess-number.png" alt=""><span class="margin-rt-dropdown-text">Games</span><span><i
-                                                class="fa fa-caret-right" aria-hidden="true"></i>
-                                        </span>
+                                                    class="fa fa-caret-right" aria-hidden="true"></i>
+                                            </span>
                                             <!-- games dropdown -->
                                             <div class="games-dropdown" style="display: none;">
 
@@ -460,8 +462,10 @@
         </footer>
         <!-- gamming -->
         <div class="bodyy" style="display: none;">
-            <div class="exit-dice-btn-container"> <button class="exit-dice-btn">Exit</button></div>
+
+
             <main class="main-dice">
+
                 <section class="player player--0 player--active">
                     <h2 class="name" id="name--0">Player 1</h2>
                     <p class="score" id="score--0">43</p>
@@ -480,7 +484,29 @@
                 </section>
 
                 <img src="dice-5.png" alt="Playing dice" class="dice" />
+                <div style="background-color: aqua; position: absolute; height: 25px; width: 690px;" class="pig-game-header">
+                    <nav class="body_piggame-navbar">
+                        <div><img class="px-icon" id=" px-guess-number" src="asset/images/dice-removebg-preview.png" alt="Dice" /></div>
+                        <p class="pixel-6">Dice</p>
 
+                        <div class="btn">
+                            <button class="body_guess-min body_guess-btns ">
+                                <img src="asset/images/minimize.png" alt="" />
+                             </button>
+
+                            <button class="body_guess-resize body_guess-btns ">
+                                <img src="asset/images/resize.png" alt="" />
+                            </button>
+
+
+                            <button class="body_piggame-close body_guess-btns">
+                                <img src="asset/images/close.png" alt="" />
+                            </button>
+
+                        </div>
+                    </nav>
+
+                </div>
                 <button class="btn-btn btn--new" onclick="reset()" id="nnnn">🔄 New game</button>
                 <button class="btn-btn btn--roll" onclick="btnroll()">🎲 Roll dice</button>
                 <button class="btn-btn btn--hold" onclick="btnhold()"><span id="hold">📥 Hold</span></button>
@@ -490,7 +516,27 @@
 
         <!-- guess the number game -->
         <div class="body-guess" style="display: none;">
-            <div class="exit-guess-container"> <button class="exit-guess">Exit</button></div>
+            <nav class="body_guess-navbar">
+                <div><img class="px-icon" id=" px-guess-number" src="asset/images/guess-number.png" alt="guess number" /></div>
+                <p class="pixel-6">Guess Number</p>
+
+                <div class="btn">
+                    <button class="body_guess-min body_guess-btns  body_guess-btns-hover">
+                        <img src="asset/images/minimize.png" alt="" />
+                     </button>
+
+                    <button class="body_guess-resize body_guess-btns ">
+                        <img src="asset/images/resize.png" alt="" />
+                    </button>
+
+
+                    <button class="body_guess-close body_guess-btns">
+                        <img src="asset/images/close.png" alt="" />
+                    </button>
+
+                </div>
+            </nav>
+
             <header class="header-guess">
                 <h1>Guess My Number!</h1>
                 <p class="between">(Between 1 and 20)</p>
@@ -516,22 +562,7 @@
 
         <!-- </div> -->
 
-        <div class="model-window d-none" style="display: none;">
-            <div class="modal">
-                <header class="model_window-header">
-                    <span class="model_window-header-text">Log Off Windows</span>
-                    <img src="asset/images/" alt="">
-                </header>
-                <div class="model_window-content">
-                    <div class="model_window-content-items" id="stand-by"><img class="model_window-content-items " src="asset/images/turn off.png" alt="stand by"><span>Stand By</span></div>
-                    <div class="model_window-content-items"><img class="model_window-content-items  " src="asset/images/turn off.png" alt=""><span> Turn Off</span></div>
-                    <div class="model_window-content-items"><img class="model_window-content-items turnoff-img" src="asset/images/green-restart-icon-19-removebg-preview.png" alt=""><span>Restart</span></div>
-                </div>
-                <footer class="model_window-footer">
-                    <button class="footer-button">Cancel</button>
-                </footer>
-            </div>
-        </div>
+
         </div>
         <div class="modal_logof-container d-none">
             <div class="modal-logOf">
@@ -545,6 +576,22 @@
                 </div>
                 <footer class="moda_logof-footer">
                     <button class="modal_logoff-btn">Cancel</button>
+                </footer>
+            </div>
+        </div>
+        <div class="model-window d-none" style="display: none;">
+            <div class="modal">
+                <header class="model_window-header">
+                    <span class="model_window-header-text">Log Off Windows</span>
+                    <img src="asset/images/" alt="">
+                </header>
+                <div class="model_window-content">
+                    <div class="model_window-content-items" id="stand-by"><img class="model_window-content-items " src="asset/images/turn off.png" alt="stand by"><span>Stand By</span></div>
+                    <div class="model_window-content-items"><img class="model_window-content-items  " src="asset/images/turn off.png" alt=""><span> Turn Off</span></div>
+                    <div class="model_window-content-items"><img class="model_window-content-items turnoff-img" src="asset/images/green-restart-icon-19-removebg-preview.png" alt=""><span>Restart</span></div>
+                </div>
+                <footer class="model_window-footer">
+                    <button class="footer-button">Cancel</button>
                 </footer>
             </div>
         </div>

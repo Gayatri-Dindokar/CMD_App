@@ -670,7 +670,6 @@ document.getElementById('bottom-div-cover').addEventListener('click', () => {
     }, 0.1);
     bottomdivCover.style.boxShadow = "rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
 
-
 });
 
 // function turnoff(){
@@ -706,6 +705,8 @@ function forcancelbtn() {
 
 }
 
+const modalLogOf = document.querySelector(".modal-logOf");
+const body = document.querySelector('.main11');
 
 document.getElementById("turn-off").addEventListener("click", () => {
     modelWindow.style.display = "block";
@@ -748,8 +749,7 @@ document.querySelector(".modal_logoff-btn").addEventListener("click", () => {
 
 // });
 
-const modalLogOf = document.querySelector(".modal-logOf");
-const body = document.querySelector('.main11');
+
 
 logOf.addEventListener("click", () => {
     // Apply grayscale to the background and content
@@ -815,10 +815,11 @@ document.getElementById("games-text-ev").addEventListener("mouseover", () => {
 document.getElementById("dice-dropdown-game").addEventListener("click", () => {
     console.log("dicegame")
     pigGame.style.display = "block";
-    // pigGame.style.left = "30%";
-    // pigGame.style.top = "30%";
+    pigGame.style.left = "30%";
+    pigGame.style.top = "12%";
     forcancelbtn();
-    mydiv.style.display = "none";
+    // mydiv.style.display = "none";
+    mydivid.classList.toggle('hidden');
 
 });
 document.getElementById("games-text-ev").addEventListener("mouseout", () => {
@@ -998,9 +999,7 @@ function againeplay() {
 // againeplay();
 document.getElementById("again-btn-guess").addEventListener("click", againeplay);
 
-document.querySelector(".exit-guess-container").addEventListener("click", () => {
-    document.querySelector(".body-guess").style.display = "none";
-});
+
 
 const guessgame = document.querySelector(".body-guess");
 document.getElementById("guess-number-game").addEventListener("click", () => {
@@ -1009,7 +1008,8 @@ document.getElementById("guess-number-game").addEventListener("click", () => {
     // guessgame.style.left = "30%";
     // guessgame.style.top = "30%";
     forcancelbtn();
-    mydivid.style.display = "none";
+    // mydivid.style.display = "none";
+    mydivid.classList.toggle('hidden');
     againeplay();
 });
 
@@ -1019,7 +1019,8 @@ document.getElementById("games-dropdown-guess-number").addEventListener("click",
     // guessgame.style.left = "30%";
     // guessgame.style.top = "30%";
     forcancelbtn();
-    mydivid.style.display = "none";
+    // mydivid.style.display = "none";
+    mydivid.classList.toggle('hidden');
     againeplay();
 
 });
@@ -1037,3 +1038,10 @@ document.addEventListener('click', function(event) {
         }
     }
 });
+document.querySelector(".body_guess-close").addEventListener("click", () => {
+    document.querySelector('.body-guess').style.display = "none";
+});
+
+document.querySelector(".body_piggame-close").addEventListener("click", () => {
+    document.querySelector('.bodyy').style.display = "none";
+})
