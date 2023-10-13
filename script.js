@@ -395,6 +395,7 @@ function movingContainer() {
     }, true);
 }
 minMaxBtn.addEventListener("click", () => {
+    bottomdivCover.style.boxShadow = "rgba(0, 0, 0, 0.3) -1px 0px inset, rgba(255, 255, 255, 0.2) 1px 1px 1px inset";
     mydivid.style.width = "254px";
     mydivid.style.height = "35px";
     mydivid.style.top = "98vh";
@@ -662,6 +663,7 @@ document.getElementById('bottom-div-cover').addEventListener('click', () => {
         mydivid.style.left = "50%";
         mydivid.style.top = "50%";
     }, 0.1);
+    bottomdivCover.style.boxShadow = "rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
 
 
 });
@@ -676,6 +678,7 @@ const startWindowpopup = document.querySelector(".startWindow-popup");
 const startWindowImg = document.querySelector(".left-startWindow-img");
 const logOf = document.getElementById("logOfPopup");
 const modalLogOfContainer = document.querySelector(".modal_logof-container");
+const modalLogOf =document.querySelector(".modal-logOf");
 // const popup = document.querySelector('.startWindow-popup');
 
 
@@ -700,6 +703,7 @@ function forcancelbtn() {
 
 document.getElementById("turn-off").addEventListener("click", () => {
     modelWindow.style.display = "block";
+    modelWindow.style.backgroundColor = "red";
     maincon.style.display = "none";
     bottomdivCover.style.display = "none";
     startWindowpopup.style.display = "none";
@@ -718,6 +722,12 @@ document.querySelector(".modal_logoff-btn").addEventListener("click", () => {
     forcancelbtn();
 });
 logOf.addEventListener("click", () => {
+    //  modalLogOfContainer = mydiv
+    const body = document.body;
+    modalLogOfContainer.classList.add("grayscale");
+    modalLogOf.classList.remove("grayscale");
+    modalLogOf.style.filter = "none";
+    modalLogOf.style.zindex = "1";
     modalLogOfContainer.style.display = "block";
     maincon.style.display = "none";
     bottomdivCover.style.display = "none";
