@@ -678,15 +678,7 @@ const logOf = document.getElementById("logOfPopup");
 const modalLogOfContainer = document.querySelector(".modal_logof-container");
 // const popup = document.querySelector('.startWindow-popup');
 
-// Add a click event listener to the document
-document.addEventListener('click', function(event) {
-    // Check if the clicked element is not the popup itself or a descendant of the popup
-    if (!startWindowpopup.contains(event.target) && (!startWindowImg.contains(event.target))) {
-        // Clicked outside the popup, hide it
-        // startWindowpopup.style.display = 'none';
-        forcancelbtn();
-    }
-});
+
 
 function forcancelbtn() {
     if (!startWindowpopup.classList.contains("popup-visible")) {
@@ -987,4 +979,18 @@ document.getElementById("games-dropdown-guess-number").addEventListener("click",
     mydivid.style.display = "none";
     againeplay();
 
+});
+
+document.addEventListener('click', function(event) {
+ 
+    if (!startWindowpopup.contains(event.target) && (!startWindowImg.contains(event.target))) {
+     
+        // startWindowpopup.style.display = 'none';
+        // forcancelbtn();
+        if (startWindowpopup.classList.contains("popup-visible")) {
+
+            startWindowpopup.style.display = "none";
+            startWindowpopup.classList.remove("popup-visible");
+        }
+    }
 });
