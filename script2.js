@@ -154,6 +154,8 @@ function forcancelbtn() {
 
 const mydivid = document.getElementById("mydiv");
 const pigGame = document.querySelector(".bodyy");
+const bottomdivCover = document.getElementById("bottom-div-cover");
+
 document.getElementById("dice-game").addEventListener("click", () => {
     console.log("llll")
     pigGame.style.display = "block";

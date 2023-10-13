@@ -555,6 +555,7 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
 
     }
 });
+
 doubleRestore.addEventListener("click", () => {
     maincon.style.display = 'block';
     bottomDiv.style.display = "none";
