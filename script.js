@@ -384,7 +384,7 @@ container.addEventListener("keyup", async function(e) {
 //     document.onmouseup = null;
 // }
 function movingContainer() {
-    mydiv.addEventListener('mousedown', function(e) {
+    navbar.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
             isDown = true;
             offset = [
@@ -428,7 +428,7 @@ minMaxBtn.addEventListener("click", () => {
 
     }
 
-    mydiv.addEventListener('mousedown', function(e) {
+    navbar.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
             isDown = false;
             offset = [
@@ -538,7 +538,7 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
     resizeAtMinSize.style.display = "block";
     resize.style.display = "none";
     mydivid.classList.add("transition");
-    mydiv.addEventListener('mousedown', function(e) {
+    navbar.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
             isDown = false;
             offset = [
@@ -566,7 +566,7 @@ var isDown = false;
 var mydiv = document.getElementById("mydiv");
 var originalWidth = mydiv.style.width;
 var originalHeight = mydiv.style.height;
-mydiv.addEventListener('mousedown', function(e) {
+navbar.addEventListener('mousedown', function(e) {
     if (e.button === 0) {
         isDown = true;
         offset = [
@@ -575,10 +575,10 @@ mydiv.addEventListener('mousedown', function(e) {
         ];
     }
 }, true);
-mydiv.addEventListener('mouseup', function() {
+navbar.addEventListener('mouseup', function() {
     isDown = false;
 }, true);
-mydiv.addEventListener('mousemove', function(event) {
+navbar.addEventListener('mousemove', function(event) {
     event.preventDefault();
 
     if (isDown) {
@@ -812,16 +812,8 @@ document.querySelector(".all-programs_tab").addEventListener("mouseout", () => {
 document.getElementById("games-text-ev").addEventListener("mouseover", () => {
     document.querySelector(".games-dropdown").style.display = "block";
 });
-document.getElementById("dice-dropdown-game").addEventListener("click", () => {
-    console.log("dicegame")
-    pigGame.style.display = "block";
-    pigGame.style.left = "30%";
-    pigGame.style.top = "12%";
-    forcancelbtn();
-    // mydiv.style.display = "none";
-    mydivid.classList.toggle('hidden');
 
-});
+
 document.getElementById("games-text-ev").addEventListener("mouseout", () => {
     document.querySelector(".games-dropdown").style.display = "none";
 });
@@ -1002,28 +994,7 @@ document.getElementById("again-btn-guess").addEventListener("click", againeplay)
 
 
 const guessgame = document.querySelector(".body-guess");
-document.getElementById("guess-number-game").addEventListener("click", () => {
-    console.log("pppp")
-    guessgame.style.display = "block";
-    // guessgame.style.left = "30%";
-    // guessgame.style.top = "30%";
-    forcancelbtn();
-    // mydivid.style.display = "none";
-    mydivid.classList.toggle('hidden');
-    againeplay();
-});
 
-document.getElementById("games-dropdown-guess-number").addEventListener("click", () => {
-    console.log("zxcvbnm,")
-    guessgame.style.display = "block";
-    // guessgame.style.left = "30%";
-    // guessgame.style.top = "30%";
-    forcancelbtn();
-    // mydivid.style.display = "none";
-    mydivid.classList.toggle('hidden');
-    againeplay();
-
-});
 
 document.addEventListener('click', function(event) {
 
@@ -1044,4 +1015,69 @@ document.querySelector(".body_guess-close").addEventListener("click", () => {
 
 document.querySelector(".body_piggame-close").addEventListener("click", () => {
     document.querySelector('.bodyy').style.display = "none";
-})
+});
+
+
+
+
+
+
+document.getElementById("games-dropdown-guess-number").addEventListener("click", () => {
+    console.log("zxcvbnm,")
+    guessgame.style.display = "block";
+    // guessgame.style.left = "30%";
+    // guessgame.style.top = "30%";
+    forcancelbtn();
+    bottomdivCover.style.display = "none";
+    mydivid.style.display = "none";
+    // mydivid.classList.toggle('hidden');
+    // if (mydivid.style.width = "254px") {
+    //     setTimeout(() => {
+    //         mydivid.classList.toggle('hidden')
+    //     }, 100);
+    // }
+
+    againeplay();
+
+});
+
+document.getElementById("dice-dropdown-game").addEventListener("click", () => {
+    console.log("dicegame")
+    pigGame.style.display = "block";
+    pigGame.style.left = "30%";
+    pigGame.style.top = "12%";
+    forcancelbtn();
+    bottomdivCover.style.display = "none";
+    mydiv.style.display = "none";
+    // mydivid.classList.toggle('hidden');
+    // if (mydivid.style.width = "254px") {
+    //     setTimeout(() => {
+    //         mydivid.classList.toggle('hidden')
+    //     }, 100);
+    // }
+
+});
+
+
+document.getElementById("guess-number-game").addEventListener("click", (e) => {
+    console.log("pppp")
+    guessgame.style.display = "block";
+    // guessgame.style.left = "30%";
+    // guessgame.style.top = "30%";
+    forcancelbtn();
+    bottomdivCover.style.display = "none";
+    mydivid.style.display = "none";
+    // mydivid.classList.toggle('hidden');
+    // if (mydivid.style.width = "254px") {
+    //     setTimeout(() => {
+    //         mydivid.classList.toggle('hidden')
+    //     }, 100);
+    // }
+    // if (e.target.matches('#bottom-div-cover')) {
+    //     setTimeout(() => {
+    //         mydivid.classList.toggle('hidden')
+    //     }, 100);
+    // }
+
+    againeplay();
+});

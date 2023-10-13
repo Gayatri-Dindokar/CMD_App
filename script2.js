@@ -160,6 +160,12 @@ document.getElementById("dice-game").addEventListener("click", () => {
     pigGame.style.left = "30%";
     pigGame.style.top = "12%";
     forcancelbtn();
-    // mydivid.style.display = "none";
-    mydivid.classList.toggle('hidden');
+    bottomdivCover.style.display = "none";
+    mydivid.style.display = "none";
+    // mydivid.classList.toggle('hidden');
+    // if (mydivid.style.width = "254px") {
+    //     setTimeout(() => {
+    //         mydivid.classList.toggle('hidden')
+    //     }, 100);
+    // }
 });
