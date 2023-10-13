@@ -20,268 +20,214 @@
 </head>
 
 <body>
-    <div>
 
-    <div class="desktop-icon-container">
-        <div class="desktop-icon">
+    <div class="main11">
+
+        <div class="desktop-icon-container">
+            <div class="desktop-icon">
 
 
-            <div class="d-flex d-coloumn">
-                <div class="anchr"><img id="pixel6icon" class="cmd" src="asset/images/iconpixel6.png" alt="pixel6icon" title="Pixel6" />
+                <div class="d-flex d-coloumn">
+                    <div class="anchr"><img id="pixel6icon" class="cmd" src="asset/images/iconpixel6.png" alt="pixel6icon" title="Pixel6" />
+                    </div>
+                    <span class="pixel6-web-text">Pixel6 Web</span>
                 </div>
-                <span class="pixel6-web-text">Pixel6 Web</span>
+
+
+                <div class="d-flex d-coloumn"><img id="recyclebin" class="cmd" src="asset/images/recyclebinbox.png" alt="recyclebin" title="recycle bin" />
+                    <span class=" recycleBin-text"> Recycle Bin</span>
+                </div>
+
+                <!-- <div class=" recycleBin-text"><h6>Recycle Bin</h6></div> -->
+                <!-- <span class="icon-text">Recycle Bin</span> -->
             </div>
 
-
-            <div class="d-flex d-coloumn"><img id="recyclebin" class="cmd" src="asset/images/recyclebinbox.png" alt="recyclebin" title="recycle bin" />
-                <span class=" recycleBin-text"> Recycle Bin</span>
+            <div class="cmdIcon d-flex d-coloumn">
+                <img id="cmd" class="cmd" src="asset/images/cmd.svg" alt="cmd" title="cmd" />
+                <span class="cmd-text">CMD</span>
             </div>
 
-            <!-- <div class=" recycleBin-text"><h6>Recycle Bin</h6></div> -->
-            <!-- <span class="icon-text">Recycle Bin</span> -->
         </div>
+        <main class="maincon" id="mydiv">
+            <nav class="navbar color" id="mydivheader">
+                <div><img class="px-icon" src="asset/images/cmd.png" alt="" /></div>
+                <p class="pixel-6">Pixel<span>6</span></p>
 
-        <div class="cmdIcon d-flex d-coloumn">
-            <img id="cmd" class="cmd" src="asset/images/cmd.svg" alt="cmd" title="cmd" />
-            <span class="cmd-text">CMD</span>
-        </div>
-
-    </div>
-    <main class="maincon" id="mydiv">
-        <nav class="navbar color" id="mydivheader">
-            <div><img class="px-icon" src="asset/images/cmd.png" alt="" /></div>
-            <p class="pixel-6">Pixel<span class="six">6</span></p>
-
-            <div class="btn">
-                <button class="btnremove" id="minmaxbtn">
+                <div class="btn">
+                    <button class="btnremove" id="minmaxbtn">
                     <img src="asset/images/minimize.png" alt="" />
                     <!-- <span id="underscore">_</span> -->
                 </button>
-                <button class="btnremove" id="bigscreen-minmaxbtn" style="display: none">
+                    <button class="btnremove" id="bigscreen-minmaxbtn" style="display: none">
                     <img src="asset/images/bigscreenminimize.png" alt="" />
                 </button>
-                <button class="btnremove" id="resize">
+                    <button class="btnremove" id="resize">
                     <img src="asset/images/resize.png" alt="" />
                 </button>
-                <button class="btnremove d-none" id="resize-at-minsize">
+                    <button class="btnremove d-none" id="resize-at-minsize">
                     <img src="asset/images/resize.png" alt="" />
                 </button>
-                <button class="btnremove d-none" id="restore">
+                    <button class="btnremove d-none" id="restore">
                     <img src="asset/images/restore.png" alt="restore" />
                 </button>
-                <button class="btnclose ">
+                    <button class="btnclose ">
                     <img src="asset/images/close.png" alt="" />
                 </button>
-                <button id="crossBtnBigScreen" style="display: none">
+                    <button id="crossBtnBigScreen" style="display: none">
                     <img src="asset/images/closeforbig.png" alt="" />
                 </button>
+                </div>
+            </nav>
+
+
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="heading">
+                        <p>
+                            Pixel<span class="six">6</span> Web Studio Pvt. Ltd.(c) 2018 Corporation. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="blink-container">
+                        <!-- <p id="demo"></p> -->
+                        <div class="line txt" id="demo">0100100100101</div>
+                        <div class="line margine-1">11001010111001</div>
+                        <div class="line margine-1">
+                            010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100
+                        </div>
+                        <div class="line margine-1">
+                            010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;101
+                        </div>
+                        <div class="line margine-1">
+                            110&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0101001
+                        </div>
+                        <div class="line margine-1">
+                            111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0110010
+                        </div>
+                        <div class="line margine-1">110</div>
+                        <div class="line margine-1">100</div>
+                        <div class="line margine-1">
+                            &nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0101
+                        </div>
+                        <div class="line margine-1">
+                            &nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0110
+                        </div>
+                    </div>
+                    <div class="instruction_px">
+                        <p>Type "help " to see a list of commands</p>
+                    </div>
+                    <div class="prompt display_output" id="displayOutputContainer">
+                        <!--genearated path -->
+                        <!-- display command output -->
+                    </div>
+                </div>
             </div>
-        </nav>
+        </main>
 
-
-        <div class="container-fluid">
-            <div class="container">
-                <div class="heading">
-                    <p>
-                        Pixel<span class="six">6</span> Web Studio Pvt. Ltd.(c) 2018 Corporation. All rights reserved.
-                    </p>
-                </div>
-                <div class="blink-container">
-                    <!-- <p id="demo"></p> -->
-                    <div class="line txt" id="demo">0100100100101</div>
-                    <div class="line margine-1">11001010111001</div>
-                    <div class="line margine-1">
-                        010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100
-                    </div>
-                    <div class="line margine-1">
-                        010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;101
-                    </div>
-                    <div class="line margine-1">
-                        110&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0101001
-                    </div>
-                    <div class="line margine-1">
-                        111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0110010
-                    </div>
-                    <div class="line margine-1">110</div>
-                    <div class="line margine-1">100</div>
-                    <div class="line margine-1">
-                        &nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0101
-                    </div>
-                    <div class="line margine-1">
-                        &nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0110
-                    </div>
-                </div>
-                <div class="instruction_px">
-                    <p>Type "help " to see a list of commands</p>
-                </div>
-                <div class="prompt display_output" id="displayOutputContainer">
-                    <!--genearated path -->
-                    <!-- display command output -->
-                </div>
+        <div class="bottom-div d-flex d-none">
+            <div class="d-flex">
+                <p class="bottom-p6">
+                    Pixel<span class="six" style="color: #c01a20">6</span>
+                </p>
             </div>
-        </div>
-    </main>
-
-    <div class="bottom-div d-flex d-none">
-        <div class="d-flex">
-            <p class="bottom-p6">
-                Pixel<span class="six" style="color: #c01a20">6</span>
-            </p>
-        </div>
-        <div class="d-flex bottom-icon">
-            <button class="btnremove resize-bigscreen">
+            <div class="d-flex bottom-icon">
+                <button class="btnremove resize-bigscreen">
                 <img src="asset/images/restore.png" alt="restore" />
             </button>
-            <button class="btnremove" id="double-restore" style="display: none">
+                <button class="btnremove" id="double-restore" style="display: none">
                 <img src="asset/images/bottomdivdoublerestore.png" alt="restore" />
             </button>
-            <button class="btnclose crossbtn">
+                <button class="btnclose crossbtn">
                 <img src="asset/images/close.png" alt="" />
             </button>
+            </div>
         </div>
-    </div>
 
 
 
 
-    <!-- footer part starts here -->
-    <footer>
-        <div class="dialog-box">
-            <div class="test ">
-                <header class="test-error-header">
-                    <div><img id="test-error-header-picture" src="asset/images/windowsanitivirus.png" alt=""></div>
-                    <div>your computer might be at risk</div>
-                    <div><img style="height: 30px;width: 30px;" src="asset/images/dialogbox-cross1.png" alt="" id="dialogbox-cross1"></div>
-                    <div><img id="dialogbox-cross2" style="height: 30px;width: 30px; display: none;" src="asset/images/dialogbox-cross2.png" alt=""></div>
-                </header>
-                <div>
-                    <p>Antivirus software might not be installed click this balloon to fix this problem</p>
+        <!-- footer part starts here -->
+        <footer>
+            <div class="dialog-box">
+                <div class="test ">
+                    <header class="test-error-header">
+                        <div><img id="test-error-header-picture" src="asset/images/windowsanitivirus.png" alt=""></div>
+                        <div>your computer might be at risk</div>
+                        <div><img style="height: 30px;width: 30px;" src="asset/images/dialogbox-cross1.png" alt="" id="dialogbox-cross1"></div>
+                        <div><img id="dialogbox-cross2" style="height: 30px;width: 30px; display: none;" src="asset/images/dialogbox-cross2.png" alt=""></div>
+                    </header>
+                    <div>
+                        <p>Antivirus software might not be installed click this balloon to fix this problem</p>
+                    </div>
                 </div>
+
             </div>
 
-        </div>
+            <div class="status-bar">
+                <div class="startWindow-popup " style="display: none;">
+                    <!-- popup-header -->
+                    <header class="window-popup-header">
+                        <!-- <img class="chess-img" src="asset/images/chess.jpg" alt=""> -->
+                        <img class="replacable-chess-p6 " src="asset/images/iconpixel6.png" alt="">
+                        <span id="user-name">user</span>
+                    </header>
+                    <section class="desktop-menu">
+                        <hr class="horizontal-row">
+                        <div class="menu-items">
 
-        <div class="status-bar">
-            <div class="startWindow-popup " style="display: none;">
-                <!-- popup-header -->
-                <header class="window-popup-header">
-                    <!-- <img class="chess-img" src="asset/images/chess.jpg" alt=""> -->
-                    <img class="replacable-chess-p6 " src="asset/images/iconpixel6.png" alt="">
-                    <span id="user-name">user</span>
-                </header>
-                <section class="desktop-menu">
-                    <hr class="horizontal-row">
-                    <div class="menu-items">
-
-                        <div class="menu-left">
-                            <div class="menu-items-content">
-                                <div class="explorar-img all-desktop-left-icon">
-                                    <img class="menu-items-img " src="asset/images/internet-explorar-removebg-preview.png" alt="">
+                            <div class="menu-left">
+                                <div class="menu-items-content">
+                                    <div class="explorar-img all-desktop-left-icon">
+                                        <img class="menu-items-img " src="asset/images/internet-explorar-removebg-preview.png" alt="">
+                                    </div>
+                                    <div class="menu-item-texts">
+                                        <div>Internet</div>
+                                        <div>Internet explorar</div>
+                                    </div>
                                 </div>
-                                <div class="menu-item-texts">
-                                    <div>Internet</div>
-                                    <div>Internet explorar</div>
-                                </div>
-                            </div>
 
 
-                            <div class="menu-items-content window_popup-hover" id="window_popup-pixel6-icon">
-                                <div class="all-desktop-left-icon">
-                                    <img class="menu-items-img" src="asset/images/iconpixel6.png" alt="">
-                                </div>
-                                <div class="menu-item-texts">
-                                    <div>pixel6</div>
-
-                                </div>
-                            </div>
-
-                            <div class="menu-items-content window_popup-hover" id="window_popup-cmd-icon">
-                                <div class="all-desktop-left-icon">
-                                    <img class="menu-items-img" src="asset/images/cmd.svg" alt="">
-                                </div>
-                                <div class="menu-item-texts">
-                                    <div>cmd</div>
-                                </div>
-                            </div>
-
-                            <div class="menu-items-content  window_popup-hover" id="window_popup-recyclebin-icon">
-                                <div class="all-desktop-left-icon">
-                                    <img class="menu-items-img" src="asset/images/recyclebinbox.png" alt="">
-                                </div>
-                                <div class="menu-item-texts">
-                                    <div>Recycle-bin</div>
-
-                                </div>
-                            </div>
-                            <!-- game -->
-                            <div class="menu-items-content window_popup-hover" id="window_popup-game-icon">
-                                <div class="all-desktop-left-icon">
-                                    <img class="menu-items-img" src="asset/images/guess-number.png" alt="">
-                                </div>
-                                <div class="menu-item-texts">
-                                    <div>game</div>
-                                    <!-- dropdown -->
-                                    <div class="games-dropdown-left-side" style="display: none;">
-                                        <div class="games_dropdown-items" id="guess-number-game">
-                                            <img class="menu-items-img" src="asset/images/guess-number.png" alt=""><span>Guess The Number</span>
-                                        </div>
-
-                                        <div class="games_dropdown-items" id="dice-game">
-                                            <img class="menu-items-img" src="asset/images/dice-removebg-preview.png" alt=""><span>Dice</span>
-                                        </div>
-
-                                        <div class="games_dropdown-items">
-                                            <img class="menu-items-img" src="asset/images/cards-removebg-preview.png" alt=""><span>Cards</span>
-                                        </div>
+                                <div class="menu-items-content window_popup-hover" id="window_popup-pixel6-icon">
+                                    <div class="all-desktop-left-icon">
+                                        <img class="menu-items-img" src="asset/images/iconpixel6.png" alt="">
+                                    </div>
+                                    <div class="menu-item-texts">
+                                        <div>pixel6</div>
 
                                     </div>
-
-
                                 </div>
 
-                                <!-- dropdown -->
-
-
-                            </div>
-                            <!-- game -->
-                            <div class="menu-items-content notepad">
-                                <div class="all-desktop-left-icon">
-                                    <img class="menu-items-img" src="asset/images/notepad.webp" alt="">
-                                </div>
-                                <div class="menu-item-texts">
-                                    <span>notepad</span>
-                                </div>
-                            </div>
-
-                            <div class="menu-separator menu-separator-padding"></div>
-
-                            <div class=" all-programs_tab ">
-                                <div class="menu-item-texts all_programs_text">
-                                    <div class=" all_programs_text"><span class="allprograms-text1">All programs</span>
-                                        <span> <img class="allprograms-img" src="asset/images/all programs.png"
-                                                alt=""></span></div>
-                                </div>
-                                <div class="all_program-img"> <img src="" alt=""></div>
-
-                                <!-- dropdown content -->
-                                <div class="dropdown_all-programs" style="display: none;">
-
-                                    <div class="dropdown_items" id="pixel6-dropdown-all-programs">
-                                        <img class="menu-items-img" src="asset/images/iconpixel6.png" alt=""><span>Pixel6</span>
+                                <div class="menu-items-content window_popup-hover" id="window_popup-cmd-icon">
+                                    <div class="all-desktop-left-icon">
+                                        <img class="menu-items-img" src="asset/images/cmd.svg" alt="">
                                     </div>
+                                    <div class="menu-item-texts">
+                                        <div>cmd</div>
+                                    </div>
+                                </div>
 
-                                    <div class="dropdown_items" id="games-text-ev">
-                                        <img class="menu-items-img" src="asset/images/guess-number.png" alt=""><span class="margin-rt-dropdown-text">Games</span><span><i
-                                                class="fa fa-caret-right" aria-hidden="true"></i>
-                                        </span>
-                                        <!-- games dropdown -->
-                                        <div class="games-dropdown" style="display: none;">
+                                <div class="menu-items-content  window_popup-hover" id="window_popup-recyclebin-icon">
+                                    <div class="all-desktop-left-icon">
+                                        <img class="menu-items-img" src="asset/images/recyclebinbox.png" alt="">
+                                    </div>
+                                    <div class="menu-item-texts">
+                                        <div>Recycle-bin</div>
 
-                                            <div class="games_dropdown-items" id="games-dropdown-guess-number">
+                                    </div>
+                                </div>
+                                <!-- game -->
+                                <div class="menu-items-content window_popup-hover" id="window_popup-game-icon">
+                                    <div class="all-desktop-left-icon">
+                                        <img class="menu-items-img" src="asset/images/guess-number.png" alt="">
+                                    </div>
+                                    <div class="menu-item-texts">
+                                        <div>game</div>
+                                        <!-- dropdown -->
+                                        <div class="games-dropdown-left-side" style="display: none;">
+                                            <div class="games_dropdown-items" id="guess-number-game">
                                                 <img class="menu-items-img" src="asset/images/guess-number.png" alt=""><span>Guess The Number</span>
                                             </div>
 
-                                            <div class="games_dropdown-items" id="dice-dropdown-game">
+                                            <div class="games_dropdown-items" id="dice-game">
                                                 <img class="menu-items-img" src="asset/images/dice-removebg-preview.png" alt=""><span>Dice</span>
                                             </div>
 
@@ -290,14 +236,69 @@
                                             </div>
 
                                         </div>
+
+
                                     </div>
 
-                                    <div class="dropdown_items" id="cmd-command-ev">
-                                        <img class="menu-items-img" src="asset/images/cmd.svg" alt=""><span class="margin-rt-dropdown-text-cmd">Cmd Command</span>
-                                        <div style="display: flex; justify-content: flex-end;">
+                                    <!-- dropdown -->
 
-                                            <!-- cmd command dropdown -->
-                                            <!-- <div class="games-dropdown" id="cmd-dropdown" style="display: none;">
+
+                                </div>
+                                <!-- game -->
+                                <div class="menu-items-content notepad">
+                                    <div class="all-desktop-left-icon">
+                                        <img class="menu-items-img" src="asset/images/notepad.webp" alt="">
+                                    </div>
+                                    <div class="menu-item-texts">
+                                        <span>notepad</span>
+                                    </div>
+                                </div>
+
+                                <div class="menu-separator menu-separator-padding"></div>
+
+                                <div class=" all-programs_tab ">
+                                    <div class="menu-item-texts all_programs_text">
+                                        <div class=" all_programs_text"><span class="allprograms-text1">All programs</span>
+                                            <span> <img class="allprograms-img" src="asset/images/all programs.png"
+                                                alt=""></span></div>
+                                    </div>
+                                    <div class="all_program-img"> <img src="" alt=""></div>
+
+                                    <!-- dropdown content -->
+                                    <div class="dropdown_all-programs" style="display: none;">
+
+                                        <div class="dropdown_items" id="pixel6-dropdown-all-programs">
+                                            <img class="menu-items-img" src="asset/images/iconpixel6.png" alt=""><span>Pixel6</span>
+                                        </div>
+
+                                        <div class="dropdown_items" id="games-text-ev">
+                                            <img class="menu-items-img" src="asset/images/guess-number.png" alt=""><span class="margin-rt-dropdown-text">Games</span><span><i
+                                                class="fa fa-caret-right" aria-hidden="true"></i>
+                                        </span>
+                                            <!-- games dropdown -->
+                                            <div class="games-dropdown" style="display: none;">
+
+                                                <div class="games_dropdown-items" id="games-dropdown-guess-number">
+                                                    <img class="menu-items-img" src="asset/images/guess-number.png" alt=""><span>Guess The Number</span>
+                                                </div>
+
+                                                <div class="games_dropdown-items" id="dice-dropdown-game">
+                                                    <img class="menu-items-img" src="asset/images/dice-removebg-preview.png" alt=""><span>Dice</span>
+                                                </div>
+
+                                                <div class="games_dropdown-items">
+                                                    <img class="menu-items-img" src="asset/images/cards-removebg-preview.png" alt=""><span>Cards</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="dropdown_items" id="cmd-command-ev">
+                                            <img class="menu-items-img" src="asset/images/cmd.svg" alt=""><span class="margin-rt-dropdown-text-cmd">Cmd Command</span>
+                                            <div style="display: flex; justify-content: flex-end;">
+
+                                                <!-- cmd command dropdown -->
+                                                <!-- <div class="games-dropdown" id="cmd-dropdown" style="display: none;">
                       <div class="games_dropdown-items">
                         <img class="menu-items-img" src="asset/images/h-removebg-preview.png" alt=""><span>help</span>
                       </div>
@@ -324,49 +325,49 @@
                         <img class="menu-items-img" src="asset/images/exi-removebg-preview.png" alt=""><span>exit</span>
                       </div>
                     </div> -->
+                                            </div>
                                         </div>
+
+                                        <div class="dropdown_items">
+                                            <img class="menu-items-img" src="asset/images/calculator.png" alt=""><span>Calculator</span>
+                                        </div>
+
                                     </div>
+                                </div>
 
-                                    <div class="dropdown_items">
-                                        <img class="menu-items-img" src="asset/images/calculator.png" alt=""><span>Calculator</span>
+                            </div>
+                            <!-- right part of start-window-popup -->
+                            <div class="menu-itens-right">
+                                <div class="menu-items-content">
+                                    <div class="all-desktop-left-icon">
+                                        <img class="menu-items-img" src="asset/images/mycomputer-removebg-preview.png" alt="">
                                     </div>
-
+                                    <div class="menu-item-texts">
+                                        <div>My Computer</div>
+                                    </div>
                                 </div>
-                            </div>
-
-                        </div>
-                        <!-- right part of start-window-popup -->
-                        <div class="menu-itens-right">
-                            <div class="menu-items-content">
-                                <div class="all-desktop-left-icon">
-                                    <img class="menu-items-img" src="asset/images/mycomputer-removebg-preview.png" alt="">
-                                </div>
-                                <div class="menu-item-texts">
-                                    <div>My Computer</div>
-                                </div>
-                            </div>
 
 
-                            <div class="menu-items-content">
-                                <div class="all-desktop-left-icon">
-                                    <img class="menu-items-img" src="asset/images/controlpanel-removebg-preview.png" alt="">
+                                <div class="menu-items-content">
+                                    <div class="all-desktop-left-icon">
+                                        <img class="menu-items-img" src="asset/images/controlpanel-removebg-preview.png" alt="">
+                                    </div>
+                                    <div class="menu-item-texts">
+                                        <div>Control Panel</div>
+                                    </div>
                                 </div>
-                                <div class="menu-item-texts">
-                                    <div>Control Panel</div>
-                                </div>
-                            </div>
 
-                            <div class="menu-items-content">
-                                <div class="all-desktop-left-icon">
-                                    <img class="menu-items-img" src="asset/images/connectTo-removebg-preview.png" alt="">
+                                <div class="menu-items-content">
+                                    <div class="all-desktop-left-icon">
+                                        <img class="menu-items-img" src="asset/images/connectTo-removebg-preview.png" alt="">
+                                    </div>
+                                    <div class="menu-item-texts">
+                                        <div>Connect To</div>
+                                    </div>
                                 </div>
-                                <div class="menu-item-texts">
-                                    <div>Connect To</div>
-                                </div>
-                            </div>
-                            <!-- <div class="menu-separator"></div> -->
+                                <!-- <div class="menu-separator"></div> -->
 
-                            <!-- <div class="menu-items-content">
+                                <!-- <div class="menu-items-content">
                 <div class="all-desktop-left-icon">
                   <img class="menu-items-img" src="asset/images/notepad.webp" alt="">
                 </div>
@@ -385,172 +386,172 @@
                 </div>
 
               </div> -->
-                            <div class="menu-separator"></div>
+                                <div class="menu-separator"></div>
 
-                            <div class="menu-items-content">
-                                <div class="all-desktop-left-icon">
-                                    <img class="menu-items-img" src="asset/images/helpandsupport-removebg-preview.png" alt="">
+                                <div class="menu-items-content">
+                                    <div class="all-desktop-left-icon">
+                                        <img class="menu-items-img" src="asset/images/helpandsupport-removebg-preview.png" alt="">
+                                    </div>
+                                    <div class="menu-item-texts">
+                                        <div>Help and Support</div>
+                                    </div>
                                 </div>
-                                <div class="menu-item-texts">
-                                    <div>Help and Support</div>
+
+                                <div class="menu-items-content">
+                                    <div class="all-desktop-left-icon">
+                                        <img class="menu-items-img" src="asset/images/searchxp-removebg-preview.png" alt="">
+                                    </div>
+                                    <div class="menu-item-texts">
+                                        <div>Search</div>
+                                    </div>
+                                </div>
+
+                                <div class="menu-items-content">
+                                    <div class="all-desktop-left-icon">
+                                        <img class="menu-items-img" src="asset/images/run-removebg-preview.png" alt="">
+                                    </div>
+                                    <div class="menu-item-texts">
+                                        <div>Run</div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="menu-items-content">
-                                <div class="all-desktop-left-icon">
-                                    <img class="menu-items-img" src="asset/images/searchxp-removebg-preview.png" alt="">
-                                </div>
-                                <div class="menu-item-texts">
-                                    <div>Search</div>
-                                </div>
-                            </div>
-
-                            <div class="menu-items-content">
-                                <div class="all-desktop-left-icon">
-                                    <img class="menu-items-img" src="asset/images/run-removebg-preview.png" alt="">
-                                </div>
-                                <div class="menu-item-texts">
-                                    <div>Run</div>
-                                </div>
-                            </div>
+                    </section>
+                    <footer class="window-popup-footer">
+                        <div class="footer_items" id="logOfPopup">
+                            <img class="footer_item-img" src="asset/images/log off.png" alt="">
+                            <span>Log Off</span>
                         </div>
+                        <div class="footer_items" id="turn-off">
+                            <img class="footer_item-img" src="asset/images/turn off.png" alt="">
+                            <span>Turn Off Computer</span>
+
+                        </div>
+                    </footer>
+                    </div>
+                    <!-- status bar  -->
+                    <div class="status-bar-items-left">
+                        <div class="left-startWindow">
+                            <img class="left-startWindow-img" src="asset/images/starwindow.png" alt="">
+
+                            <div class="bottom-div d-flex  ddd" id="bottom-div-cover">
+                                <div class="d-flex ">
+                                    <p class="bottom-p6">
+                                        <img src="asset/images/iconpixel6.png" alt="" style="height: 13px;width: 13px;">
+                                        <span style="font-size: 12px;"> Pixel6</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- status bar right part -->
+                    <div class="status-bar-items-right">
+                        <img class="soundon" src="asset/images/windows xp sound icon.png" alt="">
+                        <img class="soundon soundoff" src="asset/images/soundoff.png" alt="" style="display: none;">
+                        <img class="error-icon" src="asset/images/windowsanitivirus.png" alt="">
+                        <div class="time">
+                            <span id="fetch-time"></span>
+                        </div>
+
+                    </div>
+                </div>
+
+        </footer>
+        <!-- gamming -->
+        <div class="bodyy" style="display: none;">
+            <div class="exit-dice-btn-container"> <button class="exit-dice-btn">Exit</button></div>
+            <main class="main-dice">
+                <section class="player player--0 player--active">
+                    <h2 class="name" id="name--0">Player 1</h2>
+                    <p class="score" id="score--0">43</p>
+                    <div class="current">
+                        <p class="current-label">Current</p>
+                        <p class="current-score" id="current--0">0</p>
+                    </div>
                 </section>
-                <footer class="window-popup-footer">
-                    <div class="footer_items" id="logOfPopup">
-                        <img class="footer_item-img" src="asset/images/log off.png" alt="">
-                        <span>Log Off</span>
+                <section class="player player--1">
+                    <h2 class="name" id="name--1">Player 2</h2>
+                    <p class="score" id="score--1">24</p>
+                    <div class="current">
+                        <p class="current-label">Current</p>
+                        <p class="current-score" id="current--1">0</p>
                     </div>
-                    <div class="footer_items" id="turn-off">
-                        <img class="footer_item-img" src="asset/images/turn off.png" alt="">
-                        <span>Turn Off Computer</span>
+                </section>
 
-                    </div>
+                <img src="dice-5.png" alt="Playing dice" class="dice" />
+
+                <button class="btn-btn btn--new" onclick="reset()" id="nnnn">🔄 New game</button>
+                <button class="btn-btn btn--roll" onclick="btnroll()">🎲 Roll dice</button>
+                <button class="btn-btn btn--hold" onclick="btnhold()"><span id="hold">📥 Hold</span></button>
+            </main>
+        </div>
+
+
+        <!-- guess the number game -->
+        <div class="body-guess" style="display: none;">
+            <div class="exit-guess-container"> <button class="exit-guess">Exit</button></div>
+            <header class="header-guess">
+                <h1>Guess My Number!</h1>
+                <p class="between">(Between 1 and 20)</p>
+                <button class="btn-guess again" id="again-btn-guess">Again!</button>
+                <div class="number">?</div>
+            </header>
+            <main class="main-guess">
+                <section class="left">
+                    <input type="number" class="guess" />
+                    <button class="btn-cheack-guess check" id="cheack-btn">Check!</button>
+                </section>
+
+
+                <section class="right">
+                    <p class="message">Start guessing...</p>
+                    <p class="label-score">💯 Score: <span class="score score-display">20</span></p>
+                    <p class="label-highscore">
+                        🥇 Highscore: <span class="highscore">0</span>
+                    </p>
+                </section>
+            </main>
+        </div>
+
+        <!-- </div> -->
+
+        <div class="model-window d-none" style="display: none;">
+            <div class="modal">
+                <header class="model_window-header">
+                    <span class="model_window-header-text">Log Off Windows</span>
+                    <img src="asset/images/" alt="">
+                </header>
+                <div class="model_window-content">
+                    <div class="model_window-content-items" id="stand-by"><img class="model_window-content-items " src="asset/images/turn off.png" alt="stand by"><span>Stand By</span></div>
+                    <div class="model_window-content-items"><img class="model_window-content-items  " src="asset/images/turn off.png" alt=""><span> Turn Off</span></div>
+                    <div class="model_window-content-items"><img class="model_window-content-items turnoff-img" src="asset/images/green-restart-icon-19-removebg-preview.png" alt=""><span>Restart</span></div>
+                </div>
+                <footer class="model_window-footer">
+                    <button class="footer-button">Cancel</button>
                 </footer>
-                </div>
-                <!-- status bar  -->
-                <div class="status-bar-items-left">
-                    <div class="left-startWindow">
-                        <img class="left-startWindow-img" src="asset/images/starwindow.png" alt="">
-
-                        <div class="bottom-div d-flex  ddd" id="bottom-div-cover">
-                            <div class="d-flex ">
-                                <p class="bottom-p6">
-                                    <img src="asset/images/iconpixel6.png" alt="" style="height: 15px;width: 15px;">
-                                    <span style="font-size: 12px;"> Pixel6</span>
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- status bar right part -->
-                <div class="status-bar-items-right">
-                    <img class="soundon" src="asset/images/windows xp sound icon.png" alt="">
-                    <img class="error-icon" src="asset/images/windowsanitivirus.png" alt="">
-                    <div class="time">
-                        <span id="fetch-time"></span>
-                    </div>
-
-                </div>
             </div>
-     
-    </footer>
-<!-- turn off container -->
- 
-    <div class="model-window d-none" style="display: none;">
-        <div class="modal" >
-            <header class="model_window-header">
-                <span class="model_window-header-text">Log Off Windows</span>
-                <img src="asset/images/" alt="">
-            </header>
-            <div class="model_window-content">
-                <div class="model_window-content-items" id="stand-by"><img class="model_window-content-items " src="asset/images/turn off.png" alt="stand by"><span>Stand By</span></div>
-                <div class="model_window-content-items"><img class="model_window-content-items  " src="asset/images/turn off.png" alt=""><span> Turn Off</span></div>
-                <div class="model_window-content-items"><img class="model_window-content-items turnoff-img" src="asset/images/green-restart-icon-19-removebg-preview.png" alt=""><span>Restart</span></div>
-            </div>
-            <footer class="model_window-footer">
-                <button class="footer-button">Cancel</button>
-            </footer>
         </div>
-    </div>
- 
-    <!-- logoff modal -->
-
-    <div class="modal_logof-container d-none">
-        <div class="modal-logOf">
-            <header class="modal_logof-header">
-                <span class="model_window-header-text">Log Off Windows</span>
-                <img src="asset/images/" alt="">
-            </header>
-            <div class="model_window-content">
-                <div class="model_window-content-items"><img class="model_window-content-items  " src="asset/images/turn off.png" alt=""><span> Switch User</span></div>
-                <div class="model_window-content-items"><img class="model_window-content-items turnoff-img" src="asset/images/log off.png" alt=""><span>Log Off</span></div>
-            </div>
-            <footer class="moda_logof-footer">
-                <button class="modal_logoff-btn">Cancel</button>
-            </footer>
         </div>
-    </div>
-    <!-- gamming -->
-    <div class="bodyy" style="display: none;">
-        <div class="exit-dice-btn-container"> <button class="exit-dice-btn">Exit</button></div>
-        <main class="main-dice">
-            <section class="player player--0 player--active">
-                <h2 class="name" id="name--0">Player 1</h2>
-                <p class="score" id="score--0">43</p>
-                <div class="current">
-                    <p class="current-label">Current</p>
-                    <p class="current-score" id="current--0">0</p>
+        <div class="modal_logof-container d-none">
+            <div class="modal-logOf">
+                <header class="modal_logof-header">
+                    <span class="model_window-header-text">Log Off Windows</span>
+                    <img src="asset/images/" alt="">
+                </header>
+                <div class="model_window-content">
+                    <div class="model_window-content-items"><img class="model_window-content-items  " src="asset/images/turn off.png" alt=""><span> Switch User</span></div>
+                    <div class="model_window-content-items"><img class="model_window-content-items turnoff-img" src="asset/images/log off.png" alt=""><span>Log Off</span></div>
                 </div>
-            </section>
-            <section class="player player--1">
-                <h2 class="name" id="name--1">Player 2</h2>
-                <p class="score" id="score--1">24</p>
-                <div class="current">
-                    <p class="current-label">Current</p>
-                    <p class="current-score" id="current--1">0</p>
-                </div>
-            </section>
-
-            <img src="dice-5.png" alt="Playing dice" class="dice" />
-
-            <button class="btn-btn btn--new" onclick="reset()" id="nnnn">🔄 New game</button>
-            <button class="btn-btn btn--roll" onclick="btnroll()">🎲 Roll dice</button>
-            <button class="btn-btn btn--hold" onclick="btnhold()"><span id="hold">📥 Hold</span></button>
-        </main>
-    </div>
-
-    <!-- guess the number game -->
-    <div class="body-guess" style="display: none;">
-        <div class="exit-guess-container"> <button class="exit-guess">Exit</button></div>
-        <header class="header-guess">
-            <h1>Guess My Number!</h1>
-            <p class="between">(Between 1 and 20)</p>
-            <button class="btn-guess again" id="again-btn-guess">Again!</button>
-            <div class="number">?</div>
-        </header>
-        <main class="main-guess">
-            <section class="left">
-                <input type="number" class="guess" />
-                <button class="btn-cheack-guess check" id="cheack-btn">Check!</button>
-            </section>
+                <footer class="moda_logof-footer">
+                    <button class="modal_logoff-btn">Cancel</button>
+                </footer>
+            </div>
+        </div>
 
 
-            <section class="right">
-                <p class="message">Start guessing...</p>
-                <p class="label-score">💯 Score: <span class="score score-display">20</span></p>
-                <p class="label-highscore">
-                    🥇 Highscore: <span class="highscore">0</span>
-                </p>
-            </section>
-        </main>
-    </div>
-
-</div>
-
-    <script type="module" src="script.js"></script>
-    <script src="script2.js"></script>
+        <script type="module" src="script.js"></script>
+        <script src="script2.js"></script>
 </body>
 
 </html>

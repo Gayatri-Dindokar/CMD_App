@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 30%;
+    top: 12%;
     left: 30%;
 }
 
@@ -193,9 +193,8 @@
     background-color: #222;
     width: 917px;
     position: absolute;
-    top: 30%;
-    left: 25%;
-    /* background-color: #60b347; */
+    bottom: 100px;
+    left: 23%;
 }
 
 
@@ -292,6 +291,7 @@
     border-radius: 6px;
 }
 
+
 /* .btn:hover {
     background-color: #ccc;
 } */
@@ -326,4 +326,3 @@
     height: 32px;
     width: 75px;
 }
-

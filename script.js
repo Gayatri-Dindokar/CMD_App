@@ -632,14 +632,18 @@ errorIcon.addEventListener("mouseover", () => {
 });
 
 
-// const soundon = document.querySelector(".soundon")
+const soundon = document.querySelector(".soundon");
+const soundoff = document.querySelector(".soundoff");
 
 
-// soundon.addEventListener("click", () => {
-
-// test.style.opacity = "0";
-
-// });
+soundon.addEventListener("click", () => {
+    soundoff.style.display = "block";
+    soundon.style.display = "none";
+});
+soundoff.addEventListener("click", () => {
+    soundon.style.display = "block";
+    soundoff.style.display = "none";
+});
 
 document.getElementById('bottom-div-cover').addEventListener('click', () => {
     // mydivid.style.width = "800px";
@@ -655,6 +659,7 @@ document.getElementById('bottom-div-cover').addEventListener('click', () => {
     mydivid.style.left = "238px";
     mydivid.style.overflow = "hidden";
     mydivid.classList.toggle("hidden");
+    mydivid.style.overflow = "auto";
     mydivid.classList.add("show-scroll");
     mydivid.classList.add("transition");
     setTimeout(() => {
@@ -674,11 +679,12 @@ document.getElementById('bottom-div-cover').addEventListener('click', () => {
 const modal = document.querySelector(".modal");
 const modelWindow = document.querySelector(".model-window ");
 const modALCancel = document.querySelector(".footer-button");
+const modALogOffBtn = document.querySelector(".modal_logoff-btn")
 const startWindowpopup = document.querySelector(".startWindow-popup");
 const startWindowImg = document.querySelector(".left-startWindow-img");
 const logOf = document.getElementById("logOfPopup");
 const modalLogOfContainer = document.querySelector(".modal_logof-container");
-const modalLogOf =document.querySelector(".modal-logOf");
+// const modalLogOf =document.querySelector(".modal-logOf");
 // const popup = document.querySelector('.startWindow-popup');
 
 
@@ -707,11 +713,14 @@ document.getElementById("turn-off").addEventListener("click", () => {
     maincon.style.display = "none";
     bottomdivCover.style.display = "none";
     startWindowpopup.style.display = "none";
+    body.classList.add("grayscale");
 
 });
 modALCancel.addEventListener("click", () => {
     modelWindow.style.display = "none";
     startWindowpopup.style.display = "none";
+    body.classList.remove("grayscale");
+    startWindowpopup.classList.remove("popup-visible");
     forcancelbtn();
 
 });
@@ -719,21 +728,45 @@ document.querySelector(".modal_logoff-btn").addEventListener("click", () => {
     console.log("hgghhjhjghhhh");
     modalLogOfContainer.style.display = "none";
     startWindowpopup.style.display = "none";
+    body.classList.remove("grayscale");
+    startWindowpopup.classList.remove("popup-visible");
     forcancelbtn();
 });
+// logOf.addEventListener("click", () => {
+//  modalLogOfContainer = mydiv
+// const body = document.body;
+// modalLogOfContainer.classList.add("grayscale");
+// modalLogOf.classList.remove("grayscale");
+// modalLogOf.style.filter = "none";
+// modalLogOf.style.zindex = "1";
+// modalLogOfContainer.style.display = "block";
+// maincon.style.display = "none";
+// bottomdivCover.style.display = "none";
+// startWindowpopup.style.display = "none";
+// hh
+
+
+// });
+
+const modalLogOf = document.querySelector(".modal-logOf");
+const body = document.querySelector('.main11');
+
 logOf.addEventListener("click", () => {
-    //  modalLogOfContainer = mydiv
-    const body = document.body;
-    modalLogOfContainer.classList.add("grayscale");
-    modalLogOf.classList.remove("grayscale");
+    // Apply grayscale to the background and content
+    document.querySelector('.main11').classList.add("grayscale");
     modalLogOf.style.filter = "none";
-    modalLogOf.style.zindex = "1";
+    modalLogOfContainer.classList.remove("grayscale");
+    // body.style.overflow = "hidden";
+
+
+    // Restyle the modal
+    modalLogOf.style.zIndex = "1";
     modalLogOfContainer.style.display = "block";
     maincon.style.display = "none";
     bottomdivCover.style.display = "none";
     startWindowpopup.style.display = "none";
-
 });
+
 
 startWindowImg.addEventListener("click", () => {
     console.log("mmmm");
@@ -782,8 +815,8 @@ document.getElementById("games-text-ev").addEventListener("mouseover", () => {
 document.getElementById("dice-dropdown-game").addEventListener("click", () => {
     console.log("dicegame")
     pigGame.style.display = "block";
-    pigGame.style.left = "30%";
-    pigGame.style.top = "30%";
+    // pigGame.style.left = "30%";
+    // pigGame.style.top = "30%";
     forcancelbtn();
     mydiv.style.display = "none";
 
@@ -973,8 +1006,8 @@ const guessgame = document.querySelector(".body-guess");
 document.getElementById("guess-number-game").addEventListener("click", () => {
     console.log("pppp")
     guessgame.style.display = "block";
-    guessgame.style.left = "30%";
-    guessgame.style.top = "30%";
+    // guessgame.style.left = "30%";
+    // guessgame.style.top = "30%";
     forcancelbtn();
     mydivid.style.display = "none";
     againeplay();
@@ -983,8 +1016,8 @@ document.getElementById("guess-number-game").addEventListener("click", () => {
 document.getElementById("games-dropdown-guess-number").addEventListener("click", () => {
     console.log("zxcvbnm,")
     guessgame.style.display = "block";
-    guessgame.style.left = "30%";
-    guessgame.style.top = "30%";
+    // guessgame.style.left = "30%";
+    // guessgame.style.top = "30%";
     forcancelbtn();
     mydivid.style.display = "none";
     againeplay();
@@ -992,9 +1025,9 @@ document.getElementById("games-dropdown-guess-number").addEventListener("click",
 });
 
 document.addEventListener('click', function(event) {
- 
-    if (!startWindowpopup.contains(event.target) && (!startWindowImg.contains(event.target))) {
-     
+
+    if (!startWindowpopup.contains(event.target) && (!startWindowImg.contains(event.target)) && (!modALCancel.contains(event.target)) && (!modALogOffBtn.contains(event.target))) {
+
         // startWindowpopup.style.display = 'none';
         // forcancelbtn();
         if (startWindowpopup.classList.contains("popup-visible")) {
