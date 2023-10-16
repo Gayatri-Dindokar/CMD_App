@@ -723,7 +723,7 @@ modALCancel.addEventListener("click", () => {
     startWindowpopup.style.display = "none";
     body.classList.remove("grayscale");
     startWindowpopup.classList.remove("popup-visible");
-    forcancelbtn();
+    // forcancelbtn();
 
 });
 document.querySelector(".modal_logoff-btn").addEventListener("click", () => {
@@ -732,7 +732,7 @@ document.querySelector(".modal_logoff-btn").addEventListener("click", () => {
     startWindowpopup.style.display = "none";
     body.classList.remove("grayscale");
     startWindowpopup.classList.remove("popup-visible");
-    forcancelbtn();
+    // forcancelbtn();
 });
 // logOf.addEventListener("click", () => {
 //  modalLogOfContainer = mydiv
