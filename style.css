@@ -175,7 +175,7 @@
       transform: translate(-50%, -50%);
       position: fixed;
       /* position: relative; */
-      z-index: 9;
+      /* z-index: 9; */
       width: 800px;
       /* resize: both; */
       overflow: auto;
@@ -393,14 +393,17 @@
       margin: 0;
       padding: 0;
   }
- dd {
+
+  dd {
       width: 447px;
       margin-top: 5px;
-     }
- dt {
+  }
+
+  dt {
       margin-top: 13px;
   }
-.container {
+
+  .container {
       width: 100%;
       height: 100%;
       background-color: black;
@@ -408,37 +411,24 @@
       overflow: hidden;
       margin-left: 17px;
   }
-.heading {
+
+  .heading {
       margin-top: 12px;
       width: 394px;
       height: 48px;
   }
- /* animated P */
-.blink-container {
+
+  /* animated P */
+  .blink-container {
       /* display: flex; */
       align-items: center;
       justify-content: center;
-    width: 200px;
+      width: 200px;
       height: 170px;
       padding-top: 0px;
       flex-direction: column;
-      }
- @keyframes blink {
-
-      0%,
-      100% {
-          opacity: 1;
-      }
-
-      50% {
-          opacity: 0;
-      }
   }
- .animated-input::after {
-      content: '|';
-      animation: blink 0.1s infinite;
-      display: inline-block;
-  }
+
   @keyframes blink {
 
       0%,
@@ -450,22 +440,43 @@
           opacity: 0;
       }
   }
- .line {
+
+  .animated-input::after {
+      content: '|';
+      animation: blink 0.1s infinite;
+      display: inline-block;
+  }
+
+  @keyframes blink {
+
+      0%,
+      100% {
+          opacity: 1;
+      }
+
+      50% {
+          opacity: 0;
+      }
+  }
+
+  .line {
       white-space: nowrap;
       overflow: hidden;
-       opacity: 1;
+      opacity: 1;
       color: white;
       padding-left: 20px;
       font-size: 10px;
       animation: blink 2s infinite;
   }
- /* heading */
-.instruction_px {
+
+  /* heading */
+  .instruction_px {
       font-family: monospace;
       font-size: 11px;
   }
- /* prpompt section */
-   .path {
+
+  /* prpompt section */
+  .path {
       margin-bottom: -16px;
   }
 
@@ -478,24 +489,25 @@
   }
 
   .main {
-   font-family: monospace;
+      font-family: monospace;
       font-size: 11px;
-}
+  }
 
   .helps {
       margin-top: 20px;
-    }
+  }
 
   .input {
-     outline: none;
+      outline: none;
       color: white;
       background-color: black;
       border: none;
       position: relative;
       font-family: monospace;
   }
- /* about command */
- .about {
+
+  /* about command */
+  .about {
       font-size: 10px;
       font-family: monospace;
       text-align: justify;
@@ -529,11 +541,13 @@
   .projects {
       margin-top: 5px;
   }
-.projects ul li {
-        list-style: none;
-        margin-top: -10px;
-    } */
-  .projects-para {
+
+  .projects ul li {
+      list-style: none;
+      margin-top: -10px;
+  }
+
+  */ .projects-para {
       margin-top: -20px;
   }
 
@@ -542,8 +556,9 @@
       width: 440px;
       margin-top: -5px;
   }
-/* contact command */
- .contact {
+
+  /* contact command */
+  .contact {
       margin-top: 20px;
   }
 
@@ -554,8 +569,9 @@
   .contact p {
       margin-top: 3px;
   }
-/* jobs command */
-.jobs {
+
+  /* jobs command */
+  .jobs {
       text-align: justify;
       margin-top: 20px;
   }
@@ -592,20 +608,23 @@
   .get_quote_px {
       width: 406px;
       margin-top: 20px;
-      }
- /*  command not found */
- .note {
+  }
+
+  /*  command not found */
+  .note {
       font-size: 11px;
       margin-top: 20px;
   }
-/* input feild */
+
+  /* input feild */
 
   .input-field {
       font-size: 11px;
       font-family: monospace;
- }
-/* get_quote quetions */
-.input_getquote {
+  }
+
+  /* get_quote quetions */
+  .input_getquote {
       background-color: black;
       outline: none;
       border: none;
@@ -660,11 +679,14 @@
       height: 40px;
       width: 45px;
   }
-.bottom-div {
+
+  .bottom-div {
       height: 7px;
-      left: 122px;
+      /* left: 122px; */
       width: 137px;
-      position: fixed;
+      margin-right: 5px;
+      /* position: fixed; */
+      float: left;
       border-radius: 1px;
       bottom: 4px;
       color: white;
@@ -675,10 +697,12 @@
       box-shadow: rgba(0, 0, 0, 0.3) -1px 0px inset, rgba(255, 255, 255, 0.2) 1px 1px 1px inset;
   }
 
+
   .bottom-div:hover {
       background-color: rgb(83, 163, 255);
-    }
- .mydividHov:hover {
+  }
+
+  .mydividHov:hover {
       background-color: rgb(6, 108, 224);
   }
 
@@ -690,10 +714,11 @@
       width: 100px;
       height: 28px;
   }
- .fadeout {
+
+  .fadeout {
       opacity: 0;
-     transition: opacity 5s;
- }
+      transition: opacity 5s;
+  }
 
   .small-size {
       width: 254px;
@@ -701,7 +726,8 @@
       top: 90vh;
       left: 127px;
   }
- .large-size {
+
+  .large-size {
       width: 800px;
       height: 600px;
       top: 50%;
@@ -711,7 +737,7 @@
 
   #requireInput {
       width: 50%;
-      }
+  }
 
   .status-bar {
       height: 37px;
@@ -735,27 +761,34 @@
       display: flex;
       justify-content: space-between;
   }
-.left-startWindow-img {
+
+  .left-startWindow-img {
       height: 35px;
       margin-bottom: -2px;
       margin-left: -2px;
+      position: fixed;
   }
- .hidden {
+
+  .hidden {
       display: none;
   }
- .pixel6icon:hover {
+
+  .pixel6icon:hover {
       text-decoration: none !important;
       color: red !important;
   }
- .soundon {
+
+  .soundon {
       width: 20px;
       height: 20px;
   }
- .status-bar {
+
+  .status-bar {
       position: fixed;
   }
- .status-bar-items-right {
-     display: flex;
+
+  .status-bar-items-right {
+      display: flex;
       justify-content: space-around;
       flex-shrink: 0;
       background: linear-gradient(rgb(12, 89, 185) 1%, rgb(19, 158, 233) 6%, rgb(24, 181, 242) 10%, rgb(19, 155, 235) 14%, rgb(18, 144, 232) 19%, rgb(13, 141, 234) 63%, rgb(13, 159, 241) 81%, rgb(15, 158, 237) 88%, rgb(17, 155, 233) 91%, rgb(19, 146, 226) 94%, rgb(19, 126, 215) 97%, rgb(9, 91, 201) 100%);
@@ -763,8 +796,9 @@
       box-shadow: rgb(24, 187, 255) 1px 0px 1px inset;
       padding: 10px 10px;
       width: 95px;
-    }
- .error-icon {
+  }
+
+  .error-icon {
       height: 20px;
       width: 20px;
   }
@@ -844,6 +878,7 @@
       border-radius: 3px;
       font-family: inherit;
       margin-left: 5px;
+      background: white;
   }
 
   #user-name {
@@ -1312,5 +1347,10 @@
 
   .modal-logOf.grayscale {
       filter: none;
+  }
 
+  .bottom-div-cover-container {
+      position: relative;
+      left: 122px;
+     
   }

@@ -342,27 +342,7 @@
                                         <div>Connect To</div>
                                     </div>
                                 </div>
-                                <!-- <div class="menu-separator"></div> -->
-
-                                <!-- <div class="menu-items-content">
-                <div class="all-desktop-left-icon">
-                  <img class="menu-items-img" src="asset/images/notepad.webp" alt="">
-                </div>
-                <div class="menu-item-texts">
-                  <div>notepad</div>
-                </div>
-              </div>
-
-
-              <div class="menu-items-content">
-                <div class="all-desktop-left-icon">
-                  <img class="menu-items-img" src="asset/images/notepad.webp" alt="">
-                </div>
-                <div class="menu-item-texts">
-                  <div>notepad</div>
-                </div>
-
-              </div> -->
+                               
                                 <div class="menu-separator"></div>
 
                                 <div class="menu-items-content">
@@ -409,6 +389,9 @@
                     <div class="status-bar-items-left">
                         <div class="left-startWindow">
                             <img class="left-startWindow-img" src="asset/images/starwindow.png" alt="">
+                        </div>
+
+                        <div class="bottom-div-cover-container">
 
                             <div class="bottom-div d-flex  ddd" id="bottom-div-cover">
                                 <div class="d-flex ">
@@ -419,7 +402,29 @@
                                 </div>
                             </div>
 
+                            <!-- bottom divs -->
+                            <div class="bottom-div d-flex  ddd bottom-div-guess" id="bottom-div-cover2">
+                                <div class="d-flex ">
+                                    <p class="bottom-p6 footer-guess-game">
+                                        <img src="asset/images/guess-number.png" alt="" style="height: 22px;width: 22px;">
+                                        <span style="font-size: 12px;">Guess Number</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                              <!-- bottom divs -->
+                            <!-- <div class="bottom-div d-flex  ddd" id="bottom-div-cover3">
+                                <div class="d-flex ">
+                                    <p class="bottom-p6">
+                                        <img src="asset/images/iconpixel6.png" alt="" style="height: 13px;width: 13px;">
+                                        <span style="font-size: 12px;"> Pixel6</span>
+                                    </p>
+                                </div>
+                            </div> -->
+
                         </div>
+
+                        <!-- </div> -->
                     </div>
 
                     <!-- status bar right part -->
@@ -496,7 +501,7 @@
                 <p class="pixel-6">Guess Number</p>
 
                 <div class="btn">
-                    <button class="body_guess-min body_guess-btns  body_guess-btns-hover">
+                    <button class="body_guess-min body_guess-btns  body_guess-btns-hover" id="guess-game-min-btn">
                         <img src="asset/images/minimize.png" alt="" />
                      </button>
 
@@ -512,6 +517,7 @@
                 </div>
             </nav>
 
+          <div class="guesser-con" style="background-color: black;"> 
             <header class="header-guess">
                 <h1>Guess My Number!</h1>
                 <p class="between">(Between 1 and 20)</p>
@@ -532,6 +538,7 @@
                         🥇 Highscore: <span class="highscore">0</span>
                     </p>
                 </section>
+          </div>
             </main>
         </div>
 
@@ -574,6 +581,7 @@
 
         <script type="module" src="script.js"></script>
         <script src="script2.js"></script>
+       
 </body>
 
 </html>

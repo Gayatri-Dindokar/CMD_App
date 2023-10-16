@@ -68,27 +68,27 @@ async function showHelp() {
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type home command//
-const showHome = async() => {
+const showHome = async () => {
     const html = await showHtmlModel.showHome();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type about command//
-const showAbout = async() => {
+const showAbout = async () => {
     const html = await showHtmlModel.showAbout();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type projects command//
-const showProjects = async() => {
+const showProjects = async () => {
     const html = await showHtmlModel.showprojects();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type contact command//
-const showContact = async() => {
+const showContact = async () => {
     const html = await showHtmlModel.showContact();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type jobs command//
-const showJobs = async() => {
+const showJobs = async () => {
     const html = await showHtmlModel.showJobs();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
@@ -200,7 +200,7 @@ const get_quote = () => {
     showQuestion(0);
     focusOnInputsOfCurrentQuestion(0);
 
-    document.getElementById("nameInput").addEventListener("keyup", function(event) {
+    document.getElementById("nameInput").addEventListener("keyup", function (event) {
         let nameInput = document.getElementById("nameInput");
         let store = document.getElementById("nameInput").value;
         if (event.key === "Enter") {
@@ -220,7 +220,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("emailInput").addEventListener("keyup", function(event) {
+    document.getElementById("emailInput").addEventListener("keyup", function (event) {
         let email = document.getElementById("emailInput").value;
         let emailInput = document.getElementById("emailInput");
         if (event.key === "Enter") {
@@ -239,7 +239,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("phoneInput").addEventListener("keyup", function(event) {
+    document.getElementById("phoneInput").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
             const phoneInput = document.getElementById("phoneInput");
@@ -255,26 +255,26 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("requireInput").addEventListener("keyup", function(event) {
+    document.getElementById("requireInput").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const requireInput = document.getElementById("requireInput").value;
             showQuestion(4);
             focusOnInputsOfCurrentQuestion(4);
         }
     });
-    document.getElementById("whenInput").addEventListener("keyup", function(event) {
+    document.getElementById("whenInput").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             showQuestion(5);
             focusOnInputsOfCurrentQuestion(5);
         }
     });
-    document.getElementById("Project-Brief").addEventListener("keydown", function(event) {
+    document.getElementById("Project-Brief").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             showQuestion(6);
             focusOnInputsOfCurrentQuestion(6);
         }
     });
-    document.getElementById("submitInput").addEventListener("keyup", function(event) {
+    document.getElementById("submitInput").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const submit = document.getElementById("submitInput").value;
             const conform = document.getElementById("submitInput").value;
@@ -300,7 +300,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("messageNo").addEventListener("keyup", function(event) {
+    document.getElementById("messageNo").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("messageNo").value;
             if (conform == "y") {
@@ -319,7 +319,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("resubmission").addEventListener("keyup", function(event) {
+    document.getElementById("resubmission").addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("resubmission").value;
             if (conform == "y") {
@@ -342,7 +342,7 @@ const get_quote = () => {
     });
 };
 // main function
-container.addEventListener("keyup", async function(e) {
+container.addEventListener("keyup", async function (e) {
     // console.log(e.target);
     if (e.target.matches(".input")) {
         const userinput = e.target.value.trim();
@@ -384,7 +384,7 @@ container.addEventListener("keyup", async function(e) {
 //     document.onmouseup = null;
 // }
 function movingContainer() {
-    navbar.addEventListener('mousedown', function(e) {
+    navbar.addEventListener('mousedown', function (e) {
         if (e.button === 0) {
             isDown = true;
             offset = [
@@ -407,8 +407,9 @@ minMaxBtn.addEventListener("click", () => {
     resizeAtMinSize.style.display = "block";
     resize.style.display = "none";
     mydivid.style.borderRadius = "0px";
+    mydivid.style.zIndex = "9";
     // mydivid.style.marginBottom = "-2px";
-    mydiv.addEventListener("click", function(e) {
+    mydiv.addEventListener("click", function (e) {
         if (e.target.matches('#mydivheader')) {
             mydivid.style.width = "800px";
             mydivid.style.height = "600px";
@@ -428,7 +429,7 @@ minMaxBtn.addEventListener("click", () => {
 
     }
 
-    navbar.addEventListener('mousedown', function(e) {
+    navbar.addEventListener('mousedown', function (e) {
         if (e.button === 0) {
             isDown = false;
             offset = [
@@ -536,9 +537,10 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
     mydivid.classList.add('minimized');
     mydivid.classList.add("hidden-scroll");
     resizeAtMinSize.style.display = "block";
+    mydivid.style.zIndex = "9";
     resize.style.display = "none";
     mydivid.classList.add("transition");
-    navbar.addEventListener('mousedown', function(e) {
+    navbar.addEventListener('mousedown', function (e) {
         if (e.button === 0) {
             isDown = false;
             offset = [
@@ -567,7 +569,7 @@ var isDown = false;
 var mydiv = document.getElementById("mydiv");
 var originalWidth = mydiv.style.width;
 var originalHeight = mydiv.style.height;
-navbar.addEventListener('mousedown', function(e) {
+navbar.addEventListener('mousedown', function (e) {
     if (e.button === 0) {
         isDown = true;
         offset = [
@@ -576,10 +578,10 @@ navbar.addEventListener('mousedown', function(e) {
         ];
     }
 }, true);
-navbar.addEventListener('mouseup', function() {
+navbar.addEventListener('mouseup', function () {
     isDown = false;
 }, true);
-navbar.addEventListener('mousemove', function(event) {
+navbar.addEventListener('mousemove', function (event) {
     event.preventDefault();
 
     if (isDown) {
@@ -593,7 +595,7 @@ navbar.addEventListener('mousemove', function(event) {
             mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
         }
         mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
-        if ((mousePosition.y + offset[1]) > (pageHeight - 600)) {}
+        if ((mousePosition.y + offset[1]) > (pageHeight - 600)) { }
     }
 }, true);
 const recy = document.getElementById("recyclebin");
@@ -886,14 +888,20 @@ document.getElementById("window_popup-game-icon").addEventListener("mouseout", (
 });
 
 
-// ////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
 
 
-// guess the number//
+
+
+
+
+
+
+
+
+
+
+//  games code
+
 const again = document.querySelector('.btn-guess again');
 const number = document.querySelector('.number');
 const guesss = document.querySelector('.guess');
@@ -966,7 +974,7 @@ function againeplay() {
     console.log(random);
     document.querySelector('.number').textContent = '?';
     document.querySelector('.message').textContent = 'Start guessing...';
-    document.querySelector('.body-guess').style.backgroundColor = "black";
+    // document.querySelector('.body-guess').style.backgroundColor = "black";
     document.querySelector('.guess').value = "";
     console.log("heloo players")
 
@@ -979,7 +987,7 @@ document.getElementById("again-btn-guess").addEventListener("click", againeplay)
 const guessgame = document.querySelector(".body-guess");
 
 
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
 
     if (!startWindowpopup.contains(event.target) && (!startWindowImg.contains(event.target)) && (!modALCancel.contains(event.target)) && (!modALogOffBtn.contains(event.target))) {
 
@@ -1005,24 +1013,7 @@ document.querySelector(".body_piggame-close").addEventListener("click", () => {
 
 
 
-document.getElementById("games-dropdown-guess-number").addEventListener("click", () => {
-    console.log("zxcvbnm,")
-    guessgame.style.display = "block";
-    // guessgame.style.left = "30%";
-    // guessgame.style.top = "30%";
-    forcancelbtn();
-    bottomdivCover.style.display = "none";
-    mydivid.style.display = "none";
-    // mydivid.classList.toggle('hidden');
-    // if (mydivid.style.width = "254px") {
-    //     setTimeout(() => {
-    //         mydivid.classList.toggle('hidden')
-    //     }, 100);
-    // }
 
-    againeplay();
-
-});
 
 document.getElementById("dice-dropdown-game").addEventListener("click", () => {
     console.log("dicegame")
@@ -1042,30 +1033,75 @@ document.getElementById("dice-dropdown-game").addEventListener("click", () => {
 });
 
 
+
+document.querySelector(".turnoffthewindow").addEventListener("click", () => {
+    console.log("click");
+    window.close();
+
+});
+const guesserCon = document.querySelector(".guesser-con");
+const bodyguessNavbar = document.querySelector(".body_guess-navbar");
+const bottomDivGuess = document.querySelector(".bottom-div-guess")
+
+
+document.getElementById("guess-game-min-btn").addEventListener("click", () => {
+    bottomDivGuess.style.boxShadow = "rgba(0, 0, 0, 0.3) -1px 0px inset, rgba(255, 255, 255, 0.2) 1px 1px 1px inset";
+    guessgame.style.width = "254px";
+    guessgame.style.height = "35px";
+    guessgame.style.top = "98vh";
+    guessgame.style.left = "238px";
+    guessgame.style.overflow = "hidden";
+    mydivheader.classList.add("color");
+   guessgame.classList.add("hidden-scroll");
+   guessgame.classList.add("transition");
+    resizeAtMinSize.style.display = "block";
+    resize.style.display = "none";
+    guessgame.style.borderRadius = "0px";
+    guessgame.style.zIndex = "9";
+    // mydivid.style.marginBottom = "-2px";
+    // mydiv.addEventListener("click", function (e) {
+    //     if (e.target.matches('#mydivheader')) {
+    //         mydivid.style.width = "800px";
+    //         mydivid.style.height = "600px";
+    //         mydivid.style.left = "50%";
+    //         mydivid.style.top = "50%";
+    //         mydivid.style.overflow = "auto";
+    //         mydivid.classList.add("mydividHov");
+
+
+    //     }
+    // });
+    if (guessgame.style.width = "254px") {
+        setTimeout(() => {
+            // guessgame.classList.toggle('hidden')
+            guessgame.style.display="none";
+        }, 400)
+
+
+    }
+
+});
+
 document.getElementById("guess-number-game").addEventListener("click", (e) => {
-    console.log("pppp")
-    guessgame.style.display = "block";
-    // guessgame.style.left = "30%";
-    // guessgame.style.top = "30%";
-    forcancelbtn();
-    bottomdivCover.style.display = "none";
-    mydivid.style.display = "none";
-    // mydivid.classList.toggle('hidden');
-    // if (mydivid.style.width = "254px") {
-    //     setTimeout(() => {
-    //         mydivid.classList.toggle('hidden')
-    //     }, 100);
-    // }
-    // if (e.target.matches('#bottom-div-cover')) {
-    //     setTimeout(() => {
-    //         mydivid.classList.toggle('hidden')
-    //     }, 100);
-    // }
+     
+    // guessgame.classList.toggle("hidden");
+        
+        mydivid.style.display = "none";
+      guessgame.style.display = "block";
+        againeplay();
+        forcancelbtn();
+    });
 
-    againeplay();
-});
-document.querySelector(".turnoffthewindow").addEventListener("click",()=>{
-console.log("click");
-window.close();
+    document.getElementById("games-dropdown-guess-number").addEventListener("click", () => {
+        guessgame.style.display = "block";
+        // guessgame.classList.toggle("hidden");
+        forcancelbtn();
+        mydivid.style.display = "none";
+        againeplay();
+    });
 
-});
+
+document.querySelector(".bottom-div-guess").addEventListener("click", () => {
+   
+
+})

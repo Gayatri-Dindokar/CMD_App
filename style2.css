@@ -191,11 +191,24 @@
 .body-guess {
     font-family: 'Press Start 2P', sans-serif;
     color: #eee;
-    background-color: #222;
-    width: 917px;
-    position: absolute;
+    /* background-color: #222; */
+    /* width: 917px; */
+    /* position: absolute; */
     bottom: 100px;
     left: 23%;
+    height: 600px;
+    width: 800px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    /* position: relative; */
+    /* z-index: 9; */
+    /* width: 800px; */
+    /* resize: both; */
+    overflow: auto;
 }
 
 
@@ -313,4 +326,8 @@
 
 .score {
     font-size: 37px;
+}
+.footer-guess-game{
+    display: flex;
+    align-items: center;
 }
