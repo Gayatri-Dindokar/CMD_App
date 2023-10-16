@@ -1,8 +1,4 @@
 import * as showHtmlModel from './model/showHtml.js';
-// document.addEventListener('click', function(event) {
-//     console.log(event.target);
-// })
-
 const userinput = document.querySelector(".input");
 const main = document.querySelector(".main");
 const help = document.querySelector(".help");
@@ -25,16 +21,10 @@ const btnclose = document.querySelector(".btnclose");
 const crossBtnBigScreen = document.getElementById("crossBtnBigScreen");
 const bigScreenMinMaxBtn = document.getElementById("bigscreen-minmaxbtn");
 const doubleRestore = document.getElementById("double-restore");
-const mainconWidth = maincon.offsetWidth;
-const mainconHeight = maincon.offsetHeight;
-const hiddenNav = document.querySelector(".hidden-nav");
-const bottomIcon = document.querySelector(".bottom-icon");
-const desktopIcon = document.querySelector(".desktop-icon");
 const navbar = document.querySelector(".navbar");
 const mydivid = document.getElementById("mydiv");
 const errorIcon = document.querySelector(".error-icon");
 const test = document.querySelector(".test");
-// const bottomDiv = document.querySelector(".bottom-div")
 const bottomdivCover = document.getElementById("bottom-div-cover");
 
 const path = () => {
@@ -68,27 +58,27 @@ async function showHelp() {
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type home command//
-const showHome = async () => {
+const showHome = async() => {
     const html = await showHtmlModel.showHome();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type about command//
-const showAbout = async () => {
+const showAbout = async() => {
     const html = await showHtmlModel.showAbout();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type projects command//
-const showProjects = async () => {
+const showProjects = async() => {
     const html = await showHtmlModel.showprojects();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type contact command//
-const showContact = async () => {
+const showContact = async() => {
     const html = await showHtmlModel.showContact();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
 //when user type jobs command//
-const showJobs = async () => {
+const showJobs = async() => {
     const html = await showHtmlModel.showJobs();
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
@@ -158,10 +148,7 @@ const get_quote = () => {
                <p class='message'><input type="text" id="successfull" value="your response is succesfully submmited" class="input_getquote"></p>
               <p class='message'><input type="text" id="resubmission-succesfull"  class="input_getquote"></p>
        </div>
-
-       
-           
-           </form>`;
+ </form>`;
 
     displayOutputContainer.insertAdjacentElement("beforeend", que1);
     document.addEventListener("click", (event) => {
@@ -170,7 +157,6 @@ const get_quote = () => {
             event.target.focus();
         }
     });
-    const inputFieldsQuotes = que1.querySelectorAll(".input_getquote");
     const questions = [
         "question1",
         "question2",
@@ -200,7 +186,7 @@ const get_quote = () => {
     showQuestion(0);
     focusOnInputsOfCurrentQuestion(0);
 
-    document.getElementById("nameInput").addEventListener("keyup", function (event) {
+    document.getElementById("nameInput").addEventListener("keyup", function(event) {
         let nameInput = document.getElementById("nameInput");
         let store = document.getElementById("nameInput").value;
         if (event.key === "Enter") {
@@ -220,7 +206,8 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("emailInput").addEventListener("keyup", function (event) {
+
+    document.getElementById("emailInput").addEventListener("keyup", function(event) {
         let email = document.getElementById("emailInput").value;
         let emailInput = document.getElementById("emailInput");
         if (event.key === "Enter") {
@@ -239,7 +226,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("phoneInput").addEventListener("keyup", function (event) {
+    document.getElementById("phoneInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             event.preventDefault();
             const phoneInput = document.getElementById("phoneInput");
@@ -255,26 +242,26 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("requireInput").addEventListener("keyup", function (event) {
+    document.getElementById("requireInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             const requireInput = document.getElementById("requireInput").value;
             showQuestion(4);
             focusOnInputsOfCurrentQuestion(4);
         }
     });
-    document.getElementById("whenInput").addEventListener("keyup", function (event) {
+    document.getElementById("whenInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             showQuestion(5);
             focusOnInputsOfCurrentQuestion(5);
         }
     });
-    document.getElementById("Project-Brief").addEventListener("keydown", function (event) {
+    document.getElementById("Project-Brief").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             showQuestion(6);
             focusOnInputsOfCurrentQuestion(6);
         }
     });
-    document.getElementById("submitInput").addEventListener("keyup", function (event) {
+    document.getElementById("submitInput").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             const submit = document.getElementById("submitInput").value;
             const conform = document.getElementById("submitInput").value;
@@ -300,7 +287,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("messageNo").addEventListener("keyup", function (event) {
+    document.getElementById("messageNo").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("messageNo").value;
             if (conform == "y") {
@@ -319,7 +306,7 @@ const get_quote = () => {
             }
         }
     });
-    document.getElementById("resubmission").addEventListener("keyup", function (event) {
+    document.getElementById("resubmission").addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             const conform = document.getElementById("resubmission").value;
             if (conform == "y") {
@@ -342,7 +329,7 @@ const get_quote = () => {
     });
 };
 // main function
-container.addEventListener("keyup", async function (e) {
+container.addEventListener("keyup", async function(e) {
     // console.log(e.target);
     if (e.target.matches(".input")) {
         const userinput = e.target.value.trim();
@@ -379,12 +366,9 @@ container.addEventListener("keyup", async function (e) {
         }
     }
 });
-// function stopDragging() {
-//     document.onmousemove = null;
-//     document.onmouseup = null;
-// }
+
 function movingContainer() {
-    navbar.addEventListener('mousedown', function (e) {
+    navbar.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
             isDown = true;
             offset = [
@@ -396,6 +380,8 @@ function movingContainer() {
 }
 minMaxBtn.addEventListener("click", () => {
     bottomdivCover.style.boxShadow = "rgba(0, 0, 0, 0.3) -1px 0px inset, rgba(255, 255, 255, 0.2) 1px 1px 1px inset";
+
+    // mydivid.style.cssText = "width: 254px; height: 35px; top: 98vh; left: 238 ,overflow:hidden;"
     mydivid.style.width = "254px";
     mydivid.style.height = "35px";
     mydivid.style.top = "98vh";
@@ -409,7 +395,7 @@ minMaxBtn.addEventListener("click", () => {
     mydivid.style.borderRadius = "0px";
     mydivid.style.zIndex = "9";
     // mydivid.style.marginBottom = "-2px";
-    mydiv.addEventListener("click", function (e) {
+    mydiv.addEventListener("click", function(e) {
         if (e.target.matches('#mydivheader')) {
             mydivid.style.width = "800px";
             mydivid.style.height = "600px";
@@ -417,8 +403,6 @@ minMaxBtn.addEventListener("click", () => {
             mydivid.style.top = "50%";
             mydivid.style.overflow = "auto";
             mydivid.classList.add("mydividHov");
-
-
         }
     });
     if (mydivid.style.width = "254px") {
@@ -429,7 +413,7 @@ minMaxBtn.addEventListener("click", () => {
 
     }
 
-    navbar.addEventListener('mousedown', function (e) {
+    navbar.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
             isDown = false;
             offset = [
@@ -441,23 +425,16 @@ minMaxBtn.addEventListener("click", () => {
 });
 
 
-
-
 resizeBigscreen.addEventListener("click", () => {
     maincon.style.display = "block";
     bottomDiv.style.display = "none";
-    mydivid.style.width = "800px";
-    mydivid.style.height = "600px";
-    mydivid.style.left = "50%";
-    mydivid.style.top = "50%";
+    mydivid.style.cssText = "width: 800px; height: 600px; left: 50%; top: 50%;";
     mydivid.classList.add("show-scroll");
-})
+});
+
+
 resize.addEventListener("click", () => {
-    maincon.style.width = "100%";
-    maincon.style.height = "100vh";
-    maincon.style.left = "50%";
-    maincon.style.top = "50%";
-    maincon.style.backgroundSize = "cover";
+    maincon.style.cssText = "width: 100%; height: 100vh; left: 50%; top: 50%; background-size: cover;";
     resize.style.display = 'none';
     restore.style.display = "block";
     crossBtnBigScreen.style.display = "block";
@@ -466,66 +443,45 @@ resize.addEventListener("click", () => {
     minMaxBtn.style.display = "none";
     mydivid.classList.add("show-scroll");
     movingContainer();
-})
+});
+
+
 resizeAtMinSize.addEventListener("click", () => {
-    mydivid.style.width = "800px";
-    mydivid.style.height = "600px";
-    mydivid.style.left = "50%";
-    mydivid.style.top = "50%";
+    mydivid.style.cssText = "width: 800px; height: 600px; left: 50%; top: 50%; overflow: auto; border-top-left-radius: 15px; border-top-right-radius: 15px;";
     resizeAtMinSize.style.display = "none";
     resize.style.display = "block";
-    mydivid.style.overflow = "auto";
-    mydivid.style.borderTopleftRadius = "15px";
-    mydivid.style.borderTopRightRadius = "15px";
-})
+});
+
+
 restore.addEventListener("click", () => {
-    maincon.style.width = "800px";
-    maincon.style.height = "600px";
+    maincon.style.cssText = "width: 800px; height: 600px;";
     resize.style.display = 'block';
     restore.style.display = "none";
     mydivid.classList.add("show-scroll");
     movingContainer();
-})
+});
 
 function closeContainer() {
-    // maincon.style.left='-700px';
     maincon.style.display = 'none';
-    // maincon.classList.add('fadeout');
-    // maincon.classList.remove('fadeInAnimation');
     bottomDiv.style.display = "none";
     bottomdivCover.style.display = "none";
-
 }
 
 function openContainer() {
     location.reload();
-    maincon.style.display = 'block';
-    bottomdivCover.style.display = "block";
-    bottomDiv.style.display = "none";
-    maincon.style.width = "800px";
-    maincon.style.height = "600px";
-    maincon.style.left = "50%";
-    maincon.style.top = "50%";
-    resize.style.display = "block";
-    resizeBigscreen.style.display = "none";
-    restore.style.display = "none";
-    mydivid.classList.add("show-scroll");
-    movingContainer();
-    minMaxBtn.style.display = "block";
-    maincon.classList.remove('fadeout');
+}
+
+function mainconNone() {
+    maincon.style.display = 'none';
+    bottomdivCover.style.display = "none";
 }
 crossbtn.addEventListener("click", () => {
     bottomDiv.style.display = "none";
 });
-
-function mainconNone() {
-    maincon.style.display = 'none';
-    // bottomDiv.style.display = "none";
-    bottomdivCover.style.display = "none";
-}
 btnclose.addEventListener("click", closeContainer);
 cmdImg.addEventListener("click", openContainer)
 crossBtnBigScreen.addEventListener("click", mainconNone);
+
 bigScreenMinMaxBtn.addEventListener("click", () => {
     restore.style.display = "none";
     resize.style.display = "block";
@@ -540,7 +496,7 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
     mydivid.style.zIndex = "9";
     resize.style.display = "none";
     mydivid.classList.add("transition");
-    navbar.addEventListener('mousedown', function (e) {
+    navbar.addEventListener('mousedown', function(e) {
         if (e.button === 0) {
             isDown = false;
             offset = [
@@ -558,18 +514,14 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
     }
 });
 
-doubleRestore.addEventListener("click", () => {
-    maincon.style.display = 'block';
-    bottomDiv.style.display = "none";
-    console.log("hii")
-})
+// container moving //
 var mousePosition;
 var offset = [0, 0];
 var isDown = false;
 var mydiv = document.getElementById("mydiv");
 var originalWidth = mydiv.style.width;
 var originalHeight = mydiv.style.height;
-navbar.addEventListener('mousedown', function (e) {
+navbar.addEventListener('mousedown', function(e) {
     if (e.button === 0) {
         isDown = true;
         offset = [
@@ -578,10 +530,10 @@ navbar.addEventListener('mousedown', function (e) {
         ];
     }
 }, true);
-navbar.addEventListener('mouseup', function () {
+navbar.addEventListener('mouseup', function() {
     isDown = false;
 }, true);
-navbar.addEventListener('mousemove', function (event) {
+navbar.addEventListener('mousemove', function(event) {
     event.preventDefault();
 
     if (isDown) {
@@ -595,13 +547,11 @@ navbar.addEventListener('mousemove', function (event) {
             mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
         }
         mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
-        if ((mousePosition.y + offset[1]) > (pageHeight - 600)) { }
+        if ((mousePosition.y + offset[1]) > (pageHeight - 600)) {}
     }
 }, true);
-const recy = document.getElementById("recyclebin");
-recy.addEventListener("click", () => {
-    alert("recycle bin is empty");
-})
+
+// Desktop Icon Functionality //
 
 const anchr = document.querySelector(".anchr");
 anchr.addEventListener("click", () => {
@@ -622,7 +572,6 @@ function time() {
     fetchTime.textContent =
         ("0" + hours).substr(-2) + ":" + ("0" + minutes).substr(-2) + ampm;
 }
-
 setInterval(time, 1000);
 
 // status bar operation
@@ -631,14 +580,9 @@ errorIcon.addEventListener("mouseover", () => {
     setTimeout(() => {
         test.style.opacity = "0";
     }, 5000);
-
 });
-
-
 const soundon = document.querySelector(".soundon");
 const soundoff = document.querySelector(".soundoff");
-
-
 soundon.addEventListener("click", () => {
     soundoff.style.display = "block";
     soundon.style.display = "none";
@@ -648,36 +592,46 @@ soundoff.addEventListener("click", () => {
     soundoff.style.display = "none";
 });
 
-document.getElementById('bottom-div-cover').addEventListener('click', () => {
-    // mydivid.style.width = "800px";
-    // mydivid.style.height = "600px";
-    // mydivid.style.left = "50%";
-    // mydivid.style.top = "50%";
+// document.getElementById('bottom-div-cover').addEventListener('click', () => {
+//     mydivid.style.width = "254px";
+//     mydivid.style.height = "35px";
+//     mydivid.style.top = "98vh";
+//     mydivid.style.left = "238px";
+//     mydivid.style.overflow = "hidden";
+//     mydivid.classList.toggle("hidden");
+//     mydivid.style.overflow = "auto";
+//     mydivid.classList.add("show-scroll");
+//     mydivid.classList.add("transition");
+//     setTimeout(() => {
+//         mydivid.style.width = "800px";
+//         mydivid.style.height = "600px";
+//         mydivid.style.left = "50%";
+//         mydivid.style.top = "50%";
+//     }, 0.1);
+//     bottomdivCover.style.boxShadow = "rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
 
-    // maincon.style.display = "block";
-    // mydivid.classList.add("fff");
-    mydivid.style.width = "254px";
-    mydivid.style.height = "35px";
-    mydivid.style.top = "98vh";
-    mydivid.style.left = "238px";
-    mydivid.style.overflow = "hidden";
-    mydivid.classList.toggle("hidden");
-    mydivid.style.overflow = "auto";
-    mydivid.classList.add("show-scroll");
-    mydivid.classList.add("transition");
+// });
+bottomdivCover.addEventListener('click', () => {
+    const toggleHidden = () => mydivid.classList.toggle('hidden');
+    const setStyles = (width, height, top, left, overflow, boxShadow) => {
+        mydivid.style.width = width;
+        mydivid.style.height = height;
+        mydivid.style.top = top;
+        mydivid.style.left = left;
+        mydivid.style.overflow = overflow;
+        bottomdivCover.style.boxShadow = boxShadow;
+    };
+    setStyles('254px', '35px', '98vh', '238px', 'hidden', 'rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset');
+    toggleHidden();
+    mydivid.style.overflow = 'auto';
+    mydivid.classList.add('show-scroll', 'transition');
+
     setTimeout(() => {
-        mydivid.style.width = "800px";
-        mydivid.style.height = "600px";
-        mydivid.style.left = "50%";
-        mydivid.style.top = "50%";
+        setStyles('800px', '600px', '50%', '50%', 'auto', '');
     }, 0.1);
-    bottomdivCover.style.boxShadow = "rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
-
 });
 
-// function turnoff(){
 
-// }
 const modal = document.querySelector(".modal");
 const modelWindow = document.querySelector(".model-window ");
 const modALCancel = document.querySelector(".footer-button");
@@ -686,10 +640,8 @@ const startWindowpopup = document.querySelector(".startWindow-popup");
 const startWindowImg = document.querySelector(".left-startWindow-img");
 const logOf = document.getElementById("logOfPopup");
 const modalLogOfContainer = document.querySelector(".modal_logof-container");
-// const modalLogOf =document.querySelector(".modal-logOf");
-// const popup = document.querySelector('.startWindow-popup');
-
-
+const modalLogOf = document.querySelector(".modal-logOf");
+const body = document.querySelector('.main11');
 
 function forcancelbtn() {
     if (!startWindowpopup.classList.contains("popup-visible")) {
@@ -708,9 +660,6 @@ function forcancelbtn() {
 
 }
 
-const modalLogOf = document.querySelector(".modal-logOf");
-const body = document.querySelector('.main11');
-
 document.getElementById("turn-off").addEventListener("click", () => {
     modelWindow.style.display = "block";
     modelWindow.style.backgroundColor = "red";
@@ -725,8 +674,6 @@ modALCancel.addEventListener("click", () => {
     startWindowpopup.style.display = "none";
     body.classList.remove("grayscale");
     startWindowpopup.classList.remove("popup-visible");
-    // forcancelbtn();
-
 });
 document.querySelector(".modal_logoff-btn").addEventListener("click", () => {
     console.log("hgghhjhjghhhh");
@@ -734,15 +681,11 @@ document.querySelector(".modal_logoff-btn").addEventListener("click", () => {
     startWindowpopup.style.display = "none";
     body.classList.remove("grayscale");
     startWindowpopup.classList.remove("popup-visible");
-    // forcancelbtn();
 });
 logOf.addEventListener("click", () => {
-    // Apply grayscale to the background and content
     document.querySelector('.main11').classList.add("grayscale");
     modalLogOf.style.filter = "none";
     modalLogOfContainer.classList.remove("grayscale");
-    // body.style.overflow = "hidden";
-
 
     // Restyle the modal
     modalLogOf.style.zIndex = "1";
@@ -754,99 +697,53 @@ logOf.addEventListener("click", () => {
 
 
 startWindowImg.addEventListener("click", () => {
-    console.log("mmmm");
-    //startWindowpopup.style.display = "block";
-    // if (startWindowpopup.style.display === "none" || startWindowpopup.classList.add("slide-out")) {
-    //     startWindowpopup.style.display = "block";
-    //     startWindowpopup.classList.add("slide-in");
-    // } else {
-
-    //     startWindowpopup.classList.add("slide-out");
-    //     // startWindowpopup.style.display = "none";
-    // }
-
     if (!startWindowpopup.classList.contains("popup-visible")) {
-
         startWindowpopup.style.display = "block";
         setTimeout(() => {
             startWindowpopup.classList.add("popup-visible");
         }, 0);
     } else {
-
         startWindowpopup.classList.remove("popup-visible");
         setTimeout(() => {
             startWindowpopup.style.display = "none";
         }, 300);
     }
 
-
 });
-const dropdownAllPrograms = document.querySelector(".dropdown_all-programs")
-document.querySelector(".all-programs_tab").addEventListener("mouseover", () => {
-    if (dropdownAllPrograms.style.display === "none") {
-        dropdownAllPrograms.style.display = "block";
-    }
+const allProgramsTab = document.querySelector(".all-programs_tab");
+const dropdownAllPrograms = document.querySelector(".dropdown_all-programs");
+const gamesTextEv = document.getElementById("games-text-ev");
+const gamesDropdown = document.querySelector(".games-dropdown");
 
-});
-document.querySelector(".all-programs_tab").addEventListener("mouseout", () => {
-    if (dropdownAllPrograms.style.display === "block") {
-        dropdownAllPrograms.style.display = "none";
-    }
-
-});
-document.getElementById("games-text-ev").addEventListener("mouseover", () => {
-    document.querySelector(".games-dropdown").style.display = "block";
+allProgramsTab.addEventListener("mouseover", () => {
+    dropdownAllPrograms.style.display = "block";
 });
 
-
-document.getElementById("games-text-ev").addEventListener("mouseout", () => {
-    document.querySelector(".games-dropdown").style.display = "none";
+allProgramsTab.addEventListener("mouseout", () => {
+    dropdownAllPrograms.style.display = "none";
 });
-//   document.getElementById("cmd-command-ev").addEventListener("click",()=>{
-//     setTimeout(() => {
-//         mydivid.classList.toggle('hidden')
-//     }, 100)
-//   });
 
-// popup icons//
+gamesTextEv.addEventListener("mouseover", () => {
+    gamesDropdown.style.display = "block";
+});
+
+gamesTextEv.addEventListener("mouseout", () => {
+    gamesDropdown.style.display = "none";
+});
+
+function openWindow(url) {
+    window.open(url, "_blank");
+}
+
 document.getElementById("window_popup-pixel6-icon").addEventListener("click", () => {
-    window.open("https://pixel6.co/", "_blank");
+    openWindow("https://pixel6.co/");
 });
+
 document.getElementById("pixel6-dropdown-all-programs").addEventListener("click", () => {
-    window.open("https://pixel6.co/", "_blank");
-});
-document.getElementById("window_popup-cmd-icon").addEventListener("click", () => {
-
-    // mydivid.style.display = "block";
-    // mydivid.style.width = "800px";
-    // mydivid.style.height = "600px";
-    // mydivid.style.left = "50%";
-    // mydivid.style.top = "50%";
-    // mydivid.style.overflow = "auto";
-    // mydivid.classList.add("mydividHov");
-    location.reload();
-    maincon.style.display = 'block';
-    bottomdivCover.style.display = "block";
-    bottomDiv.style.display = "none";
-    maincon.style.width = "800px";
-    maincon.style.height = "600px";
-    maincon.style.left = "50%";
-    maincon.style.top = "50%";
-    resize.style.display = "block";
-    resizeBigscreen.style.display = "none";
-    restore.style.display = "none";
-    mydivid.classList.add("show-scroll");
-    movingContainer();
-    minMaxBtn.style.display = "block";
-    maincon.classList.remove('fadeout');
-
-
-
-    forcancelbtn();
+    openWindow("https://pixel6.co/");
 });
 
-document.getElementById("cmd-command-ev").addEventListener("click", (e) => {
-
+function resetMainCon() {
     location.reload();
     maincon.style.display = 'block';
     bottomdivCover.style.display = "block";
@@ -863,41 +760,52 @@ document.getElementById("cmd-command-ev").addEventListener("click", (e) => {
     minMaxBtn.style.display = "block";
     maincon.classList.remove('fadeout');
     forcancelbtn();
-});
-document.getElementById("window_popup-recyclebin-icon").addEventListener("click", () => {
-    forcancelbtn();
-    alert("recycle bin is empty");
+}
+document.getElementById("window_popup-cmd-icon").addEventListener("click", resetMainCon);
+document.getElementById("window_popup-cmd-icon").addEventListener("click", resetMainCon);
 
-});
+function recycleBinClicked() {
+    forcancelbtn();
+    alert("Recycle bin is empty");
+}
+document.getElementById("recyclebin").addEventListener("click", recycleBinClicked);
+document.getElementById("window_popup-recyclebin-icon").addEventListener("click", recycleBinClicked);
+
+// dialogh box //
+function showElement(element) {
+    element.style.display = "block";
+}
+
+function hideElement(element) {
+    element.style.display = "none";
+}
 document.getElementById("dialogbox-cross1").addEventListener("mouseover", () => {
-    document.getElementById("dialogbox-cross2").style.display = "block";
-    document.getElementById("dialogbox-cross1").style.display = "none";
-
+    showElement(document.getElementById("dialogbox-cross2"));
+    hideElement(document.getElementById("dialogbox-cross1"));
 });
 document.getElementById("dialogbox-cross2").addEventListener("click", () => {
-    //    document.querySelector(".dialog-box").style.display = "none";
+    // document.querySelector(".dialog-box").style.display = "none";
     test.style.opacity = "0";
 });
 
 document.getElementById("window_popup-game-icon").addEventListener("mouseover", () => {
-    document.querySelector(".games-dropdown-left-side").style.display = "block";
+    showElement(document.querySelector(".games-dropdown-left-side"));
 });
 
 document.getElementById("window_popup-game-icon").addEventListener("mouseout", () => {
-    document.querySelector(".games-dropdown-left-side").style.display = "none";
+    hideElement(document.querySelector(".games-dropdown-left-side"));
 });
 
 
+document.addEventListener('click', function(event) {
+    if (!startWindowpopup.contains(event.target) && (!startWindowImg.contains(event.target)) && (!modALCancel.contains(event.target)) && (!modALogOffBtn.contains(event.target))) {
+        if (startWindowpopup.classList.contains("popup-visible")) {
 
-
-
-
-
-
-
-
-
-
+            startWindowpopup.style.display = "none";
+            startWindowpopup.classList.remove("popup-visible");
+        }
+    }
+});
 
 
 //  games code
@@ -910,18 +818,10 @@ const message = document.querySelector('.message');
 const score = document.querySelector('.score-display');
 const highscore = document.querySelector('.highscore');
 
-// document.querySelector('.number').textContent = 13;
-// let assume = document.querySelector('.guess').value;
-
 let random = Math.floor(Math.random() * 20) + 1;
 console.log(random);
 let scoresg = 20;
 let highscores = 0;
-
-
-
-
-
 
 function guessthenumber() {
     console.log("guess the number")
@@ -979,42 +879,57 @@ function againeplay() {
     console.log("heloo players")
 
 }
-// againeplay();
 document.getElementById("again-btn-guess").addEventListener("click", againeplay);
 
+document.querySelector(".turnoffthewindow").addEventListener("click", () => {
+    console.log("click");
+    window.close();
 
+});
 
+// Guess Game functionality //
+const bottomDivCover2 = document.getElementById("bottom-div-cover2");
 const guessgame = document.querySelector(".body-guess");
 
-
-document.addEventListener('click', function (event) {
-
-    if (!startWindowpopup.contains(event.target) && (!startWindowImg.contains(event.target)) && (!modALCancel.contains(event.target)) && (!modALogOffBtn.contains(event.target))) {
-
-        // startWindowpopup.style.display = 'none';
-        // forcancelbtn();
-        if (startWindowpopup.classList.contains("popup-visible")) {
-
-            startWindowpopup.style.display = "none";
-            startWindowpopup.classList.remove("popup-visible");
-        }
+document.getElementById("guess-game-min-btn").addEventListener("click", () => {
+    guessgame.style.cssText = "width: 254px; height: 35px; top: 98vh; left: 250px; border-radius: 0; z-index: 9;";
+    guessgame.classList.add("transition");
+    setTimeout(() => {
+        guessgame.style.display = "none";
+    }, 400);
+});
+bottomDivCover2.addEventListener("click", () => {
+    if (guessgame.style.display === "none") {
+        guessgame.style.cssText = "width: 800px; height: 600px; top: 50%; left: 50%;";
+        mydiv.style.display = "none";
+    } else {
+        guessgame.style.display = "none";
     }
 });
+
+function expandGuessGame() {
+    document.getElementById("bottom-div-cover2").style.display = "flex";
+    if (guessgame.style.width = "254px") {
+        guessgame.style.width = "800px";
+        guessgame.style.height = "600px";
+        guessgame.style.left = "50%";
+        guessgame.style.top = "50%";
+    }
+    mydivid.style.display = "none";
+    guessgame.style.display = "block";
+    againeplay();
+    forcancelbtn();
+}
+document.getElementById("guess-number-game").addEventListener("click", expandGuessGame);
+document.getElementById("games-dropdown-guess-number").addEventListener("click", expandGuessGame);
 document.querySelector(".body_guess-close").addEventListener("click", () => {
     document.querySelector('.body-guess').style.display = "none";
+    document.getElementById("bottom-div-cover2").style.display = "none";
+
 });
 
-document.querySelector(".body_piggame-close").addEventListener("click", () => {
-    document.querySelector('.bodyy').style.display = "none";
-});
 
-
-
-
-
-
-
-
+// Dice Game //
 document.getElementById("dice-dropdown-game").addEventListener("click", () => {
     console.log("dicegame")
     pigGame.style.display = "block";
@@ -1032,76 +947,22 @@ document.getElementById("dice-dropdown-game").addEventListener("click", () => {
 
 });
 
-
-
-document.querySelector(".turnoffthewindow").addEventListener("click", () => {
-    console.log("click");
-    window.close();
-
-});
-const guesserCon = document.querySelector(".guesser-con");
-const bodyguessNavbar = document.querySelector(".body_guess-navbar");
-const bottomDivGuess = document.querySelector(".bottom-div-guess")
-
-
-document.getElementById("guess-game-min-btn").addEventListener("click", () => {
-    bottomDivGuess.style.boxShadow = "rgba(0, 0, 0, 0.3) -1px 0px inset, rgba(255, 255, 255, 0.2) 1px 1px 1px inset";
-    guessgame.style.width = "254px";
-    guessgame.style.height = "35px";
-    guessgame.style.top = "98vh";
-    guessgame.style.left = "238px";
-    guessgame.style.overflow = "hidden";
-    mydivheader.classList.add("color");
-   guessgame.classList.add("hidden-scroll");
-   guessgame.classList.add("transition");
-    resizeAtMinSize.style.display = "block";
-    resize.style.display = "none";
-    guessgame.style.borderRadius = "0px";
-    guessgame.style.zIndex = "9";
-    // mydivid.style.marginBottom = "-2px";
-    // mydiv.addEventListener("click", function (e) {
-    //     if (e.target.matches('#mydivheader')) {
-    //         mydivid.style.width = "800px";
-    //         mydivid.style.height = "600px";
-    //         mydivid.style.left = "50%";
-    //         mydivid.style.top = "50%";
-    //         mydivid.style.overflow = "auto";
-    //         mydivid.classList.add("mydividHov");
-
-
-    //     }
-    // });
-    if (guessgame.style.width = "254px") {
-        setTimeout(() => {
-            // guessgame.classList.toggle('hidden')
-            guessgame.style.display="none";
-        }, 400)
-
-
-    }
-
+document.getElementById("dice-game").addEventListener("click", () => {
+    console.log("llll")
+    pigGame.style.display = "block";
+    pigGame.style.left = "30%";
+    pigGame.style.top = "12%";
+    forcancelbtn();
+    bottomdivCover.style.display = "none";
+    mydivid.style.display = "none";
+    // mydivid.classList.toggle('hidden');
+    // if (mydivid.style.width = "254px") {
+    //     setTimeout(() => {
+    //         mydivid.classList.toggle('hidden')
+    //     }, 100);
+    // }
 });
 
-document.getElementById("guess-number-game").addEventListener("click", (e) => {
-     
-    // guessgame.classList.toggle("hidden");
-        
-        mydivid.style.display = "none";
-      guessgame.style.display = "block";
-        againeplay();
-        forcancelbtn();
-    });
-
-    document.getElementById("games-dropdown-guess-number").addEventListener("click", () => {
-        guessgame.style.display = "block";
-        // guessgame.classList.toggle("hidden");
-        forcancelbtn();
-        mydivid.style.display = "none";
-        againeplay();
-    });
-
-
-document.querySelector(".bottom-div-guess").addEventListener("click", () => {
-   
-
-})
+document.querySelector(".body_piggame-close").addEventListener("click", () => {
+    document.querySelector('.bodyy').style.display = "none";
+});

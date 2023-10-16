@@ -208,7 +208,6 @@
     /* z-index: 9; */
     /* width: 800px; */
     /* resize: both; */
-    overflow: auto;
 }
 
 
@@ -327,7 +326,8 @@
 .score {
     font-size: 37px;
 }
-.footer-guess-game{
+
+.footer-guess-game {
     display: flex;
     align-items: center;
 }

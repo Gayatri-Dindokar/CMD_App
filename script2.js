@@ -155,19 +155,3 @@ function forcancelbtn() {
 const mydivid = document.getElementById("mydiv");
 const pigGame = document.querySelector(".bodyy");
 const bottomdivCover = document.getElementById("bottom-div-cover");
-
-document.getElementById("dice-game").addEventListener("click", () => {
-    console.log("llll")
-    pigGame.style.display = "block";
-    pigGame.style.left = "30%";
-    pigGame.style.top = "12%";
-    forcancelbtn();
-    bottomdivCover.style.display = "none";
-    mydivid.style.display = "none";
-    // mydivid.classList.toggle('hidden');
-    // if (mydivid.style.width = "254px") {
-    //     setTimeout(() => {
-    //         mydivid.classList.toggle('hidden')
-    //     }, 100);
-    // }
-});
