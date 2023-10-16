@@ -734,24 +734,6 @@ document.querySelector(".modal_logoff-btn").addEventListener("click", () => {
     startWindowpopup.classList.remove("popup-visible");
     // forcancelbtn();
 });
-// logOf.addEventListener("click", () => {
-//  modalLogOfContainer = mydiv
-// const body = document.body;
-// modalLogOfContainer.classList.add("grayscale");
-// modalLogOf.classList.remove("grayscale");
-// modalLogOf.style.filter = "none";
-// modalLogOf.style.zindex = "1";
-// modalLogOfContainer.style.display = "block";
-// maincon.style.display = "none";
-// bottomdivCover.style.display = "none";
-// startWindowpopup.style.display = "none";
-// hh
-
-
-// });
-
-
-
 logOf.addEventListener("click", () => {
     // Apply grayscale to the background and content
     document.querySelector('.main11').classList.add("grayscale");
@@ -1081,4 +1063,9 @@ document.getElementById("guess-number-game").addEventListener("click", (e) => {
     // }
 
     againeplay();
+});
+document.querySelector(".turnoffthewindow").addEventListener("click",()=>{
+console.log("click");
+window.close();
+
 });
