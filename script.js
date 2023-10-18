@@ -846,7 +846,7 @@ document.getElementById("guess-game-min-btn").addEventListener("click", () => {
     guessgame.classList.add("transition");
     setTimeout(() => {
         guessgame.style.display = "none";
-    }, 120);
+    }, 250);
 });
 
 bottomDivCover2.addEventListener("click", (e) => {
@@ -859,9 +859,10 @@ bottomDivCover2.addEventListener("click", (e) => {
    
     if (guessgame.style.display === "none") {
         guessgame.style.transform="translate(-50%, -50%)";
-        guessgame.style.cssText = "width: 800px; height: 500px; top: 40%; left: 50%; z-index:2;";
+        guessgame.style.cssText = "width: 800px; height: 600px; top: 50%; left: 50%; z-index:2;";
         diceGame.style.zIndex = "1";
         mydivid.style.zIndex="1";
+        guessgame.style.overflow="hidden";
         // startWindowpopup.style.zIndex="11";
         // mydiv.style.display = "none";
         toggleHidden();
@@ -877,11 +878,12 @@ function expandGuessGame() {
         guessgame.style.width = "800px";
         guessgame.style.height = "600px";
         guessgame.style.left = "50%";
-        guessgame.style.top = "40%";
+        guessgame.style.top = "50%";
     }
     // mydivid.style.display = "none";
 
     guessgame.style.display = "block";
+    guessgame.style.transform="translate(-50%, -50%)";
     againeplay();
     toggleStartWindowPopup();
 }
