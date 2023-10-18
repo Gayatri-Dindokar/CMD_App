@@ -1,15 +1,16 @@
 import * as showHtmlModel from './model/showHtml.js';
-const userinput = document.querySelector(".input");
-const main = document.querySelector(".main");
-const help = document.querySelector(".help");
-const enterCommand = document.querySelector(".enterCommand");
+// const userinput = document.querySelector(".input");
+// const main = document.querySelector(".main");
+// const help = document.querySelector(".help");
+// const enterCommand = document.querySelector(".enterCommand");
+// const paths = document.querySelectorAll(".paths");
+// const containerFluid = document.querySelector(".container-fluid");
 const container = document.querySelector(".container");
-const paths = document.querySelectorAll(".paths");
-const containerFluid = document.querySelector(".container-fluid");
 const displayOutputContainer = document.querySelector(".display_output");
 const maincon = document.querySelector(".maincon");
 const resizeAtMinSize = document.getElementById("resize-at-minsize");
 //min-max functionality
+// const doubleRestore = document.getElementById("double-restore");
 const minMaxBtn = document.getElementById("minmaxbtn");
 const bottomDiv = document.querySelector(".bottom-div");
 const resize = document.getElementById("resize");
@@ -20,7 +21,6 @@ const cmdImg = document.getElementById("cmd");
 const btnclose = document.querySelector(".btnclose");
 const crossBtnBigScreen = document.getElementById("crossBtnBigScreen");
 const bigScreenMinMaxBtn = document.getElementById("bigscreen-minmaxbtn");
-const doubleRestore = document.getElementById("double-restore");
 const navbar = document.querySelector(".navbar");
 const mydivid = document.getElementById("mydiv");
 const errorIcon = document.querySelector(".error-icon");
@@ -378,30 +378,24 @@ function movingContainer() {
         }
     }, true);
 }
-minMaxBtn.addEventListener("click", () => {
-    bottomdivCover.style.boxShadow = "rgba(0, 0, 0, 0.3) -1px 0px inset, rgba(255, 255, 255, 0.2) 1px 1px 1px inset";
 
-    // mydivid.style.cssText = "width: 254px; height: 35px; top: 98vh; left: 238 ,overflow:hidden;"
-    mydivid.style.width = "254px";
-    mydivid.style.height = "35px";
-    mydivid.style.top = "98vh";
-    mydivid.style.left = "238px";
-    mydivid.style.overflow = "hidden";
-    mydivheader.classList.add("color");
-    mydivid.classList.add("hidden-scroll");
-    mydivid.classList.add("transition");
+// buttons on navbar minmize restore resize cancal functionality //
+////////////////////////////////////////////////////////////////
+function setStyles(styles) {
+    mydivid.style.cssText = styles;
+}
+///////////////////////////////////////////////////////////////////////
+minMaxBtn.addEventListener("click", () => {
+    setStyles("width: 254px; height: 35px; top: 98vh; left: 238px; overflow: hidden; border-radius: 0px;z-index:1");
     resizeAtMinSize.style.display = "block";
     resize.style.display = "none";
-    mydivid.style.borderRadius = "0px";
-    mydivid.style.zIndex = "9";
-    // mydivid.style.marginBottom = "-2px";
+    mydivid.classList.add("hidden-scroll");
+    mydivid.classList.add("transition");
+    bottomdivCover.style.boxShadow = "rgba(0, 0, 0, 0.3) -1px 0px inset, rgba(255, 255, 255, 0.2) 1px 1px 1px inset";
+
     mydiv.addEventListener("click", function(e) {
         if (e.target.matches('#mydivheader')) {
-            mydivid.style.width = "800px";
-            mydivid.style.height = "600px";
-            mydivid.style.left = "50%";
-            mydivid.style.top = "50%";
-            mydivid.style.overflow = "auto";
+            setStyles("width: 800px; height: 600px; left: 50%; top: 50%; overflow: auto;");
             mydivid.classList.add("mydividHov");
         }
     });
@@ -409,8 +403,6 @@ minMaxBtn.addEventListener("click", () => {
         setTimeout(() => {
             mydivid.classList.toggle('hidden')
         }, 400)
-
-
     }
 
     navbar.addEventListener('mousedown', function(e) {
@@ -423,16 +415,37 @@ minMaxBtn.addEventListener("click", () => {
         }
     }, true);
 });
-
-
+bigScreenMinMaxBtn.addEventListener("click", () => {
+    setStyles("width: 254px; height: 35px; top: 98vh; left: 238px; overflow: hidden;z-index:1");
+    mydivid.classList.add('minimized');
+    mydivid.classList.add("hidden-scroll");
+    // resizeAtMinSize.style.display = "block";
+    resizeAtMinSize.style.display = "none";
+    resize.style.display = "none";
+    mydivid.classList.add("transition");
+    restore.style.display = "none";
+    resize.style.display = "block";
+    navbar.addEventListener('mousedown', function(e) {
+        if (e.button === 0) {
+            isDown = false;
+            offset = [
+                mydiv.offsetLeft - e.clientX,
+                mydiv.offsetTop - e.clientY
+            ];
+        }
+    }, true);
+    if (mydivid.style.width = "254px") {
+        setTimeout(() => {
+            mydivid.classList.toggle('hidden')
+        }, 500)
+    }
+});
 resizeBigscreen.addEventListener("click", () => {
     maincon.style.display = "block";
     bottomDiv.style.display = "none";
-    mydivid.style.cssText = "width: 800px; height: 600px; left: 50%; top: 50%;";
+    setStyles("width: 800px; height: 600px; left: 50%; top: 50%;");
     mydivid.classList.add("show-scroll");
 });
-
-
 resize.addEventListener("click", () => {
     maincon.style.cssText = "width: 100%; height: 100vh; left: 50%; top: 50%; background-size: cover;";
     resize.style.display = 'none';
@@ -444,17 +457,14 @@ resize.addEventListener("click", () => {
     mydivid.classList.add("show-scroll");
     movingContainer();
 });
-
-
 resizeAtMinSize.addEventListener("click", () => {
-    mydivid.style.cssText = "width: 800px; height: 600px; left: 50%; top: 50%; overflow: auto; border-top-left-radius: 15px; border-top-right-radius: 15px;";
+    setStyles("width: 800px; height: 600px; left: 50%; top: 50%; overflow: auto; border-top-left-radius: 15px; border-top-right-radius: 15px;");
     resizeAtMinSize.style.display = "none";
     resize.style.display = "block";
 });
 
-
 restore.addEventListener("click", () => {
-    maincon.style.cssText = "width: 800px; height: 600px;";
+    setStyles("width: 800px; height: 600px;");
     resize.style.display = 'block';
     restore.style.display = "none";
     mydivid.classList.add("show-scroll");
@@ -475,44 +485,15 @@ function mainconNone() {
     maincon.style.display = 'none';
     bottomdivCover.style.display = "none";
 }
-crossbtn.addEventListener("click", () => {
-    bottomDiv.style.display = "none";
-});
 btnclose.addEventListener("click", closeContainer);
 cmdImg.addEventListener("click", openContainer)
 crossBtnBigScreen.addEventListener("click", mainconNone);
 
-bigScreenMinMaxBtn.addEventListener("click", () => {
-    restore.style.display = "none";
-    resize.style.display = "block";
-    mydivid.style.width = "254px";
-    mydivid.style.height = "35px";
-    mydivid.style.top = "98vh";
-    mydivid.style.left = "238px";
-    mydivid.style.overflow = "hidden";
-    mydivid.classList.add('minimized');
-    mydivid.classList.add("hidden-scroll");
-    resizeAtMinSize.style.display = "block";
-    mydivid.style.zIndex = "9";
-    resize.style.display = "none";
-    mydivid.classList.add("transition");
-    navbar.addEventListener('mousedown', function(e) {
-        if (e.button === 0) {
-            isDown = false;
-            offset = [
-                mydiv.offsetLeft - e.clientX,
-                mydiv.offsetTop - e.clientY
-            ];
-        }
-    }, true);
-    if (mydivid.style.width = "254px") {
-        setTimeout(() => {
-            mydivid.classList.toggle('hidden')
-        }, 500)
-
-
-    }
+crossbtn.addEventListener("click", () => {
+    bottomDiv.style.display = "none";
 });
+
+
 
 // container moving //
 var mousePosition;
@@ -553,12 +534,14 @@ navbar.addEventListener('mousemove', function(event) {
 
 // Desktop Icon Functionality //
 
-const anchr = document.querySelector(".anchr");
-anchr.addEventListener("click", () => {
+const desktopIconCmd = document.querySelector(".desktop-icon-cmd");
+desktopIconCmd.addEventListener("click", () => {
     // window.location. href="https://pixel6.co/";
     window.open("https://pixel6.co/", "_blank");
     console.log("khafukyweifyi")
 });
+
+// fetch time on status bar //
 const fetchTime = document.getElementById('fetch-time');
 
 function time() {
@@ -592,25 +575,6 @@ soundoff.addEventListener("click", () => {
     soundoff.style.display = "none";
 });
 
-// document.getElementById('bottom-div-cover').addEventListener('click', () => {
-//     mydivid.style.width = "254px";
-//     mydivid.style.height = "35px";
-//     mydivid.style.top = "98vh";
-//     mydivid.style.left = "238px";
-//     mydivid.style.overflow = "hidden";
-//     mydivid.classList.toggle("hidden");
-//     mydivid.style.overflow = "auto";
-//     mydivid.classList.add("show-scroll");
-//     mydivid.classList.add("transition");
-//     setTimeout(() => {
-//         mydivid.style.width = "800px";
-//         mydivid.style.height = "600px";
-//         mydivid.style.left = "50%";
-//         mydivid.style.top = "50%";
-//     }, 0.1);
-//     bottomdivCover.style.boxShadow = "rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
-
-// });
 bottomdivCover.addEventListener('click', () => {
     const toggleHidden = () => mydivid.classList.toggle('hidden');
     const setStyles = (width, height, top, left, overflow, boxShadow) => {
@@ -631,8 +595,7 @@ bottomdivCover.addEventListener('click', () => {
     }, 0.1);
 });
 
-
-const modal = document.querySelector(".modal");
+// const modal = document.querySelector(".modal");
 const modelWindow = document.querySelector(".model-window ");
 const modALCancel = document.querySelector(".footer-button");
 const modALogOffBtn = document.querySelector(".modal_logoff-btn")
@@ -641,25 +604,22 @@ const startWindowImg = document.querySelector(".left-startWindow-img");
 const logOf = document.getElementById("logOfPopup");
 const modalLogOfContainer = document.querySelector(".modal_logof-container");
 const modalLogOf = document.querySelector(".modal-logOf");
-const body = document.querySelector('.main11');
+const body = document.querySelector('.cmd_base-container');
 
-function forcancelbtn() {
+// status bar left side functionality popup turnoff logoff //
+function toggleStartWindowPopup() {
     if (!startWindowpopup.classList.contains("popup-visible")) {
-
         startWindowpopup.style.display = "block";
         setTimeout(() => {
             startWindowpopup.classList.add("popup-visible");
         }, 0);
     } else {
-
         startWindowpopup.classList.remove("popup-visible");
         setTimeout(() => {
             startWindowpopup.style.display = "none";
         }, 300);
     }
-
 }
-
 document.getElementById("turn-off").addEventListener("click", () => {
     modelWindow.style.display = "block";
     modelWindow.style.backgroundColor = "red";
@@ -683,18 +643,15 @@ document.querySelector(".modal_logoff-btn").addEventListener("click", () => {
     startWindowpopup.classList.remove("popup-visible");
 });
 logOf.addEventListener("click", () => {
-    document.querySelector('.main11').classList.add("grayscale");
+    document.querySelector('.cmd_base-container').classList.add("grayscale");
     modalLogOf.style.filter = "none";
     modalLogOfContainer.classList.remove("grayscale");
-
-    // Restyle the modal
     modalLogOf.style.zIndex = "1";
     modalLogOfContainer.style.display = "block";
     maincon.style.display = "none";
     bottomdivCover.style.display = "none";
     startWindowpopup.style.display = "none";
 });
-
 
 startWindowImg.addEventListener("click", () => {
     if (!startWindowpopup.classList.contains("popup-visible")) {
@@ -759,13 +716,13 @@ function resetMainCon() {
     movingContainer();
     minMaxBtn.style.display = "block";
     maincon.classList.remove('fadeout');
-    forcancelbtn();
+    toggleStartWindowPopup();
 }
 document.getElementById("window_popup-cmd-icon").addEventListener("click", resetMainCon);
 document.getElementById("window_popup-cmd-icon").addEventListener("click", resetMainCon);
 
 function recycleBinClicked() {
-    forcancelbtn();
+    toggleStartWindowPopup();
     alert("Recycle bin is empty");
 }
 document.getElementById("recyclebin").addEventListener("click", recycleBinClicked);
@@ -889,10 +846,11 @@ document.querySelector(".turnoffthewindow").addEventListener("click", () => {
 
 // Guess Game functionality //
 const bottomDivCover2 = document.getElementById("bottom-div-cover2");
+const bottomDivCover3 = document.getElementById("bottom-div-cover3");
 const guessgame = document.querySelector(".body-guess");
 
 document.getElementById("guess-game-min-btn").addEventListener("click", () => {
-    guessgame.style.cssText = "width: 254px; height: 35px; top: 98vh; left: 250px; border-radius: 0; z-index: 9;";
+    guessgame.style.cssText = "width: 254px; height: 35px; top: 98vh; left: 250px; border-radius: 0;";
     guessgame.classList.add("transition");
     setTimeout(() => {
         guessgame.style.display = "none";
@@ -901,13 +859,15 @@ document.getElementById("guess-game-min-btn").addEventListener("click", () => {
 bottomDivCover2.addEventListener("click", () => {
     if (guessgame.style.display === "none") {
         guessgame.style.cssText = "width: 800px; height: 600px; top: 50%; left: 50%;";
-        mydiv.style.display = "none";
+        // mydiv.style.display = "none";
+        toggleHidden();
     } else {
         guessgame.style.display = "none";
     }
 });
 
 function expandGuessGame() {
+
     document.getElementById("bottom-div-cover2").style.display = "flex";
     if (guessgame.style.width = "254px") {
         guessgame.style.width = "800px";
@@ -915,54 +875,84 @@ function expandGuessGame() {
         guessgame.style.left = "50%";
         guessgame.style.top = "50%";
     }
-    mydivid.style.display = "none";
+    // mydivid.style.display = "none";
+
     guessgame.style.display = "block";
     againeplay();
-    forcancelbtn();
+    toggleStartWindowPopup();
 }
 document.getElementById("guess-number-game").addEventListener("click", expandGuessGame);
 document.getElementById("games-dropdown-guess-number").addEventListener("click", expandGuessGame);
+
+
+////////////////////////////////
+
+
+
+// Dice Game //
+const diceGame = document.querySelector(".bodyy");
+document.getElementById("dice-dropdown-game").addEventListener("click", () => {
+    console.log("dicegame")
+    diceGame.style.display = "block";
+    diceGame.style.left = "30%";
+    diceGame.style.top = "12%";
+    toggleStartWindowPopup();
+    // bottomdivCover.style.display = "none";
+    // mydiv.style.display = "none";
+    toggleHidden();
+});
+
+document.getElementById("dice-game").addEventListener("click", () => {
+    diceGame.style.display = "block";
+    diceGame.style.left = "30%";
+    diceGame.style.top = "12%";
+    toggleStartWindowPopup();
+    // bottomdivCover.style.display = "none";
+    // mydivid.style.display = "none";
+    toggleHidden();
+
+});
+
+document.getElementById("dice-game-min-btn").addEventListener("click", () => {
+    diceGame.style.cssText = "width: 254px; height: 35px; top: 98vh; left: 250px; border-radius: 0;";
+    diceGame.classList.add("transition");
+    setTimeout(() => {
+        diceGame.style.display = "none";
+    }, 400);
+});
+bottomDivCover3.addEventListener("click", () => {
+    if (diceGame.style.display === "none") {
+        diceGame.style.cssText = "width: 800px; height: 600px; left: 30%; top:12%;";
+        // mydiv.style.display = "none";
+        toggleHidden();
+    } else {
+        diceGame.style.display = "none";
+    }
+});
+
+function expanddiceGame() {
+    document.getElementById("bottom-div-cover3").style.display = "flex";
+    if (diceGame.style.width = "254px") {
+        diceGame.style.width = "800px";
+        diceGame.style.height = "600px";
+        diceGame.style.left = "30%";
+        diceGame.style.top = "12%";
+    }
+    // mydivid.style.display = "none";
+    toggleHidden();
+    diceGame.style.display = "block";
+    // againeplay();
+    toggleStartWindowPopup();
+}
+document.getElementById("dice-dropdown-game").addEventListener("click", expanddiceGame);
+document.getElementById("dice-game").addEventListener("click", expanddiceGame);
+
 document.querySelector(".body_guess-close").addEventListener("click", () => {
     document.querySelector('.body-guess').style.display = "none";
     document.getElementById("bottom-div-cover2").style.display = "none";
 
 });
-
-
-// Dice Game //
-document.getElementById("dice-dropdown-game").addEventListener("click", () => {
-    console.log("dicegame")
-    pigGame.style.display = "block";
-    pigGame.style.left = "30%";
-    pigGame.style.top = "12%";
-    forcancelbtn();
-    bottomdivCover.style.display = "none";
-    mydiv.style.display = "none";
-    // mydivid.classList.toggle('hidden');
-    // if (mydivid.style.width = "254px") {
-    //     setTimeout(() => {
-    //         mydivid.classList.toggle('hidden')
-    //     }, 100);
-    // }
-
-});
-
-document.getElementById("dice-game").addEventListener("click", () => {
-    console.log("llll")
-    pigGame.style.display = "block";
-    pigGame.style.left = "30%";
-    pigGame.style.top = "12%";
-    forcancelbtn();
-    bottomdivCover.style.display = "none";
-    mydivid.style.display = "none";
-    // mydivid.classList.toggle('hidden');
-    // if (mydivid.style.width = "254px") {
-    //     setTimeout(() => {
-    //         mydivid.classList.toggle('hidden')
-    //     }, 100);
-    // }
-});
-
 document.querySelector(".body_piggame-close").addEventListener("click", () => {
     document.querySelector('.bodyy').style.display = "none";
+    bottomDivCover3.style.display = "none";
 });

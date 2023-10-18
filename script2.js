@@ -1,7 +1,6 @@
 const score0 = document.getElementById("score--0");
 const score1 = document.getElementById("score--1");
 const scoresss = document.querySelector('.score');
-
 const diceimg = document.querySelector('.dice');
 const newgame = document.querySelector('.btn-btn btn--new');
 const roll = document.querySelector('.btn--roll');
@@ -9,11 +8,8 @@ const hold = document.querySelector('.btn--hold');
 const btn = document.querySelector(".btn-btn");
 const currentscore1 = document.getElementById("current--0");
 const currentscore2 = document.getElementById("current--1");
-
 const section1 = document.querySelector(".player--0");
 const section2 = document.querySelector(".player--1");
-
-
 
 const scores = [0, 0];
 score0.textContent = 0;
@@ -23,13 +19,7 @@ activeplayer = 0;
 let playing = true;
 
 diceimg.classList.add('hidden');
-
-
-
-
-
 // 1. Generating a random dice roll
-
 function btnroll() {
     if (playing) {
         const random = Math.trunc(Math.random() * 6) + 1;
@@ -44,14 +34,10 @@ function btnroll() {
             currentscore = currentscore + random;
             document.getElementById(`current--${activeplayer}`).textContent = currentscore;
             // currentscore1.innerText = currentscore;
-
-
         } else {
             // switch to next player
             // repeated part
             document.getElementById(`current--${activeplayer}`).textContent = 0;
-
-
             currentscore = 0;
             activeplayer = activeplayer === 0 ? 1 : 0;
             // toggle method add the class if is not there and if it is there i will remove it
@@ -63,7 +49,6 @@ function btnroll() {
     }
 }
 btnroll();
-
 
 function btnhold() {
     if (playing) {
@@ -84,24 +69,18 @@ function btnhold() {
         } else {
             // repeted part
             document.getElementById(`current--${activeplayer}`).textContent = 0;
-
-
             currentscore = 0;
             activeplayer = activeplayer === 0 ? 1 : 0;
             // toggle method add the class if is not there and if it is there i will remove it
 
             section1.classList.toggle('player--active');
             section2.classList.toggle('player--active')
-
-
         }
     }
 }
 btnhold();
 
-
 function reset() {
-
     score0.textContent = 0;
     score1.textContent = 0;
     currentscore1.textContent = 0;
@@ -113,18 +92,10 @@ function reset() {
     // 2. Display dice
     diceimg.classList.add('hidden');
     diceimg.src = `dice-${random}.png`;
-
     section1.classList.remove('player--winner');
     section2.classList.remove('player--winner');
     section1.classList.add('player--active');
     section2.classList.remove('player--active');
-
-
-
-
-
-
-
 }
 reset();
 
@@ -135,7 +106,7 @@ reset();
 const startWindowImg = document.querySelector(".left-startWindow-img");
 const startWindowpopup = document.querySelector(".startWindow-popup");
 
-function forcancelbtn() {
+function toggleStartWindowPopup() {
     if (!startWindowpopup.classList.contains("popup-visible")) {
 
         startWindowpopup.style.display = "block";
@@ -149,9 +120,7 @@ function forcancelbtn() {
             startWindowpopup.style.display = "none";
         }, 300);
     }
-
 }
-
 const mydivid = document.getElementById("mydiv");
 const pigGame = document.querySelector(".bodyy");
 const bottomdivCover = document.getElementById("bottom-div-cover");

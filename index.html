@@ -21,25 +21,17 @@
 
 <body>
 
-    <div class="main11">
-
+    <div class="cmd_base-container">
         <div class="desktop-icon-container">
             <div class="desktop-icon">
-
-
                 <div class="d-flex d-coloumn">
-                    <div class="anchr"><img id="pixel6icon" class="cmd" src="asset/images/iconpixel6.png" alt="pixel6icon" title="Pixel6" />
+                    <div class="desktop-icon-cmd"><img id="pixel6icon" class="cmd" src="asset/images/iconpixel6.png" alt="pixel6icon" title="Pixel6" />
                     </div>
                     <span class="pixel6-web-text">Pixel6 Web</span>
                 </div>
-
-
                 <div class="d-flex d-coloumn"><img id="recyclebin" class="cmd" src="asset/images/recyclebinbox.png" alt="recyclebin" title="recycle bin" />
                     <span class=" recycleBin-text"> Recycle Bin</span>
                 </div>
-
-                <!-- <div class=" recycleBin-text"><h6>Recycle Bin</h6></div> -->
-                <!-- <span class="icon-text">Recycle Bin</span> -->
             </div>
 
             <div class="cmdIcon d-flex d-coloumn">
@@ -253,16 +245,14 @@
                                         <span>notepad</span>
                                     </div>
 
-                                    <!-- <div class="dropdown_items">
-                                        <img class="menu-items-img" src="asset/images/calculator.png" alt=""><span>Calculator</span>
-                                    </div> --></div>
+                                </div>
 
                                 <div class="menu-item-texts cal">
                                     <img class="menu-items-img" src="asset/images/calculator.png" alt=""><span>Calculator</span>
                                 </div>
 
                                 <div class="menu-separator menu-separator-padding"></div>
-
+                                <!-- all programs html -->
                                 <div class=" all-programs_tab ">
                                     <div class="menu-item-texts all_programs_text">
                                         <div class=" all_programs_text"><span class="allprograms-text1">All
@@ -273,7 +263,7 @@
                                     </div>
                                     <div class="all_program-img"> <img src="" alt=""></div>
 
-                                    <!-- dropdown content -->
+                                    <!-- dropdown content all programs -->
                                     <div class="dropdown_all-programs" style="display: none;">
 
                                         <div class="dropdown_items" id="pixel6-dropdown-all-programs">
@@ -284,7 +274,7 @@
                                             <img class="menu-items-img" src="asset/images/guess-number.png" alt=""><span class="margin-rt-dropdown-text">Games</span><span><i
                                                     class="fa fa-caret-right" aria-hidden="true"></i>
                                             </span>
-                                            <!-- games dropdown -->
+                                            <!-- games dropdown all programs -->
                                             <div class="games-dropdown" style="display: none;">
 
                                                 <div class="games_dropdown-items" id="games-dropdown-guess-number">
@@ -294,11 +284,6 @@
                                                 <div class="games_dropdown-items" id="dice-dropdown-game">
                                                     <img class="menu-items-img" src="asset/images/dice-removebg-preview.png" alt=""><span>Dice</span>
                                                 </div>
-
-                                                <div class="games_dropdown-items">
-                                                    <img class="menu-items-img" src="asset/images/cards-removebg-preview.png" alt=""><span>Cards</span>
-                                                </div>
-
                                             </div>
                                         </div>
 
@@ -307,12 +292,10 @@
                                             <div style="display: flex; justify-content: flex-end;">
                                             </div>
                                         </div>
-
-
                                     </div>
                                 </div>
-
                             </div>
+
                             <!-- right part of start-window-popup -->
                             <div class="menu-itens-right">
                                 <div class="menu-items-content">
@@ -342,7 +325,7 @@
                                         <div>Connect To</div>
                                     </div>
                                 </div>
-                               
+
                                 <div class="menu-separator"></div>
 
                                 <div class="menu-items-content">
@@ -412,19 +395,19 @@
                                 </div>
                             </div>
 
-                              <!-- bottom divs -->
-                            <!-- <div class="bottom-div d-flex  ddd" id="bottom-div-cover3">
+                            <!-- bottom divs -->
+                            <div class="bottom-div d-flex  ddd" id="bottom-div-cover3">
                                 <div class="d-flex ">
                                     <p class="bottom-p6">
                                         <img src="asset/images/iconpixel6.png" alt="" style="height: 13px;width: 13px;">
-                                        <span style="font-size: 12px;"> Pixel6</span>
+                                        <span style="font-size: 12px;">Dice Game</span>
                                     </p>
                                 </div>
-                            </div> -->
+                            </div>
 
                         </div>
 
-                        <!-- </div> -->
+
                     </div>
 
                     <!-- status bar right part -->
@@ -442,10 +425,7 @@
         </footer>
         <!-- gamming -->
         <div class="bodyy" style="display: none;">
-
-
             <main class="main-dice">
-
                 <section class="player player--0 player--active">
                     <h2 class="name" id="name--0">Player 1</h2>
                     <p class="score" id="score--0">43</p>
@@ -464,15 +444,15 @@
                 </section>
 
                 <img src="dice-5.png" alt="Playing dice" class="dice" />
-                <div style="background-color: aqua; position: absolute; height: 25px; width: 690px;" class="pig-game-header">
+                <div style="position: absolute; height: 25px; width: 690px;" class="pig-game-header">
                     <nav class="body_piggame-navbar">
                         <div><img class="px-icon" id=" px-guess-number" src="asset/images/dice-removebg-preview.png" alt="Dice" /></div>
                         <p class="pixel-6">Dice</p>
 
                         <div class="btn">
-                            <button class="body_guess-min body_guess-btns ">
+                            <button class="body_guess-min body_guess-btns " id="dice-game-min-btn">
                                 <img src="asset/images/minimize.png" alt="" />
-                             </button>
+                            </button>
 
                             <button class="body_guess-resize body_guess-btns ">
                                 <img src="asset/images/resize.png" alt="" />
@@ -503,7 +483,7 @@
                 <div class="btn">
                     <button class="body_guess-min body_guess-btns  body_guess-btns-hover" id="guess-game-min-btn">
                         <img src="asset/images/minimize.png" alt="" />
-                     </button>
+                    </button>
 
                     <button class="body_guess-resize body_guess-btns ">
                         <img src="asset/images/resize.png" alt="" />
@@ -517,28 +497,28 @@
                 </div>
             </nav>
 
-          <div class="guesser-con" style="background-color: black;"> 
-            <header class="header-guess">
-                <h1>Guess My Number!</h1>
-                <p class="between">(Between 1 and 20)</p>
-                <button class="btn-guess again" id="again-btn-guess">Again!</button>
-                <div class="number">?</div>
-            </header>
-            <main class="main-guess">
-                <section class="left">
-                    <input type="number" class="guess" />
-                    <button class="btn-cheack-guess check" id="cheack-btn">Check!</button>
-                </section>
+            <div class="guesser-con" style="background-color: black;">
+                <header class="header-guess">
+                    <h1>Guess My Number!</h1>
+                    <p class="between">(Between 1 and 20)</p>
+                    <button class="btn-guess again" id="again-btn-guess">Again!</button>
+                    <div class="number">?</div>
+                </header>
+                <main class="main-guess">
+                    <section class="left">
+                        <input type="number" class="guess" />
+                        <button class="btn-cheack-guess check" id="cheack-btn">Check!</button>
+                    </section>
 
 
-                <section class="right">
-                    <p class="message">Start guessing...</p>
-                    <p class="label-score">💯 Score: <span class="score score-display">20</span></p>
-                    <p class="label-highscore">
-                        🥇 Highscore: <span class="highscore">0</span>
-                    </p>
-                </section>
-          </div>
+                    <section class="right">
+                        <p class="message">Start guessing...</p>
+                        <p class="label-score">💯 Score: <span class="score score-display">20</span></p>
+                        <p class="label-highscore">
+                            🥇 Highscore: <span class="highscore">0</span>
+                        </p>
+                    </section>
+            </div>
             </main>
         </div>
 
@@ -546,6 +526,8 @@
 
 
         </div>
+
+
         <div class="modal_logof-container d-none">
             <div class="modal-logOf">
                 <header class="modal_logof-header">
@@ -561,7 +543,7 @@
                 </footer>
             </div>
         </div>
-        <div class="model-window d-none" style="display: none;">
+        <div class="model-window d-none turnoff" style="display: none;">
             <div class="modal">
                 <header class="model_window-header">
                     <span class="model_window-header-text">Log Off Windows</span>
@@ -581,7 +563,7 @@
 
         <script type="module" src="script.js"></script>
         <script src="script2.js"></script>
-       
+
 </body>
 
 </html>
