@@ -30,6 +30,26 @@ return `<div class="helps"> <p>--use keywords to navigate</p>
     </ul> </div>`;
     };
 
+    export const bottomdivCoverP6 = async function(){
+        return `  <div class="bottom-div d-flex  ddd" id="bottom-div-cover">
+        <div class="d-flex ">
+            <p class="bottom-p6">
+                <img src="asset/images/iconpixel6.png" alt="" style="height: 13px;width: 13px;">
+                <span style="font-size: 12px;"> Pixel6</span>
+            </p>
+        </div>
+    </div>`
+    };
+
+
+
+
+
+
+
+
+
+
     export const showAbout = async function() {
         return `<div class="about">
         <p>ABOUT US what we do:</p>

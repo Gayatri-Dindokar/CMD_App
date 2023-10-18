@@ -26,6 +26,7 @@ const mydivid = document.getElementById("mydiv");
 const errorIcon = document.querySelector(".error-icon");
 const test = document.querySelector(".test");
 const bottomdivCover = document.getElementById("bottom-div-cover");
+const bottomdivCoverContainer = document.querySelector(".bottom-div-cover-container");
 
 const path = () => {
     const newpath = document.createElement("p");
@@ -57,6 +58,10 @@ async function showHelp() {
     const html = await showHtmlModel.showHelp()
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
+async function bottomdivCoverP6(){
+const html = await showHtmlModel.bottomdivCoverP6()
+bottomdivCoverContainer.insertAdjacentHTML("beforeend", html);
+}
 //when user type home command//
 const showHome = async() => {
     const html = await showHtmlModel.showHome();
@@ -381,12 +386,15 @@ function movingContainer() {
 
 // buttons on navbar minmize restore resize cancal functionality //
 ////////////////////////////////////////////////////////////////
+// bottomdivCoverP6();
 function setStyles(styles) {
     mydivid.style.cssText = styles;
 }
 ///////////////////////////////////////////////////////////////////////
 minMaxBtn.addEventListener("click", () => {
-    setStyles("width: 254px; height: 35px; top: 98vh; left: 238px; overflow: hidden; border-radius: 0px;z-index:1");
+    // bottomdivCoverP6();
+    // mydivid.style.zIndex="222"
+    setStyles("width: 254px; height: 35px; top: 98vh; left: 238px; overflow: hidden; border-radius: 0px;z-index:222");
     resizeAtMinSize.style.display = "block";
     resize.style.display = "none";
     mydivid.classList.add("hidden-scroll");
@@ -575,25 +583,7 @@ soundoff.addEventListener("click", () => {
     soundoff.style.display = "none";
 });
 
-bottomdivCover.addEventListener('click', () => {
-    const toggleHidden = () => mydivid.classList.toggle('hidden');
-    const setStyles = (width, height, top, left, overflow, boxShadow) => {
-        mydivid.style.width = width;
-        mydivid.style.height = height;
-        mydivid.style.top = top;
-        mydivid.style.left = left;
-        mydivid.style.overflow = overflow;
-        bottomdivCover.style.boxShadow = boxShadow;
-    };
-    setStyles('254px', '35px', '98vh', '238px', 'hidden', 'rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset');
-    toggleHidden();
-    mydivid.style.overflow = 'auto';
-    mydivid.classList.add('show-scroll', 'transition');
 
-    setTimeout(() => {
-        setStyles('800px', '600px', '50%', '50%', 'auto', '');
-    }, 0.1);
-});
 
 // const modal = document.querySelector(".modal");
 const modelWindow = document.querySelector(".model-window ");
@@ -610,6 +600,7 @@ const body = document.querySelector('.cmd_base-container');
 function toggleStartWindowPopup() {
     if (!startWindowpopup.classList.contains("popup-visible")) {
         startWindowpopup.style.display = "block";
+        
         setTimeout(() => {
             startWindowpopup.classList.add("popup-visible");
         }, 0);
@@ -656,6 +647,7 @@ logOf.addEventListener("click", () => {
 startWindowImg.addEventListener("click", () => {
     if (!startWindowpopup.classList.contains("popup-visible")) {
         startWindowpopup.style.display = "block";
+     
         setTimeout(() => {
             startWindowpopup.classList.add("popup-visible");
         }, 0);
@@ -850,15 +842,26 @@ const bottomDivCover3 = document.getElementById("bottom-div-cover3");
 const guessgame = document.querySelector(".body-guess");
 
 document.getElementById("guess-game-min-btn").addEventListener("click", () => {
-    guessgame.style.cssText = "width: 254px; height: 35px; top: 98vh; left: 250px; border-radius: 0;";
+    guessgame.style.cssText = "width: 254px; height: 35px; top: 98vh; left: 270px; border-radius: 0;z-index:222";
     guessgame.classList.add("transition");
     setTimeout(() => {
         guessgame.style.display = "none";
-    }, 400);
+    }, 120);
 });
-bottomDivCover2.addEventListener("click", () => {
+
+bottomDivCover2.addEventListener("click", (e) => {
+    const isBoxShadowSet = bottomDivCover2.style.boxShadow !== '';
+    if (isBoxShadowSet) {
+        bottomDivCover2.style.boxShadow = '';
+     } else {
+        bottomDivCover2.style.boxShadow = "rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
+     }
+   
     if (guessgame.style.display === "none") {
-        guessgame.style.cssText = "width: 800px; height: 600px; top: 50%; left: 50%;";
+        guessgame.style.cssText = "width: 800px; height: 600px; top: 40%; left: 50%; z-index:2;";
+        diceGame.style.zIndex = "1";
+        mydivid.style.zIndex="1";
+        // startWindowpopup.style.zIndex="11";
         // mydiv.style.display = "none";
         toggleHidden();
     } else {
@@ -873,7 +876,7 @@ function expandGuessGame() {
         guessgame.style.width = "800px";
         guessgame.style.height = "600px";
         guessgame.style.left = "50%";
-        guessgame.style.top = "50%";
+        guessgame.style.top = "40%";
     }
     // mydivid.style.display = "none";
 
@@ -883,12 +886,7 @@ function expandGuessGame() {
 }
 document.getElementById("guess-number-game").addEventListener("click", expandGuessGame);
 document.getElementById("games-dropdown-guess-number").addEventListener("click", expandGuessGame);
-
-
 ////////////////////////////////
-
-
-
 // Dice Game //
 const diceGame = document.querySelector(".bodyy");
 document.getElementById("dice-dropdown-game").addEventListener("click", () => {
@@ -914,15 +912,26 @@ document.getElementById("dice-game").addEventListener("click", () => {
 });
 
 document.getElementById("dice-game-min-btn").addEventListener("click", () => {
-    diceGame.style.cssText = "width: 254px; height: 35px; top: 98vh; left: 250px; border-radius: 0;";
+ 
+    diceGame.style.cssText = "width: 254px; height: 35px; top: 98vh; left: 250px ; border-radius: 0;z-index:222";
     diceGame.classList.add("transition");
     setTimeout(() => {
         diceGame.style.display = "none";
-    }, 400);
+    }, 290);
 });
+
 bottomDivCover3.addEventListener("click", () => {
+    const isBoxShadowSet = bottomDivCover3.style.boxShadow !== '';
+    if (isBoxShadowSet) {
+        bottomDivCover3.style.boxShadow = '';
+     } else {
+        bottomDivCover3.style.boxShadow = "rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
+     }
+   
     if (diceGame.style.display === "none") {
-        diceGame.style.cssText = "width: 800px; height: 600px; left: 30%; top:12%;";
+        diceGame.style.cssText = "width: 800px; height: 600px; left: 30%; top:12%;z-index:2";
+        guessgame.style.zIndex="1";
+        mydivid.style.zIndex="1";
         // mydiv.style.display = "none";
         toggleHidden();
     } else {
@@ -955,4 +964,43 @@ document.querySelector(".body_guess-close").addEventListener("click", () => {
 document.querySelector(".body_piggame-close").addEventListener("click", () => {
     document.querySelector('.bodyy').style.display = "none";
     bottomDivCover3.style.display = "none";
+});
+
+// /////////////
+// const element = document.getElementById("bottom-div-cover2");bottomDivCover2
+// document.getElementById("demo").innerHTML = 
+console.log(bottomDivCover3.offsetLeft);
+bottomdivCover.style.boxShadow = "rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
+bottomdivCover.addEventListener('click', () => {
+  const isBoxShadowSet = bottomdivCover.style.boxShadow !== '';
+       if (isBoxShadowSet) {
+        bottomdivCover.style.boxShadow = '';
+        } else {
+        bottomdivCover.style.boxShadow = "rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
+        }
+      
+    const toggleHidden = () => mydivid.classList.toggle('hidden');
+    const setStyles = (width, height, top, left, overflow, boxShadow) => {
+        mydivid.style.width = width;
+        mydivid.style.height = height;
+        mydivid.style.top = top;
+        mydivid.style.left = left;
+        mydivid.style.overflow = overflow;
+        // bottomdivCover.style.boxShadow = boxShadow;
+        // bottomdivCover.style.boxShadow="rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
+        // startWindowpopup.style.zIndex="11";
+        // mydivid.style.zIndex="0";
+    };
+    setStyles('254px', '35px', '98vh', '238px', 'hidden', 'rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset');
+    diceGame.style.zIndex = "1";
+    guessgame.style.zIndex = "1";
+    mydivid.style.zIndex = "2";
+    toggleHidden();
+    mydivid.style.overflow = 'auto';
+    // mydivid.style.zIndex = '1';
+    mydivid.classList.add('show-scroll', 'transition');
+
+    setTimeout(() => {
+        setStyles('800px', '600px', '50%', '50%', 'auto', '');
+    }, 0.1);
 });
