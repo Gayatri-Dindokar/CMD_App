@@ -896,7 +896,7 @@ document.getElementById("dice-dropdown-game").addEventListener("click", () => {
     console.log("dicegame")
     diceGame.style.display = "block";
     diceGame.style.left = "30%";
-    diceGame.style.top = "12%";
+    diceGame.style.top = "19%";
     toggleStartWindowPopup();
     // bottomdivCover.style.display = "none";
     // mydiv.style.display = "none";
@@ -906,7 +906,7 @@ document.getElementById("dice-dropdown-game").addEventListener("click", () => {
 document.getElementById("dice-game").addEventListener("click", () => {
     diceGame.style.display = "block";
     diceGame.style.left = "30%";
-    diceGame.style.top = "12%";
+    diceGame.style.top = "19%";
     toggleStartWindowPopup();
     // bottomdivCover.style.display = "none";
     // mydivid.style.display = "none";
@@ -932,7 +932,7 @@ bottomDivCover3.addEventListener("click", () => {
      }
    
     if (diceGame.style.display === "none") {
-        diceGame.style.cssText = "width: 800px; height: 600px; left: 27%; top:12%;z-index:2";
+        diceGame.style.cssText = "width: 800px; height: 600px; left: 27%; top:19%;z-index:2";
         // diceGame.style.transform="translate(-50%, -50%)";
         guessgame.style.zIndex="1";
         mydivid.style.zIndex="1";
@@ -949,7 +949,7 @@ function expanddiceGame() {
         diceGame.style.width = "800px";
         diceGame.style.height = "600px";
         diceGame.style.left = "30%";
-        diceGame.style.top = "12%";
+        diceGame.style.top = "19%";
     }
     // mydivid.style.display = "none";
     toggleHidden();

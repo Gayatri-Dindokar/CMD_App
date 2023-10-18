@@ -131,6 +131,7 @@
       background: #000;
       height: 600px;
       width: 800px;
+      /* height: 60%; */
       overflow-y: auto;
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
@@ -172,6 +173,7 @@
       /* position: relative; */
       /* z-index: 9; */
       width: 800px;
+      /* width: 66%; */
       /* resize: both; */
       overflow: auto;
   }
