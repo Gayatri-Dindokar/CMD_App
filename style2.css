@@ -219,12 +219,12 @@
 
 .header-guess {
     position: relative;
-    height: 28vh;
+    height: 24vh;
     border-bottom: 7px solid #eee;
 }
 
 .main-guess {
-    height: 44vh;
+    height: 25vh;
     color: #eee;
     display: flex;
     align-items: center;
@@ -236,11 +236,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 161px;
 }
 
 .right {
     width: 52rem;
     font-size: 2rem;
+    margin-top: 40px;
 }
 
 

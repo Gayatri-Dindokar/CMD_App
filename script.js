@@ -858,7 +858,8 @@ bottomDivCover2.addEventListener("click", (e) => {
      }
    
     if (guessgame.style.display === "none") {
-        guessgame.style.cssText = "width: 800px; height: 600px; top: 40%; left: 50%; z-index:2;";
+        guessgame.style.transform="translate(-50%, -50%)";
+        guessgame.style.cssText = "width: 800px; height: 500px; top: 40%; left: 50%; z-index:2;";
         diceGame.style.zIndex = "1";
         mydivid.style.zIndex="1";
         // startWindowpopup.style.zIndex="11";
@@ -929,7 +930,8 @@ bottomDivCover3.addEventListener("click", () => {
      }
    
     if (diceGame.style.display === "none") {
-        diceGame.style.cssText = "width: 800px; height: 600px; left: 30%; top:12%;z-index:2";
+        diceGame.style.cssText = "width: 800px; height: 600px; left: 27%; top:12%;z-index:2";
+        // diceGame.style.transform="translate(-50%, -50%)";
         guessgame.style.zIndex="1";
         mydivid.style.zIndex="1";
         // mydiv.style.display = "none";
