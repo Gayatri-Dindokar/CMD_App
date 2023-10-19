@@ -782,7 +782,7 @@ function guessthenumber() {
     } else if (assume === random) {
         document.querySelector('.number').textContent = random;
         document.querySelector('.message').textContent = 'Correct Number';
-        document.querySelector('.body-guess').style.backgroundColor = "green";
+        document.querySelector('.guessGame-main-container').style.backgroundColor = "green";
         if (scoresg > highscores) {
             highscores = scoresg;
             document.querySelector('.highscore').textContent = highscores;
@@ -823,7 +823,7 @@ function againeplay() {
     console.log(random);
     document.querySelector('.number').textContent = '?';
     document.querySelector('.message').textContent = 'Start guessing...';
-    // document.querySelector('.body-guess').style.backgroundColor = "black";
+   
     document.querySelector('.guess').value = "";
     console.log("heloo players")
 
@@ -839,7 +839,7 @@ document.querySelector(".turnoffthewindow").addEventListener("click", () => {
 // Guess Game functionality //
 const bottomDivCover2 = document.getElementById("bottom-div-cover2");
 const bottomDivCover3 = document.getElementById("bottom-div-cover3");
-const guessgame = document.querySelector(".body-guess");
+const guessgame = document.querySelector(".guessGame-main-container");
 const  innerDiceGameContainer = document.querySelector(".dieGame-container")
 
 document.getElementById("guess-game-min-btn").addEventListener("click", () => {
@@ -967,7 +967,7 @@ document.getElementById("dice-dropdown-game").addEventListener("click", expanddi
 document.getElementById("dice-game").addEventListener("click", expanddiceGame);
 
 document.querySelector(".body_guess-close").addEventListener("click", () => {
-    document.querySelector('.body-guess').style.display = "none";
+    document.querySelector('.guessGame-main-container').style.display = "none";
     document.getElementById("bottom-div-cover2").style.display = "none";
 
 });
