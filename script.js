@@ -886,6 +886,7 @@ function expandGuessGame() {
     // mydivid.style.display = "none";
 
     guessgame.classList.remove('d-none')
+    // guessgame.style.transform="translate(-50%, -50%)";
     againeplay();
     toggleStartWindowPopup();
 }
@@ -894,7 +895,11 @@ document.getElementById("games-dropdown-guess-number").addEventListener("click",
 ////////////////////////////////
 // Dice Game //
 const diceGame = document.querySelector(".diceGame-main-container");
-document.getElementById("dice-dropdown-game").addEventListener("click", () => {getElementById
+document.getElementById("dice-dropdown-game").addEventListener("click", () => {
+    diceGame.classList.remove('d-none')
+        bottomDivCover3.style.display="flex";
+        toggleStartWindowPopup();
+        toggleHidden();
 });
 
 document.getElementById("dice-game").addEventListener("click", () => {
