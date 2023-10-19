@@ -40,7 +40,7 @@
             </div>
 
         </div>
-        <main class="maincon" id="mydiv" style="display: none;">
+        <main class="maincon" id="mydiv" >
             <nav class="navbar color" id="mydivheader">
                 <div><img class="px-icon" src="asset/images/cmd.png" alt="" /></div>
                 <p class="pixel-6">Pixel<span class="six" style="font-weight: 700;">6</span></p>
@@ -424,27 +424,25 @@
 
         </footer>
         <!-- gamming -->
-    <div class="diceGame-main-container" >
+    <div class="diceGame-main-container d-none" >
         <div  class="pig-game-header">
             <nav class="body_piggame-navbar">
                 <div><img class="px-icon" id=" px-guess-number" src="asset/images/dice-removebg-preview.png" alt="Dice" /></div>
                 <p class="pixel-6 dice-text">Dice</p>
 
-                <div class="btn">
-                    <button class="body_guess-min body_guess-btns " id="dice-game-min-btn">
-                        <img src="asset/images/minimize.png" alt="" />
-                    </button>
-
-                    <button class="body_guess-resize body_guess-btns ">
-                        <img src="asset/images/resize.png" alt="" />
-                    </button>
-
-
-                    <button class="body_piggame-close body_guess-btns">
-                        <img src="asset/images/close.png" alt="" />
-                    </button>
-
-                </div>
+                
+                    <div class="cli-buttons">
+                        <button class="cli-button dicegame-minimize">
+                            <img src="asset/images/minimize.png" alt="minimize" />
+                        </button>
+                        <button class="cli-button dicegame-resize">
+                            <img src="asset/images/resize.png" alt="resize" />
+                        </button>
+                        <button class="cli-button dicegame-close">
+                            <img src="asset/images/close.png" alt="close" />
+                        </button>
+                    </div>
+               
             </nav>
 
         </div>
@@ -484,20 +482,16 @@
                 <div><img class="px-icon" id=" px-guess-number" src="asset/images/guess-number.png" alt="guess number" /></div>
                 <p class="pixel-6">Guess Number</p>
 
-                <div class="btn">
-                    <button class="body_guess-min body_guess-btns  body_guess-btns-hover" id="guess-game-min-btn">
-                        <img src="asset/images/minimize.png" alt="" />
+                <div class="cli-buttons">
+                    <button class="cli-button guessgame-minimize">
+                        <img src="asset/images/minimize.png" alt="minimize" />
                     </button>
-
-                    <button class="body_guess-resize body_guess-btns ">
-                        <img src="asset/images/resize.png" alt="" />
+                    <button class="cli-button guessgame-resize">
+                        <img src="asset/images/resize.png" alt="resize" />
                     </button>
-
-
-                    <button class="body_guess-close body_guess-btns">
-                        <img src="asset/images/close.png" alt="" />
+                    <button class="cli-button guessgame-close">
+                        <img src="asset/images/close.png" alt="close" />
                     </button>
-
                 </div>
             </nav>
 
