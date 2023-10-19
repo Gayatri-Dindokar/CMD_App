@@ -840,6 +840,7 @@ document.querySelector(".turnoffthewindow").addEventListener("click", () => {
 const bottomDivCover2 = document.getElementById("bottom-div-cover2");
 const bottomDivCover3 = document.getElementById("bottom-div-cover3");
 const guessgame = document.querySelector(".body-guess");
+const  innerDiceGameContainer = document.querySelector(".dieGame-container")
 
 document.getElementById("guess-game-min-btn").addEventListener("click", () => {
     guessgame.style.cssText = "width: 254px; height: 35px; top: 98vh; left: 270px; border-radius: 0;z-index:222";
@@ -891,27 +892,29 @@ document.getElementById("guess-number-game").addEventListener("click", expandGue
 document.getElementById("games-dropdown-guess-number").addEventListener("click", expandGuessGame);
 ////////////////////////////////
 // Dice Game //
-const diceGame = document.querySelector(".bodyy");
+const diceGame = document.querySelector(".diceGame-main-container");
 document.getElementById("dice-dropdown-game").addEventListener("click", () => {
-    console.log("dicegame")
+    diceGame.style.cssText = "height: 59%; top: 50%; left: 50%;transform: translate(-50%, -50%);";
     diceGame.style.display = "block";
-    diceGame.style.left = "30%";
-    diceGame.style.top = "19%";
+    diceGame.style.transform="translate(-50%, -50%)";
+    bottomDivCover3.style.display="flex";
     toggleStartWindowPopup();
-    // bottomdivCover.style.display = "none";
-    // mydiv.style.display = "none";
+    
     toggleHidden();
 });
 
 document.getElementById("dice-game").addEventListener("click", () => {
     diceGame.style.display = "block";
-    diceGame.style.left = "30%";
-    diceGame.style.top = "19%";
-    toggleStartWindowPopup();
-    // bottomdivCover.style.display = "none";
-    // mydivid.style.display = "none";
-    toggleHidden();
-
+    diceGame.style. background= "linear-gradient(rgb(15, 68, 194) 0%, rgb(14, 79, 219) 3%, rgb(9, 79, 231) 6%, rgb(25, 95, 224) 8%, rgb(23, 95, 228) 14%, rgb(16, 82, 206) 17%, rgb(18, 74, 218) 25%, rgb(12, 68, 199) 56%, rgb(22, 89, 197) 81%, rgb(11, 75, 185) 89%, rgb(16, 67, 207) 94%, rgb(15, 61, 199) 97%, rgb(6, 64, 223) 100%)";
+    
+         diceGame.style.left = "50%";
+         diceGame.style.top = "50%";
+         diceGame.style.transform="translate(-50%, -50%)";
+         diceGame.style.height = "59%";
+         diceGame.style.width = "100%";
+         bottomDivCover3.style.display="flex";
+        toggleStartWindowPopup();
+        toggleHidden();
 });
 
 document.getElementById("dice-game-min-btn").addEventListener("click", () => {
@@ -932,8 +935,8 @@ bottomDivCover3.addEventListener("click", () => {
      }
    
     if (diceGame.style.display === "none") {
-        diceGame.style.cssText = "width: 800px; height: 600px; left: 27%; top:19%;z-index:2";
-        // diceGame.style.transform="translate(-50%, -50%)";
+        diceGame.style.cssText = " height: 59%; left: 50%; top:50%;z-index:2";
+        diceGame.style.transform="translate(-50%, -50%)";
         guessgame.style.zIndex="1";
         mydivid.style.zIndex="1";
         // mydiv.style.display = "none";
@@ -946,12 +949,15 @@ bottomDivCover3.addEventListener("click", () => {
 function expanddiceGame() {
     document.getElementById("bottom-div-cover3").style.display = "flex";
     if (diceGame.style.width = "254px") {
-        diceGame.style.width = "800px";
-        diceGame.style.height = "600px";
-        diceGame.style.left = "30%";
-        diceGame.style.top = "19%";
+        diceGame.style.width = "691px";
+        diceGame.style.height = "59%";
+        diceGame.style.left = "50%";
+        diceGame.style.top = "50%";
+         
+        
     }
     // mydivid.style.display = "none";
+    bottomDivCover3.style.display="flex";
     toggleHidden();
     diceGame.style.display = "block";
     // againeplay();
@@ -966,7 +972,7 @@ document.querySelector(".body_guess-close").addEventListener("click", () => {
 
 });
 document.querySelector(".body_piggame-close").addEventListener("click", () => {
-    document.querySelector('.bodyy').style.display = "none";
+    document.querySelector('.diceGame-main-container').style.display = "none";
     bottomDivCover3.style.display = "none";
 });
 

@@ -122,5 +122,5 @@ function toggleStartWindowPopup() {
     }
 }
 const mydivid = document.getElementById("mydiv");
-const pigGame = document.querySelector(".bodyy");
+const pigGame = document.querySelector(".dieGame-container");
 const bottomdivCover = document.getElementById("bottom-div-cover");
