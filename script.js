@@ -861,15 +861,17 @@ bottomDivCover2.addEventListener("click", (e) => {
      }
    
     if (guessgame.style.display === "none") {
-        guessgame.style.transform="translate(-50%, -50%)";
-        guessgame.style.cssText = "width: 800px; height: 600px; top: 50%; left: 50%; z-index:2;";
+        guessgame.style.cssText = "width: 58%; height: 61%; top: 50%; left: 50%; z-index:2;";
+        document.querySelector(".guesser-con").style.marginTop="3px";
         diceGame.style.zIndex = "1";
         mydivid.style.zIndex="1";
         guessgame.style.overflow="hidden";
-        // startWindowpopup.style.zIndex="11";
-        // mydiv.style.display = "none";
         toggleHidden();
-    } else {
+        if (window.matchMedia("(max-width: 1400px)").matches) { 
+            guessgame.style.height="76%";
+        }
+    } 
+    else {
         guessgame.style.display = "none";
     }
 });
@@ -877,13 +879,14 @@ bottomDivCover2.addEventListener("click", (e) => {
 function expandGuessGame() {
 
     document.getElementById("bottom-div-cover2").style.display = "flex";
-    if (guessgame.style.width = "254px") {
-        guessgame.style.width = "800px";
-        guessgame.style.height = "600px";
+    if (guessgame.style.width == "254px") {
+        guessgame.style.width = "58%";
+        guessgame.style.height = "87%";
         guessgame.style.left = "50%";
         guessgame.style.top = "50%";
     }
     // mydivid.style.display = "none";
+    // mydivid.style.top="50%";
 
     guessgame.classList.remove('d-none')
     // guessgame.style.transform="translate(-50%, -50%)";

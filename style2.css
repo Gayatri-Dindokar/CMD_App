@@ -226,16 +226,26 @@
     color: #eee;
     bottom: 100px;
     left: 23%;
-    height: 600px;
-    width: 800px;
+    height: 61%;
+  
+    width: 58%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     position: fixed;
+    background: linear-gradient(rgb(15, 68, 194) 0%, rgb(14, 79, 219) 3%, rgb(9, 79, 231) 6%, rgb(25, 95, 224) 8%, rgb(23, 95, 228) 14%, rgb(16, 82, 206) 17%, rgb(18, 74, 218) 25%, rgb(12, 68, 199) 56%, rgb(22, 89, 197) 81%, rgb(11, 75, 185) 89%, rgb(16, 67, 207) 94%, rgb(15, 61, 199) 97%, rgb(6, 64, 223) 100%);
 }
-
+.guesser-con{
+    width: 99%;
+  margin-left: 4px;
+  margin-top: 3px;
+}
+.body_guess-navbar{
+    border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
 
 
 /* LAYOUT */

@@ -1,20 +1,57 @@
 @media only screen and (max-width: 1400px) {
-    .diceGame-main-container{
+    .diceGame-main-container {
         height: 79%;
         width: 53%;
-       
-        top: 40px;
+         top: 40px;
     }
-    .player{
+
+    .player {
         padding: 25px;
     }
-    .btn--roll{
+
+    .btn--roll {
         top: 258px;
     }
+
     .btn--hold {
         top: 310px;
     }
-    .dice{
+
+    .dice {
         top: 85%;
     }
-  }
+
+    .guessGame-main-container {
+        /* height: 59%;
+        width: 60%; */
+        height: 76%;
+        width: 54%;
+        left: 50%;
+       top: 50%;
+ }
+
+    .main-guess {
+        height: 40vh;
+    }
+
+    .again {
+        top: 2px;
+    }
+
+    .between {
+        top: -11px;
+    }
+    .header-guess h1{
+        top: 20%;
+    }
+    .number{
+        width: 8rem;
+        top: 60px;
+        
+     }
+     .right{
+        margin-top: 40px;
+        font-size: 26px;
+  margin-left: 165px;
+     }
+}
