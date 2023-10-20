@@ -407,7 +407,7 @@ minMaxBtn.addEventListener("click", () => {
             mydivid.classList.add("mydividHov");
         }
     });
-    if (mydivid.style.width = "254px") {
+    if (mydivid.style.width == "254px") {
         setTimeout(() => {
             mydivid.classList.toggle('hidden')
         }, 400)
@@ -427,8 +427,8 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
     setStyles("width: 254px; height: 35px; top: 98vh; left: 238px; overflow: hidden;z-index:1");
     mydivid.classList.add('minimized');
     mydivid.classList.add("hidden-scroll");
-    // resizeAtMinSize.style.display = "block";
-    resizeAtMinSize.style.display = "none";
+    resizeAtMinSize.style.display = "block";
+    // resizeAtMinSize.style.display = "none";
     resize.style.display = "none";
     mydivid.classList.add("transition");
     restore.style.display = "none";
@@ -442,7 +442,7 @@ bigScreenMinMaxBtn.addEventListener("click", () => {
             ];
         }
     }, true);
-    if (mydivid.style.width = "254px") {
+    if (mydivid.style.width == "254px") {
         setTimeout(() => {
             mydivid.classList.toggle('hidden')
         }, 500)
@@ -456,6 +456,7 @@ resizeBigscreen.addEventListener("click", () => {
 });
 resize.addEventListener("click", () => {
     maincon.style.cssText = "width: 100%; height: 100vh; left: 50%; top: 50%; background-size: cover;";
+    
     resize.style.display = 'none';
     restore.style.display = "block";
     crossBtnBigScreen.style.display = "block";
@@ -845,7 +846,8 @@ const bottomDivCover3 = document.getElementById("bottom-div-cover3");
 const  innerDiceGameContainer = document.querySelector(".dieGame-container")
 
 document.querySelector(".guessgame-minimize").addEventListener("click", () => {
-    guessgame.style.cssText = "width: 254px; height: 35px; top: 98vh; left: 270px; border-radius: 0;z-index:222";
+    guessgame.classList.add('guess-game-min');
+    // guessgame.style.cssText = "width: 254px; height: 35px; top: 98vh; left: 270px; border-radius: 0;z-index:222";
     guessgame.classList.add("transition");
     setTimeout(() => {
         guessgame.style.display = "none";
@@ -877,14 +879,14 @@ bottomDivCover2.addEventListener("click", (e) => {
 });
 
 function expandGuessGame() {
-
-    document.getElementById("bottom-div-cover2").style.display = "flex";
+      document.getElementById("bottom-div-cover2").style.display = "flex";
     if (guessgame.style.width == "254px") {
         guessgame.style.width = "58%";
         guessgame.style.height = "87%";
         guessgame.style.left = "50%";
         guessgame.style.top = "50%";
     }
+    bottomDivCover2 .style.display="block";
     // mydivid.style.display = "none";
     // mydivid.style.top="50%";
 
@@ -936,6 +938,13 @@ bottomDivCover3.addEventListener("click", () => {
         mydivid.style.zIndex="1";
         // mydiv.style.display = "none";
         toggleHidden();
+        if (window.matchMedia("(max-width: 1400px)").matches) { 
+            guessgame.style.height="76%";
+            if (window.matchMedia("(max-width: 1400px)").matches) { 
+                diceGame.style.top="8%";
+                diceGame.style.height="79%";
+            }
+        }
     } else {
         diceGame.style.display = "none";
     }
@@ -956,6 +965,7 @@ document.querySelector(".dicegame-close").addEventListener("click", () => {
 // document.getElementById("demo").innerHTML = 
 console.log(bottomDivCover3.offsetLeft);
 bottomdivCover.style.boxShadow = "rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
+
 bottomdivCover.addEventListener('click', () => {
   const isBoxShadowSet = bottomdivCover.style.boxShadow !== '';
        if (isBoxShadowSet) {
@@ -980,6 +990,7 @@ bottomdivCover.addEventListener('click', () => {
     diceGame.style.zIndex = "1";
     guessgame.style.zIndex = "1";
     mydivid.style.zIndex = "2";
+    resize.style.display="block";
     toggleHidden();
     mydivid.style.overflow = 'auto';
     // mydivid.style.zIndex = '1';
