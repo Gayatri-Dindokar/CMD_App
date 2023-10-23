@@ -505,41 +505,41 @@ crossbtn.addEventListener("click", () => {
 
 
 // container moving //
-var mousePosition;
-var offset = [0, 0];
-var isDown = false;
-var mydiv = document.getElementById("mydiv");
-var originalWidth = mydiv.style.width;
-var originalHeight = mydiv.style.height;
-navbar.addEventListener('mousedown', function(e) {
-    if (e.button === 0) {
-        isDown = true;
-        offset = [
-            mydiv.offsetLeft - e.clientX,
-            mydiv.offsetTop - e.clientY
-        ];
-    }
-}, true);
-navbar.addEventListener('mouseup', function() {
-    isDown = false;
-}, true);
-navbar.addEventListener('mousemove', function(event) {
-    event.preventDefault();
+// var mousePosition;
+// var offset = [0, 0];
+// var isDown = false;
+// var mydiv = document.getElementById("mydiv");
+// var originalWidth = mydiv.style.width;
+// var originalHeight = mydiv.style.height;
+// navbar.addEventListener('mousedown', function(e) {
+//     if (e.button === 0) {
+//         isDown = true;
+//         offset = [
+//             mydiv.offsetLeft - e.clientX,
+//             mydiv.offsetTop - e.clientY
+//         ];
+//     }
+// }, true);
+// navbar.addEventListener('mouseup', function() {
+//     isDown = false;
+// }, true);
+// navbar.addEventListener('mousemove', function(event) {
+//     event.preventDefault();
 
-    if (isDown) {
-        mousePosition = {
-            x: event.clientX,
-            y: event.clientY
-        };
-        var pageWidth = window.innerWidth;
-        var pageHeight = window.innerHeight;
-        if ((mousePosition.x + offset[0]) > 0) {
-            mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
-        }
-        mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
-        if ((mousePosition.y + offset[1]) > (pageHeight - 600)) {}
-    }
-}, true);
+//     if (isDown) {
+//         mousePosition = {
+//             x: event.clientX,
+//             y: event.clientY
+//         };
+//         var pageWidth = window.innerWidth;
+//         var pageHeight = window.innerHeight;
+//         if ((mousePosition.x + offset[0]) > 0) {
+//             mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
+//         }
+//         mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
+//         if ((mousePosition.y + offset[1]) > (pageHeight - 600)) {}
+//     }
+// }, true);
 
 // Desktop Icon Functionality //
 
@@ -843,7 +843,6 @@ const toggleHidden = () => {mydivid.classList.toggle('hidden')};
 const bottomDivCover2 = document.getElementById("bottom-div-cover2");
 const bottomDivCover3 = document.getElementById("bottom-div-cover3");
 
-const  innerDiceGameContainer = document.querySelector(".dieGame-container")
 
 document.querySelector(".guessgame-minimize").addEventListener("click", () => {
     guessgame.classList.add('guess-game-min');
@@ -885,12 +884,10 @@ function expandGuessGame() {
         guessgame.style.height = "87%";
         guessgame.style.left = "50%";
         guessgame.style.top = "50%";
-    }
-    bottomDivCover2 .style.display="block";
-    // mydivid.style.display = "none";
-    // mydivid.style.top="50%";
-
-    guessgame.classList.remove('d-none')
+        }
+        bottomDivCover2.style.display="flex";
+   
+  guessgame.classList.remove('d-none')
     // guessgame.style.transform="translate(-50%, -50%)";
     againeplay();
     toggleStartWindowPopup();
@@ -953,6 +950,7 @@ bottomDivCover3.addEventListener("click", () => {
 document.querySelector(".guessgame-close").addEventListener("click", () => {
     guessgame.classList.add('d-none')
     document.getElementById("bottom-div-cover2").style.display = "none";
+    // bottomDivCover2.style.display = "none";
 
 });
 document.querySelector(".dicegame-close").addEventListener("click", () => {
