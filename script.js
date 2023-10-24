@@ -58,9 +58,9 @@ async function showHelp() {
     const html = await showHtmlModel.showHelp()
     displayOutputContainer.insertAdjacentHTML("beforeend", html);
 };
-async function bottomdivCoverP6(){
-const html = await showHtmlModel.bottomdivCoverP6()
-bottomdivCoverContainer.insertAdjacentHTML("beforeend", html);
+async function bottomdivCoverP6() {
+    const html = await showHtmlModel.bottomdivCoverP6()
+    bottomdivCoverContainer.insertAdjacentHTML("beforeend", html);
 }
 //when user type home command//
 const showHome = async() => {
@@ -456,7 +456,7 @@ resizeBigscreen.addEventListener("click", () => {
 });
 resize.addEventListener("click", () => {
     maincon.style.cssText = "width: 100%; height: 100vh; left: 50%; top: 50%; background-size: cover;";
-    
+
     resize.style.display = 'none';
     restore.style.display = "block";
     crossBtnBigScreen.style.display = "block";
@@ -601,7 +601,7 @@ const body = document.querySelector('.cmd_base-container');
 function toggleStartWindowPopup() {
     if (!startWindowpopup.classList.contains("popup-visible")) {
         startWindowpopup.style.display = "block";
-        
+
         setTimeout(() => {
             startWindowpopup.classList.add("popup-visible");
         }, 0);
@@ -648,7 +648,7 @@ logOf.addEventListener("click", () => {
 startWindowImg.addEventListener("click", () => {
     if (!startWindowpopup.classList.contains("popup-visible")) {
         startWindowpopup.style.display = "block";
-     
+
         setTimeout(() => {
             startWindowpopup.classList.add("popup-visible");
         }, 0);
@@ -826,7 +826,7 @@ function againeplay() {
     console.log(random);
     document.querySelector('.number').textContent = '?';
     document.querySelector('.message').textContent = 'Start guessing...';
-   
+
     document.querySelector('.guess').value = "";
     console.log("heloo players")
 
@@ -838,7 +838,7 @@ document.querySelector(".turnoffthewindow").addEventListener("click", () => {
     window.close();
 
 });
-const toggleHidden = () => {mydivid.classList.toggle('hidden')};
+const toggleHidden = () => { mydivid.classList.toggle('hidden') };
 // Guess Game functionality //
 const bottomDivCover2 = document.getElementById("bottom-div-cover2");
 const bottomDivCover3 = document.getElementById("bottom-div-cover3");
@@ -857,38 +857,37 @@ bottomDivCover2.addEventListener("click", (e) => {
     const isBoxShadowSet = bottomDivCover2.style.boxShadow !== '';
     if (isBoxShadowSet) {
         bottomDivCover2.style.boxShadow = '';
-     } else {
+    } else {
         bottomDivCover2.style.boxShadow = "rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
-     }
-   
+    }
+
     if (guessgame.style.display === "none") {
         guessgame.style.cssText = "width: 58%; height: 61%; top: 50%; left: 50%; z-index:2;";
-        document.querySelector(".guesser-con").style.marginTop="3px";
+        document.querySelector(".guesser-con").style.marginTop = "3px";
         diceGame.style.zIndex = "1";
-        mydivid.style.zIndex="1";
-        guessgame.style.overflow="hidden";
+        mydivid.style.zIndex = "1";
+        guessgame.style.overflow = "hidden";
         toggleHidden();
-        if (window.matchMedia("(max-width: 1400px)").matches) { 
-            guessgame.style.height="76%";
+        if (window.matchMedia("(max-width: 1400px)").matches) {
+            guessgame.style.height = "76%";
         }
-    } 
-    else {
+    } else {
         guessgame.style.display = "none";
     }
 });
 
 function expandGuessGame() {
-      document.getElementById("bottom-div-cover2").style.display = "flex";
+    document.getElementById("bottom-div-cover2").style.display = "flex";
     if (guessgame.style.width == "254px") {
         guessgame.style.width = "58%";
         guessgame.style.height = "87%";
         guessgame.style.left = "50%";
         guessgame.style.top = "50%";
-        }
-        bottomDivCover2.style.display="flex";
-   
-  guessgame.classList.remove('d-none')
-    // guessgame.style.transform="translate(-50%, -50%)";
+    }
+    bottomDivCover2.style.display = "flex";
+
+    guessgame.classList.remove('d-none')
+        // guessgame.style.transform="translate(-50%, -50%)";
     againeplay();
     toggleStartWindowPopup();
 }
@@ -899,20 +898,20 @@ document.getElementById("games-dropdown-guess-number").addEventListener("click",
 const diceGame = document.querySelector(".diceGame-main-container");
 document.getElementById("dice-dropdown-game").addEventListener("click", () => {
     diceGame.classList.remove('d-none')
-        bottomDivCover3.style.display="flex";
-        toggleStartWindowPopup();
-        toggleHidden();
+    bottomDivCover3.style.display = "flex";
+    toggleStartWindowPopup();
+    toggleHidden();
 });
 
 document.getElementById("dice-game").addEventListener("click", () => {
     diceGame.classList.remove('d-none')
-        bottomDivCover3.style.display="flex";
-        toggleStartWindowPopup();
-        toggleHidden();
+    bottomDivCover3.style.display = "flex";
+    toggleStartWindowPopup();
+    toggleHidden();
 });
 
 document.querySelector(".dicegame-minimize").addEventListener("click", () => {
- 
+
     diceGame.style.cssText = "width: 254px; height: 35px; top: 98vh; left: 250px ; border-radius: 0;z-index:222";
     diceGame.classList.add("transition");
     setTimeout(() => {
@@ -924,22 +923,22 @@ bottomDivCover3.addEventListener("click", () => {
     const isBoxShadowSet = bottomDivCover3.style.boxShadow !== '';
     if (isBoxShadowSet) {
         bottomDivCover3.style.boxShadow = '';
-     } else {
+    } else {
         bottomDivCover3.style.boxShadow = "rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
-     }
-   
+    }
+
     if (diceGame.style.display === "none") {
         diceGame.style.cssText = " height: 59%; left: 21%; top:19%;z-index:2";
         // diceGame.style.transform="translate(-50%, -50%)";
-        guessgame.style.zIndex="1";
-        mydivid.style.zIndex="1";
+        guessgame.style.zIndex = "1";
+        mydivid.style.zIndex = "1";
         // mydiv.style.display = "none";
         toggleHidden();
-        if (window.matchMedia("(max-width: 1400px)").matches) { 
-            guessgame.style.height="76%";
-            if (window.matchMedia("(max-width: 1400px)").matches) { 
-                diceGame.style.top="8%";
-                diceGame.style.height="79%";
+        if (window.matchMedia("(max-width: 1400px)").matches) {
+            guessgame.style.height = "76%";
+            if (window.matchMedia("(max-width: 1400px)").matches) {
+                diceGame.style.top = "8%";
+                diceGame.style.height = "79%";
             }
         }
     } else {
@@ -965,13 +964,13 @@ console.log(bottomDivCover3.offsetLeft);
 bottomdivCover.style.boxShadow = "rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
 
 bottomdivCover.addEventListener('click', () => {
-  const isBoxShadowSet = bottomdivCover.style.boxShadow !== '';
-       if (isBoxShadowSet) {
+    const isBoxShadowSet = bottomdivCover.style.boxShadow !== '';
+    if (isBoxShadowSet) {
         bottomdivCover.style.boxShadow = '';
-        } else {
+    } else {
         bottomdivCover.style.boxShadow = "rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
-        }
-      
+    }
+
 
     const setStyles = (width, height, top, left, overflow, boxShadow) => {
         mydivid.style.width = width;
@@ -979,6 +978,7 @@ bottomdivCover.addEventListener('click', () => {
         mydivid.style.top = top;
         mydivid.style.left = left;
         mydivid.style.overflow = overflow;
+        mydivid.style.overflowX = "hidden";
         // bottomdivCover.style.boxShadow = boxShadow;
         // bottomdivCover.style.boxShadow="rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
         // startWindowpopup.style.zIndex="11";
@@ -988,7 +988,7 @@ bottomdivCover.addEventListener('click', () => {
     diceGame.style.zIndex = "1";
     guessgame.style.zIndex = "1";
     mydivid.style.zIndex = "2";
-    resize.style.display="block";
+    resize.style.display = "block";
     toggleHidden();
     mydivid.style.overflow = 'auto';
     // mydivid.style.zIndex = '1';

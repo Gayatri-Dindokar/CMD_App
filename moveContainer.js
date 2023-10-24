@@ -1,95 +1,25 @@
 const navbar = document.querySelector(".navbar");
-const pigGameNavbar = document.querySelector(".body_piggame-navbar");
-const guessGameNavbar = document.querySelector(".body_guess-navbar");
-// const  innerDiceGameContainer = document.querySelector(".dieGame-container");
-// const  innerGuessGameContainer = document.querySelector(".guesser-con");
-// function movedown(e, element){
-//     if (e.button === 0) {
-//         isDown = true;
-//         offset = [
-//             element.offsetLeft - e.clientX,
-//            element.offsetTop - e.clientY,
-//             ];
-
-        
-//     }
-
-// }
-
-// function mousemove(event,element){
-//     if (isDown) {
-//         mousePosition = {
-//             x: event.clientX,
-//             y: event.clientY
-//         };
-//         var pageWidth = window.innerWidth;
-//         var pageHeight = window.innerHeight;
-//         if ((mousePosition.x + offset[0]) > 0) {
-//             element.style.left = (mousePosition.x + offset[0]) + 'px';
-//         }
-//         element.style.top = (mousePosition.y + offset[1]) + 'px';
-//         if ((mousePosition.y + offset[1]) > (pageHeight - 600)) {}
-//     }
-// }
-
-// var mousePosition;
-// var offset = [0, 0];
-// var isDown = false;
-// var mydiv = document.getElementById("mydiv");
-// var originalWidth = mydiv.style.width;
-// var originalHeight = mydiv.style.height;
-// navbar.addEventListener('mousedown',(e)=> {
-//     movedown(e,mydiv);
-// }, true);
-// pigGameNavbar.addEventListener('mousedown',(e)=> {
-//     movedown(e,mydiv);
-// }, true);
-// guessGameNavbar.addEventListener('mousedown',(e)=> {
-//     movedown(e,mydiv);
-// }, true);
-
-// /////////////////////////////////
-// navbar.addEventListener('mouseup', ()=>{
-//     isDown = false;
-// }, true);
-// pigGameNavbar.addEventListener('mouseup', ()=>{
-//     isDown = false;
-// }, true);
-// guessGameNavbar.addEventListener('mouseup', ()=>{
-//     isDown = false;
-// }, true);
-
-// /////////////////////////////////
-// navbar.addEventListener('mousemove', function(event) {
-//     event.preventDefault();
-//     mousemove(event,mydiv);
-// }, true);
-
-// pigGameNavbar.addEventListener('mousemove', function(event) {
-//     event.preventDefault();
-//     mousemove(event);
-// }, true);
-
-// guessGameNavbar.addEventListener('mousemove', function(event) {
-//     event.preventDefault();
-//     mousemove(event);
-// }, true);
-
-
-
-
-
-function movedown(e, element) {
+var mousePosition;
+var offset = [0, 0];
+var isDown = false;
+var mydiv = document.getElementById("mydiv");
+var originalWidth = mydiv.style.width;
+var originalHeight = mydiv.style.height;
+navbar.addEventListener('mousedown', function(e) {
     if (e.button === 0) {
         isDown = true;
         offset = [
-            element.offsetLeft - e.clientX,
-            element.offsetTop - e.clientY,
+            mydiv.offsetLeft - e.clientX,
+            mydiv.offsetTop - e.clientY
         ];
     }
-}
+}, true);
+navbar.addEventListener('mouseup', function() {
+    isDown = false;
+}, true);
+navbar.addEventListener('mousemove', function(event) {
+    event.preventDefault();
 
-function mousemove(event, element) {
     if (isDown) {
         mousePosition = {
             x: event.clientX,
@@ -98,84 +28,112 @@ function mousemove(event, element) {
         var pageWidth = window.innerWidth;
         var pageHeight = window.innerHeight;
         if ((mousePosition.x + offset[0]) > 0) {
-            element.style.left = (mousePosition.x + offset[0]) + 'px';
+            mydiv.style.left = (mousePosition.x + offset[0]) + 'px';
         }
-        element.style.top = (mousePosition.y + offset[1]) + 'px';
+        mydiv.style.top = (mousePosition.y + offset[1]) + 'px';
+        if ((mousePosition.y + offset[1]) > (pageHeight - 600)) {}
     }
-}
-
-var mousePosition;
-var offset = [0, 0];
-var isDown = false;
-var mydiv = document.getElementById("mydiv");
-var innerDiceGameContainer = document.querySelector(".dieGame-container");
-var innerGuessGameContainer = document.querySelector(".guesser-con");
-var originalWidth = mydiv.style.width;
-var originalHeight = mydiv.style.height;
-
-navbar.addEventListener('mousedown', (e) => {
-    movedown(e, mydiv);
 }, true);
 
-pigGameNavbar.addEventListener('mousedown', (e) => {
-    movedown(e, mydiv);
-}, true);
 
-guessGameNavbar.addEventListener('mousedown', (e) => {
-    movedown(e, mydiv);
-}, true);
+///////////////
 
-/////////////////////////////////
-navbar.addEventListener('mouseup', () => {
-    isDown = false;
-}, true);
 
-pigGameNavbar.addEventListener('mouseup', () => {
-    isDown = false;
-}, true);
+// const guessContainer = document.querySelector(".guesser-con");
+const navbarPigGame = document.querySelector(".body_piggame-navbar")
+    // var mousePosition;
+    // var offset = [0, 0];
+    // var isDown = false;
+    // var diceContainer = document.querySelector(".dieGame-container");
+    // // var mydiv = document.getElementById("mydiv");
+    // var originalWidth = diceContainer.style.width;
+    // var originalHeight = diceContainer.style.height;
+    // navbarPigGame.addEventListener('mousedown', function(e) {
+    //     if (e.button === 0) {
+    //         isDown = true;
+    //         offset = [
+    //             diceContainer.offsetLeft - e.clientX,
+    //             diceContainer.offsetTop - e.clientY
+    //         ];
+    //     }
+    // }, true);
+    // navbarPigGame.addEventListener('mouseup', function() {
+    //     isDown = false;
+    // }, true);
+    // navbarPigGame.addEventListener('mousemove', function(event) {
+    //     event.preventDefault();
 
-guessGameNavbar.addEventListener('mouseup', () => {
-    isDown = false;
-}, true);
+//     if (isDown) {
+//         mousePosition = {
+//             x: event.clientX,
+//             y: event.clientY
+//         };
+//         var pageWidth = window.innerWidth;
+//         var pageHeight = window.innerHeight;
+//         if ((mousePosition.x + offset[0]) > 0) {
+//             diceContainer.style.left = (mousePosition.x + offset[0]) + 'px';
+//         }
+//         diceContainer.style.top = (mousePosition.y + offset[1]) + 'px';
+//         if ((mousePosition.y + offset[1]) > (pageHeight - 600)) {}
+//     }
+// }, true);
+const diceContainer = document.querySelector(".diceGame-main-container");
+let isDragging = false;
+let offsetDiceContainer = { x: 0, y: 0 };
 
-/////////////////////////////////
-navbar.addEventListener('mousemove', function (event) {
-    event.preventDefault();
-    mousemove(event, mydiv);
-}, true);
+navbarPigGame.addEventListener('mousedown', (e) => {
+    if (e.button === 0) {
+        isDragging = true;
+        offsetDiceContainer.x = diceContainer.offsetLeft - e.clientX;
+        offsetDiceContainer.y = diceContainer.offsetTop - e.clientY;
+    }
+});
 
-pigGameNavbar.addEventListener('mousemove', function (event) {
-    event.preventDefault();
-    mousemove(event, mydiv);
-}, true);
+navbarPigGame.addEventListener('mouseup', () => {
+    isDragging = false;
+});
 
-guessGameNavbar.addEventListener('mousemove', function (event) {
-    event.preventDefault();
-    mousemove(event, mydiv);
-}, true);
+navbarPigGame.addEventListener('mousemove', (event) => {
+    if (isDragging) {
+        const mousePosition = {
+            x: event.clientX,
+            y: event.clientY
+        };
+        diceContainer.style.left = (mousePosition.x + offsetDiceContainer.x) + 'px';
+        diceContainer.style.top = (mousePosition.y + offsetDiceContainer.y) + 'px';
+    }
+});
 
-innerDiceGameContainer.addEventListener('mousedown', (e) => {
-    movedown(e, innerDiceGameContainer);
-}, true);
 
-innerGuessGameContainer.addEventListener('mousedown', (e) => {
-    movedown(e, innerGuessGameContainer);
-}, true);
 
-innerDiceGameContainer.addEventListener('mouseup', () => {
-    isDown = false;
-}, true);
 
-innerGuessGameContainer.addEventListener('mouseup', () => {
-    isDown = false;
-}, true);
 
-innerDiceGameContainer.addEventListener('mousemove', function (event) {
-    event.preventDefault();
-    mousemove(event, innerDiceGameContainer);
-}, true);
 
-innerGuessGameContainer.addEventListener('mousemove', function (event) {
-    event.preventDefault();
-    mousemove(event, innerGuessGameContainer);
-}, true);
+// For the guess game container
+const navbarGuessGame = document.querySelector(".body_guess-navbar");
+const guessContainer = document.querySelector(".guessGame-main-container");
+let isDraggingGuessContainer = false;
+let offsetGuessContainer = { x: 0, y: 0 };
+
+navbarGuessGame.addEventListener('mousedown', (e) => {
+    if (e.button === 0) {
+        isDraggingGuessContainer = true;
+        offsetGuessContainer.x = guessContainer.offsetLeft - e.clientX;
+        offsetGuessContainer.y = guessContainer.offsetTop - e.clientY;
+    }
+});
+
+navbarGuessGame.addEventListener('mouseup', () => {
+    isDraggingGuessContainer = false;
+});
+
+navbarGuessGame.addEventListener('mousemove', (event) => {
+    if (isDraggingGuessContainer) {
+        const mousePosition = {
+            x: event.clientX,
+            y: event.clientY
+        };
+        guessContainer.style.left = (mousePosition.x + offsetGuessContainer.x) + 'px';
+        guessContainer.style.top = (mousePosition.y + offsetGuessContainer.y) + 'px';
+    }
+});

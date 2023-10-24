@@ -11,9 +11,7 @@
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
     overflow: hidden;
     display: flex;
-
 }
-
 
 .body_piggame-navbar {
     background: linear-gradient(rgb(15, 68, 194) 0%, rgb(14, 79, 219) 3%, rgb(9, 79, 231) 6%, rgb(25, 95, 224) 8%, rgb(23, 95, 228) 14%, rgb(16, 82, 206) 17%, rgb(18, 74, 218) 25%, rgb(12, 68, 199) 56%, rgb(22, 89, 197) 81%, rgb(11, 75, 185) 89%, rgb(16, 67, 207) 94%, rgb(15, 61, 199) 97%, rgb(6, 64, 223) 100%);
@@ -33,11 +31,11 @@
 }
 
 .diceGame-main-container {
-    height: 59%;
+    height: auto;
     width: 59%;
     left: 21%;
     top: 19%;
-   display: block;
+    display: block;
     position: absolute;
     background: linear-gradient(rgb(15, 68, 194) 0%, rgb(14, 79, 219) 3%, rgb(9, 79, 231) 6%, rgb(25, 95, 224) 8%, rgb(23, 95, 228) 14%, rgb(16, 82, 206) 17%, rgb(18, 74, 218) 25%, rgb(12, 68, 199) 56%, rgb(22, 89, 197) 81%, rgb(11, 75, 185) 89%, rgb(16, 67, 207) 94%, rgb(15, 61, 199) 97%, rgb(6, 64, 223) 100%);
     border-top-left-radius: 19px;
@@ -49,7 +47,7 @@
     color: #eee;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-   
+    user-select: none;
 }
 
 .dice-text {
@@ -58,7 +56,6 @@
     line-height: 25px;
     font-weight: 700;
 }
-
 
 .player {
     flex: 50%;
@@ -220,16 +217,23 @@
 
 
 /* guess the number */
-.guess-game-min{
-    width: 254px; height: 35px; top: 98vh; left: 270px; border-radius: 0;z-index:222;
+
+.guess-game-min {
+    width: 254px;
+    height: 35px;
+    top: 98vh;
+    left: 270px;
+    border-radius: 0;
+    z-index: 222;
 }
-.guessGame-main-container{
+
+.guessGame-main-container {
     font-family: 'Press Start 2P', sans-serif;
+    user-select: none;
     color: #eee;
     bottom: 100px;
     left: 23%;
     height: 61%;
-  
     width: 58%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -239,14 +243,16 @@
     position: fixed;
     background: linear-gradient(rgb(15, 68, 194) 0%, rgb(14, 79, 219) 3%, rgb(9, 79, 231) 6%, rgb(25, 95, 224) 8%, rgb(23, 95, 228) 14%, rgb(16, 82, 206) 17%, rgb(18, 74, 218) 25%, rgb(12, 68, 199) 56%, rgb(22, 89, 197) 81%, rgb(11, 75, 185) 89%, rgb(16, 67, 207) 94%, rgb(15, 61, 199) 97%, rgb(6, 64, 223) 100%);
 }
-.guesser-con{
+
+.guesser-con {
     width: 99%;
-  margin-left: 4px;
-  margin-top: 3px;
+    margin-left: 4px;
+    margin-top: 3px;
 }
-.body_guess-navbar{
+
+.body_guess-navbar {
     border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 

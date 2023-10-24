@@ -176,6 +176,7 @@
       /* width: 66%; */
       /* resize: both; */
       overflow: auto;
+      overflow-x: hidden;
   }
   
   #mydivheader {
@@ -205,7 +206,6 @@
       height: 28px;
   }
   
- 
   .hidden-nav {
       padding: 3px;
       /* cursor: pointer; */
@@ -284,18 +284,20 @@
       border-radius: 5px;
       margin-right: 7px;
   }
+  
   .cli-buttons {
-    margin-left: auto;
-    display: flex;
-    justify-content: flex-end;
-}
-.cli-button img {
-    height: 15px;
-    width: 15px;
-}
-
-.cli-button ,
-  .body_guess-btns ,
+      margin-left: auto;
+      display: flex;
+      justify-content: flex-end;
+  }
+  
+  .cli-button img {
+      height: 15px;
+      width: 15px;
+  }
+  
+  .cli-button,
+  .body_guess-btns,
   .btnclose,
   .btnremove,
   #crossBtnBigScreen,
@@ -320,25 +322,26 @@
   
   .btnclose,
   #crossBtnBigScreen,
-  .body_guess-close ,
-  .body_piggame-close  {
+  .body_guess-close,
+  .body_piggame-close {
       background-image: radial-gradient(circle at 90% 90%, rgba(233, 46, 40, 0.911) 0%, rgba(211, 16, 16, 0.952) 55%, rgba(247, 38, 23, 0.877) 70%, rgba(226, 16, 16, 0.884) 90%, rgb(240, 26, 26) 100%);
   }
   
-  .btnremove:hover , .cli-button:hover ,
+  .btnremove:hover,
+  .cli-button:hover,
   .body_guess-btns-hover:hover {
       background-image: radial-gradient(circle at 90% 90%, rgb(118, 164, 245) 0%, rgb(108, 159, 247) 55%, rgb(123, 163, 241) 70%, rgb(163, 187, 236) 90%, white 100%);
   }
   
-  .btnclose:hover , .cli-button:last-child:hover ,
+  .btnclose:hover,
+  .cli-button:last-child:hover,
   #crossBtnBigScreen:hover,
   .body_guess-close:hover,
-  .body_piggame-close:hover  {
+  .body_piggame-close:hover {
       background-image: radial-gradient(circle at 90% 90%, rgb(238, 51, 44) 0%, rgb(216, 13, 13) 55%, rgb(226, 38, 24) 70%, rgb(223, 12, 12) 90%, rgb(240, 26, 26) 100%);
       opacity: 0.9;
   }
- 
- 
+  
   .body_guess-resize:disabled {
       background: #dddddd;
   }
@@ -692,7 +695,7 @@
   }
   
   .status-bar {
-    z-index: 111;
+      z-index: 111;
       height: 37px;
       width: 100%;
       font-family: roboto;
@@ -737,8 +740,8 @@
       width: 20px;
       height: 20px;
   }
-  guess-number-game
-  .status-bar {
+  
+  guess-number-game .status-bar {
       position: fixed;
   }
   
@@ -867,7 +870,6 @@
       transform: translateY(100%);
       opacity: 0;
       transition: transform 0.7s ease, opacity 0.7s ease;
-    
   }
   /* .startWindow-popup::after{
     z-index: 111;
@@ -875,6 +877,7 @@
   .startWindow-popup::before{
     z-index: 0;
   } */
+  
   .popup-visible {
       transform: translateY(0);
       opacity: 1;

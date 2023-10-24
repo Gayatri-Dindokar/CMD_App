@@ -41,7 +41,7 @@
             </div>
 
         </div>
-        <main class="maincon" id="mydiv" >
+        <main class="maincon" id="mydiv">
             <nav class="navbar color" id="mydivheader">
                 <div><img class="px-icon" src="asset/images/cmd.png" alt="" /></div>
                 <p class="pixel-6">Pixel<span class="six" style="font-weight: 700;">6</span></p>
@@ -425,13 +425,13 @@
 
         </footer>
         <!-- gamming -->
-    <div class="diceGame-main-container d-none" >
-        <div  class="pig-game-header">
-            <nav class="body_piggame-navbar">
-                <div><img class="px-icon" id=" px-guess-number" src="asset/images/dice-removebg-preview.png" alt="Dice" /></div>
-                <p class="pixel-6 dice-text">Dice</p>
+        <div class="diceGame-main-container d-none">
+            <div class="pig-game-header">
+                <nav class="body_piggame-navbar navbar">
+                    <div><img class="px-icon" id=" px-guess-number" src="asset/images/dice-removebg-preview.png" alt="Dice" /></div>
+                    <p class="pixel-6 dice-text">Dice</p>
 
-                
+
                     <div class="cli-buttons">
                         <button class="cli-button dicegame-minimize">
                             <img src="asset/images/minimize.png" alt="minimize" />
@@ -443,38 +443,38 @@
                             <img src="asset/images/close.png" alt="close" />
                         </button>
                     </div>
-               
-            </nav>
+
+                </nav>
+
+            </div>
+            <div class="dieGame-container">
+                <main class="main-dice">
+                    <section class="player player--0 player--active">
+                        <h2 class="name" id="name--0">Player 1</h2>
+                        <p class="score" id="score--0">43</p>
+                        <div class="current">
+                            <p class="current-label">Current</p>
+                            <p class="current-score" id="current--0">0</p>
+                        </div>
+                    </section>
+                    <section class="player player--1">
+                        <h2 class="name" id="name--1">Player 2</h2>
+                        <p class="score" id="score--1">24</p>
+                        <div class="current">
+                            <p class="current-label">Current</p>
+                            <p class="current-score" id="current--1">0</p>
+                        </div>
+                    </section>
+
+                    <img src="dice-5.png" alt="Playing dice" class="dice" />
+
+                    <button class="btn-btn btn--new" onclick="reset()" id="nnnn">🔄 New game</button>
+                    <button class="btn-btn btn--roll" onclick="btnroll()">🎲 Roll dice</button>
+                    <button class="btn-btn btn--hold" onclick="btnhold()"><span id="hold">📥 Hold</span></button>
+                </main>
+            </div>
 
         </div>
-        <div class="dieGame-container">
-            <main class="main-dice">
-                <section class="player player--0 player--active">
-                    <h2 class="name" id="name--0">Player 1</h2>
-                    <p class="score" id="score--0">43</p>
-                    <div class="current">
-                        <p class="current-label">Current</p>
-                        <p class="current-score" id="current--0">0</p>
-                    </div>
-                </section>
-                <section class="player player--1">
-                    <h2 class="name" id="name--1">Player 2</h2>
-                    <p class="score" id="score--1">24</p>
-                    <div class="current">
-                        <p class="current-label">Current</p>
-                        <p class="current-score" id="current--1">0</p>
-                    </div>
-                </section>
-
-                <img src="dice-5.png" alt="Playing dice" class="dice" />
-               
-                <button class="btn-btn btn--new" onclick="reset()" id="nnnn">🔄 New game</button>
-                <button class="btn-btn btn--roll" onclick="btnroll()">🎲 Roll dice</button>
-                <button class="btn-btn btn--hold" onclick="btnhold()"><span id="hold">📥 Hold</span></button>
-            </main>
-        </div>
-    
-    </div>
 
 
         <!-- guess the number game -->
