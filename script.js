@@ -867,7 +867,7 @@ bottomDivCover2.addEventListener("click", (e) => {
         diceGame.style.zIndex = "1";
         mydivid.style.zIndex = "1";
         guessgame.style.overflow = "hidden";
-        toggleHidden();
+        
         if (window.matchMedia("(max-width: 1400px)").matches) {
             guessgame.style.height = "76%";
         }
@@ -895,19 +895,25 @@ document.getElementById("guess-number-game").addEventListener("click", expandGue
 document.getElementById("games-dropdown-guess-number").addEventListener("click", expandGuessGame);
 ////////////////////////////////
 // Dice Game //
+
+
+
 const diceGame = document.querySelector(".diceGame-main-container");
+
 document.getElementById("dice-dropdown-game").addEventListener("click", () => {
-    diceGame.classList.remove('d-none')
+    diceGame.classList.remove('d-none');
+  
     bottomDivCover3.style.display = "flex";
     toggleStartWindowPopup();
-    toggleHidden();
+    // toggleHidden();
 });
 
 document.getElementById("dice-game").addEventListener("click", () => {
-    diceGame.classList.remove('d-none')
+    diceGame.classList.remove('d-none');
+   
     bottomDivCover3.style.display = "flex";
     toggleStartWindowPopup();
-    toggleHidden();
+    // toggleHidden();
 });
 
 document.querySelector(".dicegame-minimize").addEventListener("click", () => {
@@ -926,6 +932,7 @@ bottomDivCover3.addEventListener("click", () => {
     } else {
         bottomDivCover3.style.boxShadow = "rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.7) 1px 0px 1px inset";
     }
+   
 
     if (diceGame.style.display === "none") {
         diceGame.style.cssText = " height: 59%; left: 21%; top:19%;z-index:2";
@@ -933,7 +940,7 @@ bottomDivCover3.addEventListener("click", () => {
         guessgame.style.zIndex = "1";
         mydivid.style.zIndex = "1";
         // mydiv.style.display = "none";
-        toggleHidden();
+        // toggleHidden();
         if (window.matchMedia("(max-width: 1400px)").matches) {
             guessgame.style.height = "76%";
             if (window.matchMedia("(max-width: 1400px)").matches) {
@@ -941,7 +948,8 @@ bottomDivCover3.addEventListener("click", () => {
                 diceGame.style.height = "79%";
             }
         }
-    } else {
+    }
+     else {
         diceGame.style.display = "none";
     }
 });
