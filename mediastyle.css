@@ -1,6 +1,7 @@
 @media only screen and (max-width: 1400px) {
     .diceGame-main-container {
-        height: 79%;
+        /* height: 79%; */
+    height: auto;
         width: 53%;
          top: 40px;
     }
@@ -24,7 +25,8 @@
     .guessGame-main-container {
         /* height: 59%;
         width: 60%; */
-        height: 76%;
+        height: 73%;
+       
         width: 54%;
         left: 50%;
        top: 50%;

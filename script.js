@@ -27,6 +27,7 @@ const errorIcon = document.querySelector(".error-icon");
 const test = document.querySelector(".test");
 const bottomdivCover = document.getElementById("bottom-div-cover");
 const bottomdivCoverContainer = document.querySelector(".bottom-div-cover-container");
+const inputGuess = document.querySelector(".guess");
 
 const path = () => {
     const newpath = document.createElement("p");
@@ -38,6 +39,7 @@ const path = () => {
     inputField.focus();
 };
 document.addEventListener("click", (event) => {
+   
     const inputField = document.querySelectorAll(".input-field");
     inputField.forEach(input => {
         input.focus();
@@ -47,6 +49,9 @@ document.addEventListener("click", (event) => {
         input.focus();
     })
 });
+inputGuess.addEventListener("click",(event)=>{
+    event.stopPropagation();
+})
 path();
 const addcommand = () => {
     const note = `<p class="note">This Command not found. </p>`;
@@ -776,9 +781,9 @@ let scoresg = 20;
 let highscores = 0;
 
 function guessthenumber() {
+    
     console.log("guess the number")
     const assume = Number(document.querySelector('.guess').value);
-
     if (!assume) {
         document.querySelector('.message').textContent = 'No number'
 
@@ -818,6 +823,7 @@ function guessthenumber() {
 // guessthenumber();
 document.getElementById("cheack-btn").addEventListener("click", guessthenumber);
 
+
 function againeplay() {
     scoresg = 20;
     highscores = 0;
@@ -839,6 +845,7 @@ document.querySelector(".turnoffthewindow").addEventListener("click", () => {
 
 });
 const toggleHidden = () => { mydivid.classList.toggle('hidden') };
+
 // Guess Game functionality //
 const bottomDivCover2 = document.getElementById("bottom-div-cover2");
 const bottomDivCover3 = document.getElementById("bottom-div-cover3");
@@ -869,7 +876,7 @@ bottomDivCover2.addEventListener("click", (e) => {
         guessgame.style.overflow = "hidden";
         
         if (window.matchMedia("(max-width: 1400px)").matches) {
-            guessgame.style.height = "76%";
+            guessgame.style.height = "73%";
         }
     } else {
         guessgame.style.display = "none";
@@ -885,9 +892,11 @@ function expandGuessGame() {
         guessgame.style.top = "50%";
     }
     bottomDivCover2.style.display = "flex";
-
-    guessgame.classList.remove('d-none')
-        // guessgame.style.transform="translate(-50%, -50%)";
+    guessgame.classList.remove('d-none');
+    guessgame.style.display="block";
+    maincon.style.zIndex="1";
+    diceGame.style.zIndex="1";
+    guessgame.style.zIndex="2";
     againeplay();
     toggleStartWindowPopup();
 }
@@ -902,17 +911,23 @@ const diceGame = document.querySelector(".diceGame-main-container");
 
 document.getElementById("dice-dropdown-game").addEventListener("click", () => {
     diceGame.classList.remove('d-none');
-  
+    diceGame.style.display="block";
     bottomDivCover3.style.display = "flex";
     toggleStartWindowPopup();
+    maincon.style.zIndex="1";
+    diceGame.style.zIndex="2";
+    guessgame.style.zIndex="1";
     // toggleHidden();
 });
 
 document.getElementById("dice-game").addEventListener("click", () => {
     diceGame.classList.remove('d-none');
-   
+    diceGame.style.display="block";
     bottomDivCover3.style.display = "flex";
     toggleStartWindowPopup();
+    maincon.style.zIndex="1";
+    diceGame.style.zIndex="2";
+    guessgame.style.zIndex="1";
     // toggleHidden();
 });
 
@@ -945,7 +960,7 @@ bottomDivCover3.addEventListener("click", () => {
             guessgame.style.height = "76%";
             if (window.matchMedia("(max-width: 1400px)").matches) {
                 diceGame.style.top = "8%";
-                diceGame.style.height = "79%";
+                diceGame.style.height = "auto";
             }
         }
     }
