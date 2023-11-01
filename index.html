@@ -41,7 +41,7 @@
             </div>
 
         </div>
-        <main class="maincon" id="mydiv">
+        <main class="maincon" id="mydiv"  style="display: none;">
             <nav class="navbar color" id="mydivheader">
                 <div><img class="px-icon" src="asset/images/cmd.png" alt="" /></div>
                 <p class="pixel-6">Pixel<span class="six" style="font-weight: 700;">6</span></p>
@@ -478,7 +478,7 @@
 
 
         <!-- guess the number game -->
-        <div class="guessGame-main-container d-none">
+        <div class="guessGame-main-container">
             <nav class="body_guess-navbar">
                 <div><img class="px-icon" id=" px-guess-number" src="asset/images/guess-number.png" alt="guess number" /></div>
                 <p class="pixel-6">Guess Number</p>
@@ -496,27 +496,38 @@
                 </div>
             </nav>
 
-            <div class="guesser-con" style="background-color: black;">
+            <div class="guesser-con">
                 <header class="header-guess">
-                    <h1>Guess My Number!</h1>
-                    <p class="between">(Between 1 and 20)</p>
+                 <div class="header-guess_child">
                     <button class="btn-guess again" id="again-btn-guess">Again!</button>
-                    <div class="number">?</div>
+                    <p class="between">(Between 1 and 20)</p>
+                 </div>
+                  <div class="header-guess-text">
+                    <h1>Guess My Number!</h1>
+                  </div>
+                    <div class="number"><span>?</span></div>
                 </header>
                 <main class="main-guess">
-                    <section class="left">
-                        <input type="number" class="guess" />
+                    <section>
+                       <div class="main-guess-child">
+                        <div class="left">
+                            <input type="number" class="guess" />
                         <button class="btn-cheack-guess check" id="cheack-btn">Check!</button>
-                    </section>
+                        </div>
+                        <div class="right">
+                            <p class="message">Start guessing...</p>
+                            <p class="label-score">💯 Score: <span class="score-guess score-display">20</span></p>
+                            <p class="label-highscore">
+                                🥇 Highscore: <span class="highscore">0</span>
+                            </p>
+                        </div>
+
+                       </div>
+                        </section>
+                        
 
 
-                    <section class="right">
-                        <p class="message">Start guessing...</p>
-                        <p class="label-score">💯 Score: <span class="score score-display">20</span></p>
-                        <p class="label-highscore">
-                            🥇 Highscore: <span class="highscore">0</span>
-                        </p>
-                    </section>
+                   
             </div>
             </main>
         </div>
@@ -527,7 +538,7 @@
         </div>
 
 
-        <div class="modal_logof-container d-none">
+        <div class="modal_logof-container" style="display: none;">
             <div class="modal-logOf">
                 <header class="modal_logof-header">
                     <span class="model_window-header-text">Log Off Windows</span>
@@ -542,7 +553,7 @@
                 </footer>
             </div>
         </div>
-        <div class="model-window d-none turnoff" style="display: none;">
+        <div class="model-window  turnoff" style="display: none;">
             <div class="modal">
                 <header class="model_window-header">
                     <span class="model_window-header-text">Log Off Windows</span>

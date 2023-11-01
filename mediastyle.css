@@ -47,13 +47,13 @@
         top: 20%;
     }
     .number{
-        width: 8rem;
-        top: 60px;
+        width: 100%;
+        /* top: 60px; */
         
      }
-     .right{
+     /* .right{
         margin-top: 40px;
         font-size: 26px;
   margin-left: 165px;
-     }
+     } */
 }
